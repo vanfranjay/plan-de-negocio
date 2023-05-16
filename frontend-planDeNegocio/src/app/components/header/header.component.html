@@ -1,1 +1,5 @@
-<p>header works!</p>
+<mat-toolbar class="header">
+  <span>My Application</span>
+  <button (click)="redirectToHome()" [class.selected]="isHomeSelected">Home</button>
+  <button (click)="redirectToPresupuesto()" [class.selected]="isPresupuestoSelected">presupuesto</button>
+</mat-toolbar>
