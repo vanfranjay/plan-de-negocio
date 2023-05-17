@@ -1,2 +1,58 @@
-<p>home works!</p>
-<p>Saludos</p>
+<div class="container">
+  <div class="content">
+    <mat-grid-list cols="1" rowHeight="fit">
+      <mat-grid-tile-header>
+        <h1>PLAN DE NEGOCIO EMPRENDE BDP V.5.3</h1>
+      </mat-grid-tile-header>
+    </mat-grid-list>
+    <mat-grid-list [cols]="colSize" rowHeight="600px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <div>
+          <div class="form__deudor" [formGroup]="form">
+            <h2>Datos Deudor</h2>
+            <mat-form-field class="nombre" appearance="fill">
+              <mat-label>Nombre:</mat-label>
+              <input matInput formControlName="nameDeudor">
+              <!-- <div *ngIf="form.get('nameDeudor')?.invalid && form.get('name')?.touched">
+                <mat-error *ngIf="form.get('nameDeudor')?.errors?.['required']">El nombre es requerido.</mat-error>
+              </div> -->
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Ci:</mat-label>
+              <input matInput formControlName="ciDeudor">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Extensión:</mat-label>
+              <input matInput formControlName="extensionDeudor">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Edad:</mat-label>
+              <input matInput formControlName="edadDeudor">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Estado civil:</mat-label>
+              <input matInput formControlName="EstadoCivilDeudor">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Telefono:</mat-label>
+              <input matInput formControlName="telefonoDeudor">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Dirección:</mat-label>
+              <input matInput formControlName="direccionDeudor">
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        Lorem ipsum dolor sit amet.
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        Lorem ipsum dolor sit amet.
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        Lorem ipsum dolor sit amet.
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

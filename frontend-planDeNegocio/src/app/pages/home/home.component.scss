@@ -1,0 +1,33 @@
+// .container {
+//   margin: 0 auto;
+//   padding: 0 20px;
+//   max-width: 960px;
+//   /* Ajusta el valor máximo según tus necesidades */
+// }
+
+// .content {
+//   width: 100%;
+//   box-sizing: border-box;
+// }
+// @media (max-width: 768px) {
+//   /* Ajusta el punto de quiebre según tus necesidades */
+//   .container {
+//     padding: 0 10px;
+//   }
+// }
+mat-grid-tile {
+  background: lightblue;
+}
+mat-grid-tile-header{
+  background: aqua;
+  display: grid;
+  justify-items: center;
+}
+.form__deudor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.input-container {
+  width: 100%;
+}
