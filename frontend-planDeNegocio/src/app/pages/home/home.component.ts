@@ -11,6 +11,12 @@ export class HomeComponent {
 
   public colSize!: number;
   form: FormGroup;
+  disableSelect = new FormControl(false);
+  siControl = new FormControl(false);
+  noControl = new FormControl(false);
+  tiempoInicioHabilitado = false;
+  miCampoNumerico =null;
+  // disableSelect: boolean = true;
 
   // name: FormControl = new FormControl('', [Validators.required]);
   // ci: FormControl = new FormControl('', [Validators.required]);
@@ -31,7 +37,28 @@ export class HomeComponent {
         edadDeudor: ['', Validators.required],
         EstadoCivilDeudor: ['', Validators.required],
         telefonoDeudor: ['', Validators.required],
-        direccionDeudor: ['', Validators.required]
+        direccionDeudor: ['', Validators.required],
+
+        nameCodeudor: ['', Validators.required],
+        ciCodeudor: ['', Validators.required],
+        extensionCodeudor: ['', Validators.required],
+        edadCodeudor: ['', Validators.required],
+        EstadoCivilCodeudor: ['', Validators.required],
+        telefonoCodeudor: ['', Validators.required],
+        direccionCodeudor: ['', Validators.required],
+
+        razonSocial: ['', Validators.required],
+        nit: ['', Validators.required],
+        sigla: ['', Validators.required],
+        tipoFormaSociendadComercial: ['', Validators.required],
+        representanteLegal: ['', Validators.required],
+        domicilioLegal: ['', Validators.required],
+
+        actividad: ['', Validators.required],
+        departamento: ['', Validators.required],
+        municipio: ['', Validators.required],
+        telefono: ['', Validators.required],
+        direccion: ['', Validators.required]
       });
     }
   ngOnInit() {
@@ -58,6 +85,24 @@ export class HomeComponent {
   sendValues(){
     console.log(this.form.get('name')?.value);
     this.form.reset();
+  }
+  toggleCheckbox(checkbox: string) {
+    if (checkbox === 'si') {
+      this.noControl.setValue(false);
+      this.tiempoInicioHabilitado = this.siControl.value ?? false;
+      if (!this.siControl.value) {
+        this.resetearCampo();
+      }
+    } else if (checkbox === 'no') {
+      this.siControl.setValue(false);
+      this.tiempoInicioHabilitado = this.siControl.value ?? false;
+      if (!this.siControl.value) {
+        this.resetearCampo();
+      }
+    }
+  }
+  resetearCampo() {
+    this.miCampoNumerico = null;
   }
 
 }
