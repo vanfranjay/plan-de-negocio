@@ -1,38 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+enum Tab {
+  Home = 'home',
+  Presupuesto = 'presupuesto',
+  Complementario = 'complementario',
+  Pregunta1 = 'pregunta1',
+  Pregunta2 = 'pregunta2'
+}
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
-  constructor(private router: Router) { }
-  isHomeSelected: boolean = true;
-  isPresupuestoSelected: boolean = false;
+export class HeaderComponent implements OnInit {
+  selectedTab: Tab = Tab.Home;
+  Tab = Tab;
+
+  constructor(private router: Router) {}
+
   ngOnInit() {
     // Recuperar el estado seleccionado del almacenamiento local
-    const selectedTab = localStorage.getItem('selectedTab');
-    if (selectedTab === 'presupuesto') {
-      this.isHomeSelected = false;
-      this.isPresupuestoSelected = true;
-    } else {
-      // Por defecto, seleccionar la pestaña "Home"
-      this.isHomeSelected = true;
-      this.isPresupuestoSelected = false;
+    const storedTab = localStorage.getItem('selectedTab');
+    if (Object.values(Tab).includes(storedTab as Tab)) {
+      this.selectedTab = storedTab as Tab;
     }
   }
 
-  redirectToHome() {
-    this.router.navigate(['/home']);
-    this.isHomeSelected = true;
-    this.isPresupuestoSelected = false;
-    localStorage.setItem('selectedTab', 'home');
+  navigateTo(tab: Tab) {
+    this.selectedTab = tab;
+    this.router.navigate(['/', tab]);
+    localStorage.setItem('selectedTab', tab);
   }
-  redirectToPresupuesto() {
-    this.router.navigate(['/presupuesto']);
-    this.isPresupuestoSelected = true;
-    this.isHomeSelected = false;
-    localStorage.setItem('selectedTab', 'presupuesto');
+
+  isSelected(tab: Tab): boolean {
+    return this.selectedTab === tab;
   }
 }
