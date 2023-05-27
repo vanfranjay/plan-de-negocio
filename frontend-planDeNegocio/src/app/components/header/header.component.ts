@@ -37,4 +37,14 @@ export class HeaderComponent implements OnInit {
   isSelected(tab: Tab): boolean {
     return this.selectedTab === tab;
   }
+  isMenuOpen = false;
+
+  selectOption(option: string) {
+    // Lógica para manejar la selección de opciones del menú
+    console.log('Opción seleccionada:', option);
+  }
+
+  onMenuClosed() {
+    this.isMenuOpen = false;
+  }
 }

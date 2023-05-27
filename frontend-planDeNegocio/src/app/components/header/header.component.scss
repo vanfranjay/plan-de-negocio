@@ -4,10 +4,38 @@
   z-index: 100;
 }
 .selected {
-  background-color: rgb(0, 54, 191); /* Cambia el color de fondo al rojo */
+  background-color: rgb(0, 54, 191); /* Cambia el color de fondo al  */
   color: #fff; /* Cambia el color del texto a blanco */
   /* Otros estilos adicionales que desees aplicar */
 }
 .logo{
   padding-right: 20px;
+  padding-left: 10px;
+}
+@media (max-width: 1150px) {
+  .label__button-navBar {
+    font-size: 14px; /* Ajusta el tamaño de fuente según tus necesidades */
+  }
+}
+@media (max-width: 950px) {
+  mat-button-toggle-group{
+    display: none;
+  }
+}
+@media (min-width: 950px) {
+  .menu__opciones{
+    display: none;
+  }
+  .selected-menu {
+    background-color: aqua;
+    color: inherit;
+  }
+}
+.vertical-menu {
+  display: flex;
+  flex-direction: column;
+}
+.mat-button-toggle:hover{
+  background-color: aqua;
+  color: #000;
 }

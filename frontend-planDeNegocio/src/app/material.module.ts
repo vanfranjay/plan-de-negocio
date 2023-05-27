@@ -7,7 +7,10 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   exports: [
@@ -20,7 +23,10 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatInputModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatTableModule,
+    MatIconModule,
+    MatMenuModule
   ]
 })
 
