@@ -15,7 +15,7 @@ export class HomeComponent {
   siControl = new FormControl(false);
   noControl = new FormControl(false);
   tiempoInicioHabilitado = false;
-  miCampoNumerico =null;
+  miCampoNumerico = null;
   // disableSelect: boolean = true;
 
   // name: FormControl = new FormControl('', [Validators.required]);
@@ -29,38 +29,39 @@ export class HomeComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private fb: FormBuilder
-    ) {
-      this.form = this.fb.group({
-        nameDeudor: ['', Validators.required],
-        ciDeudor: ['', Validators.required],
-        extensionDeudor: ['', Validators.required],
-        edadDeudor: ['', Validators.required],
-        EstadoCivilDeudor: ['', Validators.required],
-        telefonoDeudor: ['', Validators.required],
-        direccionDeudor: ['', Validators.required],
+  ) {
+    this.form = this.fb.group({
+      nameDeudor: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/), Validators.maxLength(30)]],
+      ciDeudor: ['', [Validators.required, Validators.pattern(/^[0-9]+[a-zA-Z]?$/)]],
+      extensionDeudor: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/), Validators.maxLength(20)]],
+      edadDeudor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(2), Validators.min(21)]],
+      EstadoCivilDeudor: ['', [Validators.required, Validators.pattern(/^\S*$/)]],
+      telefonoDeudor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(8)]],
+      direccionDeudor: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s]*$/), Validators.maxLength(120)]],
 
-        nameCodeudor: ['', Validators.required],
-        ciCodeudor: ['', Validators.required],
-        extensionCodeudor: ['', Validators.required],
-        edadCodeudor: ['', Validators.required],
-        EstadoCivilCodeudor: ['', Validators.required],
-        telefonoCodeudor: ['', Validators.required],
-        direccionCodeudor: ['', Validators.required],
+      nameCodeudor: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/), Validators.maxLength(30)]],
+      ciCodeudor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      extensionCodeudor: ['', [Validators.required, , Validators.pattern(/^[a-zA-Z\s]*$/), Validators.maxLength(20)]],
+      edadCodeudor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(2), Validators.min(21)]],
+      EstadoCivilCodeudor: ['', [Validators.required, Validators.pattern(/^\S*$/)]],
+      telefonoCodeudor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(8)]],
+      direccionCodeudor: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s]*$/), Validators.maxLength(120)]],
 
-        razonSocial: ['', Validators.required],
-        nit: ['', Validators.required],
-        sigla: ['', Validators.required],
-        tipoFormaSociendadComercial: ['', Validators.required],
-        representanteLegal: ['', Validators.required],
-        domicilioLegal: ['', Validators.required],
+      razonSocial: ['', [Validators.required, Validators.pattern(/^[\w\s.]*$/)]],
+      nit: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(30)]],
+      sigla: ['', [Validators.required, Validators.pattern(/^\S*$/), Validators.maxLength(20)]],
+      tipoFormaSociendadComercial: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s.]*$/), Validators.maxLength(10)]],
+      representanteLegal: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/), Validators.maxLength(30)]],
+      domicilioLegal: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s.]*$/), Validators.maxLength(120)]],
 
-        actividad: ['', Validators.required],
-        departamento: ['', Validators.required],
-        municipio: ['', Validators.required],
-        telefono: ['', Validators.required],
-        direccion: ['', Validators.required]
-      });
-    }
+      actividad: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/), Validators.maxLength(100)]],
+      departamento: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/), Validators.maxLength(20)]],
+      municipio: ['', [Validators.required, Validators.pattern(/^\S*$/), Validators.maxLength(20)]],
+      telefono: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(8)]],
+      direccion: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s]*$/), Validators.maxLength(120)]]
+    });
+  }
+
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])
       .subscribe(result => {
@@ -82,7 +83,7 @@ export class HomeComponent {
       return 4; // Por defecto, 4 columnas
     }
   }
-  sendValues(){
+  sendValues() {
     console.log(this.form.get('name')?.value);
     this.form.reset();
   }
@@ -103,6 +104,9 @@ export class HomeComponent {
   }
   resetearCampo() {
     this.miCampoNumerico = null;
+  }
+  limpiarCampos() {
+    this.form.reset();
   }
 
 }

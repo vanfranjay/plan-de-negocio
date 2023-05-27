@@ -5,138 +5,456 @@
         <h1>PLAN DE NEGOCIO EMPRENDE BDP V.5.3</h1>
       </mat-grid-tile-header>
     </mat-grid-list>
-    <mat-grid-list [cols]="colSize" rowHeight="600px">
+    <mat-grid-list [cols]="colSize" rowHeight="610px">
       <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div>
-          <div class="form__deudor" [formGroup]="form">
-            <h2>Datos Deudor</h2>
-            <mat-form-field class="nombre" appearance="fill">
-              <mat-label>Nombre:</mat-label>
-              <input matInput formControlName="nameDeudor" />
-              <!-- <div *ngIf="form.get('nameDeudor')?.invalid && form.get('name')?.touched">
-                <mat-error *ngIf="form.get('nameDeudor')?.errors?.['required']">El nombre es requerido.</mat-error>
-              </div> -->
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Ci:</mat-label>
-              <input matInput formControlName="ciDeudor" />
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Extensión:</mat-label>
-              <input matInput formControlName="extensionDeudor" />
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Edad:</mat-label>
-              <input matInput formControlName="edadDeudor" />
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Estado civil:</mat-label>
-              <input matInput formControlName="EstadoCivilDeudor" />
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Telefono:</mat-label>
-              <input matInput formControlName="telefonoDeudor" />
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Dirección:</mat-label>
-              <input matInput formControlName="direccionDeudor" />
-            </mat-form-field>
-          </div>
+        <div class="form__deudor scrollable-content" [formGroup]="form">
+          <h2>Datos Deudor</h2>
+          <mat-form-field class="nombre" appearance="fill">
+            <mat-label>Nombre:</mat-label>
+            <input matInput formControlName="nameDeudor" />
+            <mat-error
+              *ngIf="
+                form.get('nameDeudor')?.invalid &&
+                form.get('nameDeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('nameDeudor')?.errors?.['required']"
+                >El nombre es requerido.</span
+              >
+              <span *ngIf="form.get('nameDeudor')?.errors?.['pattern']"
+                >El nombre solo debe contener letras y espacios.</span
+              >
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Ci:</mat-label>
+            <input matInput formControlName="ciDeudor" />
+            <mat-error
+              *ngIf="
+                form.get('ciDeudor')?.invalid && form.get('ciDeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('ciDeudor')?.errors?.['required']"
+                >El CI es requerido.</span
+              >
+              <span *ngIf="form.get('ciDeudor')?.errors?.['pattern']"
+                >El CI solo debe contener números.</span
+              >
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Extensión:</mat-label>
+            <input matInput formControlName="extensionDeudor" />
+            <mat-error
+              *ngIf="
+                form.get('extensionDeudor')?.invalid && form.get('extensionDeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('extensionDeudor')?.errors?.['required']"
+                >La extensión es requerida.</span
+              >
+              <span *ngIf="form.get('extensionDeudor')?.errors?.['pattern']"
+                >La extensión solo puede contener letras.</span
+              >
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Edad:</mat-label>
+            <input matInput formControlName="edadDeudor" />
+            <mat-error
+              *ngIf="
+                form.get('edadDeudor')?.invalid && form.get('edadDeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('edadDeudor')?.errors?.['required']"
+                >El edad es requerido.</span
+              >
+              <span *ngIf="form.get('edadDeudor')?.errors?.['pattern']"
+                >El edad solo debe contener números.</span
+              >
+              <span *ngIf="form.get('edadDeudor')?.errors?.['maxlength']"
+                >La edad no puede ser mayor a 2 dígitos.</span
+              >
+              <span *ngIf="form.get('edadDeudor')?.errors?.['min']"
+                >Tienes que ser mayor de edad.</span
+              >
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Estado civil:</mat-label>
+            <input matInput formControlName="EstadoCivilDeudor" />
+            <mat-error
+              *ngIf="
+                form.get('EstadoCivilDeudor')?.invalid && form.get('EstadoCivilDeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('EstadoCivilDeudor')?.errors?.['required']"
+                >El estado civil es requerida.</span
+              >
+              <span *ngIf="form.get('EstadoCivilDeudor')?.errors?.['pattern']"
+                >El estado civil solo puede contener letras.</span
+              >
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Telefono:</mat-label>
+            <input matInput formControlName="telefonoDeudor" />
+            <mat-error
+              *ngIf="
+                form.get('telefonoDeudor')?.invalid && form.get('telefonoDeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('telefonoDeudor')?.errors?.['required']"
+                >El teléfono es requerido.</span
+              >
+              <span *ngIf="form.get('telefonoDeudor')?.errors?.['pattern']"
+                >El teléfono solo debe contener números.</span
+              >
+              <span *ngIf="form.get('telefonoDeudor')?.errors?.['maxlength']"
+                >Número de teléfono invalido.</span
+              >
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Dirección:</mat-label>
+            <input matInput formControlName="direccionDeudor" />
+            <mat-error
+              *ngIf="
+                form.get('direccionDeudor')?.invalid && form.get('direccionDeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('direccionDeudor')?.errors?.['required']"
+                >La dirección es requerido.</span
+              >
+              <span *ngIf="form.get('direccionDeudor')?.errors?.['pattern']"
+                >La dirección no puede contener caracteres especiales ej: $%^&*etc.</span
+              >
+              <span *ngIf="form.get('direccionDeudor')?.errors?.['maxlength']"
+                >120 caracteres minimo.</span
+              >
+            </mat-error>
+          </mat-form-field>
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="form__deudor" [formGroup]="form">
+        <div class="form__deudor scrollable-content" [formGroup]="form">
           <h2>Datos Codeudor</h2>
           <mat-form-field class="nombre" appearance="fill">
             <mat-label>Nombre:</mat-label>
             <input matInput formControlName="nameCodeudor" />
-            <!-- <div *ngIf="form.get('nameDeudor')?.invalid && form.get('name')?.touched">
-              <mat-error *ngIf="form.get('nameDeudor')?.errors?.['required']">El nombre es requerido.</mat-error>
-            </div> -->
+            <mat-error
+              *ngIf="
+                form.get('nameCodeudor')?.invalid &&
+                form.get('nameCodeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('nameCodeudor')?.errors?.['required']"
+                >El nombre es requerido.</span
+              >
+              <span *ngIf="form.get('nameCodeudor')?.errors?.['pattern']"
+                >El nombre solo debe contener letras y espacios.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Ci:</mat-label>
             <input matInput formControlName="ciCodeudor" />
+            <mat-error
+              *ngIf="
+                form.get('ciCodeudor')?.invalid && form.get('ciCodeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('ciCodeudor')?.errors?.['required']"
+                >El CI es requerido.</span
+              >
+              <span *ngIf="form.get('ciCodeudor')?.errors?.['pattern']"
+                >El CI solo debe contener números.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Extensión:</mat-label>
             <input matInput formControlName="extensionCodeudor" />
+            <mat-error
+              *ngIf="
+                form.get('extensionCodeudor')?.invalid && form.get('extensionCodeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('extensionCodeudor')?.errors?.['required']"
+                >La extensión es requerida.</span
+              >
+              <span *ngIf="form.get('extensionCodeudor')?.errors?.['pattern']"
+                >La extensión solo puede contener letras.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Edad:</mat-label>
             <input matInput formControlName="edadCodeudor" />
+            <mat-error
+              *ngIf="
+                form.get('edadCodeudor')?.invalid && form.get('edadCodeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('edadCodeudor')?.errors?.['required']"
+                >El edad es requerido.</span
+              >
+              <span *ngIf="form.get('edadCodeudor')?.errors?.['pattern']"
+                >El edad solo debe contener números.</span
+              >
+              <span *ngIf="form.get('edadCodeudor')?.errors?.['maxlength']"
+                >La edad no puede ser mayor a 2 dígitos.</span
+              >
+              <span *ngIf="form.get('edadCodeudor')?.errors?.['min']"
+                >Tienes que ser mayor de edad.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Estado civil:</mat-label>
             <input matInput formControlName="EstadoCivilCodeudor" />
+            <mat-error
+              *ngIf="
+                form.get('EstadoCivilCodeudor')?.invalid && form.get('EstadoCivilCodeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('EstadoCivilCodeudor')?.errors?.['required']"
+                >El estado civil es requerida.</span
+              >
+              <span *ngIf="form.get('EstadoCivilCodeudor')?.errors?.['pattern']"
+                >El estado civil solo puede contener letras.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Telefono:</mat-label>
             <input matInput formControlName="telefonoCodeudor" />
+            <mat-error
+              *ngIf="
+                form.get('telefonoCodeudor')?.invalid && form.get('telefonoCodeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('telefonoCodeudor')?.errors?.['required']"
+                >El teléfono es requerido.</span
+              >
+              <span *ngIf="form.get('telefonoCodeudor')?.errors?.['pattern']"
+                >El teléfono solo debe contener números.</span
+              >
+              <span *ngIf="form.get('telefonoCodeudor')?.errors?.['maxlength']"
+                >Número de teléfono invalido.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Dirección:</mat-label>
             <input matInput formControlName="direccionCodeudor" />
+            <mat-error
+              *ngIf="
+                form.get('direccionCodeudor')?.invalid && form.get('direccionCodeudor')?.touched
+              "
+            >
+              <span *ngIf="form.get('direccionCodeudor')?.errors?.['required']"
+                >La dirección es requerido.</span
+              >
+              <span *ngIf="form.get('direccionCodeudor')?.errors?.['pattern']"
+                >La dirección no puede contener caracteres especiales ej: $%^&*etc.</span
+              >
+              <span *ngIf="form.get('direccionCodeudor')?.errors?.['maxlength']"
+                >120 caracteres minimo.</span
+              >
+            </mat-error>
           </mat-form-field>
         </div>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="form__deudor" [formGroup]="form">
+      <mat-grid-tile [colspan]="1" [rowspan]="1" class="centered-tile">
+        <div class="form__deudor scrollable-content" [formGroup]="form">
           <h2>Persona jurídica</h2>
           <mat-form-field class="nombre" appearance="fill">
             <mat-label>Razón social:</mat-label>
             <input matInput formControlName="razonSocial" />
-            <!-- <div *ngIf="form.get('nameDeudor')?.invalid && form.get('name')?.touched">
-              <mat-error *ngIf="form.get('nameDeudor')?.errors?.['required']">El nombre es requerido.</mat-error>
-            </div> -->
+            <mat-error
+              *ngIf="
+                form.get('razonSocial')?.invalid && form.get('razonSocial')?.touched
+              "
+            >
+              <span *ngIf="form.get('razonSocial')?.errors?.['required']"
+                >La razón social es requerida.</span
+              >
+              <span *ngIf="form.get('razonSocial')?.errors?.['pattern']"
+                >La razón social solo puede contener letras.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>NIT:</mat-label>
             <input matInput formControlName="nit" />
+            <mat-error
+              *ngIf="
+                form.get('nit')?.invalid && form.get('nit')?.touched
+              "
+            >
+              <span *ngIf="form.get('nit')?.errors?.['required']"
+                >El nit es requerido.</span
+              >
+              <span *ngIf="form.get('nit')?.errors?.['pattern']"
+                >El nit solo puede contener números.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>SIGLA:</mat-label>
             <input matInput formControlName="sigla" />
+            <mat-error
+              *ngIf="
+                form.get('sigla')?.invalid && form.get('sigla')?.touched
+              "
+            >
+              <span *ngIf="form.get('sigla')?.errors?.['required']"
+                >El sigla es requerida.</span
+              >
+              <span *ngIf="form.get('sigla')?.errors?.['pattern']"
+                >La sigla solo puede contener letras.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Tipo y forma de sociedad Comercial:</mat-label>
-            <input matInput formControlName="tipoFormaSociedadComercial" />
+            <input matInput formControlName="tipoFormaSociendadComercial" />
+            <mat-error
+              *ngIf="
+                form.get('tipoFormaSociendadComercial')?.invalid && form.get('tipoFormaSociendadComercial')?.touched
+              "
+            >
+              <span *ngIf="form.get('tipoFormaSociendadComercial')?.errors?.['required']"
+                >El campo es requerido.</span
+              >
+              <span *ngIf="form.get('tipoFormaSociendadComercial')?.errors?.['pattern']"
+                >La campo solo puede contener letras.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Representante legal:</mat-label>
             <input matInput formControlName="representanteLegal" />
+            <mat-error
+              *ngIf="
+                form.get('representanteLegal')?.invalid && form.get('representanteLegal')?.touched
+              "
+            >
+              <span *ngIf="form.get('representanteLegal')?.errors?.['required']"
+                >El campo es requerido.</span
+              >
+              <span *ngIf="form.get('representanteLegal')?.errors?.['pattern']"
+                >La campo solo puede contener letras.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Domicilio legal:</mat-label>
             <input matInput formControlName="domicilioLegal" />
+            <mat-error
+              *ngIf="
+                form.get('domicilioLegal')?.invalid && form.get('domicilioLegal')?.touched
+              "
+            >
+              <span *ngIf="form.get('domicilioLegal')?.errors?.['required']"
+                >El campo es requerido.</span
+              >
+              <span *ngIf="form.get('domicilioLegal')?.errors?.['pattern']"
+                >La campo solo puede contener letras y números.</span
+              >
+            </mat-error>
           </mat-form-field>
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="form__deudor" [formGroup]="form">
+        <div class="form__deudor scrollable-content" [formGroup]="form">
           <h2>Emprendimiento</h2>
           <mat-form-field class="nombre" appearance="fill">
             <mat-label>Actividad:</mat-label>
             <input matInput formControlName="actividad" />
-            <!-- <div *ngIf="form.get('nameDeudor')?.invalid && form.get('name')?.touched">
-              <mat-error *ngIf="form.get('nameDeudor')?.errors?.['required']">El nombre es requerido.</mat-error>
-            </div> -->
+            <mat-error
+              *ngIf="
+                form.get('actividad')?.invalid && form.get('actividad')?.touched
+              "
+            >
+              <span *ngIf="form.get('actividad')?.errors?.['required']"
+                >El campo es requerido.</span
+              >
+              <span *ngIf="form.get('actividad')?.errors?.['pattern']"
+                >La campo solo puede contener letras.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Departamento:</mat-label>
             <input matInput formControlName="departamento" />
+            <mat-error
+              *ngIf="
+                form.get('departamento')?.invalid && form.get('departamento')?.touched
+              "
+            >
+              <span *ngIf="form.get('departamento')?.errors?.['required']"
+                >El campo es requerido.</span
+              >
+              <span *ngIf="form.get('departamento')?.errors?.['pattern']"
+                >La campo solo puede contener solo letras.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Municipio:</mat-label>
             <input matInput formControlName="municipio" />
+            <mat-error
+              *ngIf="
+                form.get('municipio')?.invalid && form.get('municipio')?.touched
+              "
+            >
+              <span *ngIf="form.get('municipio')?.errors?.['required']"
+                >El campo es requerido.</span
+              >
+              <span *ngIf="form.get('municipio')?.errors?.['pattern']"
+                >La campo solo puede contener solo letras.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Teléfono:</mat-label>
             <input matInput formControlName="telefono" />
+            <mat-error
+              *ngIf="
+                form.get('telefono')?.invalid && form.get('telefono')?.touched
+              "
+            >
+              <span *ngIf="form.get('telefono')?.errors?.['required']"
+                >El teléfono es requerido.</span
+              >
+              <span *ngIf="form.get('telefono')?.errors?.['pattern']"
+                >El teléfono solo debe contener números.</span
+              >
+              <span *ngIf="form.get('telefono')?.errors?.['maxlength']"
+                >Número de teléfono invalido.</span
+              >
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Dirección:</mat-label>
             <input matInput formControlName="direccion" />
+            <mat-error
+              *ngIf="
+                form.get('direccion')?.invalid && form.get('direccion')?.touched
+              "
+            >
+              <span *ngIf="form.get('direccion')?.errors?.['required']"
+                >La dirección es requerido.</span
+              >
+              <span *ngIf="form.get('direccion')?.errors?.['pattern']"
+                >La dirección no puede contener caracteres especiales ej: $%^&*etc.</span
+              >
+              <span *ngIf="form.get('direccion')?.errors?.['maxlength']"
+                >120 caracteres minimo.</span
+              >
+            </mat-error>
           </mat-form-field>
         </div>
       </mat-grid-tile>
@@ -149,7 +467,9 @@
     <mat-grid-list cols="1" rowHeight="30px">
       <mat-grid-tile [colspan]="1" [rowspan]="1" class="expand-tile">
         <div class="content">
-          <p class="texto-negrita pdrch">Describa la actividad que quiere emprender</p>
+          <p class="texto-negrita pdrch">
+            Describa la actividad que quiere emprender
+          </p>
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="3" class="expand-tile">
@@ -161,28 +481,56 @@
             La actividad ya está funcionando,
           </span>
           <span>
-            <mat-checkbox [formControl]="siControl" (change)="toggleCheckbox('si')">Si</mat-checkbox>
+            <mat-checkbox
+              [formControl]="siControl"
+              (change)="toggleCheckbox('si')"
+              >Si</mat-checkbox
+            >
           </span>
           <span>
-            <mat-checkbox [formControl]="noControl" (change)="toggleCheckbox('no')">No</mat-checkbox>
+            <mat-checkbox
+              [formControl]="noControl"
+              (change)="toggleCheckbox('no')"
+              >No</mat-checkbox
+            >
           </span>
           <span class="cuantoTiempoInicio">
             ¿Hace cuánto tiempo inició?
-            <input type="number" class="meses" [disabled]="!tiempoInicioHabilitado" [(ngModel)]="miCampoNumerico">MESES
+            <input
+              type="number"
+              class="meses"
+              [disabled]="!tiempoInicioHabilitado"
+              [(ngModel)]="miCampoNumerico"
+              min="0"
+            />MESES
           </span>
         </div>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1" class="expand-tile" class="expand-tile">
+      <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1"
+        class="expand-tile"
+        class="expand-tile"
+      >
         <div class="content">
-          <p class="texto-negrita pdrch">¿Qué inversiones necesita par la actividad?</p>
+          <p class="texto-negrita pdrch">
+            ¿Qué inversiones necesita par la actividad?
+          </p>
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="3" class="expand-tile">
         <textarea class="custom-textarea" placeholder=""></textarea>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1" class="expand-tile" class="expand-tile">
+      <mat-grid-tile
+        [colspan]="1"
+        [rowspan]="1"
+        class="expand-tile"
+        class="expand-tile"
+      >
         <div class="content">
-          <p class="texto-negrita pdrch">Describa los motivos por la que el proyecto será rentable</p>
+          <p class="texto-negrita pdrch">
+            Describa los motivos por la que el proyecto será rentable
+          </p>
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="3" class="expand-tile">
@@ -335,11 +683,12 @@
             placeholder=""
           ></textarea></mat-form-field
       ></mat-grid-tile>
+      <!-- <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button type="button" (click)="limpiarCampos()">Limpiar Campos</button>
+      </mat-grid-tile> -->
     </mat-grid-list>
     <mat-grid-list cols="1" rowHeight="40px" class="footer-grid">
-      <mat-grid-tile class="footer">
-        fecha 17-05-2023
-      </mat-grid-tile>
+      <mat-grid-tile class="footer"> fecha 17-05-2023 </mat-grid-tile>
     </mat-grid-list>
   </div>
 </div>

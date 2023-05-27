@@ -25,12 +25,13 @@ mat-grid-tile-header{
   display: grid;
   justify-items: center;
   background: rgb(6, 6, 78);
-  color: rgb(255, 255, 255);;
+  color: rgb(255, 255, 255);
 }
 .form__deudor{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Alinea el contenido en la parte superior */
+  //align-items: center; /* Centra horizontalmente el contenido */
 }
 .input-container {
   width: 100%;
@@ -78,3 +79,16 @@ mat-grid-tile-header{
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.scrollable-content {
+  padding-top: 20px;
+  padding-right: 5px;
+  padding-left: 5px;
+  height: 100%; /* Establece la altura deseada para que el contenido del grid-tile sea desplazable */
+  width: 100%;
+  overflow: auto; /* Agrega una barra de desplazamiento cuando el contenido excede la altura */
+}
+.centered-tile {
+  display: flex;
+  align-items: flex-start; /* Alinea el contenido en la parte superior */
+}
+
