@@ -18,12 +18,12 @@ export class HeaderComponent implements OnInit {
   selectedTab: Tab = Tab.Home;
   Tab = Tab;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnInit() {
     // Recuperar el estado seleccionado del almacenamiento local
     const storedTab = localStorage.getItem('selectedTab');
-    if (Object.values(Tab).includes(storedTab as Tab)) {
+    if (Object.keys(Tab).includes(storedTab as Tab)) {
       this.selectedTab = storedTab as Tab;
     }
   }
