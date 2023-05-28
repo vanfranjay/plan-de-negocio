@@ -6,3 +6,53 @@
   align-items: flex-start; /* Alineación vertical al inicio */
   justify-content: flex-start; /* Alineación horizontal al inicio */
 }
+.content{
+  width: 100%;
+  height: 100%;
+}
+.texto-bold{
+  font-weight: bold;
+}
+.fondo__subtitlo{
+  background-color: rgb(6, 6, 78);
+  color: #fff;
+}
+.fondo__subtitulo2{
+  background-color: lightblue;
+}
+.grid__centerVertical{
+  display: grid;
+  align-items: center;
+}
+.custom-textarea{
+  width: 100%;
+  height: 100px;
+  resize: none;
+  overflow: auto;
+  padding: 10px;
+  padding-top: 35px;
+}
+.expand-tile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.grid__centerhorizontal{
+  justify-items: center;
+}
+@media (max-width: 600px) {
+  .text__mobil{
+    font-size: 12px;
+  }
+}
+@media (max-width: 599px){
+  .contenedor {
+    padding-top: 55px;
+  }
+}
+@media (max-width: 450px){
+  .text__mobil{
+    font-size: 10px;
+  }
+}
