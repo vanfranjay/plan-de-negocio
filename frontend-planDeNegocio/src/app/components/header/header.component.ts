@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 enum Tab {
   Home = 'home',
@@ -18,25 +18,21 @@ export class HeaderComponent implements OnInit {
   selectedTab: Tab = Tab.Home;
   Tab = Tab;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // Recuperar el estado seleccionado del almacenamiento local
-    const storedTab = localStorage.getItem('selectedTab');
-    if (Object.keys(Tab).includes(storedTab as Tab)) {
-      this.selectedTab = storedTab as Tab;
-    }
-  }
-
-  navigateTo(tab: Tab) {
-    this.selectedTab = tab;
-    this.router.navigate(['/', tab]);
-    localStorage.setItem('selectedTab', tab);
+    this.route.url.subscribe(urlSegments => {
+      const segment = urlSegments[0].path;
+      if (Object.values(Tab).includes(segment as Tab)) {
+        this.selectedTab = segment as Tab;
+      }
+    });
   }
 
   isSelected(tab: Tab): boolean {
     return this.selectedTab === tab;
   }
+
   isMenuOpen = false;
 
   selectOption(option: string) {

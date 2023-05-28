@@ -5,35 +5,34 @@
     </mat-button-toggle>
     <mat-menu #menuOptions="matMenu" [overlapTrigger]="false" (closed)="onMenuClosed()">
       <div class="vertical-menu">
-        <button class="menu__button" mat-menu-item (click)="navigateTo(Tab.Home)" [class.selected-menu]="isSelected(Tab.Home)">
+        <button class="menu__button" mat-menu-item [routerLink]="['/', Tab.Home]" routerLinkActive="selected-menu">
           <span class="label__button-navBar">Home</span>
         </button>
 
-        <button class="menu__button" mat-menu-item (click)="navigateTo(Tab.Pregunta1)" [class.selected-menu]="isSelected(Tab.Pregunta1)">
+        <button class="menu__button" mat-menu-item [routerLink]="['/', Tab.Pregunta1]" routerLinkActive="selected-menu">
           <span class="label__button-navBar">Pregunta 1</span>
         </button>
 
-        <button class="menu__button" mat-menu-item (click)="navigateTo(Tab.Pregunta2)" [class.selected-menu]="isSelected(Tab.Pregunta2)">
+        <button class="menu__button" mat-menu-item [routerLink]="['/', Tab.Pregunta2]" routerLinkActive="selected-menu">
           <span class="label__button-navBar">Pregunta 2</span>
         </button>
 
-        <button class="menu__button" mat-menu-item (click)="navigateTo(Tab.Presupuesto)" [class.selected-menu]="isSelected(Tab.Presupuesto)">
+        <button class="menu__button" mat-menu-item [routerLink]="['/', Tab.Presupuesto]" routerLinkActive="selected-menu">
           <span class="label__button-navBar">Presupuesto</span>
         </button>
 
-        <button class="menu__button" mat-menu-item (click)="navigateTo(Tab.Complementario)" [class.selected-menu]="isSelected(Tab.Complementario)">
+        <button class="menu__button" mat-menu-item [routerLink]="['/', Tab.Complementario]" routerLinkActive="selected-menu">
           <span class="label__button-navBar">Complementario</span>
         </button>
       </div>
     </mat-menu>
-
   </div>
   <span class="logo">GRUPO 4</span>
   <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-    <mat-button-toggle (click)="navigateTo(Tab.Home)" [class.selected]="isSelected(Tab.Home)"><span class="label__button-navBar">Home</span></mat-button-toggle>
-    <mat-button-toggle (click)="navigateTo(Tab.Pregunta1)" [class.selected]="isSelected(Tab.Pregunta1)"><span class="label__button-navBar">Pregunta 1</span></mat-button-toggle>
-    <mat-button-toggle (click)="navigateTo(Tab.Pregunta2)" [class.selected]="isSelected(Tab.Pregunta2)"><span class="label__button-navBar">Pregunta 2</span></mat-button-toggle>
-    <mat-button-toggle (click)="navigateTo(Tab.Presupuesto)" [class.selected]="isSelected(Tab.Presupuesto)"><span class="label__button-navBar">Presupuesto</span></mat-button-toggle>
-    <mat-button-toggle (click)="navigateTo(Tab.Complementario)" [class.selected]="isSelected(Tab.Complementario)"><span class="label__button-navBar">Complementario</span></mat-button-toggle>
+    <mat-button-toggle [routerLink]="['/', Tab.Home]" routerLinkActive="selected-menu"><span class="label__button-navBar">Home</span></mat-button-toggle>
+    <mat-button-toggle [routerLink]="['/', Tab.Pregunta1]" routerLinkActive="selected-menu"><span class="label__button-navBar">Pregunta 1</span></mat-button-toggle>
+    <mat-button-toggle [routerLink]="['/', Tab.Pregunta2]" routerLinkActive="selected-menu"><span class="label__button-navBar">Pregunta 2</span></mat-button-toggle>
+    <mat-button-toggle [routerLink]="['/', Tab.Presupuesto]" routerLinkActive="selected-menu"><span class="label__button-navBar">Presupuesto</span></mat-button-toggle>
+    <mat-button-toggle [routerLink]="['/', Tab.Complementario]" routerLinkActive="selected-menu"><span class="label__button-navBar">Complementario</span></mat-button-toggle>
   </mat-button-toggle-group>
 </mat-toolbar>

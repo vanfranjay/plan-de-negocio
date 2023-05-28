@@ -1,3 +1,8 @@
-.container{
+.contenedor{
   padding-top: 65px;
+}
+.custom-tile {
+  display: flex;
+  align-items: flex-start; /* Alineación vertical al inicio */
+  justify-content: flex-start; /* Alineación horizontal al inicio */
 }
