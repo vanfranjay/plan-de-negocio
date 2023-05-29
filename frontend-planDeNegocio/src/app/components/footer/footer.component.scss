@@ -1,0 +1,41 @@
+.footer {
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-text {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+}
+.mat-toolbar{
+  background: linear-gradient(to bottom right, #c2f9f9, #01abae);
+  height: 40px;
+}
+.width-footer{
+  width: 50px;
+}
+.spacer {
+  flex: 1;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+
+.footer-links a {
+  margin-right: 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+}
+
+.footer-social a {
+  margin-right: 8px;
+  color: white;
+}

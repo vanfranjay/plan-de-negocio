@@ -61,6 +61,14 @@
 .border-table{
   border: #000 1px solid;
 }
+.text-left{
+  text-align: start;
+  padding-left: 5px;
+}
+.textarea{
+  resize: vertical;
+  max-height: 60px;
+}
 @media (max-width: 600px) {
   .text__mobil{
     font-size: 14px;
