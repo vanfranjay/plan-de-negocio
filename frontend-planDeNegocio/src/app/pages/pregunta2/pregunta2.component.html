@@ -1,5 +1,5 @@
 <div class="contenedor">
-  <mat-grid-list [cols]="1" rowHeight="40px">
+  <mat-grid-list [cols]="1" rowHeight="55px">
     <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
       <div class="content fondo__subtitlo grid__centerVertical">
         <h2 class="texto-bold">5.3. Plaza (Lugar y Distribución)</h2>
@@ -7,7 +7,7 @@
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <div class="content fondo__subtitulo2 grid__centerVertical">
-        <p class="text__mobil">
+        <p class="">
           Si el Producto o Servicio se vende de manera directa, ¿Cuál será el
           lugar de venta?
         </p>
@@ -66,14 +66,17 @@
       <textarea class="custom-textarea" placeholder=""></textarea>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
-      <div class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal">
+      <div
+        class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal"
+      >
         <h2 class="texto-bold">6. PROVEEDORES Y CONSUMIDORES</h2>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <div class="content fondo__subtitulo2 grid__centerVertical">
         <p class="text__mobil">
-          ¿Quienes serán mis principales proveedores, compradores y cual es mi capacidad de negociar con ellos?
+          ¿Quienes serán mis principales proveedores, compradores y cual es mi
+          capacidad de negociar con ellos?
         </p>
       </div>
     </mat-grid-tile>
@@ -81,17 +84,92 @@
   <mat-grid-list [cols]="colSize" rowHeight="400px">
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <div class="content">
-        <p class="">
-          Hola
-        </p>
+        <table class="full-width border-table">
+          <tr>
+            <th colspan="4" class="border-table">Proveedores</th>
+          </tr>
+          <tr>
+            <td style="width: 40%" class="centered border-table">Lugar/Insumos</td>
+            <td style="width: 20%" class="centered border-table">Capacidad de Negociación</td>
+            <td style="width: 20%" class="centered border-table">Frecuencia</td>
+            <td style="width: 20%" class="centered border-table">Forma de Pago</td>
+          </tr>
+          <tr *ngFor="let row of rows">
+            <td>
+              <input class="full-width no-margin" type="text" placeholder="" />
+            </td>
+            <td>
+              <select class="full-width">
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select class="full-width">
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select class="full-width">
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+        </table>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <div class="content">
-        <p class="">
-          Hola
-        </p>
+        <table class="full-width border-table">
+          <tr>
+            <th colspan="4" class="border-table">Compradores</th>
+          </tr>
+          <tr>
+            <td style="width: 40%" class="centered border-table">Clientes(*)</td>
+            <td style="width: 20%" class="centered border-table">Capacidad de Negociación</td>
+            <td style="width: 20%" class="centered border-table">Frecuencia</td>
+            <td style="width: 20%" class="centered border-table">Forma de Pago</td>
+          </tr>
+          <tr *ngFor="let row of rows">
+            <td>
+              <input class="full-width no-margin" type="text" placeholder="" />
+            </td>
+            <td>
+              <select class="full-width">
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select class="full-width">
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select class="full-width">
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+        </table>
       </div>
     </mat-grid-tile>
   </mat-grid-list>
+  <!-- TABLA -->
 </div>
