@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ComplementarioRoutingModule } from './complementario-routing.module';
 import { ComplementarioComponent } from './complementario.component';
+import { MaterialModule } from 'src/app/material.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ComplementarioComponent } from './complementario.component';
   ],
   imports: [
     CommonModule,
-    ComplementarioRoutingModule
+    ComplementarioRoutingModule,
+    MaterialModule
   ]
 })
 export class ComplementarioModule { }
