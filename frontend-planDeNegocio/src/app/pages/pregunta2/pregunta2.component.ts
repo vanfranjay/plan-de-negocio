@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class Pregunta2Component {
   public colSize!: number;
-  constructor(private breakpointObserver: BreakpointObserver){}
+  constructor(private breakpointObserver: BreakpointObserver) { }
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])
       .subscribe(result => {
@@ -33,4 +33,67 @@ export class Pregunta2Component {
   }
   /////// Número de filas para la tabla
   rows: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  // captar cambios
+  onVariableChange(event: any) {
+    const nuevoValor = event;
+    console.log('Nuevo valor:', nuevoValor);
+  }
+  variableMap: { [key: string]: string } = {};
+  sumaImpar: number = 0;
+  sumaPar: number = 0;
+
+  onSelectChange(event: Event, selectName: string) {
+    const selectElement = event.target as HTMLSelectElement;
+    const selectedValue = selectElement.value;
+
+    this.variableMap[selectName] = selectedValue;
+
+    this.calculateSumas();
+  }
+
+  calculateSumas() {
+    let sumaImpar = 0;
+    let sumaPar = 0;
+
+    for (const key in this.variableMap) {
+      if (this.variableMap.hasOwnProperty(key)) {
+        const value = this.variableMap[key];
+        const numValue = parseInt(value, 10);
+
+        if (!isNaN(numValue)) {
+          if (key.includes('selectValue') && parseInt(key.slice(-1), 10) % 2 === 0) {
+            // Suma de valores con terminación par
+            sumaPar += numValue;
+          } else if (key.includes('selectValue') && parseInt(key.slice(-1), 10) % 2 !== 0) {
+            // Suma de valores con terminación impar
+            sumaImpar += numValue;
+          }
+        }
+      }
+    }
+
+    this.sumaImpar = sumaImpar;
+    this.sumaPar = sumaPar;
+    const sumaTotal = this.sumaImpar + this.sumaPar;
+    const valorUnitario = 100 / sumaTotal;
+    const ponderadoFortaleza = this.sumaImpar * valorUnitario;
+    const ponderadoDebilidad = this.sumaPar * valorUnitario;
+
+    const porcentajeFortaleza = Math.round(ponderadoFortaleza) + '%';
+    const porcentajeDebilidad = Math.round(ponderadoDebilidad) + '%';
+
+    const ponderadoFortalezaOutput = document.getElementById('ponderadoFortalezaOutput');
+    const ponderadoDebilidadOutput = document.getElementById('ponderadoDebilidadOutput');
+
+    if (ponderadoFortalezaOutput && ponderadoDebilidadOutput) {
+      if (!isNaN(ponderadoFortaleza) && !isNaN(ponderadoDebilidad)) {
+        ponderadoFortalezaOutput.textContent = 'Ponderado Fortaleza: ' + porcentajeFortaleza;
+        ponderadoDebilidadOutput.textContent = 'Ponderado Debilidad: ' + porcentajeDebilidad;
+      } else {
+        ponderadoFortalezaOutput.textContent = '';
+        ponderadoDebilidadOutput.textContent = '';
+      }
+    }
+  }
+
 }
