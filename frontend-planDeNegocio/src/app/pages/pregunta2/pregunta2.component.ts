@@ -87,8 +87,8 @@ export class Pregunta2Component {
 
     if (ponderadoFortalezaOutput && ponderadoDebilidadOutput) {
       if (!isNaN(ponderadoFortaleza) && !isNaN(ponderadoDebilidad)) {
-        ponderadoFortalezaOutput.textContent = 'Ponderado Fortaleza: ' + porcentajeFortaleza;
-        ponderadoDebilidadOutput.textContent = 'Ponderado Debilidad: ' + porcentajeDebilidad;
+        ponderadoFortalezaOutput.textContent = porcentajeFortaleza;
+        ponderadoDebilidadOutput.textContent = porcentajeDebilidad;
       } else {
         ponderadoFortalezaOutput.textContent = '';
         ponderadoDebilidadOutput.textContent = '';
