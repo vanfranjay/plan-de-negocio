@@ -1,3 +1,230 @@
 <div class="contenedor">
-  <p>presupuesto-total works!</p>
+  <mat-grid-list [cols]="colSize" rowHeight="550px">
+    <mat-grid-tile [colspan]="2" [rowspan]="1" class="custom-tile">
+      <div class="content">
+        <div class="content-title">
+          <h2 class="title">9. PRESUPUESTO RESUMEN</h2>
+        </div>
+        <table class="full-width">
+          <tr>
+            <th></th>
+            <th colspan="1" class="border subTitle">APORTE PROPIO</th>
+            <th colspan="1" class="border subTitle">MONTO TOTAL</th>
+          </tr>
+          <tr>
+            <td style="width: 5%" rowspan="4" class="border">K.O.</td>
+            <td style="width: 75%" class="border">Efectivo</td>
+            <td style="width: 20%" class="border"></td>
+          </tr>
+          <tr>
+            <td class="border">Mano de Obra del Emprendedor</td>
+            <td class="border">
+              <output></output>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">
+              Materia Prima, Insumos y/o Animales de Engorde
+            </td>
+            <td class="border">
+              <output></output>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">Requerimientos Promocionales</td>
+            <td class="border">
+              <output></output>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="3" class="border">K.I.</td>
+            <td class="border">Infraestructura, Terrenos y/o Plantines</td>
+            <td class="border">
+              <output></output>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">Maquinaria, Equipos, Vehículos y/o Ganado</td>
+            <td class="border">
+              <output></output>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">Requerimientos Legales</td>
+            <td class="border">
+              <output></output>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="border">
+              <p class="text-bold text-end">TOTAL</p>
+            </td>
+            <td class="border">
+              <output class="text-bold"></output>
+            </td>
+          </tr>
+        </table>
+        <table class="full-width">
+          <tr>
+            <th></th>
+            <th class="border subTitle">PLAN DE INVERSIÓN</th>
+            <th class="border subTitle">MONTO TOTAL</th>
+            <th class="border subTitle">AP. PROPIO EFECTIVO</th>
+          </tr>
+          <tr>
+            <td style="width: 5%" rowspan="3" class="border color-green">K.O.</td>
+            <td style="width: 61%" class="border  color-green">Gastos Operativos</td>
+            <td style="width: 17%" class="border  color-green">
+              <output></output>
+            </td>
+            <td style="width: 17%" class="border input-container">
+              <div class="input-container">
+                <input type="number" class="no-margin" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="border color-green">
+              Materia Prima, Insumos y/o Animales de Engorde
+            </td>
+            <td class="border color-green">
+              <output></output>
+            </td>
+            <td class="border">
+              <div class="input-container">
+                <input type="number" class="no-margin" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="border color-green">Requerimientos Promocionales</td>
+            <td class="border color-green">
+              <output></output>
+            </td>
+            <td class="border">
+              <div class="input-container">
+                <input type="number" class="no-margin" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td rowspan="3" class="border color-rose">K.I.</td>
+            <td class="border color-rose">Infraestructura, Terrenos y/o Plantines</td>
+            <td class="border color-rose">
+              <output></output>
+            </td>
+            <td class="border">
+              <div class="input-container">
+                <input type="number" class="no-margin" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="border color-rose">Maquinaria, Equipos, Vehiculos y/o Ganado</td>
+            <td class="border color-rose">
+              <output></output>
+            </td>
+            <td class="border">
+              <div class="input-container">
+                <input type="number" class="no-margin" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="border color-rose">Requerimientos Legales</td>
+            <td class="border color-rose">
+              <output></output>
+            </td>
+            <td class="border">
+              <div class="input-container">
+                <input type="number" class="no-margin" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="border text-bold text-end">TOTAL</td>
+            <td class="border">
+              <output class="text-bold"></output>
+            </td>
+            <td class="border">
+              <output class="text-bold"></output>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="colSize2" [rowspan]="1" class="custom-tile">
+      <div class="content">
+        <table class="full-width">
+          <tr>
+            <td style="width: 60%" class="border">TOTAL PROYECTO</td>
+            <td style="width: 40%" class="border">
+              <output class="text-bold"></output>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">APORTE PROPIO</td>
+            <td class="border">
+              <output class="text-bold"></output>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">% APORTE PROPIO</td>
+            <td class="border">
+              <output class="text-bold"></output>
+            </td>
+          </tr>
+          <tr>
+            <th class="border color-yellow" colspan="2">
+              APORTE PROPIO PARA GARANTIA HIPOTECARIO DEBE SER __ Y PARA OTRA
+              GARANTIA __
+            </th>
+          </tr>
+        </table>
+        <table class="full-width">
+          <tr>
+            <td style="width: 60%" class="border">MONTO A FINANCIAR</td>
+            <td style="width: 40%" class="border">
+              <output class="text-bold"></output>
+            </td>
+          </tr>
+        </table>
+        <table class="full-width">
+          <tr>
+            <td style="width: 60%" class="border">Primer Desembolso</td>
+            <td style="width: 40%" class="border">
+              <div class="input-container">
+                <input type="number" class="no-margin" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">Segundo Desembolso</td>
+            <td class="border">
+              <div class="input-container">
+                <input type="number" class="no-margin" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="border color-yellow" colspan="2">REVISAR 1ER Y 2DO DESEMBOLSO</th>
+          </tr>
+        </table>
+        <table class="full-width">
+          <tr>
+            <th class="border color-yellow">APORTE PROPIO CORRECTO</th>
+          </tr>
+        </table>
+        <p>
+          Nota: Para montos mayores a Bs 70.000 las operaciones otorgadas con
+          recursos del Fondo para Capital Semilla deberán ser realizadas
+          mediante dos Desembolsos a excepción de aquellas operaciones cuyo plan
+          de inversión solo comtempla un ítem de financiamiento.
+        </p>
+        <p></p>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
