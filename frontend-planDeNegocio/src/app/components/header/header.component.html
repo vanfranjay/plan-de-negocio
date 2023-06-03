@@ -21,6 +21,14 @@
           <span class="label__button-navBar">Presupuesto</span>
         </button>
 
+        <button class="menu__button" mat-menu-item [routerLink]="['/', Tab.PresupuestoTotal]" routerLinkActive="selected-menu">
+          <span class="label__button-navBar">Presupuesto Total</span>
+        </button>
+
+        <button class="menu__button" mat-menu-item [routerLink]="['/', Tab.Costos]" routerLinkActive="selected-menu">
+          <span class="label__button-navBar">Costos</span>
+        </button>
+
         <button class="menu__button" mat-menu-item [routerLink]="['/', Tab.Complementario]" routerLinkActive="selected-menu">
           <span class="label__button-navBar">Complementario</span>
         </button>
@@ -33,6 +41,8 @@
     <mat-button-toggle [routerLink]="['/', Tab.Pregunta1]" routerLinkActive="selected-menu"><span class="label__button-navBar">Pregunta 1</span></mat-button-toggle>
     <mat-button-toggle [routerLink]="['/', Tab.Pregunta2]" routerLinkActive="selected-menu"><span class="label__button-navBar">Pregunta 2</span></mat-button-toggle>
     <mat-button-toggle [routerLink]="['/', Tab.Presupuesto]" routerLinkActive="selected-menu"><span class="label__button-navBar">Presupuesto</span></mat-button-toggle>
+    <mat-button-toggle [routerLink]="['/', Tab.PresupuestoTotal]" routerLinkActive="selected-menu"><span class="label__button-navBar">Presupuesto Total</span></mat-button-toggle>
+    <mat-button-toggle [routerLink]="['/', Tab.Costos]" routerLinkActive="selected-menu"><span class="label__button-navBar">Costos</span></mat-button-toggle>
     <mat-button-toggle [routerLink]="['/', Tab.Complementario]" routerLinkActive="selected-menu"><span class="label__button-navBar">Complementario</span></mat-button-toggle>
   </mat-button-toggle-group>
 </mat-toolbar>

@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 enum Tab {
   Home = 'home',
   Presupuesto = 'presupuesto',
+  PresupuestoTotal= 'presupuesto-total',
+  Costos = 'costos',
   Complementario = 'complementario',
   Pregunta1 = 'pregunta1',
   Pregunta2 = 'pregunta2'
