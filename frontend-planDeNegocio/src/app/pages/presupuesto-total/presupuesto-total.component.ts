@@ -46,4 +46,20 @@ export class PresupuestoTotalComponent {
       return 1; // Por defecto, 4 columnas
     }
   }
+  inputValues: (number | null)[] = [];
+  total: number = 0;
+
+  calculateTotal(): void {
+    this.total = this.inputValues
+      .map(value => parseInt(value?.toString() || '0') || 0)
+      .reduce((sum, value) => sum + value, 0);
+  }
+  onKeyDown(event: KeyboardEvent, index: number) {
+    const key = event.key;
+    if (key === 'ArrowUp' || key === 'ArrowDown') {
+      event.preventDefault();
+      const nextInput = document.querySelector(`input:nth-child(${index + 2})`) as HTMLInputElement;
+      nextInput.focus();
+    }
+  }
 }

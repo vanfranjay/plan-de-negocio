@@ -73,14 +73,23 @@
             <th class="border subTitle">AP. PROPIO EFECTIVO</th>
           </tr>
           <tr>
-            <td style="width: 5%" rowspan="3" class="border color-green">K.O.</td>
-            <td style="width: 61%" class="border  color-green">Gastos Operativos</td>
-            <td style="width: 17%" class="border  color-green">
+            <td style="width: 5%" rowspan="3" class="border color-green">
+              K.O.
+            </td>
+            <td style="width: 61%" class="border color-green">
+              Gastos Operativos
+            </td>
+            <td style="width: 17%" class="border color-green">
               <output></output>
             </td>
             <td style="width: 17%" class="border input-container">
               <div class="input-container">
-                <input type="number" class="no-margin" />
+                <input
+                  type="number"
+                  class="no-margin right-align"
+                  (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]"
+                />
               </div>
             </td>
           </tr>
@@ -93,7 +102,12 @@
             </td>
             <td class="border">
               <div class="input-container">
-                <input type="number" class="no-margin" />
+                <input
+                  type="number"
+                  class="no-margin right-align"
+                  (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[1]"
+                />
               </div>
             </td>
           </tr>
@@ -104,30 +118,49 @@
             </td>
             <td class="border">
               <div class="input-container">
-                <input type="number" class="no-margin" />
+                <input
+                  type="number"
+                  class="no-margin right-align"
+                  (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[2]"
+                />
               </div>
             </td>
           </tr>
           <tr>
             <td rowspan="3" class="border color-rose">K.I.</td>
-            <td class="border color-rose">Infraestructura, Terrenos y/o Plantines</td>
+            <td class="border color-rose">
+              Infraestructura, Terrenos y/o Plantines
+            </td>
             <td class="border color-rose">
               <output></output>
             </td>
             <td class="border">
               <div class="input-container">
-                <input type="number" class="no-margin" />
+                <input
+                  type="number"
+                  class="no-margin right-align"
+                  (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[3]"
+                />
               </div>
             </td>
           </tr>
           <tr>
-            <td class="border color-rose">Maquinaria, Equipos, Vehiculos y/o Ganado</td>
+            <td class="border color-rose">
+              Maquinaria, Equipos, Vehiculos y/o Ganado
+            </td>
             <td class="border color-rose">
               <output></output>
             </td>
             <td class="border">
               <div class="input-container">
-                <input type="number" class="no-margin" />
+                <input
+                  type="number"
+                  class="no-margin right-align"
+                  (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[4]"
+                />
               </div>
             </td>
           </tr>
@@ -138,7 +171,12 @@
             </td>
             <td class="border">
               <div class="input-container">
-                <input type="number" class="no-margin" />
+                <input
+                  type="number"
+                  class="no-margin right-align"
+                  (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[5]"
+                />
               </div>
             </td>
           </tr>
@@ -149,7 +187,7 @@
               <output class="text-bold"></output>
             </td>
             <td class="border">
-              <output class="text-bold"></output>
+              <output id="result" class="text-bold">{{ total }}</output>
             </td>
           </tr>
         </table>
@@ -209,7 +247,9 @@
             </td>
           </tr>
           <tr>
-            <th class="border color-yellow" colspan="2">REVISAR 1ER Y 2DO DESEMBOLSO</th>
+            <th class="border color-yellow" colspan="2">
+              REVISAR 1ER Y 2DO DESEMBOLSO
+            </th>
           </tr>
         </table>
         <table class="full-width">
