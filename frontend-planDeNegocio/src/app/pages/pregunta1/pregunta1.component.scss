@@ -77,7 +77,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
 }
 .table_header1{
   border: #000 1px solid;
@@ -89,7 +89,7 @@
   grid-row-start: 1;
   grid-row-end: 1;
   grid-template-rows: 2 !important;
-  grid-auto-rows: 25px !important; 
+  grid-auto-rows: 25px !important;
 }
 .table_header2{
   border: #000 1px solid;
@@ -105,4 +105,23 @@
 }
 .border-table{
   border: #000 1px solid;
+}
+.input-container {
+  width: 100%;
+}
+.input-container input {
+  width: 100%;
+  box-sizing: border-box;
+}
+.no-margin {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  overflow: auto;
+}
+.border-right{
+  border-right: 1px solid #000;
+}
+.text-center{
+  text-align: center;
 }

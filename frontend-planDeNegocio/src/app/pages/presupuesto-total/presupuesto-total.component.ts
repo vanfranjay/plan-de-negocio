@@ -54,12 +54,4 @@ export class PresupuestoTotalComponent {
       .map(value => parseInt(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
   }
-  onKeyDown(event: KeyboardEvent, index: number) {
-    const key = event.key;
-    if (key === 'ArrowUp' || key === 'ArrowDown') {
-      event.preventDefault();
-      const nextInput = document.querySelector(`input:nth-child(${index + 2})`) as HTMLInputElement;
-      nextInput.focus();
-    }
-  }
 }

@@ -46,26 +46,26 @@
         <div  class="table">
           <div class="table_header"> N°</div>
           <div class="table_header"> ESTIMACIÓN DE TAMAÑO DE MERCADO Y OPORTUNIDAD DE CRECIMIENTO  </div>
-          <div class="table_header1">  
+          <div class="table_header1">
             <th colspan="2" class="">
               <tr class="">CANTIDADES</tr>
             <tr class=""> Minimo Maximo</tr>
             </th>
-            
+
           </div>
           <div class="table_header"> PROMEDIO</div>
           <div class="table_item">1</div>
           <div class="table_item">¿Cuántos clientes se atenderán inicialmente?</div>
-          <div class="table_item"><input type="text" class="input" placeholder=""> <input type="text" class="input" placeholder=""> </div>
-          <div class="table_item">60</div>
+          <div class="table_item"><input type="text" class="input no-margin border-right text-center" placeholder="" (change)="calculateTotal()" [(ngModel)]="inputValues[0]"> <input type="text" class="input no-margin text-center" placeholder=""  (change)="calculateTotal()" [(ngModel)]="inputValues[1]"> </div>
+          <div class="table_item"><output>{{total}}</output></div>
           <div class="table_item">2</div>
           <div class="table_item">¿Cuanta cantidad de sus Productos o Servicios venderá inicialmente?</div>
-          <div class="table_item"><input type="text" class="input" placeholder=""> <input type="text" class="input" placeholder=""> </div>
-          <div class="table_item">25</div>
+          <div class="table_item"><input type="text" class="input no-margin border-right text-center" placeholder="" (change)="calculateTotal1()" [(ngModel)]="inputValues1[0]"> <input type="text" class="input no-margin text-center" placeholder="" (change)="calculateTotal1()" [(ngModel)]="inputValues1[1]"> </div>
+          <div class="table_item"><output>{{total1}}</output></div>
           <div class="table_item">3</div>
           <div class="table_item">Si el Producto o Servicio tiene aceptación, ¿Cual es la capacidad máxima de producción o atención? (En función a RRHH, maquinaria y/o equipo, espacio, materia prima, otro)</div>
-          <div class="table_item"><input type="text" class="input" placeholder=""> <input type="text" class="input" placeholder=""> </div>
-          <div class="table_item">200</div>
+          <div class="table_item"><input type="text" class="input no-margin border-right text-center" placeholder="" (change)="calculateTotal2()" [(ngModel)]="inputValues2[0]"> <input type="text" class="input no-margin text-center" placeholder="" (change)="calculateTotal2()" [(ngModel)]="inputValues2[1]"> </div>
+          <div class="table_item"><output>{{total2}}</output></div>
 
         </div>
       </mat-grid-tile>

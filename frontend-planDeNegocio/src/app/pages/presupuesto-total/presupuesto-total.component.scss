@@ -37,10 +37,6 @@
   outline: none;
   box-shadow: none;
   overflow: auto;
-  // border-bottom: 1px #000 solid;
-  // box-sizing: border-box;
-  // padding-right: 5px;
-  // padding-left: 5px;
 }
 .input-container {
   width: 100%;
@@ -77,13 +73,14 @@ output {
 .right-align:focus{
   text-align: left;
 }
-.no-arrows {
-  -moz-appearance: textfield; /* Firefox */
-  appearance: textfield; /* Otros navegadores */
-}
+// para eliminar las flechas que aparecen en el input type number
+// .no-arrows {
+//   -moz-appearance: textfield; /* Firefox */
+//   appearance: textfield; /* Otros navegadores */
+// }
 
-.no-arrows::-webkit-inner-spin-button,
-.no-arrows::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+// .no-arrows::-webkit-inner-spin-button,
+// .no-arrows::-webkit-outer-spin-button {
+//   -webkit-appearance: none;
+//   margin: 0;
+// }
