@@ -1,3 +1,56 @@
 .contenedor{
   padding-top: 65px;
 }
+
+.fondo__subtitlo{
+  background-color: #17365d;
+  color: #fff;
+}
+.fondo__subtitulo2{
+  background-color: #dbe5f1;
+}
+
+.sizeMed {
+  font-size: medium;
+}
+
+.subTitle{
+  background-color: #dbe5f1;
+  color: black;
+}
+
+.subTitle2{
+  background-color: #f79646;
+  color: #fff;
+}
+
+.grid__centerVertical{
+  display: grid;
+  align-items: center;
+}
+.grid__centerhorizontal{
+  justify-items: center;
+}
+
+.input-container2 {
+  width: 100%;
+}
+.input-container2 input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #dbe5f1;
+}
+
+.input-container3 {
+  width: 100%;
+}
+.input-container3 input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.selectCostosSM{
+  width: 100%;
+  background-color: #f79646;
+}
