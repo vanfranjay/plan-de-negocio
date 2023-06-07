@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PresupuestoTotalService } from '../../service/presupuestoTotal/presupuesto-total.service';
+import { PresupuestoService } from '../../service/presupuesto/presupuesto.service';
 
 @Component({
   selector: 'app-presupuesto',
@@ -8,7 +8,7 @@ import { PresupuestoTotalService } from '../../service/presupuestoTotal/presupue
 })
 export class PresupuestoComponent {
   constructor(
-    private presupuestoTotalService: PresupuestoTotalService
+    private presupuestoService: PresupuestoService
   ) { }
 
   //<input type="number" class="no-margin right-align" (change)="calculateTotal()" [(ngModel)]="inputValues[2]"/>
@@ -22,24 +22,24 @@ export class PresupuestoComponent {
     this.total = this.inputValuesDetalle
       .map(value => parseInt(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
-    this.presupuestoTotalService.setTotal(this.total);
+    this.presupuestoService.setTotal(this.total);
     switch (index) {
       case 0:
-        this.presupuestoTotalService.setInputValuesDetalle0(this.input1);
+        this.presupuestoService.setInputValuesDetalle0(this.input1);
         break;
       case 1:
-        this.presupuestoTotalService.setInputValuesDetalle1(this.input1);
+        this.presupuestoService.setInputValuesDetalle1(this.input1);
         break;
       case 2:
-        this.presupuestoTotalService.setInputValuesDetalle2(this.input1);
+        this.presupuestoService.setInputValuesDetalle2(this.input1);
         break;
     }
   }
   ngOnInit() {
-    this.inputValuesDetalle[0] = this.presupuestoTotalService.getInputValuesDetalle0();
-    this.inputValuesDetalle[1] = this.presupuestoTotalService.getInputValuesDetalle1();
-    this.inputValuesDetalle[2] = this.presupuestoTotalService.getInputValuesDetalle2();
-    this.total = this.presupuestoTotalService.getTotal();
+    this.inputValuesDetalle[0] = this.presupuestoService.getInputValuesDetalle0();
+    this.inputValuesDetalle[1] = this.presupuestoService.getInputValuesDetalle1();
+    this.inputValuesDetalle[2] = this.presupuestoService.getInputValuesDetalle2();
+    this.total = this.presupuestoService.getTotal();
   }
   // 8.2 Mano de obra <input type="number" (change)="agregarTotal()" [(ngModel)]="manoObraEmprendedor">
   manoObraEmprendedor!: number;
