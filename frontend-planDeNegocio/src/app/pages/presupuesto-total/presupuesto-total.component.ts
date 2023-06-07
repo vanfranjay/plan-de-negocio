@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
+import { PresupuestoTotalService } from '../../service/presupuestoTotal/presupuesto-total.service';
 
 @Component({
   selector: 'app-presupuesto-total',
@@ -9,9 +10,13 @@ import { Component } from '@angular/core';
 export class PresupuestoTotalComponent {
   public colSize!: number;
   public colSize2: number = 1;
+  total!: number;
   constructor(
     private breakpointObserver: BreakpointObserver,
-  ) { }
+    private presupuestoTotalService: PresupuestoTotalService
+  ) {
+    this.total = this.presupuestoTotalService.getTotal();
+  }
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])
       .subscribe(result => {
@@ -47,10 +52,10 @@ export class PresupuestoTotalComponent {
     }
   }
   inputValues: (number | null)[] = [];
-  total: number = 0;
+  totalApPropioEfectivo: number = 0;
 
   calculateTotal(): void {
-    this.total = this.inputValues
+    this.totalApPropioEfectivo = this.inputValues
       .map(value => parseInt(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
   }

@@ -15,7 +15,7 @@
           <tr>
             <td style="width: 5%" rowspan="4" class="border">K.O.</td>
             <td style="width: 75%" class="border">Efectivo</td>
-            <td style="width: 20%" class="border"></td>
+            <td style="width: 20%" class="border text-center">{{total}}</td>
           </tr>
           <tr>
             <td class="border">Mano de Obra del Emprendedor</td>
@@ -189,7 +189,7 @@
               <output class="text-bold"></output>
             </td>
             <td class="border">
-              <output id="result" class="text-bold">{{ total | currency: 'BOB'}}</output>
+              <output id="result" class="text-bold">{{ totalApPropioEfectivo | currency: 'BOB'}}</output>
             </td>
           </tr>
         </table>

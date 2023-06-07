@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PresupuestoRoutingModule } from './presupuesto-routing.module';
 import { PresupuestoComponent } from './presupuesto.component';
+import { MaterialModule } from 'src/app/material.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PresupuestoComponent } from './presupuesto.component';
   ],
   imports: [
     CommonModule,
-    PresupuestoRoutingModule
+    PresupuestoRoutingModule,
+    MaterialModule
   ]
 })
 export class PresupuestoModule { }
