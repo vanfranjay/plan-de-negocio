@@ -59,6 +59,51 @@ export class PresupuestoService {
   getValorManoObra(){
     return this.valorManoObra
   }
+  /// 8.3
+  inputvaluesMateriaPrima0!: number;
+  setInputValuesMateriaPrima0(valor: number){
+    this.inputvaluesMateriaPrima0 = valor;
+  }
+  getInputValuesMateriaPrima0(){
+    return this.inputvaluesMateriaPrima0;
+  }
+  inputvaluesMateriaPrima1!: number;
+  setInputValuesMateriaPrima1(valor: number){
+    this.inputvaluesMateriaPrima1 = valor;
+  }
+  getInputValuesMateriaPrima1(){
+    return this.inputvaluesMateriaPrima1;
+  }
+  inputvaluesMateriaPrima2!: number;
+  setInputValuesMateriaPrima2(valor: number){
+    this.inputvaluesMateriaPrima2 = valor;
+  }
+  getInputValuesMateriaPrima2(){
+    return this.inputvaluesMateriaPrima2;
+  }
+  //se invertira 8.3
+  inputvaluesMateriaPrima10!: number;
+  setInputValuesMateriaPrima10(valor: number){
+    this.inputvaluesMateriaPrima10 = valor;
+  }
+  getInputValuesMateriaPrima10(){
+    return this.inputvaluesMateriaPrima10;
+  }
+  inputvaluesMateriaPrima11!: number;
+  setInputValuesMateriaPrima11(valor: number){
+    this.inputvaluesMateriaPrima11 = valor;
+  }
+  getInputValuesMateriaPrima11(){
+    return this.inputvaluesMateriaPrima11;
+  }
+  inputvaluesMateriaPrima12!: number;
+  setInputValuesMateriaPrima12(valor: number){
+    this.inputvaluesMateriaPrima12 = valor;
+  }
+  getInputValuesMateriaPrima12(){
+    return this.inputvaluesMateriaPrima12;
+  }
+
   setTotalMateriaPrima(valor: number){
     this.totalMateriaPrima = valor;
   }
@@ -70,6 +115,50 @@ export class PresupuestoService {
   }
   getTotalMateriaPrima1(){
     return this.totalMateriaPrima1;
+  }
+
+  // 8.4 inversion propia
+  inputValuesReqProm0!: number;
+  setInputValuesReqProm0(valor: number){
+    this.inputValuesReqProm0 = valor;
+  }
+  getInputValuesReqProm0(){
+    return this.inputValuesReqProm0;
+  }
+  inputValuesReqProm1!: number;
+  setInputValuesReqProm1(valor: number){
+    this.inputValuesReqProm1 = valor;
+  }
+  getInputValuesReqProm1(){
+    return this.inputValuesReqProm1;
+  }
+  inputValuesReqProm2!: number;
+  setInputValuesReqProm2(valor: number){
+    this.inputValuesReqProm2 = valor;
+  }
+  getInputValuesReqProm2(){
+    return this.inputValuesReqProm2;
+  }
+  inputValuesReqProm10!: number;
+  setInputValuesReqProm10(valor: number){
+    this.inputValuesReqProm10 = valor;
+  }
+  getInputValuesReqProm10(){
+    return this.inputValuesReqProm10;
+  }
+  inputValuesReqProm11!: number;
+  setInputValuesReqProm11(valor: number){
+    this.inputValuesReqProm11 = valor;
+  }
+  getInputValuesReqProm11(){
+    return this.inputValuesReqProm11;
+  }
+  inputValuesReqProm12!: number;
+  setInputValuesReqProm12(valor: number){
+    this.inputValuesReqProm12 = valor;
+  }
+  getInputValuesReqProm12(){
+    return this.inputValuesReqProm12;
   }
   setTotalReqProm(valor: number){
     this.totalReqProm = valor;

@@ -40,48 +40,125 @@ export class PresupuestoComponent {
     this.inputValuesDetalle[1] = this.presupuestoService.getInputValuesDetalle1();
     this.inputValuesDetalle[2] = this.presupuestoService.getInputValuesDetalle2();
     this.total = this.presupuestoService.getTotal();
+    this.valorManoObra = this.presupuestoService.getValorManoObra();
+    this.manoObraEmprendedor = this.presupuestoService.getValorManoObra();
+    this.inputValuesMateriaPrima[0] = this.presupuestoService.getInputValuesMateriaPrima0();
+    this.inputValuesMateriaPrima[1] = this.presupuestoService.getInputValuesMateriaPrima1();
+    this.inputValuesMateriaPrima[2] = this.presupuestoService.getInputValuesMateriaPrima2();
+    this.totalMateriaPrima = this.presupuestoService.getTotalMateriaPrima();
+
+    this.inputValuesMateriaPrima1[0] = this.presupuestoService.getInputValuesMateriaPrima10();
+    this.inputValuesMateriaPrima1[1] = this.presupuestoService.getInputValuesMateriaPrima11();
+    this.inputValuesMateriaPrima1[2] = this.presupuestoService.getInputValuesMateriaPrima12();
+    this.totalMateriaPrima1 = this.presupuestoService.getTotalMateriaPrima1();
+
+    this.inputValuesReqProm[0] = this.presupuestoService.getInputValuesReqProm0();
+    this.inputValuesReqProm[1] = this.presupuestoService.getInputValuesReqProm1();
+    this.inputValuesReqProm[2] = this.presupuestoService.getInputValuesReqProm2();
+    this.totalReqProm = this.presupuestoService.getTotalReqProm();
+
+    this.inputValuesReqProm1[0] = this.presupuestoService.getInputValuesReqProm10();
+    this.inputValuesReqProm1[1] = this.presupuestoService.getInputValuesReqProm11();
+    this.inputValuesReqProm1[2] = this.presupuestoService.getInputValuesReqProm12();
+    this.totalReqProm1 = this.presupuestoService.getTotalReqProm1();
   }
   // 8.2 Mano de obra <input type="number" (change)="agregarTotal()" [(ngModel)]="manoObraEmprendedor">
   manoObraEmprendedor!: number;
   valorManoObra!: number;
   agregarTotal(): void {
     this.valorManoObra = this.manoObraEmprendedor;
+    this.presupuestoService.setValorManoObra(this.valorManoObra);
   }
   // 8.3 Materia prima, insumos y/o animales de engorde APORTE PROPIO
   inputValuesMateriaPrima: (number | null)[] = [];
   totalMateriaPrima: number = 0;
+  input2!: number;
 
-  calculateTotal1(): void {
+  calculateTotal1(index: number): void {
+    this.input2 = this.inputValuesMateriaPrima[index] ?? 0;
     this.totalMateriaPrima = this.inputValuesMateriaPrima
       .map(value => parseInt(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
+    this.presupuestoService.setTotalMateriaPrima(this.totalMateriaPrima);
+    switch (index) {
+      case 0:
+        this.presupuestoService.setInputValuesMateriaPrima0(this.input2);
+        break;
+      case 1:
+        this.presupuestoService.setInputValuesMateriaPrima1(this.input2);
+        break;
+      case 2:
+        this.presupuestoService.setInputValuesMateriaPrima2(this.input2);
+        break;
+    }
+
   }
   // se INVERTIRA
   inputValuesMateriaPrima1: (number | null)[] = [];
   totalMateriaPrima1: number = 0;
 
-  calculateTotal2(): void {
+  calculateTotal2(index: number): void {
+    this.input2 = this.inputValuesMateriaPrima1[index] ?? 0;
     this.totalMateriaPrima1 = this.inputValuesMateriaPrima1
       .map(value => parseInt(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
+    this.presupuestoService.setTotalMateriaPrima1(this.totalMateriaPrima1);
+    switch (index) {
+      case 0:
+        this.presupuestoService.setInputValuesMateriaPrima10(this.input2);
+        break;
+      case 1:
+        this.presupuestoService.setInputValuesMateriaPrima11(this.input2);
+        break;
+      case 2:
+        this.presupuestoService.setInputValuesMateriaPrima12(this.input2);
+        break;
+    }
   }
   // 8.4 Requerimientos Promocionales APORTE PROPIO
   inputValuesReqProm: (number | null)[] = [];
   totalReqProm: number = 0;
+  input3!: number;
 
-  calculateTotal3(): void {
+  calculateTotal3(index: number): void {
+    this.input3 = this.inputValuesReqProm[index] ?? 0;
     this.totalReqProm = this.inputValuesReqProm
       .map(value => parseInt(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
+    this.presupuestoService.setTotalReqProm(this.totalReqProm);
+    switch (index) {
+      case 0:
+        this.presupuestoService.setInputValuesReqProm0(this.input3);
+        break;
+      case 1:
+        this.presupuestoService.setInputValuesReqProm1(this.input3);
+        break;
+      case 2:
+        this.presupuestoService.setInputValuesReqProm2(this.input3);
+        break;
+    }
   }
   // se INVERTIRA
   inputValuesReqProm1: (number | null)[] = [];
   totalReqProm1: number = 0;
 
-  calculateTotal4(): void {
+  calculateTotal4(index: number): void {
+    this.input3 = this.inputValuesReqProm1[index] ?? 0;
     this.totalReqProm1 = this.inputValuesReqProm1
       .map(value => parseInt(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
+    this.presupuestoService.setTotalReqProm1(this.totalReqProm1);
+    switch (index) {
+      case 0:
+        this.presupuestoService.setInputValuesReqProm10(this.input3);
+        break;
+      case 1:
+        this.presupuestoService.setInputValuesReqProm11(this.input3);
+        break;
+      case 2:
+        this.presupuestoService.setInputValuesReqProm12(this.input3);
+        break;
+    }
   }
   // 8.5 Gastos operativos SE INVERTIRA
   inputValuesGastosOp: (number | null)[] = [];
