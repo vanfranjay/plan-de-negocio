@@ -8,40 +8,43 @@ import { PresupuestoTotalService } from '../../service/presupuestoTotal/presupue
 })
 export class PresupuestoComponent {
   constructor(
-    private presupuestoTotalService : PresupuestoTotalService
-  ){}
+    private presupuestoTotalService: PresupuestoTotalService
+  ) { }
 
   //<input type="number" class="no-margin right-align" (change)="calculateTotal()" [(ngModel)]="inputValues[2]"/>
   // 8.1 detalle
   inputValuesDetalle: (number | null)[] = [];
   total!: number;
-  input2!: number;
-  input3!: number;
+  input1!: number;
 
   calculateTotal(index: number): void {
-    this.input2 = this.inputValuesDetalle[index] ?? 0 ;
-    this.input3 = this.inputValuesDetalle[index] ?? 0 ;
+    this.input1 = this.inputValuesDetalle[index] ?? 0;
     this.total = this.inputValuesDetalle
       .map(value => parseInt(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoTotalService.setTotal(this.total);
-    this.presupuestoTotalService.setInputValuesDetalle(this.total);
-    if (index===1) {
-      this.presupuestoTotalService.setInputValuesDetalle1(this.input2);
-    }
-    if (index===2) {
-      this.presupuestoTotalService.setInputValuesDetalle2(this.input3);
+    switch (index) {
+      case 0:
+        this.presupuestoTotalService.setInputValuesDetalle0(this.input1);
+        break;
+      case 1:
+        this.presupuestoTotalService.setInputValuesDetalle1(this.input1);
+        break;
+      case 2:
+        this.presupuestoTotalService.setInputValuesDetalle2(this.input1);
+        break;
     }
   }
   ngOnInit() {
-    this.inputValuesDetalle[0] = this.presupuestoTotalService.getInputValuesDetalle();
+    this.inputValuesDetalle[0] = this.presupuestoTotalService.getInputValuesDetalle0();
     this.inputValuesDetalle[1] = this.presupuestoTotalService.getInputValuesDetalle1();
     this.inputValuesDetalle[2] = this.presupuestoTotalService.getInputValuesDetalle2();
+    this.total = this.presupuestoTotalService.getTotal();
   }
   // 8.2 Mano de obra <input type="number" (change)="agregarTotal()" [(ngModel)]="manoObraEmprendedor">
   manoObraEmprendedor!: number;
   valorManoObra!: number;
-  agregarTotal(): void{
+  agregarTotal(): void {
     this.valorManoObra = this.manoObraEmprendedor;
   }
   // 8.3 Materia prima, insumos y/o animales de engorde APORTE PROPIO

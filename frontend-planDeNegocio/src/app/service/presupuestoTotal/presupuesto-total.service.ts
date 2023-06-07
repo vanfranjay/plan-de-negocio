@@ -22,10 +22,10 @@ export class PresupuestoTotalService {
 
   inputValuesDetalle!: number;
 
-  setInputValuesDetalle(valor: number){
+  setInputValuesDetalle0(valor: number){
     this.inputValuesDetalle = valor;
   }
-  getInputValuesDetalle(){
+  getInputValuesDetalle0(){
     return this.inputValuesDetalle;
   }
 
@@ -46,7 +46,7 @@ export class PresupuestoTotalService {
   getInputValuesDetalle2(){
     return this.inputValuesDetalle2;
   }
-
+////////////////////////////////////////////////
   setTotal(valor: number){
     this.total = valor;
   }
