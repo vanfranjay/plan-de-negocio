@@ -34,8 +34,8 @@ export class PresupuestoTotalComponent {
     this.gastosOperativos = this.presupuestoService.getTotalGastosOp();
     this.materiaPrimaAP = this.presupuestoService.getTotalMateriaPrima();
     this.materiaPrimaPI = this.presupuestoService.getTotalMateriaPrima1();
-    this.requerimientosLegalesAP = this.presupuestoService.getTotalReqProm();
-    this.requerimientosLegalesPI = this.presupuestoService.getTotalReqProm1();
+    // this.requerimientosLegalesAP = this.presupuestoService.getTotalReqProm();
+    // this.requerimientosLegalesPI = this.presupuestoService.getTotalReqProm1();
     this.infrTerrPlanAP = this.presupuestoService.getTotalInfr();
     this.infrTerrPlanPI = this.presupuestoService.getTotalInfr1();
     this.maqEquVehAP = this.presupuestoService.getTotalMaq();
@@ -44,6 +44,27 @@ export class PresupuestoTotalComponent {
     this.requerimientosLegalesPI = this.presupuestoService.getTotalLegal1();
     this.requerimientosPromocionalesAP = this.presupuestoService.getTotalReqProm();
     this.requerimientosPromocionalesPI = this.presupuestoService.getTotalReqProm1();
+    this.calcularTotalAP();
+    this.calcularTotalPI();
+  }
+  calcularTotalAP() {
+    this.totalAP =
+      (this.presupuestoService.getTotal() ?? 0) +
+      (this.presupuestoService.getValorManoObra() ?? 0) +
+      (this.presupuestoService.getTotalMateriaPrima() ?? 0) +
+      (this.presupuestoService.getTotalReqProm() ?? 0) +
+      (this.presupuestoService.getTotalInfr() ?? 0) +
+      (this.presupuestoService.getTotalMaq() ?? 0) +
+      (this.presupuestoService.getTotalLegal() ?? 0)
+  }
+  calcularTotalPI(){
+    this.totalPI =
+      (this.presupuestoService.getTotalGastosOp() ?? 0) +
+      (this.presupuestoService.getTotalMateriaPrima1() ?? 0) +
+      (this.presupuestoService.getTotalReqProm1() ?? 0) +
+      (this.presupuestoService.getTotalInfr1() ?? 0) +
+      (this.presupuestoService.getTotalMaq1() ?? 0) +
+      (this.presupuestoService.getTotalLegal1() ?? 0)
   }
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])

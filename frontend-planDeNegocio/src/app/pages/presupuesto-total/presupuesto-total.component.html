@@ -62,7 +62,7 @@
               <p class="text-bold text-end">TOTAL</p>
             </td>
             <td class="border">
-              <output class="text-bold"></output>
+              <output class="text-bold">{{totalAP}}</output>
             </td>
           </tr>
         </table>
@@ -185,8 +185,8 @@
           <tr>
             <td></td>
             <td class="border text-bold text-end">TOTAL</td>
-            <td class="border">
-              <output class="text-bold"></output>
+            <td class="border text-center">
+              <output class="text-bold">{{totalPI}}</output>
             </td>
             <td class="border">
               <output id="result" class="text-bold">{{ totalApPropioEfectivo | currency: 'BOB'}}</output>
