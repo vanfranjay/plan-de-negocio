@@ -1,6 +1,7 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
 import { PresupuestoService } from '../../service/presupuesto/presupuesto.service';
+import { PresupuestoTotalService } from '../../service/presupuestoTotal/presupuesto-total.service';
 
 @Component({
   selector: 'app-presupuesto-total',
@@ -25,9 +26,25 @@ export class PresupuestoTotalComponent {
   requerimientosLegalesPI!: number;
   totalAP!: number;
   totalPI!: number;
+
+  totalProyecto!: number;
+  aportePropio!: number;
+  porcAportePropio!: number;
+  montoFinanciar!: number;
+  primerDesembolso!: number;
+  segundoDesembolso!: number;
+
+  input!: number;
+
+  showErrorMessage: boolean= false;
+
+  messageApEfectivo!: string;
+  messageDesembolso!: string;
+
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private presupuestoService: PresupuestoService
+    private presupuestoService: PresupuestoService,
+    private presupuestoTotalService: PresupuestoTotalService,
   ) {
     this.total = this.presupuestoService.getTotal();
     this.manoObraEmprendedor = this.presupuestoService.getValorManoObra();
@@ -44,8 +61,43 @@ export class PresupuestoTotalComponent {
     this.requerimientosLegalesPI = this.presupuestoService.getTotalLegal1();
     this.requerimientosPromocionalesAP = this.presupuestoService.getTotalReqProm();
     this.requerimientosPromocionalesPI = this.presupuestoService.getTotalReqProm1();
+
+    this.messageApEfectivo = this. presupuestoTotalService.getMessageApEfectivo();
+
     this.calcularTotalAP();
     this.calcularTotalPI();
+    this.calcularTotalProyecto();
+    this.calcularAportePropio();
+    this.calcularTotalPorcentajeAP();
+    this.calcularMontoFinanciar();
+    this.verificarApPropioEfectivo();
+
+    this.verificarMontoFinanciar();
+  }
+  verificarApPropioEfectivo(){
+    if (this.totalAP === this.total || (this.totalAP == 0 && (this.total == null || this.total == undefined))) {
+     this.messageApEfectivo = 'APORTE PROPIO CORRECTO';
+     this.presupuestoTotalService.setMessageApEfectivo(this.messageApEfectivo);
+    }else{
+      this.messageApEfectivo = 'EL TOTAL APORTE PROPIO DEBE SER IGUAL AL EFECTIVO'
+      this.presupuestoTotalService.setMessageApEfectivo(this.messageApEfectivo);
+    }
+  }
+  calcularTotalProyecto() {
+    this.totalProyecto = (this.totalAP ?? 0) + (this.totalPI ?? 0) - (this.total ?? 0);
+  }
+  calcularAportePropio() {
+    this.aportePropio = this.totalAP ?? 0;
+  }
+  calcularTotalPorcentajeAP() {
+    if (this.totalAP === 0 || this.totalProyecto === 0) {
+      this.porcAportePropio = 0;
+    } else {
+      this.porcAportePropio = (this.totalAP) / this.totalProyecto;
+    }
+  }
+  calcularMontoFinanciar() {
+    this.montoFinanciar = this.totalProyecto - this.aportePropio;
   }
   calcularTotalAP() {
     this.totalAP =
@@ -57,7 +109,7 @@ export class PresupuestoTotalComponent {
       (this.presupuestoService.getTotalMaq() ?? 0) +
       (this.presupuestoService.getTotalLegal() ?? 0)
   }
-  calcularTotalPI(){
+  calcularTotalPI() {
     this.totalPI =
       (this.presupuestoService.getTotalGastosOp() ?? 0) +
       (this.presupuestoService.getTotalMateriaPrima1() ?? 0) +
@@ -77,7 +129,40 @@ export class PresupuestoTotalComponent {
           this.colSize2 = 1;
         }
       });
+
+    this.primerDesembolso = this.presupuestoTotalService.getPrimerDesembolso();
+    this.segundoDesembolso = this.presupuestoTotalService.getSegundoDesembolso();
+
+    this.inputValues[0] = this.presupuestoTotalService.getInputValues0();
+    this.inputValues[1] = this.presupuestoTotalService.getInputValues1();
+    this.inputValues[2] = this.presupuestoTotalService.getInputValues2();
+    this.inputValues[3] = this.presupuestoTotalService.getInputValues3();
+    this.inputValues[4] = this.presupuestoTotalService.getInputValues4();
+    this.inputValues[5] = this.presupuestoTotalService.getInputValues5();
+    this.totalApPropioEfectivo = this.presupuestoTotalService.getTotalApPropioEfectivo();
+
+    this.showErrorMessage = this.presupuestoTotalService.getShowErrorMessage();
+
+    this.messageDesembolso = this.presupuestoTotalService.getMessageDesembolso();
   }
+  verificarMontoFinanciar(){
+    if (this.montoFinanciar == ((this.primerDesembolso ?? 0) + (this.segundoDesembolso ?? 0))) {
+      this.messageDesembolso = 'DESEMBOLSO CORRECTO';
+      this.presupuestoTotalService.setMessageDesembolso(this.messageDesembolso);
+    }else{
+      this.messageDesembolso = 'REVISAR 1ER Y 2DO DESEMBOLSO';
+      this.presupuestoTotalService.setMessageDesembolso(this.messageDesembolso);
+    }
+  }
+  addPrimerDesembolso() {
+    this.presupuestoTotalService.setPrimerDesembolso(this.primerDesembolso);
+    this.verificarMontoFinanciar();
+  }
+  addSegundoDesembolso() {
+    this.presupuestoTotalService.setSegundoDesembolso(this.segundoDesembolso);
+    this.verificarMontoFinanciar();
+  }
+
   calculateColSize(breakpoints: { [key: string]: boolean }): number {
     if (breakpoints[Breakpoints.XSmall]) {
       return 2; // Pantallas extra pequeñas, 1 columna
@@ -103,9 +188,41 @@ export class PresupuestoTotalComponent {
   inputValues: (number | null)[] = [];
   totalApPropioEfectivo: number = 0;
 
-  calculateTotal(): void {
+  calculateTotal(index: number): void {
+    this.input = this.inputValues[index] ?? 0;
     this.totalApPropioEfectivo = this.inputValues
       .map(value => parseInt(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
+    this.presupuestoTotalService.setTotalApPropioEfectivo(this.totalApPropioEfectivo);
+    switch (index) {
+      case 0:
+        this.presupuestoTotalService.setInputValues0(this.input);
+        break;
+      case 1:
+        this.presupuestoTotalService.setInputValues1(this.input);
+        break;
+      case 2:
+        this.presupuestoTotalService.setInputValues2(this.input);
+        break;
+      case 3:
+        this.presupuestoTotalService.setInputValues3(this.input);
+        break;
+      case 4:
+        this.presupuestoTotalService.setInputValues4(this.input);
+        break;
+      case 5:
+        this.presupuestoTotalService.setInputValues5(this.input);
+        break;
+    }
+    this.checkOutputValue()
+  }
+  checkOutputValue() {
+    if (this.totalApPropioEfectivo > 100000) {
+      this.showErrorMessage = true;
+      this.presupuestoTotalService.setShowErrorMessage(this.showErrorMessage);
+    } else {
+      this.showErrorMessage = false;
+      this.presupuestoTotalService.setShowErrorMessage(this.showErrorMessage);
+    }
   }
 }

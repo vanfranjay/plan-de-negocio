@@ -1,5 +1,5 @@
 <div class="contenedor">
-  <mat-grid-list [cols]="colSize" rowHeight="690px">
+  <mat-grid-list [cols]="colSize" rowHeight="721px">
     <mat-grid-tile [colspan]="2" [rowspan]="1" class="custom-tile">
       <div class="content">
         <div class="content-title">
@@ -89,7 +89,7 @@
                 <input
                   type="number"
                   class="no-margin right-align"
-                  (change)="calculateTotal()"
+                  (change)="calculateTotal(0)"
                   [(ngModel)]="inputValues[0]"
                 />
               </div>
@@ -107,7 +107,7 @@
                 <input
                   type="number"
                   class="no-margin right-align"
-                  (change)="calculateTotal()"
+                  (change)="calculateTotal(1)"
                   [(ngModel)]="inputValues[1]"
                 />
               </div>
@@ -123,7 +123,7 @@
                 <input
                   type="number"
                   class="no-margin right-align"
-                  (change)="calculateTotal()"
+                  (change)="calculateTotal(2)"
                   [(ngModel)]="inputValues[2]"
                 />
               </div>
@@ -142,7 +142,7 @@
                 <input
                   type="number"
                   class="no-margin right-align"
-                  (change)="calculateTotal()"
+                  (change)="calculateTotal(3)"
                   [(ngModel)]="inputValues[3]"
                 />
               </div>
@@ -160,7 +160,7 @@
                 <input
                   type="number"
                   class="no-margin right-align"
-                  (change)="calculateTotal()"
+                  (change)="calculateTotal(4)"
                   [(ngModel)]="inputValues[4]"
                 />
               </div>
@@ -176,7 +176,7 @@
                 <input
                   type="number"
                   class="no-margin right-align"
-                  (change)="calculateTotal()"
+                  (change)="calculateTotal(5)"
                   [(ngModel)]="inputValues[5]"
                 />
               </div>
@@ -192,6 +192,11 @@
               <output id="result" class="text-bold">{{ totalApPropioEfectivo | currency: 'BOB'}}</output>
             </td>
           </tr>
+          <tr>
+            <td colspan="4" class="text-end color-red">
+              <p *ngIf="showErrorMessage">La sumatoria de AP. PROPIO EFECTIVO tiene que ser menor 100000</p>
+            </td>
+          </tr>
         </table>
       </div>
     </mat-grid-tile>
@@ -201,26 +206,26 @@
         <table class="full-width">
           <tr>
             <td style="width: 60%" class="border">TOTAL PROYECTO</td>
-            <td style="width: 40%" class="border">
-              <output class="text-bold"></output>
+            <td style="width: 40%" class="border text-center">
+              <output class="text-bold">{{totalProyecto}}</output>
             </td>
           </tr>
           <tr>
             <td class="border">APORTE PROPIO</td>
-            <td class="border">
-              <output class="text-bold"></output>
+            <td class="border text-center">
+              <output class="text-bold">{{aportePropio}}</output>
             </td>
           </tr>
           <tr>
             <td class="border">% APORTE PROPIO</td>
-            <td class="border">
-              <output class="text-bold"></output>
+            <td class="border text-center">
+              <output class="text-bold">{{porcAportePropio | percent: '1.2-2' }}</output>
             </td>
           </tr>
           <tr>
             <th class="border color-yellow" colspan="2">
-              APORTE PROPIO PARA GARANTIA HIPOTECARIO DEBE SER __ Y PARA OTRA
-              GARANTIA __
+              APORTE PROPIO PARA GARANTIA HIPOTECARIO DEBE SER 10% Y PARA OTRA
+              GARANTIA 20%
             </th>
           </tr>
         </table>
@@ -228,8 +233,8 @@
         <table class="full-width">
           <tr>
             <td style="width: 60%" class="border">MONTO A FINANCIAR</td>
-            <td style="width: 40%" class="border">
-              <output class="text-bold"></output>
+            <td style="width: 40%" class="border text-center">
+              <output class="text-bold">bs. {{montoFinanciar}}</output>
             </td>
           </tr>
         </table>
@@ -239,7 +244,9 @@
             <td style="width: 60%" class="border">Primer Desembolso</td>
             <td style="width: 40%" class="border">
               <div class="input-container">
-                <input type="number" class="no-margin" />
+                <input type="number" class="no-margin"
+                (change)="addPrimerDesembolso()"
+                [(ngModel)]="primerDesembolso"/>
               </div>
             </td>
           </tr>
@@ -247,20 +254,22 @@
             <td class="border">Segundo Desembolso</td>
             <td class="border">
               <div class="input-container">
-                <input type="number" class="no-margin" />
+                <input type="number" class="no-margin"
+                (change)="addSegundoDesembolso()"
+                [(ngModel)]="segundoDesembolso"/>
               </div>
             </td>
           </tr>
           <tr>
             <th class="border color-yellow" colspan="2">
-              REVISAR 1ER Y 2DO DESEMBOLSO
+              {{messageDesembolso}}
             </th>
           </tr>
         </table>
         <br>
         <table class="full-width">
           <tr>
-            <th class="border color-yellow">APORTE PROPIO CORRECTO</th>
+            <th class="border color-yellow">{{messageApEfectivo}}</th>
           </tr>
         </table>
         <br>
