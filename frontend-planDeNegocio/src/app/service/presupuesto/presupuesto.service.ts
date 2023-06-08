@@ -20,7 +20,7 @@ export class PresupuestoService {
   private totalLegal!: number;
   private totalLegal1!: number;
 
-  inputValuesDetalle!: number;
+  private inputValuesDetalle!: number;
 
   setInputValuesDetalle0(valor: number) {
     this.inputValuesDetalle = valor;
@@ -29,7 +29,7 @@ export class PresupuestoService {
     return this.inputValuesDetalle;
   }
 
-  inputValuesDetalle1!: number;
+  private inputValuesDetalle1!: number;
 
   setInputValuesDetalle1(valor: number) {
     this.inputValuesDetalle1 = valor;
@@ -38,7 +38,7 @@ export class PresupuestoService {
     return this.inputValuesDetalle1;
   }
 
-  inputValuesDetalle2!: number;
+  private inputValuesDetalle2!: number;
 
   setInputValuesDetalle2(valor: number) {
     this.inputValuesDetalle2 = valor;
@@ -60,21 +60,21 @@ export class PresupuestoService {
     return this.valorManoObra;
   }
   /// 8.3
-  inputvaluesMateriaPrima0!: number;
+  private inputvaluesMateriaPrima0!: number;
   setInputValuesMateriaPrima0(valor: number) {
     this.inputvaluesMateriaPrima0 = valor;
   }
   getInputValuesMateriaPrima0() {
     return this.inputvaluesMateriaPrima0;
   }
-  inputvaluesMateriaPrima1!: number;
+  private inputvaluesMateriaPrima1!: number;
   setInputValuesMateriaPrima1(valor: number) {
     this.inputvaluesMateriaPrima1 = valor;
   }
   getInputValuesMateriaPrima1() {
     return this.inputvaluesMateriaPrima1;
   }
-  inputvaluesMateriaPrima2!: number;
+  private inputvaluesMateriaPrima2!: number;
   setInputValuesMateriaPrima2(valor: number) {
     this.inputvaluesMateriaPrima2 = valor;
   }
@@ -82,21 +82,21 @@ export class PresupuestoService {
     return this.inputvaluesMateriaPrima2;
   }
   //se invertira 8.3
-  inputvaluesMateriaPrima10!: number;
+  private inputvaluesMateriaPrima10!: number;
   setInputValuesMateriaPrima10(valor: number) {
     this.inputvaluesMateriaPrima10 = valor;
   }
   getInputValuesMateriaPrima10() {
     return this.inputvaluesMateriaPrima10;
   }
-  inputvaluesMateriaPrima11!: number;
+  private inputvaluesMateriaPrima11!: number;
   setInputValuesMateriaPrima11(valor: number) {
     this.inputvaluesMateriaPrima11 = valor;
   }
   getInputValuesMateriaPrima11() {
     return this.inputvaluesMateriaPrima11;
   }
-  inputvaluesMateriaPrima12!: number;
+  private inputvaluesMateriaPrima12!: number;
   setInputValuesMateriaPrima12(valor: number) {
     this.inputvaluesMateriaPrima12 = valor;
   }
@@ -118,42 +118,42 @@ export class PresupuestoService {
   }
 
   // 8.4 inversion propia
-  inputValuesReqProm0!: number;
+  private inputValuesReqProm0!: number;
   setInputValuesReqProm0(valor: number) {
     this.inputValuesReqProm0 = valor;
   }
   getInputValuesReqProm0() {
     return this.inputValuesReqProm0;
   }
-  inputValuesReqProm1!: number;
+  private inputValuesReqProm1!: number;
   setInputValuesReqProm1(valor: number) {
     this.inputValuesReqProm1 = valor;
   }
   getInputValuesReqProm1() {
     return this.inputValuesReqProm1;
   }
-  inputValuesReqProm2!: number;
+  private inputValuesReqProm2!: number;
   setInputValuesReqProm2(valor: number) {
     this.inputValuesReqProm2 = valor;
   }
   getInputValuesReqProm2() {
     return this.inputValuesReqProm2;
   }
-  inputValuesReqProm10!: number;
+  private inputValuesReqProm10!: number;
   setInputValuesReqProm10(valor: number) {
     this.inputValuesReqProm10 = valor;
   }
   getInputValuesReqProm10() {
     return this.inputValuesReqProm10;
   }
-  inputValuesReqProm11!: number;
+  private inputValuesReqProm11!: number;
   setInputValuesReqProm11(valor: number) {
     this.inputValuesReqProm11 = valor;
   }
   getInputValuesReqProm11() {
     return this.inputValuesReqProm11;
   }
-  inputValuesReqProm12!: number;
+  private inputValuesReqProm12!: number;
   setInputValuesReqProm12(valor: number) {
     this.inputValuesReqProm12 = valor;
   }
@@ -173,21 +173,21 @@ export class PresupuestoService {
     return this.totalReqProm1;
   }
   // 8.5
-  inputValuesGastosOp0!: number;
+  private inputValuesGastosOp0!: number;
   setInputValuesGastosOp0(valor: number) {
     this.inputValuesGastosOp0 = valor;
   }
   getInputValuesGastosOp0() {
     return this.inputValuesGastosOp0;
   }
-  inputValuesGastosOp1!: number;
+  private inputValuesGastosOp1!: number;
   setInputValuesGastosOp1(valor: number) {
     this.inputValuesGastosOp1 = valor;
   }
   getInputValuesGastosOp1() {
     return this.inputValuesGastosOp1;
   }
-  inputValuesGastosOp2!: number;
+  private inputValuesGastosOp2!: number;
   setInputValuesGastosOp2(valor: number) {
     this.inputValuesGastosOp2 = valor;
   }
@@ -201,21 +201,21 @@ export class PresupuestoService {
     return this.totalGastosOp;
   }
   // 8.6
-  inputValuesInfr0!: number;
+  private inputValuesInfr0!: number;
   setInputValuesInfr0(valor: number) {
     this.inputValuesInfr0 = valor;
   }
   getInputValuesInfr0() {
     return this.inputValuesInfr0;
   }
-  inputValuesInfr1!: number;
+  private inputValuesInfr1!: number;
   setInputValuesInfr1(valor: number) {
     this.inputValuesInfr1 = valor;
   }
   getInputValuesInfr1() {
     return this.inputValuesInfr1;
   }
-  inputValuesInfr2!: number;
+  private inputValuesInfr2!: number;
   setInputValuesInfr2(valor: number) {
     this.inputValuesInfr2 = valor;
   }
@@ -223,21 +223,21 @@ export class PresupuestoService {
     return this.inputValuesInfr2;
   }
   //8.6 se invertira
-  inputValuesInfr10!: number;
+  private inputValuesInfr10!: number;
   setInputValuesInfr10(valor: number) {
     this.inputValuesInfr10 = valor;
   }
   getInputValuesInfr10() {
     return this.inputValuesInfr10;
   }
-  inputValuesInfr11!: number;
+  private inputValuesInfr11!: number;
   setInputValuesInfr11(valor: number) {
     this.inputValuesInfr11 = valor;
   }
   getInputValuesInfr11() {
     return this.inputValuesInfr11;
   }
-  inputValuesInfr12!: number;
+  private inputValuesInfr12!: number;
   setInputValuesInfr12(valor: number) {
     this.inputValuesInfr12 = valor;
   }
@@ -258,21 +258,21 @@ export class PresupuestoService {
   }
 
   // 8.7 inversión propia
-  inputValuesMaq0!: number;
+  private inputValuesMaq0!: number;
   setInputValuesMaq0(valor: number) {
     this.inputValuesMaq0 = valor;
   }
   getInputValuesMaq0() {
     return this.inputValuesMaq0;
   }
-  inputValuesMaq1!: number;
+  private inputValuesMaq1!: number;
   setInputValuesMaq1(valor: number) {
     this.inputValuesMaq1 = valor;
   }
   getInputValuesMaq1() {
     return this.inputValuesMaq1;
   }
-  inputValuesMaq2!: number;
+  private inputValuesMaq2!: number;
   setInputValuesMaq2(valor: number) {
     this.inputValuesMaq2 = valor;
   }
@@ -286,21 +286,21 @@ export class PresupuestoService {
     return this.totalMaq;
   }
   //8.7 inversion
-  inputValuesMaq10!: number;
+  private inputValuesMaq10!: number;
   setInputValuesMaq10(valor: number) {
     this.inputValuesMaq10 = valor;
   }
   getInputValuesMaq10() {
     return this.inputValuesMaq10;
   }
-  inputValuesMaq11!: number;
+  private inputValuesMaq11!: number;
   setInputValuesMaq11(valor: number) {
     this.inputValuesMaq11 = valor;
   }
   getInputValuesMaq11() {
     return this.inputValuesMaq11;
   }
-  inputValuesMaq12!: number;
+  private inputValuesMaq12!: number;
   setInputValuesMaq12(valor: number) {
     this.inputValuesMaq12 = valor;
   }
@@ -314,21 +314,21 @@ export class PresupuestoService {
     return this.totalMaq1;
   }
   // 8.8 inversión propia
-  inputValuesLegal0!: number;
+  private inputValuesLegal0!: number;
   setInputValuesLegal0(valor: number) {
     this.inputValuesLegal0 = valor;
   }
   getInputValuesLegal0() {
     return this.inputValuesLegal0;
   }
-  inputValuesLegal1!: number;
+  private inputValuesLegal1!: number;
   setInputValuesLegal1(valor: number) {
     this.inputValuesLegal1 = valor;
   }
   getInputValuesLegal1() {
     return this.inputValuesLegal1;
   }
-  inputValuesLegal2!: number;
+  private inputValuesLegal2!: number;
   setInputValuesLegal2(valor: number) {
     this.inputValuesLegal2 = valor;
   }
@@ -342,21 +342,21 @@ export class PresupuestoService {
     return this.totalLegal;
   }
   // 8.8 inversion
-  inputValuesLegal10!: number;
+  private inputValuesLegal10!: number;
   setInputValuesLegal10(valor: number) {
     this.inputValuesLegal10 = valor;
   }
   getInputValuesLegal10() {
     return this.inputValuesLegal10;
   }
-  inputValuesLegal11!: number;
+  private inputValuesLegal11!: number;
   setInputValuesLegal11(valor: number) {
     this.inputValuesLegal11 = valor;
   }
   getInputValuesLegal11() {
     return this.inputValuesLegal11;
   }
-  inputValuesLegal12!: number;
+  private inputValuesLegal12!: number;
   setInputValuesLegal12(valor: number) {
     this.inputValuesLegal12 = valor;
   }
@@ -371,14 +371,14 @@ export class PresupuestoService {
   }
 
   // Total capital operaciones
-  totalCapitalOpApPro!: number;
+  private totalCapitalOpApPro!: number;
   setTotalCapitalOpApPro(valor: number) {
     this.totalCapitalOpApPro = valor;
   }
   getTotalCapitalOpApPro() {
     return this.totalCapitalOpApPro;
   }
-  totalCapitalOpInvertira!: number;
+  private totalCapitalOpInvertira!: number;
   setTotalCapitalOpInvertira(valor: number) {
     this.totalCapitalOpInvertira = valor;
   }
@@ -386,14 +386,14 @@ export class PresupuestoService {
     return this.totalCapitalOpInvertira;
   }
   // Total capital inversión
-  totalCapitalInversionApPo!: number;
+  private totalCapitalInversionApPo!: number;
   setTotalCapitalInversionApPo(valor: number){
     this.totalCapitalInversionApPo = valor;
   }
   getTotalCapitalInversionApPo(){
     return this.totalCapitalInversionApPo;
   }
-  totalCapitalInversionSeInvertira!: number;
+  private totalCapitalInversionSeInvertira!: number;
   setTotalCapitalInversionSeInvertira(valor: number){
     this.totalCapitalInversionSeInvertira = valor;
   }
