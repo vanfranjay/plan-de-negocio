@@ -11,7 +11,12 @@
           <h2>Datos Deudor</h2>
           <mat-form-field class="nombre" appearance="fill">
             <mat-label>Nombre:</mat-label>
-            <input matInput formControlName="nameDeudor" />
+            <input
+              matInput
+              formControlName="nameDeudor"
+              (change)="asignarValor('NombreDeudor', homeNombreDeudor)"
+              [(ngModel)]="homeNombreDeudor"
+            />
             <mat-error
               *ngIf="
                 form.get('nameDeudor')?.invalid &&
@@ -47,7 +52,8 @@
             <input matInput formControlName="extensionDeudor" />
             <mat-error
               *ngIf="
-                form.get('extensionDeudor')?.invalid && form.get('extensionDeudor')?.touched
+                form.get('extensionDeudor')?.invalid &&
+                form.get('extensionDeudor')?.touched
               "
             >
               <span *ngIf="form.get('extensionDeudor')?.errors?.['required']"
@@ -63,7 +69,8 @@
             <input matInput formControlName="edadDeudor" />
             <mat-error
               *ngIf="
-                form.get('edadDeudor')?.invalid && form.get('edadDeudor')?.touched
+                form.get('edadDeudor')?.invalid &&
+                form.get('edadDeudor')?.touched
               "
             >
               <span *ngIf="form.get('edadDeudor')?.errors?.['required']"
@@ -85,7 +92,8 @@
             <input matInput formControlName="EstadoCivilDeudor" />
             <mat-error
               *ngIf="
-                form.get('EstadoCivilDeudor')?.invalid && form.get('EstadoCivilDeudor')?.touched
+                form.get('EstadoCivilDeudor')?.invalid &&
+                form.get('EstadoCivilDeudor')?.touched
               "
             >
               <span *ngIf="form.get('EstadoCivilDeudor')?.errors?.['required']"
@@ -101,7 +109,8 @@
             <input matInput formControlName="telefonoDeudor" />
             <mat-error
               *ngIf="
-                form.get('telefonoDeudor')?.invalid && form.get('telefonoDeudor')?.touched
+                form.get('telefonoDeudor')?.invalid &&
+                form.get('telefonoDeudor')?.touched
               "
             >
               <span *ngIf="form.get('telefonoDeudor')?.errors?.['required']"
@@ -120,14 +129,16 @@
             <input matInput formControlName="direccionDeudor" />
             <mat-error
               *ngIf="
-                form.get('direccionDeudor')?.invalid && form.get('direccionDeudor')?.touched
+                form.get('direccionDeudor')?.invalid &&
+                form.get('direccionDeudor')?.touched
               "
             >
               <span *ngIf="form.get('direccionDeudor')?.errors?.['required']"
                 >La dirección es requerido.</span
               >
               <span *ngIf="form.get('direccionDeudor')?.errors?.['pattern']"
-                >La dirección no puede contener caracteres especiales ej: $%^&*etc.</span
+                >La dirección no puede contener caracteres especiales ej:
+                $%^&*etc.</span
               >
               <span *ngIf="form.get('direccionDeudor')?.errors?.['maxlength']"
                 >120 caracteres minimo.</span
@@ -161,7 +172,8 @@
             <input matInput formControlName="ciCodeudor" />
             <mat-error
               *ngIf="
-                form.get('ciCodeudor')?.invalid && form.get('ciCodeudor')?.touched
+                form.get('ciCodeudor')?.invalid &&
+                form.get('ciCodeudor')?.touched
               "
             >
               <span *ngIf="form.get('ciCodeudor')?.errors?.['required']"
@@ -177,7 +189,8 @@
             <input matInput formControlName="extensionCodeudor" />
             <mat-error
               *ngIf="
-                form.get('extensionCodeudor')?.invalid && form.get('extensionCodeudor')?.touched
+                form.get('extensionCodeudor')?.invalid &&
+                form.get('extensionCodeudor')?.touched
               "
             >
               <span *ngIf="form.get('extensionCodeudor')?.errors?.['required']"
@@ -193,7 +206,8 @@
             <input matInput formControlName="edadCodeudor" />
             <mat-error
               *ngIf="
-                form.get('edadCodeudor')?.invalid && form.get('edadCodeudor')?.touched
+                form.get('edadCodeudor')?.invalid &&
+                form.get('edadCodeudor')?.touched
               "
             >
               <span *ngIf="form.get('edadCodeudor')?.errors?.['required']"
@@ -215,10 +229,12 @@
             <input matInput formControlName="EstadoCivilCodeudor" />
             <mat-error
               *ngIf="
-                form.get('EstadoCivilCodeudor')?.invalid && form.get('EstadoCivilCodeudor')?.touched
+                form.get('EstadoCivilCodeudor')?.invalid &&
+                form.get('EstadoCivilCodeudor')?.touched
               "
             >
-              <span *ngIf="form.get('EstadoCivilCodeudor')?.errors?.['required']"
+              <span
+                *ngIf="form.get('EstadoCivilCodeudor')?.errors?.['required']"
                 >El estado civil es requerida.</span
               >
               <span *ngIf="form.get('EstadoCivilCodeudor')?.errors?.['pattern']"
@@ -231,7 +247,8 @@
             <input matInput formControlName="telefonoCodeudor" />
             <mat-error
               *ngIf="
-                form.get('telefonoCodeudor')?.invalid && form.get('telefonoCodeudor')?.touched
+                form.get('telefonoCodeudor')?.invalid &&
+                form.get('telefonoCodeudor')?.touched
               "
             >
               <span *ngIf="form.get('telefonoCodeudor')?.errors?.['required']"
@@ -250,14 +267,16 @@
             <input matInput formControlName="direccionCodeudor" />
             <mat-error
               *ngIf="
-                form.get('direccionCodeudor')?.invalid && form.get('direccionCodeudor')?.touched
+                form.get('direccionCodeudor')?.invalid &&
+                form.get('direccionCodeudor')?.touched
               "
             >
               <span *ngIf="form.get('direccionCodeudor')?.errors?.['required']"
                 >La dirección es requerido.</span
               >
               <span *ngIf="form.get('direccionCodeudor')?.errors?.['pattern']"
-                >La dirección no puede contener caracteres especiales ej: $%^&*etc.</span
+                >La dirección no puede contener caracteres especiales ej:
+                $%^&*etc.</span
               >
               <span *ngIf="form.get('direccionCodeudor')?.errors?.['maxlength']"
                 >120 caracteres minimo.</span
@@ -274,7 +293,8 @@
             <input matInput formControlName="razonSocial" />
             <mat-error
               *ngIf="
-                form.get('razonSocial')?.invalid && form.get('razonSocial')?.touched
+                form.get('razonSocial')?.invalid &&
+                form.get('razonSocial')?.touched
               "
             >
               <span *ngIf="form.get('razonSocial')?.errors?.['required']"
@@ -289,9 +309,7 @@
             <mat-label>NIT:</mat-label>
             <input matInput formControlName="nit" />
             <mat-error
-              *ngIf="
-                form.get('nit')?.invalid && form.get('nit')?.touched
-              "
+              *ngIf="form.get('nit')?.invalid && form.get('nit')?.touched"
             >
               <span *ngIf="form.get('nit')?.errors?.['required']"
                 >El nit es requerido.</span
@@ -305,9 +323,7 @@
             <mat-label>SIGLA:</mat-label>
             <input matInput formControlName="sigla" />
             <mat-error
-              *ngIf="
-                form.get('sigla')?.invalid && form.get('sigla')?.touched
-              "
+              *ngIf="form.get('sigla')?.invalid && form.get('sigla')?.touched"
             >
               <span *ngIf="form.get('sigla')?.errors?.['required']"
                 >El sigla es requerida.</span
@@ -322,13 +338,16 @@
             <input matInput formControlName="tipoFormaSociendadComercial" />
             <mat-error
               *ngIf="
-                form.get('tipoFormaSociendadComercial')?.invalid && form.get('tipoFormaSociendadComercial')?.touched
+                form.get('tipoFormaSociendadComercial')?.invalid &&
+                form.get('tipoFormaSociendadComercial')?.touched
               "
             >
-              <span *ngIf="form.get('tipoFormaSociendadComercial')?.errors?.['required']"
+              <span
+                *ngIf="form.get('tipoFormaSociendadComercial')?.errors?.['required']"
                 >El campo es requerido.</span
               >
-              <span *ngIf="form.get('tipoFormaSociendadComercial')?.errors?.['pattern']"
+              <span
+                *ngIf="form.get('tipoFormaSociendadComercial')?.errors?.['pattern']"
                 >La campo solo puede contener letras.</span
               >
             </mat-error>
@@ -338,7 +357,8 @@
             <input matInput formControlName="representanteLegal" />
             <mat-error
               *ngIf="
-                form.get('representanteLegal')?.invalid && form.get('representanteLegal')?.touched
+                form.get('representanteLegal')?.invalid &&
+                form.get('representanteLegal')?.touched
               "
             >
               <span *ngIf="form.get('representanteLegal')?.errors?.['required']"
@@ -354,7 +374,8 @@
             <input matInput formControlName="domicilioLegal" />
             <mat-error
               *ngIf="
-                form.get('domicilioLegal')?.invalid && form.get('domicilioLegal')?.touched
+                form.get('domicilioLegal')?.invalid &&
+                form.get('domicilioLegal')?.touched
               "
             >
               <span *ngIf="form.get('domicilioLegal')?.errors?.['required']"
@@ -391,7 +412,8 @@
             <input matInput formControlName="departamento" />
             <mat-error
               *ngIf="
-                form.get('departamento')?.invalid && form.get('departamento')?.touched
+                form.get('departamento')?.invalid &&
+                form.get('departamento')?.touched
               "
             >
               <span *ngIf="form.get('departamento')?.errors?.['required']"
@@ -449,7 +471,8 @@
                 >La dirección es requerido.</span
               >
               <span *ngIf="form.get('direccion')?.errors?.['pattern']"
-                >La dirección no puede contener caracteres especiales ej: $%^&*etc.</span
+                >La dirección no puede contener caracteres especiales ej:
+                $%^&*etc.</span
               >
               <span *ngIf="form.get('direccion')?.errors?.['maxlength']"
                 >120 caracteres minimo.</span
@@ -559,7 +582,9 @@
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="2">
-        <span class="texto-negrita texto__descripcion-opciones">Nombre del Producto o Servicio</span>
+        <span class="texto-negrita texto__descripcion-opciones"
+          >Nombre del Producto o Servicio</span
+        >
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="2">
         <span class="texto-negrita texto__descripcion-opciones">

@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
+import { CostosService } from 'src/app/service/costos/costos.service';
 
 @Component({
   selector: 'app-costos',
@@ -9,9 +10,13 @@ import { Component } from '@angular/core';
 export class CostosComponent {
   public colSize!: number;
   public colSize2: number = 1;
+  rangoA!: number;
   constructor(
     private breakpointObserver: BreakpointObserver,
-  ) { }
+    private costosService: CostosService,
+  ) {
+    this.rangoA = this.costosService.getRangoA();
+  }
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])
       .subscribe(result => {
@@ -23,6 +28,7 @@ export class CostosComponent {
           this.colSize2 = 1;
         }
       });
+  this.rangoA = this.costosService.getRangoA();
   }
   calculateColSize(breakpoints: { [key: string]: boolean }): number {
     if (breakpoints[Breakpoints.XSmall]) {
@@ -54,5 +60,6 @@ export class CostosComponent {
     this.total = this.inputValues
       .map(value => parseInt(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
+    this.costosService.setRangoA(this.rangoA)
   }
 }
