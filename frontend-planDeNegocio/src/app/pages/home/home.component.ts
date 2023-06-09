@@ -16,7 +16,6 @@ export class HomeComponent {
   siControl = new FormControl(false);
   noControl = new FormControl(false);
   tiempoInicioHabilitado = false;
-  miCampoNumerico = null;
 
 
   //variables deudor
@@ -225,7 +224,7 @@ export class HomeComponent {
     }
   }
   resetearCampo() {
-    this.miCampoNumerico = null;
+    this.homeMesPlanNeg = 0;
   }
   limpiarCampos() {
     this.form.reset();
