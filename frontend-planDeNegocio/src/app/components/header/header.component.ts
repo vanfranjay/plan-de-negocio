@@ -6,6 +6,7 @@ enum Tab {
   Presupuesto = 'presupuesto',
   PresupuestoTotal= 'presupuesto-total',
   Costos = 'costos',
+  Flujo = 'flujo',
   Complementario = 'complementario',
   Pregunta1 = 'pregunta1',
   Pregunta2 = 'pregunta2'

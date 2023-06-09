@@ -29,6 +29,10 @@
           <span class="label__button-navBar">Costos</span>
         </button>
 
+        <button class="menu__button" mat-menu-item [routerLink]="['/', Tab.Flujo]" routerLinkActive="selected-menu">
+          <span class="label__button-navBar">Flujo</span>
+        </button>
+
         <button class="menu__button" mat-menu-item [routerLink]="['/', Tab.Complementario]" routerLinkActive="selected-menu">
           <span class="label__button-navBar">Complementario</span>
         </button>
@@ -43,6 +47,7 @@
     <mat-button-toggle [routerLink]="['/', Tab.Presupuesto]" routerLinkActive="selected-menu"><span class="label__button-navBar">Presupuesto</span></mat-button-toggle>
     <mat-button-toggle [routerLink]="['/', Tab.PresupuestoTotal]" routerLinkActive="selected-menu"><span class="label__button-navBar">Presupuesto Total</span></mat-button-toggle>
     <mat-button-toggle [routerLink]="['/', Tab.Costos]" routerLinkActive="selected-menu"><span class="label__button-navBar">Costos</span></mat-button-toggle>
+    <mat-button-toggle [routerLink]="['/', Tab.Flujo]" routerLinkActive="selected-menu"><span class="label__button-navBar">Flujo</span></mat-button-toggle>
     <mat-button-toggle [routerLink]="['/', Tab.Complementario]" routerLinkActive="selected-menu"><span class="label__button-navBar">Complementario</span></mat-button-toggle>
   </mat-button-toggle-group>
 </mat-toolbar>

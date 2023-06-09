@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'pregunta2', loadChildren: () => import('./pages/pregunta2/pregunta2.module').then(m => m.Pregunta2Module) },
   { path: 'complementario', loadChildren: () => import('./pages/complementario/complementario.module').then(m => m.ComplementarioModule) },
   { path: 'presupuesto-total', loadChildren: () => import('./pages/presupuesto-total/presupuesto-total.module').then(m => m.PresupuestoTotalModule) },
-  { path: 'costos', loadChildren: () => import('./pages/costos/costos.module').then(m => m.CostosModule) }
+  { path: 'costos', loadChildren: () => import('./pages/costos/costos.module').then(m => m.CostosModule) },
+  { path: 'flujo', loadChildren: () => import('./pages/flujo/flujo.module').then(m => m.FlujoModule) }
 ];
 
 @NgModule({
