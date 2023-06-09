@@ -190,8 +190,6 @@ export class HomeComponent {
           this.colSize = 4; // Pantallas más grandes, 4 columnas
         }
       });
-
-    this.homeNombreDeudor = this.homesService.getHomeNombreDeudor();
   }
   calculateColSize(breakpoints: { [key: string]: boolean }): number {
     if (breakpoints[Breakpoints.XSmall]) {
