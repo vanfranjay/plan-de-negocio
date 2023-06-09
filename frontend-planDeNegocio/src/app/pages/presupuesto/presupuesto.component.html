@@ -13,21 +13,21 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="7" class="expand-tile fondo__subtitulo2">
-      <div  class="table">
+      <div  class="table text__mobil">
         <div class="table_header"> DETALLE</div>
         <div class="table_header"></div>
         <div class="table_header"> PROCEDENCIA</div>
         <div class="table_header">MONTO APORTE PROPIO</div>
         <div class="table_item">EFECTIVO/ORIGEN:  </div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal(0)" [(ngModel)]="inputValuesDetalle[0]"></div>
         <div class="table_item">CAJA DE AHORRO/ENTIDAD FINACIERA</div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal(1)" [(ngModel)]="inputValuesDetalle[1]"></div>
         <div class="table_item">OTROS</div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="text" class="input" placeholder=""> </div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal(2)" [(ngModel)]="inputValuesDetalle[2]"></div>
         <div class="table_item"></div>
@@ -49,10 +49,10 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="4" class="expand-tile fondo__subtitulo2">
-      <div  class="table0">
+      <div  class="table0 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
-        <div class="table_header">DETALLES</div>
+        <div class="table_header">DETALLE</div>
         <div class="table_header">APORTE PROPIO (BS)</div>
         <div class="table_item">1</div>
         <div class="table_item">global</div>
@@ -73,7 +73,7 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="7" class="expand-tile fondo__subtitulo2">
-      <div  class="table1">
+      <div  class="table1 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
         <div class="table_header">DETALLE</div>
@@ -81,17 +81,17 @@
         <div class="table_header">SE INVERTIRÁ (BS)</div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal1(0)" [(ngModel)]="inputValuesMateriaPrima[0]"></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal2(0)" [(ngModel)]="inputValuesMateriaPrima1[0]"></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal1(1)" [(ngModel)]="inputValuesMateriaPrima[1]"></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal2(1)" [(ngModel)]="inputValuesMateriaPrima1[1]"></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal1(2)" [(ngModel)]="inputValuesMateriaPrima[2]"></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal2(2)" [(ngModel)]="inputValuesMateriaPrima1[2]"></div>
         <div class="table_item"></div>
@@ -109,7 +109,7 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="7" class="expand-tile fondo__subtitulo2">
-      <div  class="table1">
+      <div  class="table1 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
         <div class="table_header">DETALLE</div>
@@ -117,17 +117,17 @@
         <div class="table_header">SE INVERTIRÁ (BS)</div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal3(0)" [(ngModel)]="inputValuesReqProm[0]"></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal4(0)" [(ngModel)]="inputValuesReqProm1[0]"></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal3(1)" [(ngModel)]="inputValuesReqProm[1]"></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal4(1)" [(ngModel)]="inputValuesReqProm1[1]"></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal3(2)" [(ngModel)]="inputValuesReqProm[2]"></div>
         <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal4(2)" [(ngModel)]="inputValuesReqProm1[2]"></div>
         <div class="table_item"></div>
@@ -143,7 +143,7 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="8" class="expand-tile fondo__subtitulo2">
-      <div  class="table1">
+      <div  class="table1 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
         <div class="table_header">DETALLE</div>
@@ -151,17 +151,17 @@
         <div class="table_header">SE INVERTIRÁ (BS)</div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal5(0)" [(ngModel)]="inputValuesGastosOp[0]"></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal5(1)" [(ngModel)]="inputValuesGastosOp[1]"></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal5(2)" [(ngModel)]="inputValuesGastosOp[2]"></div>
         <div class="table_item"></div>
@@ -189,7 +189,7 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="7" class="expand-tile fondo__subtitulo2">
-      <div  class="table1">
+      <div  class="table1 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
         <div class="table_header">DETALLE</div>
@@ -197,17 +197,17 @@
         <div class="table_header">SE INVERTIRÁ (BS)</div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal6(0)" [(ngModel)]="inputValuesInfr[0]"></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal7(0)" [(ngModel)]="inputValuesInfr1[0]"></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal6(1)" [(ngModel)]="inputValuesInfr[1]"></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal7(1)" [(ngModel)]="inputValuesInfr1[1]"></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal6(2)" [(ngModel)]="inputValuesInfr[2]"></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal7(2)" [(ngModel)]="inputValuesInfr1[2]"></div>
         <div class="table_item"></div>
@@ -225,7 +225,7 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="7" class="expand-tile fondo__subtitulo2">
-      <div  class="table1">
+      <div  class="table1 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
         <div class="table_header">DETALLE</div>
@@ -233,17 +233,17 @@
         <div class="table_header">SE INVERTIRÁ (BS)</div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal8(0)" [(ngModel)]="inputValuesMaq[0]"></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal9(0)" [(ngModel)]="inputValuesMaq1[0]"></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal8(1)" [(ngModel)]="inputValuesMaq[1]"></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal9(1)" [(ngModel)]="inputValuesMaq1[1]"></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal8(2)" [(ngModel)]="inputValuesMaq[2]"></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal9(2)" [(ngModel)]="inputValuesMaq1[2]"></div>
         <div class="table_item"></div>
@@ -259,7 +259,7 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="8" class="expand-tile fondo__subtitulo2">
-      <div  class="table1">
+      <div  class="table1 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
         <div class="table_header">DETALLE</div>
@@ -267,17 +267,17 @@
         <div class="table_header">SE INVERTIRÁ (BS)</div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal10(0)" [(ngModel)]="inputValuesLegal[0]"></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal11(0)" [(ngModel)]="inputValuesLegal1[0]"></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal10(1)" [(ngModel)]="inputValuesLegal[1]"></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal11(1)" [(ngModel)]="inputValuesLegal1[1]"></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
         <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
+        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal10(2)" [(ngModel)]="inputValuesLegal[2]"></div>
         <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal11(2)" [(ngModel)]="inputValuesLegal1[2]"></div>
         <div class="table_item"></div>
