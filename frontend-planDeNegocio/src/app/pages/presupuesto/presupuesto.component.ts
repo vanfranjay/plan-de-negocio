@@ -7,9 +7,146 @@ import { PresupuestoService } from '../../service/presupuesto/presupuesto.servic
   styleUrls: ['./presupuesto.component.scss']
 })
 export class PresupuestoComponent {
+
+  //presupuesto del emprendedor
+  presupuestoCaOpDetalle1!: string;
+  presupuestoCaOpDetalle2!: string;
+  presupuestoCaOpDetalle3!: string;
+  presupuestoCaOpProcedencia1!: string;
+  presupuestoCaOpProcedencia2!: string;
+  presupuestoCaOpProcedencia3!: string;
+  //8.2 mano de obra del emprendedor
+  presupuestoCaOpEmprendedor!: string;
+  //8.3 Materia prima
+  presupuestoCaOpMatPrimaCant1!: string;
+  presupuestoCaOpMatPrimaCant2!: string;
+  presupuestoCaOpMatPrimaCant3!: string;
+  presupuestoCaOpMatPrimaUnidad1!: string;
+  presupuestoCaOpMatPrimaUnidad2!: string;
+  presupuestoCaOpMatPrimaUnidad3!: string;
+  presupuestoCaOpMatPrimaDetalle1!: string;
+  presupuestoCaOpMatPrimaDetalle2!: string;
+  presupuestoCaOpMatPrimaDetalle3!: string;
+  //8.4 requerimientos promocionales
+  presupuestoCaOpRequCant1!: string;
+  presupuestoCaOpRequCant2!: string;
+  presupuestoCaOpRequCant3!: string;
+  presupuestoCaOpRequUni1!: string;
+  presupuestoCaOpRequUni2!: string;
+  presupuestoCaOpRequUni3!: string;
+  presupuestoCaOpRequDet1!: string;
+  presupuestoCaOpRequDet2!: string;
+  presupuestoCaOpRequDet3!: string;
+  //8.5 gastos operativos
+  presupuestoCaOpGastosCant1!: string;
+  presupuestoCaOpGastosCant2!: string;
+  presupuestoCaOpGastosCant3!: string;
+  presupuestoCaOpGastosUn1!: string;
+  presupuestoCaOpGastosUn2!: string;
+  presupuestoCaOpGastosUn3!: string;
+  presupuestoCaOpGastosDet1!: string;
+  presupuestoCaOpGastosDet2!: string;
+  presupuestoCaOpGastosDet3!: string;
+  //8.6
+  //capital de inversión
+  presupuestoCapInInfrCan1!: string;
+  presupuestoCapInInfrCan2!: string;
+  presupuestoCapInInfrCan3!: string;
+  presupuestoCapInInfrUn1!: string;
+  presupuestoCapInInfrUn2!: string;
+  presupuestoCapInInfrUn3!: string;
+  presupuestoCapInInfrDet1!: string;
+  presupuestoCapInInfrDet2!: string;
+  presupuestoCapInInfrDet3!: string;
+  //8.7
+  presupuestoCapInMaqCan1!: string;
+  presupuestoCapInMaqCan2!: string;
+  presupuestoCapInMaqCan3!: string;
+  presupuestoCapInMaqUn1!: string;
+  presupuestoCapInMaqUn2!: string;
+  presupuestoCapInMaqUn3!: string;
+  presupuestoCapInMaqDet1!: string;
+  presupuestoCapInMaqDet2!: string;
+  presupuestoCapInMaqDet3!: string;
+  //8.8
+  presupuestoCapInReqCan1!: string;
+  presupuestoCapInReqCan2!: string;
+  presupuestoCapInReqCan3!: string;
+  presupuestoCapInReqUn1!: string;
+  presupuestoCapInReqUn2!: string;
+  presupuestoCapInReqUn3!: string;
+  presupuestoCapInReqDet1!: string;
+  presupuestoCapInReqDet2!: string;
+  presupuestoCapInReqDet3!: string;
+
+  presupuesto: string = 'setPresupuesto'
+
   constructor(
     private presupuestoService: PresupuestoService
-  ) { }
+  ) {
+    this.presupuestoCaOpDetalle1 = this.presupuestoService.getPresupuestoCaOpDetalle1();
+    this.presupuestoCaOpDetalle2 = this.presupuestoService.getPresupuestoCaOpDetalle2();
+    this.presupuestoCaOpDetalle3 = this.presupuestoService.getPresupuestoCaOpDetalle3();
+    this.presupuestoCaOpProcedencia1 = this.presupuestoService.getPresupuestoCaOpProcedencia1();
+    this.presupuestoCaOpProcedencia2 = this.presupuestoService.getPresupuestoCaOpProcedencia2();
+    this.presupuestoCaOpProcedencia3 = this.presupuestoService.getPresupuestoCaOpProcedencia3();
+    this.presupuestoCaOpEmprendedor = this.presupuestoService.getPresupuestoCaOpEmprendedor();
+    this.presupuestoCaOpMatPrimaCant1 = this.presupuestoService.getPresupuestoCaOpMatPrimaCant1();
+    this.presupuestoCaOpMatPrimaCant2 = this.presupuestoService.getPresupuestoCaOpMatPrimaCant2();
+    this.presupuestoCaOpMatPrimaCant3 = this.presupuestoService.getPresupuestoCaOpMatPrimaCant3();
+    this.presupuestoCaOpMatPrimaUnidad1 = this.presupuestoService.getPresupuestoCaOpMatPrimaUnidad1();
+    this.presupuestoCaOpMatPrimaUnidad2 = this.presupuestoService.getPresupuestoCaOpMatPrimaUnidad2();
+    this.presupuestoCaOpMatPrimaUnidad3 = this.presupuestoService.getPresupuestoCaOpMatPrimaUnidad3();
+    this.presupuestoCaOpMatPrimaDetalle1 = this.presupuestoService.getPresupuestoCaOpMatPrimaDetalle1();
+    this.presupuestoCaOpMatPrimaDetalle2 = this.presupuestoService.getPresupuestoCaOpMatPrimaDetalle2();
+    this.presupuestoCaOpMatPrimaDetalle3 = this.presupuestoService.getPresupuestoCaOpMatPrimaDetalle3();
+    this.presupuestoCaOpRequCant1 = this.presupuestoService.getPresupuestoCaOpRequCant1();
+    this.presupuestoCaOpRequCant2 = this.presupuestoService.getPresupuestoCaOpRequCant2();
+    this.presupuestoCaOpRequCant3 = this.presupuestoService.getPresupuestoCaOpRequCant3();
+    this.presupuestoCaOpRequUni1 = this.presupuestoService.getPresupuestoCaOpRequUni1();
+    this.presupuestoCaOpRequUni2 = this.presupuestoService.getPresupuestoCaOpRequUni2();
+    this.presupuestoCaOpRequUni3 = this.presupuestoService.getPresupuestoCaOpRequUni3();
+    this.presupuestoCaOpRequDet1 = this.presupuestoService.getPresupuestoCaOpRequDet1();
+    this.presupuestoCaOpRequDet2 = this.presupuestoService.getPresupuestoCaOpRequDet2();
+    this.presupuestoCaOpRequDet3 = this.presupuestoService.getPresupuestoCaOpRequDet3();
+    this.presupuestoCaOpGastosCant1 = this.presupuestoService.getPresupuestoCaOpGastosCant1();
+    this.presupuestoCaOpGastosCant2 = this.presupuestoService.getPresupuestoCaOpGastosCant2();
+    this.presupuestoCaOpGastosCant3 = this.presupuestoService.getPresupuestoCaOpGastosCant3();
+    this.presupuestoCaOpGastosUn1 = this.presupuestoService.getPresupuestoCaOpGastosUn1();
+    this.presupuestoCaOpGastosUn2 = this.presupuestoService.getPresupuestoCaOpGastosUn2();
+    this.presupuestoCaOpGastosUn3 = this.presupuestoService.getPresupuestoCaOpGastosUn3();
+    this.presupuestoCaOpGastosDet1 = this.presupuestoService.getPresupuestoCaOpGastosDet1();
+    this.presupuestoCaOpGastosDet2 = this.presupuestoService.getPresupuestoCaOpGastosDet2();
+    this.presupuestoCaOpGastosDet3 = this.presupuestoService.getPresupuestoCaOpGastosDet3();
+    //capital de inversión
+    this.presupuestoCapInInfrCan1 = this.presupuestoService.getPresupuestoCapInInfrCan1();
+    this.presupuestoCapInInfrCan2 = this.presupuestoService.getPresupuestoCapInInfrCan2();
+    this.presupuestoCapInInfrCan3 = this.presupuestoService.getPresupuestoCapInInfrCan3();
+    this.presupuestoCapInInfrUn1 = this.presupuestoService.getPresupuestoCapInInfrUn1();
+    this.presupuestoCapInInfrUn2 = this.presupuestoService.getPresupuestoCapInInfrUn2();
+    this.presupuestoCapInInfrUn3 = this.presupuestoService.getPresupuestoCapInInfrUn3();
+    this.presupuestoCapInInfrDet1 = this.presupuestoService.getPresupuestoCapInInfrDet1();
+    this.presupuestoCapInInfrDet2 = this.presupuestoService.getPresupuestoCapInInfrDet2();
+    this.presupuestoCapInInfrDet3 = this.presupuestoService.getPresupuestoCapInInfrDet3();
+    this.presupuestoCapInMaqCan1 = this.presupuestoService.getPresupuestoCapInMaqCan1();
+    this.presupuestoCapInMaqCan2 = this.presupuestoService.getPresupuestoCapInMaqCan2();
+    this.presupuestoCapInMaqCan3 = this.presupuestoService.getPresupuestoCapInMaqCan3();
+    this.presupuestoCapInMaqUn1 = this.presupuestoService.getPresupuestoCapInMaqUn1();
+    this.presupuestoCapInMaqUn2 = this.presupuestoService.getPresupuestoCapInMaqUn2();
+    this.presupuestoCapInMaqUn3 = this.presupuestoService.getPresupuestoCapInMaqUn3();
+    this.presupuestoCapInMaqDet1 = this.presupuestoService.getPresupuestoCapInMaqDet1();
+    this.presupuestoCapInMaqDet2 = this.presupuestoService.getPresupuestoCapInMaqDet2();
+    this.presupuestoCapInMaqDet3 = this.presupuestoService.getPresupuestoCapInMaqDet3();
+    this.presupuestoCapInReqCan1 = this.presupuestoService.getPresupuestoCapInReqCan1();
+    this.presupuestoCapInReqCan2 = this.presupuestoService.getPresupuestoCapInReqCan2();
+    this.presupuestoCapInReqCan3 = this.presupuestoService.getPresupuestoCapInReqCan3();
+    this.presupuestoCapInReqUn1 = this.presupuestoService.getPresupuestoCapInReqUn1();
+    this.presupuestoCapInReqUn2 = this.presupuestoService.getPresupuestoCapInReqUn2();
+    this.presupuestoCapInReqUn3 = this.presupuestoService.getPresupuestoCapInReqUn3();
+    this.presupuestoCapInReqDet1 = this.presupuestoService.getPresupuestoCapInReqDet1();
+    this.presupuestoCapInReqDet2 = this.presupuestoService.getPresupuestoCapInReqDet2();
+    this.presupuestoCapInReqDet3 = this.presupuestoService.getPresupuestoCapInReqDet3();
+  }
 
   totalCapitalOpApPro: number = 0;
   totalCapitalOpInvertira: number = 0;
@@ -32,19 +169,19 @@ export class PresupuestoComponent {
 
     this.presupuestoService.setTotalCapitalOpInvertira(this.totalCapitalOpInvertira);
   }
-  calcularCapitalInversionApPro(){
+  calcularCapitalInversionApPro() {
     this.totalCapitalInversionApPo =
       (this.presupuestoService.getTotalInfr() ?? 0) +
       (this.presupuestoService.getTotalMaq() ?? 0) +
       (this.presupuestoService.getTotalLegal() ?? 0);
-      this.presupuestoService.setTotalCapitalInversionApPo(this.totalCapitalInversionApPo);
+    this.presupuestoService.setTotalCapitalInversionApPo(this.totalCapitalInversionApPo);
   }
-  calcularCapitalInversionSeInvertira(){
+  calcularCapitalInversionSeInvertira() {
     this.totalCapitalInversionSeInvertira =
       (this.presupuestoService.getTotalInfr1() ?? 0) +
       (this.presupuestoService.getTotalMaq1() ?? 0) +
       (this.presupuestoService.getTotalLegal1() ?? 0);
-      this.presupuestoService.setTotalCapitalInversionSeInvertira(this.totalCapitalInversionSeInvertira);
+    this.presupuestoService.setTotalCapitalInversionSeInvertira(this.totalCapitalInversionSeInvertira);
   }
 
   //<input type="number" class="no-margin right-align" (change)="calculateTotal()" [(ngModel)]="inputValues[2]"/>
@@ -139,6 +276,12 @@ export class PresupuestoComponent {
     this.totalCapitalInversionApPo = this.presupuestoService.getTotalCapitalInversionApPo();
     this.totalCapitalInversionSeInvertira = this.presupuestoService.getTotalCapitalInversionSeInvertira();
   }
+
+  asignarValor(value: string, valor: any) {
+    const valueM: string = this.presupuesto + value;      //setHome${NombreDeudor}
+    (this.presupuestoService as any)[valueM](valor);
+  }
+
   // 8.2 Mano de obra <input type="number" (change)="agregarTotal()" [(ngModel)]="manoObraEmprendedor">
   manoObraEmprendedor!: number;
   valorManoObra!: number;
@@ -388,18 +531,18 @@ export class PresupuestoComponent {
     this.totalLegal1 = this.inputValuesLegal1
       .map(value => parseInt(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
-      this.presupuestoService.setTotalLegal1(this.totalLegal1);
-      switch (index) {
-        case 0:
-          this.presupuestoService.setInputValuesLegal10(this.input2);
-          break;
-        case 1:
-          this.presupuestoService.setInputValuesLegal11(this.input2);
-          break;
-        case 2:
-          this.presupuestoService.setInputValuesLegal12(this.input2);
-          break;
-      }
-      this.calcularCapitalInversionSeInvertira();
+    this.presupuestoService.setTotalLegal1(this.totalLegal1);
+    switch (index) {
+      case 0:
+        this.presupuestoService.setInputValuesLegal10(this.input2);
+        break;
+      case 1:
+        this.presupuestoService.setInputValuesLegal11(this.input2);
+        break;
+      case 2:
+        this.presupuestoService.setInputValuesLegal12(this.input2);
+        break;
+    }
+    this.calcularCapitalInversionSeInvertira();
   }
 }

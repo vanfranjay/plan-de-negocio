@@ -1,7 +1,9 @@
 <div class="contenedor">
   <mat-grid-list [cols]="1" rowHeight="40px">
     <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
-      <div class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal">
+      <div
+        class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal"
+      >
         <h2 class="texto-bold">8. PRESUPUESTO DEL EMPRENDIMIENTO</h2>
       </div>
     </mat-grid-tile>
@@ -12,57 +14,132 @@
         </p>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="7" class="expand-tile fondo__subtitulo2">
-      <div  class="table text__mobil">
-        <div class="table_header"> DETALLE</div>
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="7"
+      class="expand-tile fondo__subtitulo2"
+    >
+      <div class="table text__mobil">
+        <div class="table_header">DETALLE</div>
         <div class="table_header"></div>
-        <div class="table_header"> PROCEDENCIA</div>
+        <div class="table_header">PROCEDENCIA</div>
         <div class="table_header">MONTO APORTE PROPIO</div>
-        <div class="table_item">EFECTIVO/ORIGEN:  </div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal(0)" [(ngModel)]="inputValuesDetalle[0]"></div>
+        <div class="table_item">EFECTIVO/ORIGEN:</div>
+        <div class="table_item">
+          <textarea
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="asignarValor('CaOpDetalle1', presupuestoCaOpDetalle1)"
+            [(ngModel)]="presupuestoCaOpDetalle1"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpProcedencia1', presupuestoCaOpProcedencia1)"
+            [(ngModel)]="presupuestoCaOpProcedencia1"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal(0)"
+            [(ngModel)]="inputValuesDetalle[0]"
+          />
+        </div>
         <div class="table_item">CAJA DE AHORRO/ENTIDAD FINACIERA</div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal(1)" [(ngModel)]="inputValuesDetalle[1]"></div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpDetalle2', presupuestoCaOpDetalle2)"
+            [(ngModel)]="presupuestoCaOpDetalle2"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpProcedencia2', presupuestoCaOpProcedencia2)"
+            [(ngModel)]="presupuestoCaOpProcedencia2"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal(1)"
+            [(ngModel)]="inputValuesDetalle[1]"
+          />
+        </div>
         <div class="table_item">OTROS</div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""> </div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal(2)" [(ngModel)]="inputValuesDetalle[2]"></div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpDetalle3', presupuestoCaOpDetalle3)"
+            [(ngModel)]="presupuestoCaOpDetalle3"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpProcedencia3', presupuestoCaOpProcedencia3)"
+            [(ngModel)]="presupuestoCaOpProcedencia3"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal(2)"
+            [(ngModel)]="inputValuesDetalle[2]"
+          />
+        </div>
         <div class="table_item"></div>
         <div class="table_item"></div>
         <div class="table_item">SUB TOTAL</div>
-        <div class="table_item">{{total}}</div>
+        <div class="table_item">{{ total }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
-      <div class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal">
+      <div
+        class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal"
+      >
         <h2 class="texto-bold">CAPITAL OPERATIVO</h2>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <div class="content fondo__subtitulo2 grid__centerVertical">
-        <p class="text__mobil">
-          8.2 Mano de Obra del Emprendedor
-        </p>
+        <p class="text__mobil">8.2 Mano de Obra del Emprendedor</p>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="4" class="expand-tile fondo__subtitulo2">
-      <div  class="table0 text__mobil">
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="4"
+      class="expand-tile fondo__subtitulo2"
+    >
+      <div class="table0 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
         <div class="table_header">DETALLE</div>
         <div class="table_header">APORTE PROPIO (BS)</div>
         <div class="table_item">1</div>
         <div class="table_item">global</div>
-        <div class="table_item">MANO DE OBRA DEL EMPRENDEDOR HASTA LA INSTALACION DEL NEGOCIO</div>
-        <div class="table_item"><input type="number" class="input" placeholder=""  (change)="agregarTotal()" [(ngModel)]="manoObraEmprendedor"></div>
+        <div class="table_item">
+          MANO DE OBRA DEL EMPRENDEDOR HASTA LA INSTALACION DEL NEGOCIO
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="agregarTotal()"
+            [(ngModel)]="manoObraEmprendedor"
+          />
+        </div>
 
         <div class="table_item"></div>
         <div class="table_item"></div>
         <div class="table_item">SUB TOTAL</div>
-        <div class="table_item">{{valorManoObra}}</div>
+        <div class="table_item">{{ valorManoObra }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -72,112 +149,382 @@
         </p>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="7" class="expand-tile fondo__subtitulo2">
-      <div  class="table1 text__mobil">
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="7"
+      class="expand-tile fondo__subtitulo2"
+    >
+      <div class="table1 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
         <div class="table_header">DETALLE</div>
         <div class="table_header">APORTE PROPIO (BS)</div>
         <div class="table_header">SE INVERTIRÁ (BS)</div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal1(0)" [(ngModel)]="inputValuesMateriaPrima[0]"></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal2(0)" [(ngModel)]="inputValuesMateriaPrima1[0]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal1(1)" [(ngModel)]="inputValuesMateriaPrima[1]"></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal2(1)" [(ngModel)]="inputValuesMateriaPrima1[1]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal1(2)" [(ngModel)]="inputValuesMateriaPrima[2]"></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal2(2)" [(ngModel)]="inputValuesMateriaPrima1[2]"></div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpMatPrimaCant1', presupuestoCaOpMatPrimaCant1)"
+            [(ngModel)]="presupuestoCaOpMatPrimaCant1"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpMatPrimaUnidad1', presupuestoCaOpMatPrimaUnidad1)"
+            [(ngModel)]="presupuestoCaOpMatPrimaUnidad1"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpMatPrimaDetalle1', presupuestoCaOpMatPrimaDetalle1)"
+            [(ngModel)]="presupuestoCaOpMatPrimaDetalle1"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal1(0)"
+            [(ngModel)]="inputValuesMateriaPrima[0]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal2(0)"
+            [(ngModel)]="inputValuesMateriaPrima1[0]"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpMatPrimaCant2', presupuestoCaOpMatPrimaCant2)"
+            [(ngModel)]="presupuestoCaOpMatPrimaCant2"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpMatPrimaUnidad2', presupuestoCaOpMatPrimaUnidad2)"
+            [(ngModel)]="presupuestoCaOpMatPrimaUnidad2"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpMatPrimaDetalle2', presupuestoCaOpMatPrimaDetalle2)"
+            [(ngModel)]="presupuestoCaOpMatPrimaDetalle2"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal1(1)"
+            [(ngModel)]="inputValuesMateriaPrima[1]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal2(1)"
+            [(ngModel)]="inputValuesMateriaPrima1[1]"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpMatPrimaCant3', presupuestoCaOpMatPrimaCant3)"
+            [(ngModel)]="presupuestoCaOpMatPrimaCant3"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpMatPrimaUnidad3', presupuestoCaOpMatPrimaUnidad3)"
+            [(ngModel)]="presupuestoCaOpMatPrimaUnidad3"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpMatPrimaDetalle3', presupuestoCaOpMatPrimaDetalle3)"
+            [(ngModel)]="presupuestoCaOpMatPrimaDetalle3"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal1(2)"
+            [(ngModel)]="inputValuesMateriaPrima[2]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal2(2)"
+            [(ngModel)]="inputValuesMateriaPrima1[2]"
+          />
+        </div>
         <div class="table_item"></div>
         <div class="table_item"></div>
         <div class="table_item">SUB TOTAL</div>
-        <div class="table_item">{{totalMateriaPrima}}</div>
-        <div class="table_item">{{totalMateriaPrima1}}</div>
+        <div class="table_item">{{ totalMateriaPrima }}</div>
+        <div class="table_item">{{ totalMateriaPrima1 }}</div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">8.4 Requerimientos promocionales</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="7"
+      class="expand-tile fondo__subtitulo2"
+    >
+      <div class="table1 text__mobil">
+        <div class="table_header">CANTIDAD</div>
+        <div class="table_header">UNIDAD</div>
+        <div class="table_header">DETALLE</div>
+        <div class="table_header">APORTE PROPIO (BS)</div>
+        <div class="table_header">SE INVERTIRÁ (BS)</div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpRequCant1', presupuestoCaOpRequCant1)"
+            [(ngModel)]="presupuestoCaOpRequCant1"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpRequUni1', presupuestoCaOpRequUni1)"
+            [(ngModel)]="presupuestoCaOpRequUni1"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpRequDet1', presupuestoCaOpRequDet1)"
+            [(ngModel)]="presupuestoCaOpRequDet1"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal3(0)"
+            [(ngModel)]="inputValuesReqProm[0]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal4(0)"
+            [(ngModel)]="inputValuesReqProm1[0]"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpRequCant2', presupuestoCaOpRequCant2)"
+            [(ngModel)]="presupuestoCaOpRequCant2"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpRequUni2', presupuestoCaOpRequUni2)"
+            [(ngModel)]="presupuestoCaOpRequUni2"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpRequDet2', presupuestoCaOpRequDet2)"
+            [(ngModel)]="presupuestoCaOpRequDet2"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal3(1)"
+            [(ngModel)]="inputValuesReqProm[1]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal4(1)"
+            [(ngModel)]="inputValuesReqProm1[1]"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpRequCant3', presupuestoCaOpRequCant3)"
+            [(ngModel)]="presupuestoCaOpRequCant3"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpRequUni3', presupuestoCaOpRequUni3)"
+            [(ngModel)]="presupuestoCaOpRequUni3"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpRequDet3', presupuestoCaOpRequDet3)"
+            [(ngModel)]="presupuestoCaOpRequDet3"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal3(2)"
+            [(ngModel)]="inputValuesReqProm[2]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal4(2)"
+            [(ngModel)]="inputValuesReqProm1[2]"
+          />
+        </div>
+        <div class="table_item"></div>
+        <div class="table_item"></div>
+        <div class="table_item">SUB TOTAL</div>
+        <div class="table_item">{{ totalReqProm }}</div>
+        <div class="table_item">{{ totalReqProm1 }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <div class="content fondo__subtitulo2 grid__centerVertical">
         <p class="text__mobil">
-          8.4 Requerimientos promocionales
+          8.5 Gastos operativos (Mano de obra, Alquileres, Servicios Básicos,
+          etc)
         </p>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="7" class="expand-tile fondo__subtitulo2">
-      <div  class="table1 text__mobil">
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="8"
+      class="expand-tile fondo__subtitulo2"
+    >
+      <div class="table1 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
         <div class="table_header">DETALLE</div>
         <div class="table_header">APORTE PROPIO (BS)</div>
         <div class="table_header">SE INVERTIRÁ (BS)</div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal3(0)" [(ngModel)]="inputValuesReqProm[0]"></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal4(0)" [(ngModel)]="inputValuesReqProm1[0]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal3(1)" [(ngModel)]="inputValuesReqProm[1]"></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal4(1)" [(ngModel)]="inputValuesReqProm1[1]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal3(2)" [(ngModel)]="inputValuesReqProm[2]"></div>
-        <div class="table_item"><input type="number" class="input" placeholder="" (change)="calculateTotal4(2)" [(ngModel)]="inputValuesReqProm1[2]"></div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpGastosCant1', presupuestoCaOpGastosCant1)"
+            [(ngModel)]="presupuestoCaOpGastosCant1"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpGastosUn1', presupuestoCaOpGastosUn1)"
+            [(ngModel)]="presupuestoCaOpGastosUn1"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpGastosDet1', presupuestoCaOpGastosDet1)"
+            [(ngModel)]="presupuestoCaOpGastosDet1"
+          ></textarea>
+        </div>
+        <div class="table_item"></div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal5(0)"
+            [(ngModel)]="inputValuesGastosOp[0]"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpGastosCant2', presupuestoCaOpGastosCant2)"
+            [(ngModel)]="presupuestoCaOpGastosCant2"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpGastosUn2', presupuestoCaOpGastosUn2)"
+            [(ngModel)]="presupuestoCaOpGastosUn2"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpGastosDet2', presupuestoCaOpGastosDet2)"
+            [(ngModel)]="presupuestoCaOpGastosDet2"
+          ></textarea>
+        </div>
+        <div class="table_item"></div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal5(1)"
+            [(ngModel)]="inputValuesGastosOp[1]"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpGastosCant3', presupuestoCaOpGastosCant3)"
+            [(ngModel)]="presupuestoCaOpGastosCant3"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpGastosUn3', presupuestoCaOpGastosUn3)"
+            [(ngModel)]="presupuestoCaOpGastosUn3"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CaOpGastosDet3', presupuestoCaOpGastosDet3)"
+            [(ngModel)]="presupuestoCaOpGastosDet3"
+          ></textarea>
+        </div>
+        <div class="table_item"></div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal5(2)"
+            [(ngModel)]="inputValuesGastosOp[2]"
+          />
+        </div>
         <div class="table_item"></div>
         <div class="table_item"></div>
         <div class="table_item">SUB TOTAL</div>
-        <div class="table_item">{{totalReqProm}}</div>
-        <div class="table_item">{{totalReqProm1}}</div>
-      </div>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <div class="content fondo__subtitulo2 grid__centerVertical">
-        <p class="text__mobil">  8.5 Gastos operativos (Mano de obra, Alquileres, Servicios Básicos, etc) </p>
-      </div>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="8" class="expand-tile fondo__subtitulo2">
-      <div  class="table1 text__mobil">
-        <div class="table_header">CANTIDAD</div>
-        <div class="table_header">UNIDAD</div>
-        <div class="table_header">DETALLE</div>
-        <div class="table_header">APORTE PROPIO (BS)</div>
-        <div class="table_header">SE INVERTIRÁ (BS)</div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
         <div class="table_item"></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal5(0)" [(ngModel)]="inputValuesGastosOp[0]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal5(1)" [(ngModel)]="inputValuesGastosOp[1]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal5(2)" [(ngModel)]="inputValuesGastosOp[2]"></div>
-        <div class="table_item"></div>
-        <div class="table_item"></div>
-        <div class="table_item">SUB TOTAL</div>
-        <div class="table_item"></div>
-        <div class="table_item">{{totalGastosOp}}</div>
+        <div class="table_item">{{ totalGastosOp }}</div>
         <div class="table_item"></div>
         <div class="table_item"></div>
         <div class="table_item">TOTAL CAPITAL DE OPERACIONES</div>
-        <div class="table_item">{{totalCapitalOpApPro}}</div>
-        <div class="table_item">{{totalCapitalOpInvertira}}</div>
+        <div class="table_item">{{ totalCapitalOpApPro }}</div>
+        <div class="table_item">{{ totalCapitalOpInvertira }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
-      <div class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal">
+      <div
+        class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal"
+      >
         <h2 class="texto-bold">CAPITAL DE INVERSIÓN</h2>
       </div>
     </mat-grid-tile>
@@ -188,110 +535,398 @@
         </p>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="7" class="expand-tile fondo__subtitulo2">
-      <div  class="table1 text__mobil">
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="7"
+      class="expand-tile fondo__subtitulo2"
+    >
+      <div class="table1 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
         <div class="table_header">DETALLE</div>
         <div class="table_header">APORTE PROPIO (BS)</div>
         <div class="table_header">SE INVERTIRÁ (BS)</div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal6(0)" [(ngModel)]="inputValuesInfr[0]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal7(0)" [(ngModel)]="inputValuesInfr1[0]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal6(1)" [(ngModel)]="inputValuesInfr[1]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal7(1)" [(ngModel)]="inputValuesInfr1[1]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal6(2)" [(ngModel)]="inputValuesInfr[2]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal7(2)" [(ngModel)]="inputValuesInfr1[2]"></div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInInfrCan1', presupuestoCapInInfrCan1)"
+            [(ngModel)]="presupuestoCapInInfrCan1"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInInfrUn1', presupuestoCapInInfrUn1)"
+            [(ngModel)]="presupuestoCapInInfrUn1"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInInfrDet1', presupuestoCapInInfrDet1)"
+            [(ngModel)]="presupuestoCapInInfrDet1"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal6(0)"
+            [(ngModel)]="inputValuesInfr[0]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal7(0)"
+            [(ngModel)]="inputValuesInfr1[0]"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInInfrCan2', presupuestoCapInInfrCan2)"
+            [(ngModel)]="presupuestoCapInInfrCan2"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInInfrUn2', presupuestoCapInInfrUn2)"
+            [(ngModel)]="presupuestoCapInInfrUn2"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInInfrDet2', presupuestoCapInInfrDet2)"
+            [(ngModel)]="presupuestoCapInInfrDet2"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal6(1)"
+            [(ngModel)]="inputValuesInfr[1]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal7(1)"
+            [(ngModel)]="inputValuesInfr1[1]"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInInfrCan3', presupuestoCapInInfrCan3)"
+            [(ngModel)]="presupuestoCapInInfrCan3"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInInfrUn3', presupuestoCapInInfrUn3)"
+            [(ngModel)]="presupuestoCapInInfrUn3"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInInfrDet3', presupuestoCapInInfrDet3)"
+            [(ngModel)]="presupuestoCapInInfrDet3"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal6(2)"
+            [(ngModel)]="inputValuesInfr[2]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal7(2)"
+            [(ngModel)]="inputValuesInfr1[2]"
+          />
+        </div>
         <div class="table_item"></div>
         <div class="table_item"></div>
         <div class="table_item">SUB TOTAL</div>
-        <div class="table_item">{{totalInfr}}</div>
-        <div class="table_item">{{totalInfr1}}</div>
+        <div class="table_item">{{ totalInfr }}</div>
+        <div class="table_item">{{ totalInfr1 }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <div class="content fondo__subtitulo2 grid__centerVertical">
-        <p class="text__mobil">
-          8.7 Maquinaria, Equipos, Vehículos y/o Ganado
-        </p>
+        <p class="text__mobil">8.7 Maquinaria, Equipos, Vehículos y/o Ganado</p>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="7" class="expand-tile fondo__subtitulo2">
-      <div  class="table1 text__mobil">
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="7"
+      class="expand-tile fondo__subtitulo2"
+    >
+      <div class="table1 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
         <div class="table_header">DETALLE</div>
         <div class="table_header">APORTE PROPIO (BS)</div>
         <div class="table_header">SE INVERTIRÁ (BS)</div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal8(0)" [(ngModel)]="inputValuesMaq[0]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal9(0)" [(ngModel)]="inputValuesMaq1[0]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal8(1)" [(ngModel)]="inputValuesMaq[1]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal9(1)" [(ngModel)]="inputValuesMaq1[1]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal8(2)" [(ngModel)]="inputValuesMaq[2]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal9(2)" [(ngModel)]="inputValuesMaq1[2]"></div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInMaqCan1', presupuestoCapInMaqCan1)"
+            [(ngModel)]="presupuestoCapInMaqCan1"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInMaqUn1', presupuestoCapInMaqUn1)"
+            [(ngModel)]="presupuestoCapInMaqUn1"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInMaqDet1', presupuestoCapInMaqDet1)"
+            [(ngModel)]="presupuestoCapInMaqDet1"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal8(0)"
+            [(ngModel)]="inputValuesMaq[0]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal9(0)"
+            [(ngModel)]="inputValuesMaq1[0]"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInMaqCan2', presupuestoCapInMaqCan2)"
+            [(ngModel)]="presupuestoCapInMaqCan2"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInMaqUn2', presupuestoCapInMaqUn2)"
+            [(ngModel)]="presupuestoCapInMaqUn2"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInMaqDet2', presupuestoCapInMaqDet2)"
+            [(ngModel)]="presupuestoCapInMaqDet2"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal8(1)"
+            [(ngModel)]="inputValuesMaq[1]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal9(1)"
+            [(ngModel)]="inputValuesMaq1[1]"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInMaqCan3', presupuestoCapInMaqCan3)"
+            [(ngModel)]="presupuestoCapInMaqCan3"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInMaqUn3', presupuestoCapInMaqUn3)"
+            [(ngModel)]="presupuestoCapInMaqUn3"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInMaqDet3', presupuestoCapInMaqDet3)"
+            [(ngModel)]="presupuestoCapInMaqDet3"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal8(2)"
+            [(ngModel)]="inputValuesMaq[2]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal9(2)"
+            [(ngModel)]="inputValuesMaq1[2]"
+          />
+        </div>
         <div class="table_item"></div>
         <div class="table_item"></div>
         <div class="table_item">SUB TOTAL</div>
-        <div class="table_item">{{totalMaq}}</div>
-        <div class="table_item">{{totalMaq1}}</div>
+        <div class="table_item">{{ totalMaq }}</div>
+        <div class="table_item">{{ totalMaq1 }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <div class="content fondo__subtitulo2 grid__centerVertical">
-        <p class="text__mobil">  8.8 Requerimientos legales</p>
+        <p class="text__mobil">8.8 Requerimientos legales</p>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="8" class="expand-tile fondo__subtitulo2">
-      <div  class="table1 text__mobil">
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="8"
+      class="expand-tile fondo__subtitulo2"
+    >
+      <div class="table1 text__mobil">
         <div class="table_header">CANTIDAD</div>
         <div class="table_header">UNIDAD</div>
         <div class="table_header">DETALLE</div>
         <div class="table_header">APORTE PROPIO (BS)</div>
         <div class="table_header">SE INVERTIRÁ (BS)</div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal10(0)" [(ngModel)]="inputValuesLegal[0]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal11(0)" [(ngModel)]="inputValuesLegal1[0]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal10(1)" [(ngModel)]="inputValuesLegal[1]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal11(1)" [(ngModel)]="inputValuesLegal1[1]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><input type="text" class="input" placeholder=""></div>
-        <div class="table_item"><textarea type="text" class="input" placeholder=""></textarea></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal10(2)" [(ngModel)]="inputValuesLegal[2]"></div>
-        <div class="table_item"><input type="text" class="input" placeholder="" (change)="calculateTotal11(2)" [(ngModel)]="inputValuesLegal1[2]"></div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInReqCan1', presupuestoCapInReqCan1)"
+            [(ngModel)]="presupuestoCapInReqCan1"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInReqUn1', presupuestoCapInReqUn1)"
+            [(ngModel)]="presupuestoCapInReqUn1"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInReqDet1', presupuestoCapInReqDet1)"
+            [(ngModel)]="presupuestoCapInReqDet1"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal10(0)"
+            [(ngModel)]="inputValuesLegal[0]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal11(0)"
+            [(ngModel)]="inputValuesLegal1[0]"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInReqCan2', presupuestoCapInReqCan2)"
+            [(ngModel)]="presupuestoCapInReqCan2"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInReqUn2', presupuestoCapInReqUn2)"
+            [(ngModel)]="presupuestoCapInReqUn2"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInReqDet2', presupuestoCapInReqDet2)"
+            [(ngModel)]="presupuestoCapInReqDet2"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal10(1)"
+            [(ngModel)]="inputValuesLegal[1]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal11(1)"
+            [(ngModel)]="inputValuesLegal1[1]"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInReqCan3', presupuestoCapInReqCan3)"
+            [(ngModel)]="presupuestoCapInReqCan3"
+          />
+        </div>
+        <div class="table_item">
+          <input type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInReqUn3', presupuestoCapInReqUn3)"
+            [(ngModel)]="presupuestoCapInReqUn3"
+          />
+        </div>
+        <div class="table_item">
+          <textarea type="text" class="input" placeholder=""
+          (change)="asignarValor('CapInReqDet3', presupuestoCapInReqDet3)"
+            [(ngModel)]="presupuestoCapInReqDet3"
+          ></textarea>
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal10(2)"
+            [(ngModel)]="inputValuesLegal[2]"
+          />
+        </div>
+        <div class="table_item">
+          <input
+            type="text"
+            class="input"
+            placeholder=""
+            (change)="calculateTotal11(2)"
+            [(ngModel)]="inputValuesLegal1[2]"
+          />
+        </div>
         <div class="table_item"></div>
         <div class="table_item"></div>
         <div class="table_item">SUB TOTAL</div>
-        <div class="table_item">{{totalLegal}}</div>
-        <div class="table_item">{{totalLegal1}}</div>
+        <div class="table_item">{{ totalLegal }}</div>
+        <div class="table_item">{{ totalLegal1 }}</div>
         <div class="table_item"></div>
         <div class="table_item"></div>
         <div class="table_item">TOTAL CAPITAL DE INVERSION</div>
-        <div class="table_item">{{totalCapitalInversionApPo}}</div>
-        <div class="table_item">{{totalCapitalInversionSeInvertira}}</div>
+        <div class="table_item">{{ totalCapitalInversionApPo }}</div>
+        <div class="table_item">{{ totalCapitalInversionSeInvertira }}</div>
       </div>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
-
