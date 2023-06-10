@@ -51,6 +51,7 @@ export class FlujoComponent {
   costoOperativo!: number;
   utilidadOperativa!: number;
   utilidadBruta: number= 0;
+  colSize3!: number;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -99,9 +100,11 @@ export class FlujoComponent {
         if (result.matches) {
           this.colSize = this.calculateColSize(result.breakpoints);
           this.colSize2 = this.calculateColSize2(result.breakpoints);
+          this.colSize3 = this.calculateColSize3(result.breakpoints);
         } else {
           this.colSize = 2; // Pantallas más grandes, 4 columnas
           this.colSize2 = 1;
+          this.colSize3 = 3;
         }
       });
 
@@ -169,6 +172,17 @@ export class FlujoComponent {
       return 1; // Pantallas medianas, 3 columnas
     } else {
       return 1; // Por defecto, 4 columnas
+    }
+  }
+  calculateColSize3(breakpoints: { [key: string]: boolean }): number {
+    if (breakpoints[Breakpoints.XSmall]) {
+      return 1; // Pantallas extra pequeñas, 1 columna
+    } else if (breakpoints[Breakpoints.Small]) {
+      return 2; // Pantallas pequeñas, 2 columnas
+    } else if (breakpoints[Breakpoints.Medium]) {
+      return 3; // Pantallas medianas, 3 columnas
+    } else {
+      return 3; // Por defecto, 4 columnas
     }
   }
   // datos credito monto
