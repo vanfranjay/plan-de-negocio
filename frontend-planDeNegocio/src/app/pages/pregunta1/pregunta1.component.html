@@ -1,164 +1,287 @@
 <div class="contenedor">
-    <mat-grid-list [cols]="1" rowHeight="40px">
-      <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
-        <div class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal">
-          <h2 class="texto-bold">3. ANALISIS DE MERCADO</h2>
+  <mat-grid-list [cols]="1" rowHeight="40px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
+      <div
+        class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal"
+      >
+        <h2 class="texto-bold">3. ANALISIS DE MERCADO</h2>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">
+          ¿Quiénes serán los clientes que compraran su Producto o Servicio?
+          (niños, jóvenes, adultos, edad, sexo, ocupación, estilo de vida,
+          pasatiempo)
+        </p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
+      <textarea
+        class="custom-textarea"
+        placeholder=""
+        (change)="asignarValor('Clientes', pregunta1Clientes)"
+        [(ngModel)]="pregunta1Clientes"
+      ></textarea>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">
+          ¿Por qué cree que estos potenciales clientes compraran su Producto o
+          Servicio? (fortalezas de los productos y servicios y la distintividad)
+        </p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
+      <textarea
+        class="custom-textarea"
+        placeholder=""
+        (change)="
+          asignarValor('ClientesPotenciales', pregunta1ClientesPotenciales)
+        "
+        [(ngModel)]="pregunta1ClientesPotenciales"
+      ></textarea>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">
+          ¿Actualmente tiene relaciones con clientes potenciales? ¿Quiénes son?
+          ( Nuevos clientes, clientes potenciales, clientes frecuentes)
+        </p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
+      <textarea
+        class="custom-textarea"
+        placeholder=""
+        (change)="
+          asignarValor(
+            'ClientesPotencialesAct',
+            pregunta1ClientesPotencialesAct
+          )
+        "
+        [(ngModel)]="pregunta1ClientesPotencialesAct"
+      ></textarea>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">
+          3.2. Tamaño del mercado que se quiere capturar y oportunidad de
+          crecimiento, estimar el volumen o cantidad que se comercializara
+        </p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="1"
+      [rowspan]="6"
+      class="expand-tile fondo__subtitulo2"
+    >
+      <div class="table">
+        <div class="table_header">N°</div>
+        <div class="table_header">
+          ESTIMACIÓN DE TAMAÑO DE MERCADO Y OPORTUNIDAD DE CRECIMIENTO
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            ¿Quiénes serán los clientes que compraran su Producto o Servicio? (niños, jóvenes, adultos, edad, sexo, ocupación, estilo de vida, pasatiempo)
-          </p>
+        <div class="table_header1">
+          <th colspan="2" class="">
+            <tr class="">
+              CANTIDADES
+            </tr>
+            <tr class="">
+              Minimo Maximo
+            </tr>
+          </th>
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            ¿Por qué cree que estos potenciales clientes compraran su Producto o Servicio? (fortalezas de los productos y servicios y la distintividad)
-          </p>
+        <div class="table_header">PROMEDIO</div>
+        <div class="table_item">1</div>
+        <div class="table_item">
+          ¿Cuántos clientes se atenderán inicialmente?
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            ¿Actualmente tiene relaciones con clientes potenciales? ¿Quiénes son?  ( Nuevos clientes, clientes potenciales, clientes frecuentes)
-          </p>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input no-margin border-right text-center"
+            placeholder=""
+            (change)="calculateTotal(0)"
+            [(ngModel)]="inputValues[0]"
+          />
+          <input
+            type="number"
+            class="input no-margin text-center"
+            placeholder=""
+            (change)="calculateTotal(1)"
+            [(ngModel)]="inputValues[1]"
+          />
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            3.2. Tamaño del mercado que se quiere capturar y oportunidad de crecimiento, estimar el volumen o cantidad que se comercializara
-          </p>
+        <div class="table_item">
+          <output>{{ pregunta1Promedio1 }}</output>
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="6" class="expand-tile fondo__subtitulo2">
-        <div  class="table">
-          <div class="table_header"> N°</div>
-          <div class="table_header"> ESTIMACIÓN DE TAMAÑO DE MERCADO Y OPORTUNIDAD DE CRECIMIENTO  </div>
-          <div class="table_header1">
-            <th colspan="2" class="">
-              <tr class="">CANTIDADES</tr>
-            <tr class=""> Minimo Maximo</tr>
-            </th>
-
-          </div>
-          <div class="table_header"> PROMEDIO</div>
-          <div class="table_item">1</div>
-          <div class="table_item">¿Cuántos clientes se atenderán inicialmente?</div>
-          <div class="table_item"><input type="text" class="input no-margin border-right text-center" placeholder="" (change)="calculateTotal()" [(ngModel)]="inputValues[0]"> <input type="text" class="input no-margin text-center" placeholder=""  (change)="calculateTotal()" [(ngModel)]="inputValues[1]"> </div>
-          <div class="table_item"><output>{{total}}</output></div>
-          <div class="table_item">2</div>
-          <div class="table_item">¿Cuanta cantidad de sus Productos o Servicios venderá inicialmente?</div>
-          <div class="table_item"><input type="text" class="input no-margin border-right text-center" placeholder="" (change)="calculateTotal1()" [(ngModel)]="inputValues1[0]"> <input type="text" class="input no-margin text-center" placeholder="" (change)="calculateTotal1()" [(ngModel)]="inputValues1[1]"> </div>
-          <div class="table_item"><output>{{total1}}</output></div>
-          <div class="table_item">3</div>
-          <div class="table_item">Si el Producto o Servicio tiene aceptación, ¿Cual es la capacidad máxima de producción o atención? (En función a RRHH, maquinaria y/o equipo, espacio, materia prima, otro)</div>
-          <div class="table_item"><input type="text" class="input no-margin border-right text-center" placeholder="" (change)="calculateTotal2()" [(ngModel)]="inputValues2[0]"> <input type="text" class="input no-margin text-center" placeholder="" (change)="calculateTotal2()" [(ngModel)]="inputValues2[1]"> </div>
-          <div class="table_item"><output>{{total2}}</output></div>
-
+        <div class="table_item">2</div>
+        <div class="table_item">
+          ¿Cuanta cantidad de sus Productos o Servicios venderá inicialmente?
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
-        <div class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal">
-          <h2 class="texto-bold">4. ANALISIS DE LA COMPETENCIA</h2>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input no-margin border-right text-center"
+            placeholder=""
+            (change)="calculateTotal1(0)"
+            [(ngModel)]="inputValues1[0]"
+          />
+          <input
+            type="number"
+            class="input no-margin text-center"
+            placeholder=""
+            (change)="calculateTotal1(1)"
+            [(ngModel)]="inputValues1[1]"
+          />
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            4.1. Identificación de la competencia directa e indirecta
-          </p>
+        <div class="table_item">
+          <output>{{ pregunta1Promedio2 }}</output>
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            ¿Existen competidores cercanos al lugar donde se aperturará la nueva actividad? ¿quienes son? ¿donde se ubican?
-          </p>
+        <div class="table_item">3</div>
+        <div class="table_item">
+          Si el Producto o Servicio tiene aceptación, ¿Cual es la capacidad
+          máxima de producción o atención? (En función a RRHH, maquinaria y/o
+          equipo, espacio, materia prima, otro)
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            ¿Qué acciones realizará para hacerle frente a la competencia? ¿Qué acciones tomará para que los nuevos competidores no le afecten?
-          </p>
+        <div class="table_item">
+          <input
+            type="number"
+            class="input no-margin border-right text-center"
+            placeholder=""
+            (change)="calculateTotal2(0)"
+            [(ngModel)]="inputValues2[0]"
+          />
+          <input
+            type="number"
+            class="input no-margin text-center"
+            placeholder=""
+            (change)="calculateTotal2(1)"
+            [(ngModel)]="inputValues2[1]"
+          />
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
-        <div class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal">
-          <h2 class="texto-bold">5. ESTRATEGIA DE MERCADO (4P`s: Producto , Precio, Plaza y Promoción)</h2>
+        <div class="table_item">
+          <output>{{ pregunta1Promedio3 }}</output>
         </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            5.1. Producto o Servicio
-          </p>
-        </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            ¿Qué características del Producto o Servicio son beneficiosas para el cliente? ¿Qué es lo que mas valorará el cliente del Producto o Servicio? (facilidad, funcionalidad, saludable, otros)
-          </p>
-        </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            ¿Cuál de los productos o Servicios generará mayor ingreso, cuál será el producto o servicio estrella?
-          </p>
-        </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            5.2. Precios
-          </p>
-        </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            ¿Cuál será el precio del Producto o Servicio y cuál la forma de pago?
-          </p>
-        </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <div class="content fondo__subtitulo2 grid__centerVertical">
-          <p class="text__mobil">
-            ¿Cómo se ha determinado el precio del producto o Servicio? ¿Cuál será el costo para el consumidor?  (precio de mercado, cálculo de costos, otros)
-          </p>
-        </div>
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
+      <div
+        class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal"
+      >
+        <h2 class="texto-bold">4. ANALISIS DE LA COMPETENCIA</h2>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">
+          4.1. Identificación de la competencia directa e indirecta
+        </p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">
+          ¿Existen competidores cercanos al lugar donde se aperturará la nueva
+          actividad? ¿quienes son? ¿donde se ubican?
+        </p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
+      <textarea class="custom-textarea" placeholder=""
+      (change)="asignarValor('Competidores', pregunta1Competidores)"
+        [(ngModel)]="pregunta1Competidores"
+      ></textarea>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">
+          ¿Qué acciones realizará para hacerle frente a la competencia? ¿Qué
+          acciones tomará para que los nuevos competidores no le afecten?
+        </p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
+      <textarea class="custom-textarea" placeholder=""
+      (change)="asignarValor('AccionCompetencia', pregunta1AccionCompetencia)"
+        [(ngModel)]="pregunta1AccionCompetencia"
+      ></textarea>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
+      <div
+        class="content fondo__subtitlo grid__centerVertical grid__centerhorizontal"
+      >
+        <h2 class="texto-bold">
+          5. ESTRATEGIA DE MERCADO (4P`s: Producto , Precio, Plaza y Promoción)
+        </h2>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">5.1. Producto o Servicio</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">
+          ¿Qué características del Producto o Servicio son beneficiosas para el
+          cliente? ¿Qué es lo que mas valorará el cliente del Producto o
+          Servicio? (facilidad, funcionalidad, saludable, otros)
+        </p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
+      <textarea class="custom-textarea" placeholder=""
+      (change)="asignarValor('ProdcServicio', pregunta1ProdcServicio)"
+        [(ngModel)]="pregunta1ProdcServicio"
+      ></textarea>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">
+          ¿Cuál de los productos o Servicios generará mayor ingreso, cuál será
+          el producto o servicio estrella?
+        </p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
+      <textarea class="custom-textarea" placeholder=""
+      (change)="asignarValor('ProdcMayoringreso', pregunta1ProdcMayoringreso)"
+        [(ngModel)]="pregunta1ProdcMayoringreso"
+      ></textarea>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">5.2. Precios</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">
+          ¿Cuál será el precio del Producto o Servicio y cuál la forma de pago?
+        </p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
+      <textarea class="custom-textarea" placeholder=""
+      (change)="asignarValor('PrecioServicio', pregunta1PrecioServicio)"
+        [(ngModel)]="pregunta1PrecioServicio"
+      ></textarea>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <div class="content fondo__subtitulo2 grid__centerVertical">
+        <p class="text__mobil">
+          ¿Cómo se ha determinado el precio del producto o Servicio? ¿Cuál será
+          el costo para el consumidor? (precio de mercado, cálculo de costos,
+          otros)
+        </p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
+      <textarea class="custom-textarea" placeholder=""
+      (change)="asignarValor('DetPrecioServProd', pregunta1DetPrecioServProd)"
+        [(ngModel)]="pregunta1DetPrecioServProd"
+      ></textarea>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

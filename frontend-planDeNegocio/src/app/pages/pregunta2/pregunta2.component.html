@@ -14,7 +14,12 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-      <textarea class="custom-textarea" placeholder=""></textarea>
+      <textarea
+        class="custom-textarea"
+        placeholder=""
+        (change)="asignarValor('ProdServDir', pregunta2ProdServDir)"
+        [(ngModel)]="pregunta2ProdServDir"
+      ></textarea>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <div class="content fondo__subtitulo2 grid__centerVertical">
@@ -26,7 +31,12 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-      <textarea class="custom-textarea" placeholder=""></textarea>
+      <textarea
+        class="custom-textarea"
+        placeholder=""
+        (change)="asignarValor('ProdServInd', pregunta2ProdServInd)"
+        [(ngModel)]="pregunta2ProdServInd"
+      ></textarea>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <div class="content fondo__subtitulo2 grid__centerVertical">
@@ -37,7 +47,12 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-      <textarea class="custom-textarea" placeholder=""></textarea>
+      <textarea
+        class="custom-textarea"
+        placeholder=""
+        (change)="asignarValor('VentaProdServ', pregunta2VentaProdServ)"
+        [(ngModel)]="pregunta2VentaProdServ"
+      ></textarea>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
       <div class="content fondo__subtitlo grid__centerVertical">
@@ -53,7 +68,12 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-      <textarea class="custom-textarea" placeholder=""></textarea>
+      <textarea
+        class="custom-textarea"
+        placeholder=""
+        (change)="asignarValor('PromProdServ', pregunta2PromProdServ)"
+        [(ngModel)]="pregunta2PromProdServ"
+      ></textarea>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
       <div class="content fondo__subtitulo2 grid__centerVertical">
@@ -63,7 +83,12 @@
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-      <textarea class="custom-textarea" placeholder=""></textarea>
+      <textarea
+        class="custom-textarea"
+        placeholder=""
+        (change)="asignarValor('Promcli', pregunta2Promcli)"
+        [(ngModel)]="pregunta2Promcli"
+      ></textarea>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
       <div
@@ -100,13 +125,23 @@
               Forma de Pago
             </td>
           </tr>
-          <tr *ngFor="let row of rows">
+          <tr>
             <td>
               <!-- Text area por un inputa probar -->
-              <textarea rows="1" class="full-width no-margin textarea" placeholder=""></textarea>
+              <textarea
+                rows="1"
+                class="full-width no-margin textarea"
+                placeholder=""
+                (change)="asignarValor('ProvLugar1', pregunta2ProvLugar1)"
+                [(ngModel)]="pregunta2ProvLugar1"
+              ></textarea>
             </td>
             <td>
-              <select class="full-width">
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvCapNeg1', pregunta2ProvCapNeg1)"
+                [(ngModel)]="pregunta2ProvCapNeg1"
+              >
                 <option></option>
                 <option>Alta</option>
                 <option>Media</option>
@@ -114,7 +149,11 @@
               </select>
             </td>
             <td>
-              <select class="full-width">
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvFrec1', pregunta2ProvFrec1)"
+                [(ngModel)]="pregunta2ProvFrec1"
+              >
                 <option></option>
                 <option>Alta</option>
                 <option>Media</option>
@@ -122,7 +161,491 @@
               </select>
             </td>
             <td>
-              <select class="full-width">
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvPag1', pregunta2ProvPag1)"
+                [(ngModel)]="pregunta2ProvPag1"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Text area por un inputa probar -->
+              <textarea
+                rows="1"
+                class="full-width no-margin textarea"
+                placeholder=""
+                (change)="asignarValor('ProvLugar2', pregunta2ProvLugar2)"
+                [(ngModel)]="pregunta2ProvLugar2"
+              ></textarea>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvCapNeg2', pregunta2ProvCapNeg2)"
+                [(ngModel)]="pregunta2ProvCapNeg2"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvFrec2', pregunta2ProvFrec2)"
+                [(ngModel)]="pregunta2ProvFrec2"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvPag2', pregunta2ProvPag2)"
+                [(ngModel)]="pregunta2ProvPag2"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Text area por un inputa probar -->
+              <textarea
+                rows="1"
+                class="full-width no-margin textarea"
+                placeholder=""
+                (change)="asignarValor('ProvLugar3', pregunta2ProvLugar3)"
+                [(ngModel)]="pregunta2ProvLugar3"
+              ></textarea>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvCapNeg3', pregunta2ProvCapNeg3)"
+                [(ngModel)]="pregunta2ProvCapNeg3"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvFrec3', pregunta2ProvFrec3)"
+                [(ngModel)]="pregunta2ProvFrec3"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvPag3', pregunta2ProvPag3)"
+                [(ngModel)]="pregunta2ProvPag3"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Text area por un inputa probar -->
+              <textarea
+                rows="1"
+                class="full-width no-margin textarea"
+                placeholder=""
+                (change)="asignarValor('ProvLugar4', pregunta2ProvLugar4)"
+                [(ngModel)]="pregunta2ProvLugar4"
+              ></textarea>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvCapNeg4', pregunta2ProvCapNeg4)"
+                [(ngModel)]="pregunta2ProvCapNeg4"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvFrec4', pregunta2ProvFrec4)"
+                [(ngModel)]="pregunta2ProvFrec4"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvPag4', pregunta2ProvPag4)"
+                [(ngModel)]="pregunta2ProvPag4"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Text area por un inputa probar -->
+              <textarea
+                rows="1"
+                class="full-width no-margin textarea"
+                placeholder=""
+                (change)="asignarValor('ProvLugar5', pregunta2ProvLugar5)"
+                [(ngModel)]="pregunta2ProvLugar5"
+              ></textarea>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvCapNeg5', pregunta2ProvCapNeg5)"
+                [(ngModel)]="pregunta2ProvCapNeg5"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvFrec5', pregunta2ProvFrec5)"
+                [(ngModel)]="pregunta2ProvFrec5"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvPag5', pregunta2ProvPag5)"
+                [(ngModel)]="pregunta2ProvPag5"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Text area por un inputa probar -->
+              <textarea
+                rows="1"
+                class="full-width no-margin textarea"
+                placeholder=""
+                (change)="asignarValor('ProvLugar6', pregunta2ProvLugar6)"
+                [(ngModel)]="pregunta2ProvLugar6"
+              ></textarea>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvCapNeg6', pregunta2ProvCapNeg6)"
+                [(ngModel)]="pregunta2ProvCapNeg6"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvFrec6', pregunta2ProvFrec6)"
+                [(ngModel)]="pregunta2ProvFrec6"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvPag6', pregunta2ProvPag6)"
+                [(ngModel)]="pregunta2ProvPag6"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Text area por un inputa probar -->
+              <textarea
+                rows="1"
+                class="full-width no-margin textarea"
+                placeholder=""
+                (change)="asignarValor('ProvLugar7', pregunta2ProvLugar7)"
+                [(ngModel)]="pregunta2ProvLugar7"
+              ></textarea>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvCapNeg7', pregunta2ProvCapNeg7)"
+                [(ngModel)]="pregunta2ProvCapNeg7"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvFrec7', pregunta2ProvFrec7)"
+                [(ngModel)]="pregunta2ProvFrec7"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvPag7', pregunta2ProvPag7)"
+                [(ngModel)]="pregunta2ProvPag7"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Text area por un inputa probar -->
+              <textarea
+                rows="1"
+                class="full-width no-margin textarea"
+                placeholder=""
+                (change)="asignarValor('ProvLugar8', pregunta2ProvLugar8)"
+                [(ngModel)]="pregunta2ProvLugar8"
+              ></textarea>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvCapNeg8', pregunta2ProvCapNeg8)"
+                [(ngModel)]="pregunta2ProvCapNeg8"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvFrec8', pregunta2ProvFrec8)"
+                [(ngModel)]="pregunta2ProvFrec8"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvPag8', pregunta2ProvPag8)"
+                [(ngModel)]="pregunta2ProvPag8"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Text area por un inputa probar -->
+              <textarea
+                rows="1"
+                class="full-width no-margin textarea"
+                placeholder=""
+                (change)="asignarValor('ProvLugar9', pregunta2ProvLugar9)"
+                [(ngModel)]="pregunta2ProvLugar9"
+              ></textarea>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvCapNeg9', pregunta2ProvCapNeg9)"
+                [(ngModel)]="pregunta2ProvCapNeg9"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvFrec9', pregunta2ProvFrec9)"
+                [(ngModel)]="pregunta2ProvFrec9"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvPag9', pregunta2ProvPag9)"
+                [(ngModel)]="pregunta2ProvPag9"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Text area por un inputa probar -->
+              <textarea
+                rows="1"
+                class="full-width no-margin textarea"
+                placeholder=""
+                (change)="asignarValor('ProvLugar10', pregunta2ProvLugar10)"
+                [(ngModel)]="pregunta2ProvLugar10"
+              ></textarea>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvCapNeg10', pregunta2ProvCapNeg10)"
+                [(ngModel)]="pregunta2ProvCapNeg10"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvFrec10', pregunta2ProvFrec10)"
+                [(ngModel)]="pregunta2ProvFrec10"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvPag10', pregunta2ProvPag10)"
+                [(ngModel)]="pregunta2ProvPag10"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- Text area por un inputa probar -->
+              <textarea
+                rows="1"
+                class="full-width no-margin textarea"
+                placeholder=""
+                (change)="asignarValor('ProvLugar11', pregunta2ProvLugar11)"
+                [(ngModel)]="pregunta2ProvLugar11"
+              ></textarea>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvCapNeg11', pregunta2ProvCapNeg11)"
+                [(ngModel)]="pregunta2ProvCapNeg11"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvFrec11', pregunta2ProvFrec11)"
+                [(ngModel)]="pregunta2ProvFrec11"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('ProvPag11', pregunta2ProvPag11)"
+                [(ngModel)]="pregunta2ProvPag11"
+              >
                 <option></option>
                 <option>Alta</option>
                 <option>Media</option>
@@ -151,12 +674,22 @@
               Forma de Pago
             </td>
           </tr>
-          <tr *ngFor="let row of rows">
+          <tr>
             <td>
-              <input class="full-width no-margin" type="text" placeholder="" />
+              <input
+                class="full-width no-margin"
+                type="text"
+                placeholder=""
+                (change)="asignarValor('CompCli1', pregunta2CompCli1)"
+                [(ngModel)]="pregunta2CompCli1"
+              />
             </td>
             <td>
-              <select class="full-width">
+              <select
+                class="full-width"
+                (change)="asignarValor('CompCapNeg1', pregunta2CompCapNeg1)"
+                [(ngModel)]="pregunta2CompCapNeg1"
+              >
                 <option></option>
                 <option>Alta</option>
                 <option>Media</option>
@@ -164,7 +697,11 @@
               </select>
             </td>
             <td>
-              <select class="full-width">
+              <select
+                class="full-width"
+                (change)="asignarValor('CompFrec1', pregunta2CompFrec1)"
+                [(ngModel)]="pregunta2CompFrec1"
+              >
                 <option></option>
                 <option>Alta</option>
                 <option>Media</option>
@@ -172,7 +709,481 @@
               </select>
             </td>
             <td>
-              <select class="full-width">
+              <select
+                class="full-width"
+                (change)="asignarValor('CompPago1', pregunta2CompPago1)"
+                [(ngModel)]="pregunta2CompPago1"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="full-width no-margin"
+                type="text"
+                placeholder=""
+                (change)="asignarValor('CompCli2', pregunta2CompCli2)"
+                [(ngModel)]="pregunta2CompCli2"
+              />
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompCapNeg2', pregunta2CompCapNeg2)"
+                [(ngModel)]="pregunta2CompCapNeg2"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompFrec2', pregunta2CompFrec2)"
+                [(ngModel)]="pregunta2CompFrec2"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompPago2', pregunta2CompPago2)"
+                [(ngModel)]="pregunta2CompPago2"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="full-width no-margin"
+                type="text"
+                placeholder=""
+                (change)="asignarValor('CompCli3', pregunta2CompCli3)"
+                [(ngModel)]="pregunta2CompCli3"
+              />
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompCapNeg3', pregunta2CompCapNeg3)"
+                [(ngModel)]="pregunta2CompCapNeg3"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompFrec3', pregunta2CompFrec3)"
+                [(ngModel)]="pregunta2CompFrec3"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompPago3', pregunta2CompPago3)"
+                [(ngModel)]="pregunta2CompPago3"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="full-width no-margin"
+                type="text"
+                placeholder=""
+                (change)="asignarValor('CompCli4', pregunta2CompCli4)"
+                [(ngModel)]="pregunta2CompCli4"
+              />
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompCapNeg4', pregunta2CompCapNeg4)"
+                [(ngModel)]="pregunta2CompCapNeg4"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompFrec4', pregunta2CompFrec4)"
+                [(ngModel)]="pregunta2CompFrec4"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompPago4', pregunta2CompPago4)"
+                [(ngModel)]="pregunta2CompPago4"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="full-width no-margin"
+                type="text"
+                placeholder=""
+                (change)="asignarValor('CompCli5', pregunta2CompCli5)"
+                [(ngModel)]="pregunta2CompCli5"
+              />
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompCapNeg5', pregunta2CompCapNeg5)"
+                [(ngModel)]="pregunta2CompCapNeg5"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompFrec5', pregunta2CompFrec5)"
+                [(ngModel)]="pregunta2CompFrec5"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompPago5', pregunta2CompPago5)"
+                [(ngModel)]="pregunta2CompPago5"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="full-width no-margin"
+                type="text"
+                placeholder=""
+                (change)="asignarValor('CompCli6', pregunta2CompCli6)"
+                [(ngModel)]="pregunta2CompCli6"
+              />
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompCapNeg6', pregunta2CompCapNeg6)"
+                [(ngModel)]="pregunta2CompCapNeg6"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompFrec6', pregunta2CompFrec6)"
+                [(ngModel)]="pregunta2CompFrec6"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompPago6', pregunta2CompPago6)"
+                [(ngModel)]="pregunta2CompPago6"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="full-width no-margin"
+                type="text"
+                placeholder=""
+                (change)="asignarValor('CompCli7', pregunta2CompCli7)"
+                [(ngModel)]="pregunta2CompCli7"
+              />
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompCapNeg7', pregunta2CompCapNeg7)"
+                [(ngModel)]="pregunta2CompCapNeg7"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompFrec7', pregunta2CompFrec7)"
+                [(ngModel)]="pregunta2CompFrec7"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompPago7', pregunta2CompPago7)"
+                [(ngModel)]="pregunta2CompPago7"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="full-width no-margin"
+                type="text"
+                placeholder=""
+                (change)="asignarValor('CompCli8', pregunta2CompCli8)"
+                [(ngModel)]="pregunta2CompCli8"
+              />
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompCapNeg8', pregunta2CompCapNeg8)"
+                [(ngModel)]="pregunta2CompCapNeg8"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompFrec8', pregunta2CompFrec8)"
+                [(ngModel)]="pregunta2CompFrec8"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompPago8', pregunta2CompPago8)"
+                [(ngModel)]="pregunta2CompPago8"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="full-width no-margin"
+                type="text"
+                placeholder=""
+                (change)="asignarValor('CompCli9', pregunta2CompCli9)"
+                [(ngModel)]="pregunta2CompCli9"
+              />
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompCapNeg9', pregunta2CompCapNeg9)"
+                [(ngModel)]="pregunta2CompCapNeg9"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompFrec9', pregunta2CompFrec9)"
+                [(ngModel)]="pregunta2CompFrec9"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompPago9', pregunta2CompPago9)"
+                [(ngModel)]="pregunta2CompPago9"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="full-width no-margin"
+                type="text"
+                placeholder=""
+                (change)="asignarValor('CompCli10', pregunta2CompCli10)"
+                [(ngModel)]="pregunta2CompCli10"
+              />
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompCapNeg10', pregunta2CompCapNeg10)"
+                [(ngModel)]="pregunta2CompCapNeg10"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompFrec10', pregunta2CompFrec10)"
+                [(ngModel)]="pregunta2CompFrec10"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompPago10', pregunta2CompPago10)"
+                [(ngModel)]="pregunta2CompPago10"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                class="full-width no-margin"
+                type="text"
+                placeholder=""
+                (change)="asignarValor('CompCli11', pregunta2CompCli11)"
+                [(ngModel)]="pregunta2CompCli11"
+              />
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompCapNeg11', pregunta2CompCapNeg11)"
+                [(ngModel)]="pregunta2CompCapNeg11"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompFrec11', pregunta2CompFrec11)"
+                [(ngModel)]="pregunta2CompFrec11"
+              >
+                <option></option>
+                <option>Alta</option>
+                <option>Media</option>
+                <option>Baja</option>
+              </select>
+            </td>
+            <td>
+              <select
+                class="full-width"
+                (change)="asignarValor('CompPago11', pregunta2CompPago11)"
+                [(ngModel)]="pregunta2CompPago11"
+              >
                 <option></option>
                 <option>Alta</option>
                 <option>Media</option>
@@ -226,19 +1237,29 @@
   <div class="content">
     <table class="full-width border-table">
       <tr>
-        <th colspan="2" class="border-table text-left">INFRAESTRUCTURA Y ADMINISTRACIÓN</th>
+        <th colspan="2" class="border-table text-left">
+          INFRAESTRUCTURA Y ADMINISTRACIÓN
+        </th>
         <th colspan="1" class="border-table">FORTALEZAS</th>
         <th colspan="1" class="border-table">DEBILIDADES</th>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          1.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">1.-</td>
         <td style="width: 55%" class="centered no-margin">
-          <p class="text-left">Infraestructura necesaria de acuerdo a lo se que necesita para el negocio</p>
+          <p class="text-left">
+            Infraestructura necesaria de acuerdo a lo se que necesita para el
+            negocio
+          </p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue1')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue1');
+              asignarValor('Fort1', pregunta2Fort1)
+            "
+            [(ngModel)]="pregunta2Fort1"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -246,7 +1267,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue2')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue2');
+              asignarValor('Deb1', pregunta2Deb1)
+            "
+            [(ngModel)]="pregunta2Deb1"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -255,14 +1283,21 @@
         </td>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          2.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">2.-</td>
         <td style="width: 55%" class="centered no-margin">
-          <p class="text-left">Disponibilidad de Maquinaria y Equipos para la actividad</p>
+          <p class="text-left">
+            Disponibilidad de Maquinaria y Equipos para la actividad
+          </p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue3')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue3');
+              asignarValor('Fort2', pregunta2Fort2)
+            "
+            [(ngModel)]="pregunta2Fort2"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -270,7 +1305,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue4')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue4');
+              asignarValor('Deb2', pregunta2Deb2)
+            "
+            [(ngModel)]="pregunta2Deb2"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -282,14 +1324,21 @@
         <th colspan="4" class="border-table text-left">RECURSOS HUMANOS</th>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          1.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">1.-</td>
         <td style="width: 55%" class="centered no-margin">
-          <p class="text-left">Personal operativo con conocimientos suficientes para la actividad</p>
+          <p class="text-left">
+            Personal operativo con conocimientos suficientes para la actividad
+          </p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue5')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue5');
+              asignarValor('Fort3', pregunta2Fort3)
+            "
+            [(ngModel)]="pregunta2Fort3"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -297,7 +1346,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue6')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue6');
+              asignarValor('Deb3', pregunta2Deb3)
+            "
+            [(ngModel)]="pregunta2Deb3"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -306,14 +1362,19 @@
         </td>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          2.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">2.-</td>
         <td style="width: 55%" class="centered no-margin">
           <p class="text-left">Personal administrativo eficiente</p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue7')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue7');
+              asignarValor('Fort4', pregunta2Fort4)
+            "
+            [(ngModel)]="pregunta2Fort4"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -321,7 +1382,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue8')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue8');
+              asignarValor('Deb4', pregunta2Deb4)
+            "
+            [(ngModel)]="pregunta2Deb4"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -333,14 +1401,21 @@
         <th colspan="4" class="border-table text-left">ABASTECIMIENTO</th>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          1.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">1.-</td>
         <td style="width: 55%" class="centered no-margin">
-          <p class="text-left">Disponibilidad de Insumos y Materia Prima en el mercado</p>
+          <p class="text-left">
+            Disponibilidad de Insumos y Materia Prima en el mercado
+          </p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue9')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue9');
+              asignarValor('Fort5', pregunta2Fort5)
+            "
+            [(ngModel)]="pregunta2Fort5"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -348,7 +1423,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue10')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue10');
+              asignarValor('Deb5', pregunta2Deb5)
+            "
+            [(ngModel)]="pregunta2Deb5"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -357,14 +1439,21 @@
         </td>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          2.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">2.-</td>
         <td style="width: 55%" class="centered no-margin">
-          <p class="text-left">Existen distintas formas de pago a los proveedores</p>
+          <p class="text-left">
+            Existen distintas formas de pago a los proveedores
+          </p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue11')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue11');
+              asignarValor('Fort6', pregunta2Fort6)
+            "
+            [(ngModel)]="pregunta2Fort6"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -372,7 +1461,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue12')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue12');
+              asignarValor('Deb6', pregunta2Deb6)
+            "
+            [(ngModel)]="pregunta2Deb6"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -384,14 +1480,22 @@
         <th colspan="4" class="border-table text-left">OPERACIONES</th>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          1.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">1.-</td>
         <td style="width: 55%" class="centered no-margin">
-          <p class="text-left">Conocimiento de la metodología adecuada para la atención y/o producción</p>
+          <p class="text-left">
+            Conocimiento de la metodología adecuada para la atención y/o
+            producción
+          </p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue13')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue13');
+              asignarValor('Fort7', pregunta2Fort7)
+            "
+            [(ngModel)]="pregunta2Fort7"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -399,7 +1503,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue14')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue14');
+              asignarValor('Deb7', pregunta2Deb7)
+            "
+            [(ngModel)]="pregunta2Deb7"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -408,14 +1519,19 @@
         </td>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          2.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">2.-</td>
         <td style="width: 55%" class="centered no-margin">
           <p class="text-left">Calidad y garantía del Producto o Servicio</p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue15')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue15');
+              asignarValor('Fort8', pregunta2Fort8)
+            "
+            [(ngModel)]="pregunta2Fort8"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -423,31 +1539,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue16')">
-            <option></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td style="width: 5%" class="centered no-margin">
-          3.-
-        </td>
-        <td style="width: 55%" class="centered no-margin">
-          <p class="text-left">Conocimiento del Propietario sobre la atención y/o producción e inventarios</p>
-        </td>
-        <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue17')">
-            <option></option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
-        </td>
-        <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue18')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue16');
+              asignarValor('Deb8', pregunta2Deb8)
+            "
+            [(ngModel)]="pregunta2Deb8"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -456,14 +1555,22 @@
         </td>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          4.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">3.-</td>
         <td style="width: 55%" class="centered no-margin">
-          <p class="text-left">Conocimiento respecto al análisis permanente de costos/beneficios</p>
+          <p class="text-left">
+            Conocimiento del Propietario sobre la atención y/o producción e
+            inventarios
+          </p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue19')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue17');
+              asignarValor('Fort9', pregunta2Fort9)
+            "
+            [(ngModel)]="pregunta2Fort9"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -471,7 +1578,52 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue20')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue18');
+              asignarValor('Deb9', pregunta2Deb9)
+            "
+            [(ngModel)]="pregunta2Deb9"
+          >
+            <option></option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 5%" class="centered no-margin">4.-</td>
+        <td style="width: 55%" class="centered no-margin">
+          <p class="text-left">
+            Conocimiento respecto al análisis permanente de costos/beneficios
+          </p>
+        </td>
+        <td style="width: 20%" class="centered border-table">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue19');
+              asignarValor('Fort10', pregunta2Fort10)
+            "
+            [(ngModel)]="pregunta2Fort10"
+          >
+            <option></option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </td>
+        <td style="width: 20%" class="centered border-table">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue20');
+              asignarValor('Deb10', pregunta2Deb10)
+            "
+            [(ngModel)]="pregunta2Deb10"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -483,14 +1635,21 @@
         <th colspan="4" class="border-table text-left">MERCADEO Y VENTAS</th>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          1.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">1.-</td>
         <td style="width: 55%" class="centered no-margin">
-          <p class="text-left">Conocimiento del mercado y clientes a los que se les venderan</p>
+          <p class="text-left">
+            Conocimiento del mercado y clientes a los que se les venderan
+          </p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue21')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue21');
+              asignarValor('Fort11', pregunta2Fort11)
+            "
+            [(ngModel)]="pregunta2Fort11"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -498,7 +1657,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue22')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue22');
+              asignarValor('Deb11', pregunta2Deb11)
+            "
+            [(ngModel)]="pregunta2Deb11"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -507,14 +1673,19 @@
         </td>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          2.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">2.-</td>
         <td style="width: 55%" class="centered no-margin">
           <p class="text-left">Publicidad eficiente</p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue23')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue23');
+              asignarValor('Fort12', pregunta2Fort12)
+            "
+            [(ngModel)]="pregunta2Fort12"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -522,7 +1693,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue24')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue24');
+              asignarValor('Deb12', pregunta2Deb12)
+            "
+            [(ngModel)]="pregunta2Deb12"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -531,14 +1709,19 @@
         </td>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          3.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">3.-</td>
         <td style="width: 55%" class="centered no-margin">
           <p class="text-left">Precios Competitivos</p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue25')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue25');
+              asignarValor('Fort13', pregunta2Fort13)
+            "
+            [(ngModel)]="pregunta2Fort13"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -546,7 +1729,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue26')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue26');
+              asignarValor('Deb13', pregunta2Deb13)
+            "
+            [(ngModel)]="pregunta2Deb13"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -558,14 +1748,21 @@
         <th colspan="4" class="border-table text-left">SERVICIO AL CLIENTE</th>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          1.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">1.-</td>
         <td style="width: 55%" class="centered no-margin">
-          <p class="text-left">Distribución acorde a los requerimientos del cliente.</p>
+          <p class="text-left">
+            Distribución acorde a los requerimientos del cliente.
+          </p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue27')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue27');
+              asignarValor('Fort14', pregunta2Fort14)
+            "
+            [(ngModel)]="pregunta2Fort14"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -573,7 +1770,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue28')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue28');
+              asignarValor('Deb14', pregunta2Deb14)
+            "
+            [(ngModel)]="pregunta2Deb14"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -582,14 +1786,21 @@
         </td>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          2.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">2.-</td>
         <td style="width: 55%" class="centered no-margin">
-          <p class="text-left">Atención personalizada, Información total y oportuna al cliente</p>
+          <p class="text-left">
+            Atención personalizada, Información total y oportuna al cliente
+          </p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue29')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue29');
+              asignarValor('Fort15', pregunta2Fort15)
+            "
+            [(ngModel)]="pregunta2Fort15"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -597,7 +1808,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue30')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue30');
+              asignarValor('Deb15', pregunta2Deb15)
+            "
+            [(ngModel)]="pregunta2Deb15"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -606,14 +1824,19 @@
         </td>
       </tr>
       <tr>
-        <td style="width: 5%" class="centered no-margin">
-          3.-
-        </td>
+        <td style="width: 5%" class="centered no-margin">3.-</td>
         <td style="width: 55%" class="centered no-margin">
           <p class="text-left">Servicio Post Venta</p>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue31')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue31');
+              asignarValor('Fort16', pregunta2Fort16)
+            "
+            [(ngModel)]="pregunta2Fort16"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -621,7 +1844,14 @@
           </select>
         </td>
         <td style="width: 20%" class="centered border-table">
-          <select class="full-width" (change)="onSelectChange($event, 'selectValue32')">
+          <select
+            class="full-width"
+            (change)="
+              onSelectChange($event, 'selectValue32');
+              asignarValor('Deb16', pregunta2Deb16)
+            "
+            [(ngModel)]="pregunta2Deb16"
+          >
             <option></option>
             <option>1</option>
             <option>2</option>
@@ -632,10 +1862,22 @@
       <tr>
         <th colspan="2" class="border-table">PONDERACIÓN</th>
         <th colspan="1" class="border-table">
-          <output id="ponderadoFortalezaOutput"></output>
+          <output
+            id="ponderadoFortalezaOutput"
+            (change)="asignarValor('FortPond', pregunta2FortPond)"
+            [(ngModel)]="pregunta2FortPond"
+            >{{ pregunta2FortPond }}
+            </output
+          >
         </th>
         <th colspan="1" class="border-table">
-          <output id="ponderadoDebilidadOutput"></output>
+          <output
+            id="ponderadoDebilidadOutput"
+            (change)="asignarValor('DebPond', pregunta2DebPond)"
+            [(ngModel)]="pregunta2DebPond"
+          >
+            {{ pregunta2DebPond }}
+          </output>
         </th>
       </tr>
     </table>

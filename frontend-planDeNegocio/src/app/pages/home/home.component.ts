@@ -72,9 +72,13 @@ export class HomeComponent {
   homeCaractProd3!: string;
   homeCaractProd4!: string;
 
-  home: string = 'home';
   home1: string = 'setHome';
+  control: string = '';
 
+
+  //toggleCheckbox
+  siControl1!: String;
+  siControl2!: String;
   // disableSelect: boolean = true;
 
   // name: FormControl = new FormControl('', [Validators.required]);
@@ -175,6 +179,12 @@ export class HomeComponent {
     this.homeCaractProd3 = this.homesService.getHomeCaractProd3();
     this.homeCaractProd4 = this.homesService.getHomeCaractProd4();
 
+
+    this.noControl.setValue(this.homesService.getNoControl());
+    this.siControl.setValue(this.homesService.getSiControl());
+
+    this.tiempoInicioHabilitado = this.homesService.getSiControl();
+
   }
   asignarValor(value: string, valor: any) {
     const valueM: string = this.home1 + value;      //setHome${NombreDeudor}
@@ -190,8 +200,6 @@ export class HomeComponent {
           this.colSize = 4; // Pantallas más grandes, 4 columnas
         }
       });
-
-    this.homeNombreDeudor = this.homesService.getHomeNombreDeudor();
   }
   calculateColSize(breakpoints: { [key: string]: boolean }): number {
     if (breakpoints[Breakpoints.XSmall]) {
@@ -215,12 +223,16 @@ export class HomeComponent {
       if (!this.siControl.value) {
         this.resetearCampo();
       }
+      this.homesService.setSiControl(true);
+      this.homesService.setNoControl(false);
     } else if (checkbox === 'no') {
       this.siControl.setValue(false);
       this.tiempoInicioHabilitado = this.siControl.value ?? false;
       if (!this.siControl.value) {
         this.resetearCampo();
       }
+      this.homesService.setSiControl(false);
+      this.homesService.setNoControl(true);
     }
   }
   resetearCampo() {

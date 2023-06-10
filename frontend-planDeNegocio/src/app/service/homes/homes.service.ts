@@ -6,6 +6,20 @@ import { Injectable } from '@angular/core';
 export class HomesService {
 
   constructor() { }
+  private siControl!: boolean;
+  public getSiControl(): boolean {
+    return this.siControl;
+  }
+  public setSiControl(value: boolean) {
+    this.siControl = value;
+  }
+  private noControl!: boolean;
+  public getNoControl(): boolean {
+    return this.noControl;
+  }
+  public setNoControl(value: boolean) {
+    this.noControl = value;
+  }
   private home!: string;
   public getHome(): string {
     return this.home;
