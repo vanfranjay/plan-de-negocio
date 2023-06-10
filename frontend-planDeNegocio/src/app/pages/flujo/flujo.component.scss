@@ -102,3 +102,14 @@ output {
   overflow-x: scroll; /* Permite el desplazamiento horizontal */
   width: 100%; /* Ajusta el ancho del contenedor */
 }
+.text-start{
+  text-align: start;
+}
+.bg-white{
+  background-color: #fff;
+}
+@media (max-width: 598px) {
+  .contenedor{
+    padding-top: 57px;
+  }
+}
