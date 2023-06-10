@@ -1,14 +1,21 @@
 <div class="contenedor">
-  <mat-grid-list [cols]="colSize" rowHeight="40px">
-    <mat-grid-tile [colspan]="1" [rowspan]="20" class="custom-tile">
+  <mat-grid-list [cols]="1" rowHeight="40px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
       <div class="content">
         <div class="content-title">
           <h2 class="title">11. ANÁLISIS FINANCIERO</h2>
         </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list [cols]="colSize" rowHeight="40px">
+    <mat-grid-tile [colspan]="1" [rowspan]="17" class="custom-tile">
+      <div class="content">
+
         <table class="full-width table">
           <tr>
             <th colspan="1" rowspan="10" style="width: 50%" class="border">
-              <p>
+              <p style="text-align: left;">
                 11.1. Costos operativos ¿Cuáles serán los gastos que generará la
                 actividad mensualmente?
               </p>
@@ -317,7 +324,7 @@
         </table>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="20" class="custom-tile">
+    <mat-grid-tile [colspan]="1" [rowspan]="17" class="custom-tile">
       <div class="content">
         <table class="full-width table">
           <tr>
@@ -478,6 +485,8 @@
                   <td style="width: 15%">CUOTA APROX:</td>
                   <td style="width: 15%">(2970)</td>
                 </tr>
+                <br>
+                <br>
               </table>
             </th>
           </tr>
@@ -495,8 +504,8 @@
         <table style="width: 40%">
           <tr>
             <td style="width: 34%"></td>
-            <td style="width: 33%" class="fl">MES</td>
-            <td style="width: 33%" class="fl">AÑO</td>
+            <td style="width: 33%" class="fl text-center">MES</td>
+            <td style="width: 33%" class="fl text-center">AÑO</td>
           </tr>
           <tr>
             <td style="width: 40%" class="fl">Implementación estimada</td>
@@ -541,497 +550,307 @@
         </table>
         <br />
         <div class="conten">
-          <div class="conteni">
-            <table>
-              <tr>
-                <td style="width: 10%"></td>
-                <td style="width: 7%" class="fl">INICIAL</td>
-                <td style="width: 7%" class="fl">ENERO</td>
-                <td style="width: 7%" class="fl">FEBRERO</td>
-                <td style="width: 7%" class="fl">MARZO</td>
-                <td style="width: 7%" class="fl">ABRIL</td>
-                <td style="width: 7%" class="fl">MAYO</td>
-                <td style="width: 7%" class="fl">JUNIO</td>
-                <td style="width: 7%" class="fl">JULIO</td>
-                <td style="width: 7%" class="fl">AGOSTO</td>
-                <td style="width: 7%" class="fl">SEPTIEMBRE</td>
-                <td style="width: 7%" class="fl">OCTUBRE</td>
-                <td style="width: 7%" class="fl">NOVIEMBRE</td>
-                <td style="width: 7%" class="fl">DICIEMBRE</td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">Inversiones</td>
-                <td style="width: 7%" class="border">425.789</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">SALDO INICIAL</td>
-                <td style="width: 7%" class="border">425.789</td>
-                <td style="width: 7%" class="border">-</td>
-                <td style="width: 7%" class="border">(4.068)</td>
-                <td style="width: 7%" class="border">7992</td>
-                <td style="width: 7%" class="border">(11917)</td>
-                <td style="width: 7%" class="border">(15602)</td>
-                <td style="width: 7%" class="border">(19288)</td>
-                <td style="width: 7%" class="border">(23216)</td>
-                <td style="width: 7%" class="border">(27288)</td>
-                <td style="width: 7%" class="border">(31217)</td>
-                <td style="width: 7%" class="border">(35145)</td>
-                <td style="width: 7%" class="border">(39077)</td>
-                <td style="width: 7%" class="border">(43008)</td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">Ingresos</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">Costo de Produccion</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">Utilidad Bruta</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">Costos Fijos</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">
-                  UTILIDAD NETA Capacidad de pago
-                </td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">Cuota</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">FLUJO ACUMULADO</td>
-                <td style="width: 7%" class="border">-</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
-              </tr>
-            </table>
-          </div>
+        <div class="conteni">
+          <table >
+            <tr>
+              <td style="width: 10%" ></td>
+              <td style="width: 7%" class="fl">INICIAL</td>
+              <td style="width: 7%" class="fl">ENERO</td>
+              <td style="width: 7%" class="fl">FEBRERO</td>
+              <td style="width: 7%" class="fl">MARZO</td>
+              <td style="width: 7%" class="fl">ABRIL</td>
+              <td style="width: 7%" class="fl">MAYO</td>
+              <td style="width: 7%" class="fl">JUNIO</td>
+              <td style="width: 7%" class="fl">JULIO</td>
+              <td style="width: 7%" class="fl">AGOSTO</td>
+              <td style="width: 7%" class="fl">SEPTIEMBRE</td>
+              <td style="width: 7%" class="fl">OCTUBRE</td>
+              <td style="width: 7%" class="fl">NOVIEMBRE</td>
+              <td style="width: 7%" class="fl">DICIEMBRE</td>
+            </tr>
+            <tr>
+              <td style="width: 10%" class="fl">Inversiones</td>
+              <td style="width: 7%" class="border">425.789</td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 8%"></td>
+            </tr>
+            <tr>
+              <td style="width: 10%" class="fl">SALDO INICIAL</td>
+              <td style="width: 7%" class="border">425.789</td>
+              <td style="width: 7%" class="border">-</td>
+              <td style="width: 7%" class="border">(4.068)</td>
+              <td style="width: 7%" class="border">7992</td>
+              <td style="width: 7%" class="border">(11917)</td>
+              <td style="width: 7%" class="border">(15602)</td>
+              <td style="width: 7%" class="border">(19288)</td>
+              <td style="width: 7%" class="border">(23216)</td>
+              <td style="width: 7%" class="border">(27288)</td>
+              <td style="width: 7%" class="border">(31217)</td>
+              <td style="width: 7%" class="border">(35145)</td>
+              <td style="width: 7%" class="border">(39077)</td>
+              <td style="width: 7%" class="border">(43008)</td>
+              <td style="width: 8%"></td>
+            </tr>
+            <tr>
+              <td style="width: 10%" class="fl">Ingresos</td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 8%"></td>
+            </tr>
+            <tr>
+              <td style="width: 10%" class="fl">Costo de Produccion</td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 8%"></td>
+            </tr>
+            <tr>
+              <td style="width: 10%" class="fl">Utilidad Bruta</td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 8%"></td>
+            </tr>
+            <tr>
+              <td style="width: 10%" class="fl">Costos Fijos</td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 8%"></td>
+            </tr>
+            <tr>
+              <td style="width: 10%" class="fl">UTILIDAD NETA Capacidad de pago</td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 8%"></td>
+            </tr>
+            <tr>
+              <td style="width: 10%" class="fl">Cuota</td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+              <td style="width: 8%"></td>
+            </tr>
+            <tr>
+              <td style="width: 10%" class="fl">FLUJO ACUMULADO</td>
+              <td style="width: 7%" class="border">-</td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 7%" class="border"></td>
+              <td style="width: 8%"></td>
+            </tr>
+          </table>
         </div>
-        <div class="conten">
-          <div class="conteni1">
-            <br />
-            <table>
-              <tr>
-                <td style="width: 10%"></td>
-                <td style="width: 7%" class="fl">2023</td>
-                <td style="width: 7%" class="fl">2024</td>
-                <td style="width: 7%" class="fl">2025</td>
-                <td style="width: 7%" class="fl">2026</td>
-                <td style="width: 7%" class="fl">2027</td>
-                <td style="width: 7%" class="fl">2028</td>
-                <td style="width: 7%" class="fl">2029</td>
-                <td style="width: 7%" class="fl">2030</td>
-                <td style="width: 8%"></td>
-              </tr>
-
-              <tr>
-                <td style="width: 10%" class="fl">SALDO INICIAL</td>
-                <td style="width: 7%" class="border">425.789</td>
-                <td style="width: 7%" class="border">-</td>
-                <td style="width: 7%" class="border">(4.068)</td>
-                <td style="width: 7%" class="border">7992</td>
-                <td style="width: 7%" class="border">(11917)</td>
-                <td style="width: 7%" class="border">(15602)</td>
-                <td style="width: 7%" class="border">(19288)</td>
-                <td style="width: 7%" class="border">(23216)</td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">Ingresos</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">Costo de Produccion</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">Utilidad Bruta</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">Costos Fijos</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">
-                  UTILIDAD NETA Capacidad de pago
-                </td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">Cuota</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
-                </td>
-                <td style="width: 8%"></td>
-              </tr>
-              <tr>
-                <td style="width: 10%" class="fl">FLUJO ACUMULADO</td>
-                <td style="width: 7%" class="border">-</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
-              </tr>
-            </table>
-          </div>
         </div>
-        <br />
-        <table style="width: 40%">
+      <div class="conten">
+      <div class="conteni1">
+        <br>
+        <table >
           <tr>
-            <td style="width: 60%" class="fl">VAN</td>
-            <td style="width: 40%" class="border"></td>
+            <td style="width: 10%" ></td>
+            <td style="width: 7%" class="fl">2023</td>
+            <td style="width: 7%" class="fl">2024</td>
+            <td style="width: 7%" class="fl">2025</td>
+            <td style="width: 7%" class="fl">2026</td>
+            <td style="width: 7%" class="fl">2027</td>
+            <td style="width: 7%" class="fl">2028</td>
+            <td style="width: 7%" class="fl">2029</td>
+            <td style="width: 7%" class="fl">2030</td>
+            <td style="width: 8%"></td>
+          </tr>
+
+          <tr>
+            <td style="width: 10%" class="fl">SALDO INICIAL</td>
+            <td style="width: 7%" class="border">425.789</td>
+            <td style="width: 7%" class="border">-</td>
+            <td style="width: 7%" class="border">(4.068)</td>
+            <td style="width: 7%" class="border">7992</td>
+            <td style="width: 7%" class="border">(11917)</td>
+            <td style="width: 7%" class="border">(15602)</td>
+            <td style="width: 7%" class="border">(19288)</td>
+            <td style="width: 7%" class="border">(23216)</td>
+            <td style="width: 8%"></td>
           </tr>
           <tr>
-            <td style="width: 60%" class="fl">TIR</td>
-            <td style="width: 40%" class="border"></td>
+            <td style="width: 10%" class="fl">Ingresos</td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 8%"></td>
+          </tr>
+          <tr>
+            <td style="width: 10%" class="fl">Costo de Produccion</td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 8%"></td>
+          </tr>
+          <tr>
+            <td style="width: 10%" class="fl">Utilidad Bruta</td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 8%"></td>
+          </tr>
+          <tr>
+            <td style="width: 10%" class="fl">Costos Fijos</td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 8%"></td>
+          </tr>
+          <tr>
+            <td style="width: 10%" class="fl">UTILIDAD NETA Capacidad de pago</td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 8%"></td>
+          </tr>
+          <tr>
+            <td style="width: 10%" class="fl">Cuota</td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+            <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+            <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+            <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+            <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+            <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+            <td style="width: 7%" class="border"><input type="text" class="no-margin input-container" placeholder="" /></td>
+            <td style="width: 8%"></td>
+          </tr>
+          <tr>
+            <td style="width: 10%" class="fl">FLUJO ACUMULADO</td>
+            <td style="width: 7%" class="border">-</td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 7%" class="border"></td>
+            <td style="width: 8%"></td>
           </tr>
         </table>
+      </div>
+      </div>
+      <br>
+      <table style="width: 40%">
+        <tr>
+          <td style="width: 60%" class="fl">VAN</td>
+          <td style="width: 40%" class="border"></td>
+        </tr>
+        <tr>
+          <td style="width: 60%" class="fl">TIR</td>
+          <td style="width: 40%" class="border"></td>
+        </tr>
+      </table>
       </div>
     </mat-grid-tile>
   </mat-grid-list>
