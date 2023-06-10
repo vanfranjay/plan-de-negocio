@@ -1,14 +1,21 @@
 <div class="contenedor">
-  <mat-grid-list [cols]="colSize" rowHeight="40px">
-    <mat-grid-tile [colspan]="1" [rowspan]="20" class="custom-tile">
+  <mat-grid-list [cols]="1" rowHeight="40px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
       <div class="content">
         <div class="content-title">
           <h2 class="title">11. ANÁLISIS FINANCIERO</h2>
         </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list [cols]="colSize" rowHeight="40px">
+    <mat-grid-tile [colspan]="1" [rowspan]="17" class="custom-tile">
+      <div class="content">
+        
         <table class="full-width table">
           <tr>
             <th colspan="1" rowspan="10" style="width: 50%" class="border">
-              <p>
+              <p style="text-align: left;">
                 11.1. Costos operativos ¿Cuáles serán los gastos que generará la
                 actividad mensualmente?
               </p>
@@ -175,7 +182,7 @@
         </table>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="20" class="custom-tile">
+    <mat-grid-tile [colspan]="1" [rowspan]="17" class="custom-tile">
       <div class="content">
         <table class="full-width table">
           <tr>
@@ -330,6 +337,8 @@
                   <td style="width: 15%">CUOTA APROX:</td>
                   <td style="width: 15%">(2970)</td>
                 </tr>
+                <br>
+                <br>
               </table>
             </th>
           </tr>
@@ -347,8 +356,8 @@
         <table style="width: 40%">
           <tr>
             <td style="width: 34%"></td>
-            <td style="width: 33%" class="fl">MES</td>
-            <td style="width: 33%" class="fl">AÑO</td>
+            <td style="width: 33%" class="fl text-center">MES</td>
+            <td style="width: 33%" class="fl text-center">AÑO</td>
           </tr>
           <tr>
             <td style="width: 40%" class="fl">Implementación estimada</td>
@@ -397,19 +406,19 @@
           <table >
             <tr>
               <td style="width: 10%" ></td>
-              <td style="width: 7%" class="fl">INICIAL</td>
-              <td style="width: 7%" class="fl">ENERO</td>
-              <td style="width: 7%" class="fl">FEBRERO</td>
-              <td style="width: 7%" class="fl">MARZO</td>
-              <td style="width: 7%" class="fl">ABRIL</td>
-              <td style="width: 7%" class="fl">MAYO</td>
-              <td style="width: 7%" class="fl">JUNIO</td>
-              <td style="width: 7%" class="fl">JULIO</td>
-              <td style="width: 7%" class="fl">AGOSTO</td>
-              <td style="width: 7%" class="fl">SEPTIEMBRE</td>
-              <td style="width: 7%" class="fl">OCTUBRE</td>
-              <td style="width: 7%" class="fl">NOVIEMBRE</td>
-              <td style="width: 7%" class="fl">DICIEMBRE</td>
+              <td style="width: 7%" class="fl text-center">INICIAL</td>
+              <td style="width: 7%" class="fl text-center">ENERO</td>
+              <td style="width: 7%" class="fl text-center">FEBRERO</td>
+              <td style="width: 7%" class="fl text-center">MARZO</td>
+              <td style="width: 7%" class="fl text-center">ABRIL</td>
+              <td style="width: 7%" class="fl text-center">MAYO</td>
+              <td style="width: 7%" class="fl text-center">JUNIO</td>
+              <td style="width: 7%" class="fl text-center">JULIO</td>
+              <td style="width: 7%" class="fl text-center">AGOSTO</td>
+              <td style="width: 7%" class="fl text-center">SEPTIEMBRE</td>
+              <td style="width: 7%" class="fl text-center">OCTUBRE</td>
+              <td style="width: 7%" class="fl text-center">NOVIEMBRE</td>
+              <td style="width: 7%" class="fl text-center">DICIEMBRE</td>
             </tr>
             <tr>
               <td style="width: 10%" class="fl">Inversiones</td>
@@ -573,14 +582,14 @@
         <table >
           <tr>
             <td style="width: 10%" ></td>
-            <td style="width: 7%" class="fl">2023</td>
-            <td style="width: 7%" class="fl">2024</td>
-            <td style="width: 7%" class="fl">2025</td>
-            <td style="width: 7%" class="fl">2026</td>
-            <td style="width: 7%" class="fl">2027</td>
-            <td style="width: 7%" class="fl">2028</td>
-            <td style="width: 7%" class="fl">2029</td>
-            <td style="width: 7%" class="fl">2030</td>
+            <td style="width: 7%" class="fl text-center">2023</td>
+            <td style="width: 7%" class="fl text-center">2024</td>
+            <td style="width: 7%" class="fl text-center">2025</td>
+            <td style="width: 7%" class="fl text-center">2026</td>
+            <td style="width: 7%" class="fl text-center">2027</td>
+            <td style="width: 7%" class="fl text-center">2028</td>
+            <td style="width: 7%" class="fl text-center">2029</td>
+            <td style="width: 7%" class="fl text-center">2030</td>
             <td style="width: 8%"></td>
           </tr>
           
@@ -686,11 +695,11 @@
       <br>
       <table style="width: 40%">
         <tr>          
-          <td style="width: 60%" class="fl">VAN</td>
+          <td style="width: 60%" class="fl text-center">VAN</td>
           <td style="width: 40%" class="border"></td>
         </tr>
         <tr>          
-          <td style="width: 60%" class="fl">TIR</td>
+          <td style="width: 60% " class="fl text-center">TIR</td>
           <td style="width: 40%" class="border"></td>
         </tr>
       </table>
