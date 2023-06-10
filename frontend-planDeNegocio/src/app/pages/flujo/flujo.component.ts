@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { PresupuestoService } from 'src/app/service/presupuesto/presupuesto.service';
+
 @Component({
   selector: 'app-flujo',
   templateUrl: './flujo.component.html',
@@ -8,10 +10,26 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 export class FlujoComponent {
   colSize: any;
   colSize2: any;
+
+  datosCreditoMonto!: number;
+  totalAP!: number;
+  totalProyecto!: number;
+  aportePropio!: number;
+  total!: number;
+  totalPI!: number;
+
   constructor(
     private breakpointObserver: BreakpointObserver,
-  ){}
-  ngOnInit(){
+    private presupuestoService: PresupuestoService,
+  ) {
+    this.total = this.presupuestoService.getTotal();
+    this.calcularTotalAP();
+    this.calcularTotalPI();
+    this.calcularTotalProyecto();
+    this.calcularAportePropio();
+    this.calcularMontoFinanciar();
+  }
+  ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])
       .subscribe(result => {
         if (result.matches) {
@@ -44,5 +62,34 @@ export class FlujoComponent {
     } else {
       return 1; // Por defecto, 4 columnas
     }
+  }
+  // datos credito monto
+  calcularTotalAP() {
+    this.totalAP =
+      (this.presupuestoService.getTotal() ?? 0) +
+      (this.presupuestoService.getValorManoObra() ?? 0) +
+      (this.presupuestoService.getTotalMateriaPrima() ?? 0) +
+      (this.presupuestoService.getTotalReqProm() ?? 0) +
+      (this.presupuestoService.getTotalInfr() ?? 0) +
+      (this.presupuestoService.getTotalMaq() ?? 0) +
+      (this.presupuestoService.getTotalLegal() ?? 0)
+  }
+  calcularMontoFinanciar() {
+    this.datosCreditoMonto = this.totalProyecto - this.aportePropio;
+  }
+  calcularTotalProyecto() {
+    this.totalProyecto = (this.totalAP ?? 0) + (this.totalPI ?? 0) - (this.total ?? 0);
+  }
+  calcularAportePropio() {
+    this.aportePropio = this.totalAP ?? 0;
+  }
+  calcularTotalPI() {
+    this.totalPI =
+      (this.presupuestoService.getTotalGastosOp() ?? 0) +
+      (this.presupuestoService.getTotalMateriaPrima1() ?? 0) +
+      (this.presupuestoService.getTotalReqProm1() ?? 0) +
+      (this.presupuestoService.getTotalInfr1() ?? 0) +
+      (this.presupuestoService.getTotalMaq1() ?? 0) +
+      (this.presupuestoService.getTotalLegal1() ?? 0)
   }
 }
