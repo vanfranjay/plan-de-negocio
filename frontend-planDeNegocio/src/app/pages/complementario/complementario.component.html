@@ -13,7 +13,10 @@
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
+        <textarea class="custom-textarea" placeholder=""
+        (change)="asignarValor('DedicacionEmprendedor', complementoDedicacionEmprendedor)"
+          [(ngModel)]="complementoDedicacionEmprendedor"
+        ></textarea>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <div class="content fondo__subtitulo2 grid__centerVertical">
@@ -23,7 +26,10 @@
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
+        <textarea class="custom-textarea" placeholder=""
+        (change)="asignarValor('EntiFinancieras', complementoEntiFinancieras)"
+          [(ngModel)]="complementoEntiFinancieras"
+        ></textarea>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <div class="content fondo__subtitulo2 grid__centerVertical">
@@ -33,7 +39,10 @@
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
+        <textarea class="custom-textarea" placeholder=""
+        (change)="asignarValor('ExpAct', complementoExpAct)"
+          [(ngModel)]="complementoExpAct"
+        ></textarea>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <div class="content fondo__subtitulo2 grid__centerVertical">
@@ -43,7 +52,10 @@
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
+        <textarea class="custom-textarea" placeholder=""
+        (change)="asignarValor('Garantia', complementoGarantia)"
+          [(ngModel)]="complementoGarantia"
+        ></textarea>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <div class="content fondo__subtitulo2 grid__centerVertical">
@@ -53,7 +65,10 @@
         </div>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1" [rowspan]="2" class="expand-tile">
-        <textarea class="custom-textarea" placeholder=""></textarea>
+        <textarea class="custom-textarea" placeholder=""
+        (change)="asignarValor('Otros', complementoOtros)"
+          [(ngModel)]="complementoOtros"
+        ></textarea>
       </mat-grid-tile>
     </mat-grid-list>
   </div>
