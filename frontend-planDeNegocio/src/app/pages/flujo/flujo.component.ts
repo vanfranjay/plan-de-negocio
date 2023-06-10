@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { PresupuestoService } from 'src/app/service/presupuesto/presupuesto.service';
+import { FlujoService } from 'src/app/service/flujo/flujo.service';
 
 @Component({
   selector: 'app-flujo',
@@ -18,10 +19,73 @@ export class FlujoComponent {
   total!: number;
   totalPI!: number;
 
+  //variables de costos operativos
+  costoOpImpuesto!: number;
+  costoOpAlimentacion!: number;
+  costoOpServLuz!: number;
+  costoOpServAgua!: number;
+  costoOpServGas!: number;
+  costoOpServTelf!: number;
+  costoOpServInter!: number;
+  costoOpAlquiler!: number;
+  costoOpTransporte!: number;
+  costoOpMaterialEscritorio!: number;
+  costoOpPagoEmpl!: number;
+  costoOpPromo!: number;
+  costoOpTxtMant1!: string;
+  costoOpTxtMant2!: string;
+  costoOpTxtMant3!: string;
+  costoOpMant1!: number;
+  costoOpMant2!: number;
+  costoOpMant3!: number;
+  costoOpVestimenta!: number;
+  costoOpSalud!: number;
+  costoOpTxtOtrosImpr1!: string;
+  costoOpTxtOtrosImpr2!: string;
+  costoOpOtrosImpr1!: number;
+  costoOpOtrosImpr2!: number;
+  costoOpTotalGasto!: number;
+
+
+  flujoCostOp: string = 'setCostoOp';
+  costoOperativo!: number;
+  utilidadOperativa!: number;
+  utilidadBruta: number= 0;
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     private presupuestoService: PresupuestoService,
+    private flujoService: FlujoService,
   ) {
+
+    //Varibles de costos operativos
+    this.costoOpImpuesto = this.flujoService.getCostoOpImpuesto();
+    this.costoOpAlimentacion = this.flujoService.getCostoOpAlimentacion();
+    this.costoOpServLuz = this.flujoService.getCostoOpServLuz();
+    this.costoOpServAgua = this.flujoService.getCostoOpServAgua();
+    this.costoOpServGas = this.flujoService.getCostoOpServGas();
+    this.costoOpServTelf = this.flujoService.getCostoOpServTelf();
+    this.costoOpServInter = this.flujoService.getCostoOpServInter();
+    this.costoOpAlquiler = this.flujoService.getCostoOpAlquiler();
+    this.costoOpTransporte = this.flujoService.getCostoOpTransporte();
+    this.costoOpMaterialEscritorio = this.flujoService.getCostoOpMaterialEscritorio();
+    this.costoOpPagoEmpl = this.flujoService.getCostoOpPagoEmpl();
+    this.costoOpPromo = this.flujoService.getCostoOpPromo();
+    this.costoOpTxtMant1 = this.flujoService.getCostoOpTxtMant1();
+    this.costoOpTxtMant2 = this.flujoService.getCostoOpTxtMant2();
+    this.costoOpTxtMant3 = this.flujoService.getCostoOpTxtMant3();
+    this.costoOpMant1 = this.flujoService.getCostoOpMant1();
+    this.costoOpMant2 = this.flujoService.getCostoOpMant2();
+    this.costoOpMant3 = this.flujoService.getCostoOpMant3();
+    this.costoOpVestimenta = this.flujoService.getCostoOpVestimenta();
+    this.costoOpSalud = this.flujoService.getCostoOpSalud();
+    this.costoOpTxtOtrosImpr1 = this.flujoService.getCostoOpTxtOtrosImpr1();
+    this.costoOpTxtOtrosImpr2 = this.flujoService.getCostoOpTxtOtrosImpr2();
+    this.costoOpOtrosImpr1 = this.flujoService.getCostoOpOtrosImpr1();
+    this.costoOpOtrosImpr2 = this.flujoService.getCostoOpOtrosImpr2();
+    this.costoOpTotalGasto = this.flujoService.getCostoOpTotalGasto();
+    this.costoOperativo = this.flujoService.getCostoOperativo();
+
     this.total = this.presupuestoService.getTotal();
     this.calcularTotalAP();
     this.calcularTotalPI();
@@ -40,7 +104,51 @@ export class FlujoComponent {
           this.colSize2 = 1;
         }
       });
+
   }
+  asignarValor(value: string, valor: any) {
+    const valueM: string = this.flujoCostOp + value;      //setHome${NombreDeudor}
+    (this.flujoService as any)[valueM](valor);
+
+    this.calculateTotalGastosCostoOperativo();
+    this.calculateCostoOpTbUtilidad();
+    this.calculateUtilidadOperativa();
+  }
+  calculateUtilidadOperativa() {
+    this.utilidadOperativa =
+      (this.utilidadBruta)-
+      (this.costoOperativo);
+  }
+  calculateCostoOpTbUtilidad() {
+    this.costoOperativo = (this.costoOpTotalGasto ?? 0) * 12;
+    this.flujoService.setCostoOperativo(this.costoOperativo);
+  }
+
+  calculateTotalGastosCostoOperativo() {
+    this.costoOpTotalGasto =
+      (this.costoOpImpuesto ?? 0) +
+      (this.costoOpAlimentacion ?? 0) +
+      (this.costoOpServLuz ?? 0) +
+      (this.costoOpServAgua ?? 0) +
+      (this.costoOpServGas ?? 0) +
+      (this.costoOpServTelf ?? 0) +
+      (this.costoOpServInter ?? 0) +
+      (this.costoOpAlquiler ?? 0) +
+      (this.costoOpTransporte ?? 0) +
+      (this.costoOpMaterialEscritorio ?? 0) +
+      (this.costoOpPagoEmpl ?? 0) +
+      (this.costoOpPromo ?? 0) +
+      (this.costoOpMant1 ?? 0) +
+      (this.costoOpMant2 ?? 0) +
+      (this.costoOpMant3 ?? 0) +
+      (this.costoOpVestimenta ?? 0) +
+      (this.costoOpSalud ?? 0) +
+      (this.costoOpOtrosImpr1 ?? 0) +
+      (this.costoOpOtrosImpr2 ?? 0)
+
+    this.flujoService.setCostoOpTotalGasto(this.costoOpTotalGasto);
+  }
+
   calculateColSize(breakpoints: { [key: string]: boolean }): number {
     if (breakpoints[Breakpoints.XSmall]) {
       return 1; // Pantallas extra pequeñas, 1 columna
