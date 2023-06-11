@@ -46,6 +46,12 @@ export class FlujoComponent {
   costoOpOtrosImpr2!: number;
   costoOpTotalGasto!: number;
 
+  //variables primera tabla de flujo
+  // los que no cambian:
+  flujoCostosFijosTb1!: number;
+  // los que cambian:
+
+
 
   flujoCostOp: string = 'setCostoOp';
   costoOperativo!: number;
@@ -88,6 +94,8 @@ export class FlujoComponent {
     this.costoOperativo = this.flujoService.getCostoOperativo();
 
     this.total = this.presupuestoService.getTotal();
+
+    this.flujoCostosFijosTb1 = this.flujoService.getFlujoCostosFijosTb1();
     this.calcularTotalAP();
     this.calcularTotalPI();
     this.calcularTotalProyecto();
@@ -116,6 +124,11 @@ export class FlujoComponent {
     this.calculateTotalGastosCostoOperativo();
     this.calculateCostoOpTbUtilidad();
     this.calculateUtilidadOperativa();
+    this.CalculateCostosFijosFlujoTab1()
+  }
+  CalculateCostosFijosFlujoTab1(){
+    this.flujoCostosFijosTb1 = (this.costoOpTotalGasto ?? 0)
+    this.flujoService.setFlujoCostosFijosTb1(this.flujoCostosFijosTb1);
   }
   calculateUtilidadOperativa() {
     this.utilidadOperativa =

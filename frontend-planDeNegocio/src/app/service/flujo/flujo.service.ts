@@ -6,6 +6,13 @@ import { Injectable } from '@angular/core';
 export class FlujoService {
 
   constructor() { }
+  private flujoCostosFijosTb1!: number;
+  public getFlujoCostosFijosTb1(): number {
+    return this.flujoCostosFijosTb1;
+  }
+  public setFlujoCostosFijosTb1(value: number) {
+    this.flujoCostosFijosTb1 = value;
+  }
   private costoOperativo!: number;
   public getCostoOperativo(): number {
     return this.costoOperativo;
