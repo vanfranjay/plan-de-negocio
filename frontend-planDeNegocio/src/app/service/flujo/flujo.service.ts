@@ -6,6 +6,20 @@ import { Injectable } from '@angular/core';
 export class FlujoService {
 
   constructor() { }
+  private flujoPoliza: number = 0.395;
+  public getFlujoPoliza(): number {
+    return this.flujoPoliza;
+  }
+  public setFlujoPoliza(value: number) {
+    this.flujoPoliza = value;
+  }
+  private flujoCuotaProx!: number;
+  public getFlujoCuotaProx(): number {
+    return this.flujoCuotaProx;
+  }
+  public setFlujoCuotaProx(value: number) {
+    this.flujoCuotaProx = value;
+  }
   private flujoAcIni!: number;
   public getFlujoAcIni(): number {
     return this.flujoAcIni;

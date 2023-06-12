@@ -80,30 +80,30 @@ export class FlujoComponent {
   flujoSIOct!: number;
   flujoSINov!: number;
   flujoSIDiv!: number;
-  flujoIEne!: number;
-  flujoIFeb!: number;
-  flujoIMar!: number;
-  flujoIAbr!: number;
-  flujoIMay!: number;
-  flujoIJun!: number;
-  flujoIJul!: number;
-  flujoIAgo!: number;
-  flujoISep!: number;
-  flujoIOct!: number;
-  flujoINov!: number;
-  flujoIDiv!: number;
-  flujoCProdEne!: number;
-  flujoCPFeb!: number;
-  flujoCPMar!: number;
-  flujoCPAbr!: number;
-  flujoCPMay!: number;
-  flujoCPJun!: number;
-  flujoCPJul!: number;
-  flujoCPAgo!: number;
-  flujoCPSep!: number;
-  flujoCPOct!: number;
-  flujoCPNov!: number;
-  flujoCPDiv!: number;
+  flujoIEne: number = 0;
+  flujoIFeb: number = 0;
+  flujoIMar: number = 0;
+  flujoIAbr: number = 0;
+  flujoIMay: number = 0;
+  flujoIJun: number = 0;
+  flujoIJul: number = 0;
+  flujoIAgo: number = 0;
+  flujoISep: number = 0;
+  flujoIOct: number = 0;
+  flujoINov: number = 0;
+  flujoIDiv: number = 0;
+  flujoCProdEne: number = 0;
+  flujoCPFeb: number = 0;
+  flujoCPMar: number = 0;
+  flujoCPAbr: number = 0;
+  flujoCPMay: number = 0;
+  flujoCPJun: number = 0;
+  flujoCPJul: number = 0;
+  flujoCPAgo: number = 0;
+  flujoCPSep: number = 0;
+  flujoCPOct: number = 0;
+  flujoCPNov: number = 0;
+  flujoCPDiv: number = 0;
   flujoUBEne!: number;
   flujoUBFeb!: number;
   flujoUBMar!: number;
@@ -195,6 +195,10 @@ export class FlujoComponent {
     //datos credito
     this.flujoActividad = this.flujoService.getFlujoActividad();
     this.flujoTasaInteres = this.flujoService.getFlujoTasaInteres();
+    this.flujoPoliza = this.flujoService.getFlujoPoliza();
+
+
+    //tabla flujo
 
 
     this.flujoCostosFijosTb1 = this.flujoService.getFlujoCostosFijosTb1();
@@ -238,10 +242,107 @@ export class FlujoComponent {
     this.flujoService.setFlujoCostosFijosTb1(this.flujoCostosFijosTb1);
   }
   /////////////////// tabla de flujo
+  asignarValorFlujoCEne(): number{
+    //return this.flujoCEne = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    if (this.flujoService.getFlujoCuotaProx() != null) {
+      return this.flujoCEne = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    }else{
+      return this.flujoCEne = 0;
+    }
+  }
+  asignarValorFlujoCFeb(): number{
+    //return this.flujoCFeb = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    if (this.flujoService.getFlujoCuotaProx() != null) {
+      return this.flujoCFeb = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    }else{
+      return this.flujoCFeb = 0;
+    }
+  }
+  asignarValorFlujoCMar(): number{
+    //return this.flujoCMar = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    if (this.flujoService.getFlujoCuotaProx() != null) {
+      return this.flujoCMar = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    }else{
+      return this.flujoCMar = 0;
+    }
+  }
+  asignarValorFlujoCAbr(): number{
+    //return this.flujoCAbr = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    if (this.flujoService.getFlujoCuotaProx() != null) {
+      return this.flujoCAbr = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    }else{
+      return this.flujoCAbr = 0;
+    }
+  }
+  asignarValorFlujoCMay(): number{
+    //return this.flujoCMay = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    if (this.flujoService.getFlujoCuotaProx() != null) {
+      return this.flujoCMay = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    }else{
+      return this.flujoCMay = 0;
+    }
+  }
+  asignarValorFlujoCJun(): number{
+    //return this.flujoCJun = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    if (this.flujoService.getFlujoCuotaProx() != null) {
+      return this.flujoCJun = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    }else{
+      return this.flujoCJun = 0;
+    }
+  }
+  asignarValorFlujoCJul(): number{
+    //return this.flujoCJul = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    if (this.flujoService.getFlujoCuotaProx() != null) {
+      return this.flujoCJul = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    }else{
+      return this.flujoCJul = 0;
+    }
+  }
+  asignarValorFlujoCAgo(): number{
+    //return this.flujoCAgo = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    if (this.flujoService.getFlujoCuotaProx() != null) {
+      return this.flujoCAgo = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    }else{
+      return this.flujoCAgo = 0;
+    }
+  }
+  asignarValorFlujoCSep(): number{
+    //return this.flujoCSep = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    if (this.flujoService.getFlujoCuotaProx() != null) {
+      return this.flujoCSep = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    }else{
+      return this.flujoCSep = 0;
+    }
+  }
+  asignarValorFlujoCOct(): number{
+    //return this.flujoCOct = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    if (this.flujoService.getFlujoCuotaProx() != null) {
+      return this.flujoCOct = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    }else{
+      return this.flujoCOct = 0;
+    }
+  }
+  asignarValorFlujoCNov(): number{
+    //return this.flujoCNov = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    if (this.flujoService.getFlujoCuotaProx() != null) {
+      return this.flujoCNov = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    }else{
+      return this.flujoCNov = 0;
+    }
+  }
+  asignarValorFlujoCDiv(): number{
+    //return this.flujoCDiv = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    if (this.flujoService.getFlujoCuotaProx() != null) {
+      return this.flujoCDiv = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
+    }else{
+      return this.flujoCDiv = 0;
+    }
+  }
+
   llenarTabla1Flujo() {
     this.flujoUBEne = (this.flujoIEne ?? 0) - (this.flujoCProdEne ?? 0);
     this.flujoUNCdPagEne = (this.flujoUBEne ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
-    this.flujoAEne = (this.flujoUNCdPagEne ?? 0) - (this.flujoCEne ?? 0);
+    this.flujoAEne = (this.flujoUNCdPagEne ?? 0) - (this.asignarValorFlujoCEne() ?? 0);
     this.flujoSIFeb = this.flujoAEne;
     this.flujoService.setFlujoUBEne(this.flujoUBEne);
     this.flujoService.setFlujoUNCdPagEne(this.flujoUNCdPagEne);
@@ -250,7 +351,7 @@ export class FlujoComponent {
 
     this.flujoUBFeb = (this.flujoIFeb ?? 0) - (this.flujoCPFeb ?? 0);
     this.flujoUNCdPFeb = (this.flujoUBFeb ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
-    this.flujoAFeb = (this.flujoUNCdPFeb ?? 0) - (this.flujoCFeb ?? 0);
+    this.flujoAFeb = (this.flujoUNCdPFeb ?? 0) - (this.asignarValorFlujoCFeb() ?? 0) + this.flujoSIFeb;
     this.flujoSIMar = this.flujoAFeb;
     this.flujoService.setFlujoUBFeb(this.flujoUBFeb);
     this.flujoService.setFlujoUNCdPFeb(this.flujoUNCdPFeb);
@@ -259,7 +360,7 @@ export class FlujoComponent {
 
     this.flujoUBMar = (this.flujoIMar ?? 0) - (this.flujoCPMar ?? 0);
     this.flujoUNCdPMar = (this.flujoUBMar ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
-    this.flujoAMar = (this.flujoUNCdPMar ?? 0) - (this.flujoCMar ?? 0);
+    this.flujoAMar = (this.flujoUNCdPMar ?? 0) - (this.asignarValorFlujoCMar() ?? 0) + this.flujoSIMar;
     this.flujoSIAbr = this.flujoAMar;
     this.flujoService.setFlujoUBMar(this.flujoUBMar);
     this.flujoService.setFlujoUNCdPMar(this.flujoUNCdPMar);
@@ -268,7 +369,7 @@ export class FlujoComponent {
 
     this.flujoUBAbr = (this.flujoIAbr ?? 0) - (this.flujoCPAbr ?? 0);
     this.flujoUNCdPAbr = (this.flujoUBAbr ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
-    this.flujoAAbr = (this.flujoUNCdPAbr ?? 0) - (this.flujoCAbr ?? 0);
+    this.flujoAAbr = (this.flujoUNCdPAbr ?? 0) - (this.asignarValorFlujoCAbr() ?? 0) + this.flujoSIAbr;
     this.flujoSIMay = this.flujoAAbr;
     this.flujoService.setFlujoUBAbr(this.flujoUBAbr);
     this.flujoService.setFlujoUNCdPAbr(this.flujoUNCdPAbr);
@@ -277,7 +378,7 @@ export class FlujoComponent {
 
     this.flujoUBMay = (this.flujoIMay ?? 0) - (this.flujoCPMay ?? 0);
     this.flujoUNCdPMay = (this.flujoUBMay ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
-    this.flujoAMay = (this.flujoUNCdPMay ?? 0) - (this.flujoCMay ?? 0);
+    this.flujoAMay = (this.flujoUNCdPMay ?? 0) - (this.asignarValorFlujoCMay() ?? 0) + this.flujoSIMay;
     this.flujoSIJun = this.flujoAMay;
     this.flujoService.setFlujoUBMay(this.flujoUBMay);
     this.flujoService.setFlujoUNCdPMay(this.flujoUNCdPMay);
@@ -286,7 +387,7 @@ export class FlujoComponent {
 
     this.flujoUBJun = (this.flujoIJun ?? 0) - (this.flujoCPJun ?? 0);
     this.flujoUNCdPJun = (this.flujoUBJun ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
-    this.flujoAJun = (this.flujoUNCdPJun ?? 0) - (this.flujoCJun ?? 0);
+    this.flujoAJun = (this.flujoUNCdPJun ?? 0) - (this.asignarValorFlujoCJun() ?? 0) + this.flujoSIJun;
     this.flujoSIJul = this.flujoAJun;
     this.flujoService.setFlujoUBJun(this.flujoUBJun);
     this.flujoService.setFlujoUNCdPJun(this.flujoUNCdPJun);
@@ -295,7 +396,7 @@ export class FlujoComponent {
 
     this.flujoUBJul = (this.flujoIJul ?? 0) - (this.flujoCPJul ?? 0);
     this.flujoUNCdPJul = (this.flujoUBJul ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
-    this.flujoAJul = (this.flujoUNCdPJul ?? 0) - (this.flujoCJul ?? 0);
+    this.flujoAJul = (this.flujoUNCdPJul ?? 0) - (this.asignarValorFlujoCJul() ?? 0) + this.flujoSIJul;
     this.flujoSIAgo = this.flujoAJul;
     this.flujoService.setFlujoUBJul(this.flujoUBJul);
     this.flujoService.setFlujoUNCdPJul(this.flujoUNCdPJul);
@@ -304,7 +405,7 @@ export class FlujoComponent {
 
     this.flujoUBAgo = (this.flujoIAgo ?? 0) - (this.flujoCPAgo ?? 0);
     this.flujoUNCdPAgo = (this.flujoUBAgo ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
-    this.flujoAAgo = (this.flujoUNCdPAgo ?? 0) - (this.flujoCAgo ?? 0);
+    this.flujoAAgo = (this.flujoUNCdPAgo ?? 0) - (this.asignarValorFlujoCAgo() ?? 0) + this.flujoSIAgo;
     this.flujoSISep = this.flujoAAgo;
     this.flujoService.setFlujoUBAgo(this.flujoUBAgo);
     this.flujoService.setFlujoUNCdPAgo(this.flujoUNCdPAgo);
@@ -313,7 +414,7 @@ export class FlujoComponent {
 
     this.flujoUBSep = (this.flujoISep ?? 0) - (this.flujoCPSep ?? 0);
     this.flujoUNCdPSep = (this.flujoUBSep ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
-    this.flujoASep = (this.flujoUNCdPSep ?? 0) - (this.flujoCSep ?? 0);
+    this.flujoASep = (this.flujoUNCdPSep ?? 0) - (this.asignarValorFlujoCSep() ?? 0) + this.flujoSISep;
     this.flujoSIOct = this.flujoASep;
     this.flujoService.setFlujoUBSep(this.flujoUBSep);
     this.flujoService.setFlujoUNCdPSep(this.flujoUNCdPSep);
@@ -322,7 +423,7 @@ export class FlujoComponent {
 
     this.flujoUBOct = (this.flujoIOct ?? 0) - (this.flujoCPOct ?? 0);
     this.flujoUNCdPOct = (this.flujoUBOct ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
-    this.flujoAOct = (this.flujoUNCdPOct ?? 0) - (this.flujoCOct ?? 0);
+    this.flujoAOct = (this.flujoUNCdPOct ?? 0) - (this.asignarValorFlujoCOct() ?? 0) + this.flujoSIOct;
     this.flujoSINov = this.flujoAOct;
     this.flujoService.setFlujoUBOct(this.flujoUBOct);
     this.flujoService.setFlujoUNCdPOct(this.flujoUNCdPOct);
@@ -331,7 +432,7 @@ export class FlujoComponent {
 
     this.flujoUBNov = (this.flujoINov ?? 0) - (this.flujoCPNov ?? 0);
     this.flujoUNCdPNov = (this.flujoUBNov ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
-    this.flujoANov = (this.flujoUNCdPNov ?? 0) - (this.flujoCNov ?? 0);
+    this.flujoANov = (this.flujoUNCdPNov ?? 0) - (this.asignarValorFlujoCNov() ?? 0) + this.flujoSINov;
     this.flujoSIDiv = this.flujoANov;
     this.flujoService.setFlujoUBNov(this.flujoUBNov);
     this.flujoService.setFlujoUNCdPNov(this.flujoUNCdPNov);
@@ -340,7 +441,7 @@ export class FlujoComponent {
 
     this.flujoUBDiv = (this.flujoIDiv ?? 0) - (this.flujoCPDiv ?? 0);
     this.flujoUNCdPDiv = (this.flujoUBDiv ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
-    this.flujoADiv = (this.flujoUNCdPDiv ?? 0) - (this.flujoCDiv ?? 0);
+    this.flujoADiv = (this.flujoUNCdPDiv ?? 0) - (this.asignarValorFlujoCDiv() ?? 0) + this.flujoSIDiv;
     //this.flujoSIFeb = this.flujoADiv;
     this.flujoService.setFlujoUBDiv(this.flujoUBDiv);
     this.flujoService.setFlujoUNCdPDiv(this.flujoUNCdPDiv);
@@ -354,14 +455,21 @@ export class FlujoComponent {
   calculateDatosCredito() {
     if (this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
       this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12)) ** -(this.flujoPlazoMeses ?? 1))) - this.datosCreditoMonto;
+      this.flujoService.setFlujoCuotaProx(this.flujoCuotaProx);
+      this.flujoService.setFlujoPoliza(this.flujoPoliza);
+      this.llenarTabla1Flujo();
     } else {
       this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12)) ** -(this.flujoPlazoMeses ?? 1)));
+      this.flujoService.setFlujoCuotaProx(this.flujoCuotaProx);
+      this.flujoService.setFlujoPoliza(this.flujoPoliza);
+      this.llenarTabla1Flujo();
     }
     //this.flujoCuotaProx = (this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - Math.pow(1 + (this.calculateTasaInteres() / 12), -1));
     //this.flujoDatosCredito = this.flujoCuotaProx + this.calculatePoliza(+this.flujoPoliza); ** ((-this.flujoPlazoMeses) ?? 1)
+
   }
-  calculatePoliza(valor: number): number {
-    return valor * 100;
+  calculatePoliza(): number {
+    return this.flujoPoliza * 100;
   }
   calculateTasaInteres(): number {
     if (this.flujoActividad === 'SERVICIOS') {
@@ -470,5 +578,10 @@ export class FlujoComponent {
       (this.presupuestoService.getTotalInfr1() ?? 0) +
       (this.presupuestoService.getTotalMaq1() ?? 0) +
       (this.presupuestoService.getTotalLegal1() ?? 0)
+  }
+
+  formatNumber(value: number): string {
+    const formattedValue = Math.abs(value).toFixed(0);
+    return value >= 0 ? formattedValue : `(${formattedValue})`;
   }
 }

@@ -634,71 +634,69 @@
                 <td style="width: 7%" class="border">425.789</td>
                 <td style="width: 7%" class="border">-</td>
                 <td style="width: 7%" class="border">
-                  {{
-                    flujoSIFeb >= 0 ? flujoSIFeb : "(" + flujoSIFeb * -1 + ")"
-                  }}
+                  {{formatNumber(flujoSIFeb)}}
                 </td>
-                <td style="width: 7%" class="border">{{ flujoSIMar >= 0 ? flujoSIMar : "("+ flujoSIMar * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoSIAbr >= 0 ?flujoSIAbr : "("+flujoSIAbr * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoSIMay >= 0 ?flujoSIMay : "("+flujoSIMay * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoSIJun >= 0 ?flujoSIJun : "("+flujoSIJun * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoSIJul >= 0 ?flujoSIJul : "("+flujoSIJul * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoSIAgo >= 0 ?flujoSIAgo : "("+flujoSIAgo * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoSISep >= 0 ?flujoSISep : "("+flujoSISep * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoSIOct >= 0 ?flujoSIOct : "("+flujoSIOct * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoSINov >= 0 ?flujoSINov : "("+flujoSINov * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoSIDiv >= 0 ?flujoSIDiv : "("+flujoSIDiv * -1 +")"}}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoSIMar) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoSIAbr) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoSIMay) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoSIJun) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoSIJul) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoSIAgo) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoSISep) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoSIOct) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoSINov) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoSIDiv) }}</td>
                 <td style="width: 8%"></td>
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">Ingresos</td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border">{{ flujoIEne >= 0 ? flujoIEne : "("+ flujoIEne * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoIFeb >= 0 ? flujoIFeb : "("+ flujoIFeb * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoIMar >= 0 ? flujoIMar : "("+ flujoIMar * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoIAbr >= 0 ? flujoIAbr : "("+ flujoIAbr * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoIMay >= 0 ? flujoIMay : "("+ flujoIMay * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoIJun >= 0 ? flujoIJun : "("+ flujoIJun * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoIJul >= 0 ? flujoIJul : "("+ flujoIJul * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoIAgo >= 0 ? flujoIAgo : "("+ flujoIAgo * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoISep >= 0 ? flujoISep : "("+ flujoISep * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoIOct >= 0 ? flujoIOct : "("+ flujoIOct * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoINov >= 0 ? flujoINov : "("+ flujoINov * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoIDiv >= 0 ? flujoIDiv : "("+ flujoIDiv * -1 +")"}}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoIEne) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoIFeb) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoIMar) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoIAbr) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoIMay) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoIJun) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoIJul) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoIAgo) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoISep) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoIOct) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoINov) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoIDiv) }}</td>
                 <td style="width: 8%"></td>
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">Costo de Produccion</td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border">{{ flujoCProdEne >= 0 ? flujoCProdEne : "("+ flujoCProdEne * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoCPFeb >= 0 ? flujoCPFeb : "("+ flujoCPFeb * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoCPMar >= 0 ? flujoCPMar : "("+ flujoCPMar * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoCPAbr >= 0 ? flujoCPAbr : "("+ flujoCPAbr * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoCPMay >= 0 ? flujoCPMay : "("+ flujoCPMay * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoCPJun >= 0 ? flujoCPJun : "("+ flujoCPJun * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoCPJul >= 0 ? flujoCPJul : "("+ flujoCPJul * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoCPAgo >= 0 ? flujoCPAgo : "("+ flujoCPAgo * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoCPSep >= 0 ? flujoCPSep : "("+ flujoCPSep * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoCPOct >= 0 ? flujoCPOct : "("+ flujoCPOct * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoCPNov >= 0 ? flujoCPNov : "("+ flujoCPNov * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoCPDiv >= 0 ? flujoCPDiv : "("+ flujoCPDiv * -1 +")"}}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoCProdEne) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoCPFeb) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoCPMar) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoCPAbr) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoCPMay) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoCPJun) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoCPJul) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoCPAgo) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoCPSep) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoCPOct) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoCPNov) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoCPDiv) }}</td>
                 <td style="width: 8%"></td>
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">Utilidad Bruta</td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border">{{ flujoUBEne >= 0 ? flujoUBEne : "("+ flujoUBEne * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUBFeb >= 0 ? flujoUBFeb : "("+ flujoUBFeb * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUBMar >= 0 ? flujoUBMar : "("+ flujoUBMar * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUBAbr >= 0 ? flujoUBAbr : "("+ flujoUBAbr * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUBMay >= 0 ? flujoUBMay : "("+ flujoUBMay * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUBJun >= 0 ? flujoUBJun : "("+ flujoUBJun * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUBJul >= 0 ? flujoUBJul : "("+ flujoUBJul * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUBAgo >= 0 ? flujoUBAgo : "("+ flujoUBAgo * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUBSep >= 0 ? flujoUBSep : "("+ flujoUBSep * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUBOct >= 0 ? flujoUBOct : "("+ flujoUBOct * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUBNov >= 0 ? flujoUBNov : "("+ flujoUBNov * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUBDiv >= 0 ? flujoUBDiv : "("+ flujoUBDiv * -1 +")"}}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUBEne) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUBFeb) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUBMar) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUBAbr) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUBMay) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUBJun) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUBJul) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUBAgo) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUBSep) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUBOct) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUBNov) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUBDiv) }}</td>
                 <td style="width: 8%"></td>
               </tr>
               <tr>
@@ -807,18 +805,18 @@
                   UTILIDAD NETA Capacidad de pago
                 </td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border">{{ flujoUNCdPagEne >= 0 ? flujoUNCdPagEne : "("+ flujoUNCdPagEne * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUNCdPFeb >= 0 ? flujoUNCdPFeb : "("+ flujoUNCdPFeb * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUNCdPMar >= 0 ? flujoUNCdPMar : "("+ flujoUNCdPMar * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUNCdPAbr >= 0 ? flujoUNCdPAbr : "("+ flujoUNCdPAbr * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUNCdPMay >= 0 ? flujoUNCdPMay : "("+ flujoUNCdPMay * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUNCdPJun >= 0 ? flujoUNCdPJun : "("+ flujoUNCdPJun * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUNCdPJul >= 0 ? flujoUNCdPJul : "("+ flujoUNCdPJul * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUNCdPAgo >= 0 ? flujoUNCdPAgo : "("+ flujoUNCdPAgo * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUNCdPSep >= 0 ? flujoUNCdPSep : "("+ flujoUNCdPSep * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUNCdPOct >= 0 ? flujoUNCdPOct : "("+ flujoUNCdPOct * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUNCdPNov >= 0 ? flujoUNCdPNov : "("+ flujoUNCdPNov * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoUNCdPDiv >= 0 ? flujoUNCdPDiv : "("+ flujoUNCdPDiv * -1 +")"}}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPagEne) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPFeb) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPMar) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPAbr) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPMay) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPJun) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPJul) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPAgo) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPSep) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPOct) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPNov) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPDiv) }}</td>
                 <td style="width: 8%"></td>
               </tr>
               <tr>
@@ -925,18 +923,18 @@
               <tr>
                 <td style="width: 10%" class="fl">FLUJO ACUMULADO</td>
                 <td style="width: 7%" class="border">-</td>
-                <td style="width: 7%" class="border">{{ flujoAEne >= 0 ? flujoAEne : "("+ flujoAEne * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoAFeb >= 0 ? flujoAFeb : "("+ flujoAFeb * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoAMar >= 0 ? flujoAMar : "("+ flujoAMar * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoAAbr >= 0 ? flujoAAbr : "("+ flujoAAbr * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoAMay >= 0 ? flujoAMay : "("+ flujoAMay * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoAJun >= 0 ? flujoAJun : "("+ flujoAJun * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoAJul >= 0 ? flujoAJul : "("+ flujoAJul * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoAAgo >= 0 ? flujoAAgo : "("+ flujoAAgo * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoASep >= 0 ? flujoASep : "("+ flujoASep * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoAOct >= 0 ? flujoAOct : "("+ flujoAOct * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoANov >= 0 ? flujoANov : "("+ flujoANov * -1 +")"}}</td>
-                <td style="width: 7%" class="border">{{ flujoADiv >= 0 ? flujoADiv : "("+ flujoADiv * -1 +")"}}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoAEne) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoAFeb) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoAMar) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoAAbr) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoAMay) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoAJun) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoAJul) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoAAgo) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoASep) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoAOct) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoANov) }}</td>
+                <td style="width: 7%" class="border">{{ formatNumber(flujoADiv) }}</td>
                 <td style="width: 8%"></td>
               </tr>
             </table>
