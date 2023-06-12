@@ -440,6 +440,8 @@
                       type="text"
                       class="input-container"
                       placeholder="0,395"
+                      (change)="calculateDatosCredito()"
+                      [(ngModel)]="flujoPoliza"
                     />
                   </td>
                   <td style="width: 15%"></td>
@@ -448,7 +450,7 @@
                 <tr>
                   <td style="width: 20%">DATOS DEL CREDITO</td>
                   <td style="width: 15%"></td>
-                  <td style="width: 15%">Plazo</td>
+                  <td style="width: 15%"></td>
                   <td style="width: 15%"></td>
                   <td style="width: 15%">Tasa de</td>
                   <td style="width: 15%"></td>
@@ -456,22 +458,26 @@
                 <tr>
                   <td style="width: 20%">Monto:</td>
                   <td style="width: 15%" class="border">
-                    {{
-                      datosCreditoMonto >= 0
-                        ? "bs. " + datosCreditoMonto
-                        : "(" + datosCreditoMonto * -1 + ")"
-                    }}
+                    <output [(ngModel)]="datosCreditoMonto" (change)="calculateDatosCredito">
+                      {{
+                        datosCreditoMonto >= 0
+                          ? "bs. " + datosCreditoMonto
+                          : "(" + datosCreditoMonto * -1 + ")"
+                      }}
+                    </output>
                   </td>
-                  <td style="width: 15%">(meses)</td>
+                  <td style="width: 15%">Plazo (meses)</td>
                   <td style="width: 15%">
                     <input
-                      type="text"
+                      type="number"
                       class="input-container"
-                      placeholder="72"
+                      placeholder="max 84"
+                      (change)="calculateDatosCredito()"
+                      [(ngModel)]="flujoPlazoMeses"
                     />
                   </td>
                   <td style="width: 15%">interes:</td>
-                  <td style="width: 15%" class="border">7,00</td>
+                  <td style="width: 15%" class="border">{{flujoTasaInteres | percent: '1.2-2'}}</td>
                 </tr>
                 <tr>
                   <td style="width: 20%">Tipo cuota::</td>
@@ -482,7 +488,7 @@
                       <option value="opcion3">PERSONALIZADA</option>
                     </select>
                   </td>
-                  <td style="width: 15%">Poliza</td>
+                  <td style="width: 15%"></td>
                   <td style="width: 15%"></td>
                   <td style="width: 15%"></td>
                   <td style="width: 15%"></td>
@@ -491,15 +497,15 @@
                 <tr>
                   <td style="width: 20%">actividad:</td>
                   <td style="width: 15%">
-                    <select class="custom-select">
-                      <option value="opcion1">SERVICIOS</option>
-                      <option value="opcion2">PRODUCTIVIDAD</option>
+                    <select class="custom-select" [(ngModel)]="flujoActividad" (change)="calculateDatosCredito()">
+                      <option value="SERVICIOS">SERVICIOS</option>
+                      <option value="PRODUCTIVIDAD">PRODUCTIVIDAD</option>
                     </select>
                   </td>
                   <td style="width: 15%"></td>
                   <td style="width: 15%"></td>
                   <td style="width: 15%">CUOTA APROX:</td>
-                  <td style="width: 15%">(2970)</td>
+                  <td style="width: 15%">{{flujoCuotaProx | number:'1.0-0'}}</td>
                 </tr>
                 <br />
                 <br />

@@ -6,6 +6,21 @@ import { Injectable } from '@angular/core';
 export class FlujoService {
 
   constructor() { }
+
+  private flujoActividad: string = 'SERVICIOS';
+  public getFlujoActividad(): string {
+    return this.flujoActividad;
+  }
+  public setFlujoActividad(value: string) {
+    this.flujoActividad = value;
+  }
+  private flujoTasaInteres: number = 0.115;
+  public getFlujoTasaInteres(): number {
+    return this.flujoTasaInteres;
+  }
+  public setFlujoTasaInteres(value: number) {
+    this.flujoTasaInteres = value;
+  }
   private flujoCostosFijosTb1!: number;
   public getFlujoCostosFijosTb1(): number {
     return this.flujoCostosFijosTb1;
