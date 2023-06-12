@@ -89,7 +89,7 @@ export class CostosService {
     this.costosDirProdFrecuencia1 = value;
   }
 
-   // Producto Servicio 1
+   // Producto Servicio 2
 
    private costosDirProdServ2!: string;
 
@@ -141,7 +141,7 @@ export class CostosService {
      this.costosDirProdFrecuencia2 = value;
    }
 
-    // Producto Servicio 1
+    // Producto Servicio 3
 
   private costosDirProdServ3!: string;
 
@@ -156,11 +156,11 @@ export class CostosService {
   private costosDirProdTipo3!: string;
 
   public getCostosDirProdTipo3(): string {
-    return this.costosDirProdTipo1;
+    return this.costosDirProdTipo3;
   }
 
   public setCostosDirProdTipo3(value: string) {
-    this.costosDirProdTipo1 = value;
+    this.costosDirProdTipo3 = value;
   }
 
   private costosDirProdCantidad3!: number;
@@ -180,7 +180,7 @@ export class CostosService {
   }
 
   public setCostosDirProdUniVenta3(value: string) {
-    this.costosDirProdUniVenta1 = value;
+    this.costosDirProdUniVenta3 = value;
   }
 
   private costosDirProdFrecuencia3!: string;
@@ -193,32 +193,32 @@ export class CostosService {
     this.costosDirProdFrecuencia3 = value;
   }
 
-   // Producto Servicio 1
+   // Producto Servicio 4
 
    private costosDirProdServ4!: string;
 
    public getCostosDirProdServ4(): string {
-     return this.costosDirProdServ1;
+     return this.costosDirProdServ4;
    }
  
    public setCostosDirProdServ4(value: string) {
-     this.costosDirProdServ1 = value;
+     this.costosDirProdServ4 = value;
    }
  
    private costosDirProdTipo4!: string;
  
    public getCostosDirProdTipo4(): string {
-     return this.costosDirProdTipo1;
+     return this.costosDirProdTipo4;
    }
  
    public setCostosDirProdTipo4(value: string) {
-     this.costosDirProdTipo1 = value;
+     this.costosDirProdTipo4 = value;
    }
  
    private costosDirProdCantidad4!: number;
  
    public getCostosDirProdCantidad4(): number {
-     return this.costosDirProdCantidad1;
+     return this.costosDirProdCantidad4;
    }
  
    public setCostosDirProdCantidad4(value: number) {
@@ -228,11 +228,11 @@ export class CostosService {
    private costosDirProdUniVenta4!: string;
  
    public getCostosDirProdUniVenta4(): string {
-     return this.costosDirProdUniVenta1;
+     return this.costosDirProdUniVenta4;
    }
  
    public setCostosDirProdUniVenta4(value: string) {
-     this.costosDirProdUniVenta1 = value;
+     this.costosDirProdUniVenta4 = value;
    }
  
    private costosDirProdFrecuencia4!: string;
