@@ -1,6 +1,28 @@
 .contenedor{
   padding-top: 65px;
 }
+.custom-tile {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: flex-start; 
+}
+.content{
+  width: 100%;
+  height: 100%;
+}
+
+.content-title{
+  width: 100%;
+  height: 40px;
+  display: grid;
+  align-items: center;
+  background: #17365d;
+}
+.title{
+  padding-left: 10px;
+  font-weight: bold;
+  color: #fff;
+}
 
 .fondo__subtitlo{
   background-color: #17365d;
@@ -47,10 +69,10 @@
 }
 
 .input-container3 {
-  width: 98%;
+  width: 100%;
 }
 .input-container3 input {
-  width: 98%;
+  width: 100%;
   box-sizing: border-box;
   background-color: #fff;
 }

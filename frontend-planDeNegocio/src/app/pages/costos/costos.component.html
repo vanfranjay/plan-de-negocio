@@ -1,5 +1,5 @@
 <div class="contenedor">
-  <mat-grid-list [cols]="colSize" rowHeight="1500px">
+  <mat-grid-list [cols]="colSize" rowHeight="2000px">
     <mat-grid-tile [colspan]="3" [rowspan]="1" class="custom-tile">
       <div class="content">
         <div class="content-title fondo__subtitlo grid__centerVertical grid__centerhorizontal">
@@ -8,7 +8,6 @@
         <div class="content-title fondo__subtitlo grid__centerVertical grid__centerhorizontal">
           <h2 class="title">MANUFACTURA Y SERVICIOS</h2>
         </div>
-
         <table class="full-width border-table">
           <tr>
             <th colspan="3" class="border fondo__subtitulo2 subTitle ">A=ALTA; M=MEDIA; B=BAJA</th>
@@ -43,8 +42,7 @@
             <td width="1%" colspan="1" class="border fondo__subtitulo2 subTitle">A</td>
             <td style="width: 6%" class="border input-container3">
               <div class="input-container3">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="rangoA" />
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()" [(ngModel)]="rangoA" />
               </div>
             </td>
 
@@ -170,79 +168,80 @@
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
+
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
           </tr>
@@ -252,7 +251,25 @@
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
@@ -264,75 +281,54 @@
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
           </tr>
 
         </table>
-
-        <br>
-
         <table class="full-width border-table">
 
           <tr>
@@ -355,7 +351,7 @@
               <input class="full-width no-margin" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
@@ -378,31 +374,31 @@
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
           </tr>
@@ -414,7 +410,7 @@
               <input class="full-width no-margin" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
@@ -437,31 +433,31 @@
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
           </tr>
@@ -473,7 +469,7 @@
               <input class="full-width no-margin" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
@@ -496,31 +492,31 @@
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
           </tr>
@@ -532,7 +528,7 @@
               <input class="full-width no-margin" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
@@ -555,31 +551,56 @@
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="6" class="border fondo__subtitulo2 subTitle">
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <b>TOTALES</b>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
               </div>
             </td>
           </tr>
@@ -589,7 +610,323 @@
           </tr>
         </table>
 
+        <table class="full-width border-table">
 
+          <tr>
+            <th colspan="1" class="border fondo__subtitulo2 subTitle3">Producto o Servicio:</th>
+
+            <td colspan="2" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+
+            <th colspan="1" class="border fondo__subtitulo2 subTitle3">Unidad de Medida:</th>
+
+            <td colspan="2" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+          </tr>
+          <tr>
+            <th colspan="6" class="border fondo__subtitulo2 subTitle"></th>
+            <br>
+          </tr>
+          <tr>
+            <th width="30%" colspan="1" class="border fondo__subtitulo2 subTitle3">Insumo</th>
+            <th width="10%" colspan="1" class="border fondo__subtitulo2 subTitle3">Cantidad (A)</th>
+            <th width="20%" colspan="1" class="border fondo__subtitulo2 subTitle3">Unidad</th>
+            <th width="10%" colspan="1" class="border fondo__subtitulo2 subTitle3">N° de Unidades de Productos o
+              Servicios (B)</th>
+            <th width="15%" colspan="1" class="border fondo__subtitulo2 subTitle3">Precio Unitario (C)</th>
+            <th width="15%" colspan="1" class="border fondo__subtitulo2 subTitle3">Total (A/B)*C</th>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" class="border fondo__subtitulo2 subTitle">
+            </td>
+            <td colspan="2" class="border fondo__subtitulo2 subTitle">
+              <b>Total Costo (D):</b>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
+              </div>
+            </td>
+
+          </tr>
+          <tr>
+            <td colspan="3" class="border fondo__subtitulo2 subTitle">
+            </td>
+            <td colspan="2" class="border fondo__subtitulo2 subTitle">
+              <b>Precio de Venta:</b>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+
+          </tr>
+          <tr>
+            <th colspan="10" class="border fondo__subtitulo2 subTitle"></th>
+            <br>
+          </tr>
+        </table>
 
         <table class="full-width border-table">
 
@@ -624,7 +961,7 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
@@ -656,45 +993,13 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
+              <input class="input-container3 " type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
@@ -720,45 +1025,13 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
+              <input class="input-container3 " type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
@@ -784,45 +1057,13 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
+              <input class="input-container3 " type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
@@ -848,19 +1089,45 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
@@ -874,6 +1141,108 @@
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" class="border fondo__subtitulo2 subTitle">
+            </td>
+            <td colspan="2" class="border fondo__subtitulo2 subTitle">
+              <b>Total Costo (D):</b>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
+              </div>
+            </td>
+
+          </tr>
+          <tr>
+            <td colspan="3" class="border fondo__subtitulo2 subTitle">
+            </td>
+            <td colspan="2" class="border fondo__subtitulo2 subTitle">
+              <b>Precio de Venta:</b>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+
+          </tr>
+          <tr>
+            <th colspan="10" class="border fondo__subtitulo2 subTitle"></th>
+            <br>
           </tr>
         </table>
         <table class="full-width border-table">
@@ -909,7 +1278,7 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
@@ -941,45 +1310,13 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
+              <input class="input-container3 " type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
@@ -1005,45 +1342,13 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
+              <input class="input-container3 " type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
@@ -1069,45 +1374,13 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
+              <input class="input-container3 " type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
@@ -1133,19 +1406,45 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
@@ -1159,6 +1458,108 @@
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" class="border fondo__subtitulo2 subTitle">
+            </td>
+            <td colspan="2" class="border fondo__subtitulo2 subTitle">
+              <b>Total Costo (D):</b>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
+              </div>
+            </td>
+
+          </tr>
+          <tr>
+            <td colspan="3" class="border fondo__subtitulo2 subTitle">
+            </td>
+            <td colspan="2" class="border fondo__subtitulo2 subTitle">
+              <b>Precio de Venta:</b>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+
+          </tr>
+          <tr>
+            <th colspan="10" class="border fondo__subtitulo2 subTitle"></th>
+            <br>
           </tr>
         </table>
         <table class="full-width border-table">
@@ -1194,7 +1595,7 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
@@ -1226,45 +1627,13 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
+              <input class="input-container3 " type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
@@ -1290,45 +1659,13 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
+              <input class="input-container3 " type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
@@ -1354,45 +1691,13 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
-                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                  [(ngModel)]="inputValues[0]" />
-              </div>
-            </td>
-            <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <input class="input-container3" type="text" placeholder="" />
+              <input class="input-container3 " type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
@@ -1418,19 +1723,45 @@
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <input class="input-container3" type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
-              <div class="input-container2">
+              <div class="input-container3">
                 <input type="number" class="no-margin right-align" (change)="calculateTotal()"
                   [(ngModel)]="inputValues[0]" />
               </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
             </td>
             <td colspan="1" class="border fondo__subtitulo2 subTitle">
               <div class="input-container2">
@@ -1444,6 +1775,108 @@
                   [(ngModel)]="inputValues[0]" />
               </div>
             </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3" type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <input class="input-container3 " type="text" placeholder="" />
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" class="border fondo__subtitulo2 subTitle">
+            </td>
+            <td colspan="2" class="border fondo__subtitulo2 subTitle">
+              <b>Total Costo (D):</b>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container2">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" readonly="readonly" />
+              </div>
+            </td>
+
+          </tr>
+          <tr>
+            <td colspan="3" class="border fondo__subtitulo2 subTitle">
+            </td>
+            <td colspan="2" class="border fondo__subtitulo2 subTitle">
+              <b>Precio de Venta:</b>
+            </td>
+            <td colspan="1" class="border fondo__subtitulo2 subTitle">
+              <div class="input-container3">
+                <input type="number" class="no-margin right-align" (change)="calculateTotal()"
+                  [(ngModel)]="inputValues[0]" />
+              </div>
+            </td>
+
+          </tr>
+          <tr>
+            <th colspan="10" class="border fondo__subtitulo2 subTitle"></th>
+            <br>
           </tr>
         </table>
       </div>
