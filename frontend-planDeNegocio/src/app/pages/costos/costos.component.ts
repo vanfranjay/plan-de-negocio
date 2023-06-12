@@ -8,15 +8,29 @@ import { CostosService } from 'src/app/service/costos/costos.service';
   styleUrls: ['./costos.component.scss']
 })
 export class CostosComponent {
+  costos: string = 'setRango'
+
   public colSize!: number;
   public colSize2: number = 1;
   rangoA!: number;
+  rangoB!: number;
+  rangoC!: number;
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     private costosService: CostosService,
   ) {
     this.rangoA = this.costosService.getRangoA();
+    this.rangoB = this.costosService.getRangoB();
+    this.rangoC = this.costosService.getRangoC();
   }
+
+  asignarValor(value: string, valor: any) {
+    const valueM: string = this.costos + value;      //setHome${NombreDeudor}
+
+    (this.costosService as any)[valueM](valor);
+  }
+
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])
       .subscribe(result => {

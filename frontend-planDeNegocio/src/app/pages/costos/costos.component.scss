@@ -3,12 +3,33 @@
 }
 .custom-tile {
   display: flex;
-  align-items: flex-start; 
-  justify-content: flex-start; 
+  align-items: flex-start; /* Alineación vertical al inicio */
+  justify-content: flex-start; /* Alineación horizontal al inicio */
 }
+
 .content{
   width: 100%;
   height: 100%;
+  background-color: #dbe5f1;
+}
+
+.contentTable{
+  width: 100%;
+  overflow-x: auto;
+  position: relative;
+}
+
+.contentRange{
+  width: 1500px; /* Ancho del contenido */
+}
+
+.contentProd{
+  width: 1600px; /* Ancho del contenido */
+}
+
+
+.contentProSer{
+  width: 1340px; /* Ancho del contenido */
 }
 
 .content-title{
@@ -22,6 +43,7 @@
   padding-left: 10px;
   font-weight: bold;
   color: #fff;
+  text-align: center;
 }
 
 .fondo__subtitlo{
@@ -80,4 +102,11 @@
 .selectCostosSM{
   width: 100%;
   background-color: #f79646;
+}
+
+.full-height{
+  height: 100%;
+}
+.full-width{
+  width: 100%;
 }
