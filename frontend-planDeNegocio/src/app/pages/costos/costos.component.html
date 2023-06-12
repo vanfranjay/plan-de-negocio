@@ -56,24 +56,24 @@
                 <td width="1%" colspan="1" class="border fondo__subtitulo2 subTitle">A</td>
                 <td style="width: 6%" class="border input-container3">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="asignarValor('A', rangoA)"
-                      [(ngModel)]="rangoA" />
+                    <input type="number" class="no-margin right-align" (change)="asignarValor('RangoA', costosDirRangoA)"
+                      [(ngModel)]="costosDirRangoA" />
                   </div>
                 </td>
 
                 <td width="1%" colspan="1" class="border fondo__subtitulo2 subTitle">M</td>
                 <td style="width: 6%" class="border input-container3">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="asignarValor('B', rangoB)"
-                      [(ngModel)]="rangoB" />
+                    <input type="number" class="no-margin right-align" (change)="asignarValor('RangoB', costosDirRangoB)"
+                      [(ngModel)]="costosDirRangoB" />
                   </div>
                 </td>
 
                 <td width="1%" colspan="1" class="border fondo__subtitulo2 subTitle">B</td>
                 <td style="width: 6%" class="border input-container3">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="asignarValor('C', rangoC)"
-                      [(ngModel)]="rangoC" />
+                    <input type="number" class="no-margin right-align" (change)="asignarValor('RangoC', costosDirRangoC)"
+                      [(ngModel)]="costosDirRangoC" />
                   </div>
                 </td>
                 <td>
@@ -369,22 +369,26 @@
               </tr>
               <tr>
                 <td width="20%" colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" />
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdServ1', costosDirProdServ1)"
+                  [(ngModel)]="costosDirProdServ1" />
                 </td>
                 <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" />
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdTipo1', costosDirProdTipo1)"
+                  [(ngModel)]="costosDirProdTipo1" />
                 </td>
                 <td width="5%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align" (change)="asignarValor('ProdCantidad1', costosDirProdCantidad1)"
+                    [(ngModel)]="costosDirProdCantidad1" />
                   </div>
                 </td>
                 <td width="11%" colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" />
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdUniVenta1', costosDirProdUniVenta1)"
+                  [(ngModel)]="costosDirProdUniVenta1" />
                 </td>
                 <td>
-                  <select class="selectCostosSM">
+                  <select class="selectCostosSM" (change)="asignarValor('ProdFrecuencia1', costosDirProdFrecuencia1)"
+                  [(ngModel)]="costosDirProdFrecuencia1">
                     <option></option>
                     <option>Diario</option>
                     <option>Semanal</option>
@@ -428,22 +432,26 @@
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" />
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdServ2', costosDirProdServ2)"
+                  [(ngModel)]="costosDirProdServ2" />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" />
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdTipo2', costosDirProdTipo2)"
+                  [(ngModel)]="costosDirProdTipo2" />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align" (change)="asignarValor('ProdCantidad2', costosDirProdCantidad2)"
+                    [(ngModel)]="costosDirProdCantidad2" />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" />
+                  <input class="full-width no-margin" type="text" placeholder=""  (change)="asignarValor('ProdUniVenta2', costosDirProdUniVenta2)"
+                  [(ngModel)]="costosDirProdUniVenta2" />
                 </td>
                 <td>
-                  <select class="selectCostosSM">
+                  <select class="selectCostosSM" (change)="asignarValor('ProdFrecuencia2', costosDirProdFrecuencia2)"
+                  [(ngModel)]="costosDirProdFrecuencia2">
                     <option></option>
                     <option>Diario</option>
                     <option>Semanal</option>
@@ -487,22 +495,26 @@
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" />
+                  <input class="full-width no-margin" type="text" placeholder=""  (change)="asignarValor('ProdServ3', costosDirProdServ3)"
+                  [(ngModel)]="costosDirProdServ3"/>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" />
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdTipo3', costosDirProdTipo3)"
+                  [(ngModel)]="costosDirProdTipo3"/>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align" (change)="asignarValor('ProdCantidad3', costosDirProdCantidad3)"
+                    [(ngModel)]="costosDirProdCantidad3"/>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" />
+                  <input class="full-width no-margin" type="text" placeholder=""  (change)="asignarValor('ProdUniVenta3', costosDirProdUniVenta3)"
+                  [(ngModel)]="costosDirProdUniVenta3" />
                 </td>
                 <td>
-                  <select class="selectCostosSM">
+                  <select class="selectCostosSM" (change)="asignarValor('ProdFrecuencia3', costosDirProdFrecuencia3)"
+                  [(ngModel)]="costosDirProdFrecuencia3">
                     <option></option>
                     <option>Diario</option>
                     <option>Semanal</option>
@@ -546,22 +558,26 @@
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" />
+                  <input class="full-width no-margin" type="text" placeholder=""  (change)="asignarValor('ProdServ4', costosDirProdServ4)"
+                  [(ngModel)]="costosDirProdServ4"/>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" />
+                  <input class="full-width no-margin" type="text" placeholder=""  (change)="asignarValor('ProdTipo4', costosDirProdTipo4)"
+                  [(ngModel)]="costosDirProdTipo4"/>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"  (change)="asignarValor('ProdCantidad4', costosDirProdCantidad4)"
+                    [(ngModel)]="costosDirProdCantidad4" />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" />
+                  <input class="full-width no-margin" type="text" placeholder=""  (change)="asignarValor('ProdUniVenta4', costosDirProdUniVenta4)"
+                  [(ngModel)]="costosDirProdUniVenta4"  />
                 </td>
                 <td>
-                  <select class="selectCostosSM">
+                  <select class="selectCostosSM" (change)="asignarValor('ProdFrecuencia4', costosDirProdFrecuencia4)"
+                  [(ngModel)]="costosDirProdFrecuencia4">
                     <option></option>
                     <option>Diario</option>
                     <option>Semanal</option>
