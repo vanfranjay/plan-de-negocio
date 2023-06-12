@@ -581,7 +581,11 @@ export class FlujoComponent {
   }
 
   formatNumber(value: number): string {
-    const formattedValue = Math.abs(value).toFixed(0);
-    return value >= 0 ? formattedValue : `(${formattedValue})`;
+    if (value === 0) {
+      return '';
+    } else {
+      const formattedValue = Math.abs(value).toFixed(0);
+      return value >= 0 ? formattedValue : `(${formattedValue})`;
+    }
   }
 }
