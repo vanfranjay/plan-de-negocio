@@ -6,6 +6,601 @@ import { Injectable } from '@angular/core';
 export class FlujoService {
 
   constructor() { }
+  private flujoAcIni!: number;
+  public getFlujoAcIni(): number {
+    return this.flujoAcIni;
+  }
+  public setFlujoAcIni(value: number) {
+    this.flujoAcIni = value;
+  }
+  private flujoSIEne!: number;
+  public getFlujoSIEne(): number {
+    return this.flujoSIEne;
+  }
+  public setFlujoSIEne(value: number) {
+    this.flujoSIEne = value;
+  }
+  private flujoSIFeb!: number;
+  public getFlujoSIFeb(): number {
+    return this.flujoSIFeb;
+  }
+  public setFlujoSIFeb(value: number) {
+    this.flujoSIFeb = value;
+  }
+  private flujoSIMar!: number;
+  public getFlujoSIMar(): number {
+    return this.flujoSIMar;
+  }
+  public setFlujoSIMar(value: number) {
+    this.flujoSIMar = value;
+  }
+  private flujoSIAbr!: number;
+  public getFlujoSIAbr(): number {
+    return this.flujoSIAbr;
+  }
+  public setFlujoSIAbr(value: number) {
+    this.flujoSIAbr = value;
+  }
+  private flujoSIMay!: number;
+  public getFlujoSIMay(): number {
+    return this.flujoSIMay;
+  }
+  public setFlujoSIMay(value: number) {
+    this.flujoSIMay = value;
+  }
+  private flujoSIJun!: number;
+  public getFlujoSIJun(): number {
+    return this.flujoSIJun;
+  }
+  public setFlujoSIJun(value: number) {
+    this.flujoSIJun = value;
+  }
+  private flujoSIJul!: number;
+  public getFlujoSIJul(): number {
+    return this.flujoSIJul;
+  }
+  public setFlujoSIJul(value: number) {
+    this.flujoSIJul = value;
+  }
+  private flujoSIAgo!: number;
+  public getFlujoSIAgo(): number {
+    return this.flujoSIAgo;
+  }
+  public setFlujoSIAgo(value: number) {
+    this.flujoSIAgo = value;
+  }
+  private flujoSISep!: number;
+  public getFlujoSISep(): number {
+    return this.flujoSISep;
+  }
+  public setFlujoSISep(value: number) {
+    this.flujoSISep = value;
+  }
+  private flujoSIOct!: number;
+  public getFlujoSIOct(): number {
+    return this.flujoSIOct;
+  }
+  public setFlujoSIOct(value: number) {
+    this.flujoSIOct = value;
+  }
+  private flujoSINov!: number;
+  public getFlujoSINov(): number {
+    return this.flujoSINov;
+  }
+  public setFlujoSINov(value: number) {
+    this.flujoSINov = value;
+  }
+  private flujoSIDiv!: number;
+  public getFlujoSIDiv(): number {
+    return this.flujoSIDiv;
+  }
+  public setFlujoSIDiv(value: number) {
+    this.flujoSIDiv = value;
+  }
+  private flujoIEne!: number;
+  public getFlujoIEne(): number {
+    return this.flujoIEne;
+  }
+  public setFlujoIEne(value: number) {
+    this.flujoIEne = value;
+  }
+  private flujoIFeb!: number;
+  public getFlujoIFeb(): number {
+    return this.flujoIFeb;
+  }
+  public setFlujoIFeb(value: number) {
+    this.flujoIFeb = value;
+  }
+  private flujoIMar!: number;
+  public getFlujoIMar(): number {
+    return this.flujoIMar;
+  }
+  public setFlujoIMar(value: number) {
+    this.flujoIMar = value;
+  }
+  private flujoIAbr!: number;
+  public getFlujoIAbr(): number {
+    return this.flujoIAbr;
+  }
+  public setFlujoIAbr(value: number) {
+    this.flujoIAbr = value;
+  }
+  private flujoIMay!: number;
+  public getFlujoIMay(): number {
+    return this.flujoIMay;
+  }
+  public setFlujoIMay(value: number) {
+    this.flujoIMay = value;
+  }
+  private flujoIJun!: number;
+  public getFlujoIJun(): number {
+    return this.flujoIJun;
+  }
+  public setFlujoIJun(value: number) {
+    this.flujoIJun = value;
+  }
+  private flujoIJul!: number;
+  public getFlujoIJul(): number {
+    return this.flujoIJul;
+  }
+  public setFlujoIJul(value: number) {
+    this.flujoIJul = value;
+  }
+  private flujoIAgo!: number;
+  public getFlujoIAgo(): number {
+    return this.flujoIAgo;
+  }
+  public setFlujoIAgo(value: number) {
+    this.flujoIAgo = value;
+  }
+  private flujoISep!: number;
+  public getFlujoISep(): number {
+    return this.flujoISep;
+  }
+  public setFlujoISep(value: number) {
+    this.flujoISep = value;
+  }
+  private flujoIOct!: number;
+  public getFlujoIOct(): number {
+    return this.flujoIOct;
+  }
+  public setFlujoIOct(value: number) {
+    this.flujoIOct = value;
+  }
+  private flujoINov!: number;
+  public getFlujoINov(): number {
+    return this.flujoINov;
+  }
+  public setFlujoINov(value: number) {
+    this.flujoINov = value;
+  }
+  private flujoIDiv!: number;
+  public getFlujoIDiv(): number {
+    return this.flujoIDiv;
+  }
+  public setFlujoIDiv(value: number) {
+    this.flujoIDiv = value;
+  }
+  private flujoCProdEne!: number;
+  public getFlujoCProdEne(): number {
+    return this.flujoCProdEne;
+  }
+  public setFlujoCProdEne(value: number) {
+    this.flujoCProdEne = value;
+  }
+  private flujoCPFeb!: number;
+  public getFlujoCPFeb(): number {
+    return this.flujoCPFeb;
+  }
+  public setFlujoCPFeb(value: number) {
+    this.flujoCPFeb = value;
+  }
+  private flujoCPMar!: number;
+  public getFlujoCPMar(): number {
+    return this.flujoCPMar;
+  }
+  public setFlujoCPMar(value: number) {
+    this.flujoCPMar = value;
+  }
+  private flujoCPAbr!: number;
+  public getFlujoCPAbr(): number {
+    return this.flujoCPAbr;
+  }
+  public setFlujoCPAbr(value: number) {
+    this.flujoCPAbr = value;
+  }
+  private flujoCPMay!: number;
+  public getFlujoCPMay(): number {
+    return this.flujoCPMay;
+  }
+  public setFlujoCPMay(value: number) {
+    this.flujoCPMay = value;
+  }
+  private flujoCPJun!: number;
+  public getFlujoCPJun(): number {
+    return this.flujoCPJun;
+  }
+  public setFlujoCPJun(value: number) {
+    this.flujoCPJun = value;
+  }
+  private flujoCPJul!: number;
+  public getFlujoCPJul(): number {
+    return this.flujoCPJul;
+  }
+  public setFlujoCPJul(value: number) {
+    this.flujoCPJul = value;
+  }
+  private flujoCPAgo!: number;
+  public getFlujoCPAgo(): number {
+    return this.flujoCPAgo;
+  }
+  public setFlujoCPAgo(value: number) {
+    this.flujoCPAgo = value;
+  }
+  private flujoCPSep!: number;
+  public getFlujoCPSep(): number {
+    return this.flujoCPSep;
+  }
+  public setFlujoCPSep(value: number) {
+    this.flujoCPSep = value;
+  }
+  private flujoCPOct!: number;
+  public getFlujoCPOct(): number {
+    return this.flujoCPOct;
+  }
+  public setFlujoCPOct(value: number) {
+    this.flujoCPOct = value;
+  }
+  private flujoCPNov!: number;
+  public getFlujoCPNov(): number {
+    return this.flujoCPNov;
+  }
+  public setFlujoCPNov(value: number) {
+    this.flujoCPNov = value;
+  }
+  private flujoCPDiv!: number;
+  public getFlujoCPDiv(): number {
+    return this.flujoCPDiv;
+  }
+  public setFlujoCPDiv(value: number) {
+    this.flujoCPDiv = value;
+  }
+  private flujoUBEne!: number;
+  public getFlujoUBEne(): number {
+    return this.flujoUBEne;
+  }
+  public setFlujoUBEne(value: number) {
+    this.flujoUBEne = value;
+  }
+  private flujoUBFeb!: number;
+  public getFlujoUBFeb(): number {
+    return this.flujoUBFeb;
+  }
+  public setFlujoUBFeb(value: number) {
+    this.flujoUBFeb = value;
+  }
+  private flujoUBMar!: number;
+  public getFlujoUBMar(): number {
+    return this.flujoUBMar;
+  }
+  public setFlujoUBMar(value: number) {
+    this.flujoUBMar = value;
+  }
+  private flujoUBAbr!: number;
+  public getFlujoUBAbr(): number {
+    return this.flujoUBAbr;
+  }
+  public setFlujoUBAbr(value: number) {
+    this.flujoUBAbr = value;
+  }
+  private flujoUBMay!: number;
+  public getFlujoUBMay(): number {
+    return this.flujoUBMay;
+  }
+  public setFlujoUBMay(value: number) {
+    this.flujoUBMay = value;
+  }
+  private flujoUBJun!: number;
+  public getFlujoUBJun(): number {
+    return this.flujoUBJun;
+  }
+  public setFlujoUBJun(value: number) {
+    this.flujoUBJun = value;
+  }
+  private flujoUBJul!: number;
+  public getFlujoUBJul(): number {
+    return this.flujoUBJul;
+  }
+  public setFlujoUBJul(value: number) {
+    this.flujoUBJul = value;
+  }
+  private flujoUBAgo!: number;
+  public getFlujoUBAgo(): number {
+    return this.flujoUBAgo;
+  }
+  public setFlujoUBAgo(value: number) {
+    this.flujoUBAgo = value;
+  }
+  private flujoUBSep!: number;
+  public getFlujoUBSep(): number {
+    return this.flujoUBSep;
+  }
+  public setFlujoUBSep(value: number) {
+    this.flujoUBSep = value;
+  }
+  private flujoUBOct!: number;
+  public getFlujoUBOct(): number {
+    return this.flujoUBOct;
+  }
+  public setFlujoUBOct(value: number) {
+    this.flujoUBOct = value;
+  }
+  private flujoUBNov!: number;
+  public getFlujoUBNov(): number {
+    return this.flujoUBNov;
+  }
+  public setFlujoUBNov(value: number) {
+    this.flujoUBNov = value;
+  }
+  private flujoUBDiv!: number;
+  public getFlujoUBDiv(): number {
+    return this.flujoUBDiv;
+  }
+  public setFlujoUBDiv(value: number) {
+    this.flujoUBDiv = value;
+  }
+  private flujoUNCdPagEne!: number;
+  public getFlujoUNCdPagEne(): number {
+    return this.flujoUNCdPagEne;
+  }
+  public setFlujoUNCdPagEne(value: number) {
+    this.flujoUNCdPagEne = value;
+  }
+  private flujoUNCdPFeb!: number;
+  public getFlujoUNCdPFeb(): number {
+    return this.flujoUNCdPFeb;
+  }
+  public setFlujoUNCdPFeb(value: number) {
+    this.flujoUNCdPFeb = value;
+  }
+  private flujoUNCdPMar!: number;
+  public getFlujoUNCdPMar(): number {
+    return this.flujoUNCdPMar;
+  }
+  public setFlujoUNCdPMar(value: number) {
+    this.flujoUNCdPMar = value;
+  }
+  private flujoUNCdPAbr!: number;
+  public getFlujoUNCdPAbr(): number {
+    return this.flujoUNCdPAbr;
+  }
+  public setFlujoUNCdPAbr(value: number) {
+    this.flujoUNCdPAbr = value;
+  }
+  private flujoUNCdPMay!: number;
+  public getFlujoUNCdPMay(): number {
+    return this.flujoUNCdPMay;
+  }
+  public setFlujoUNCdPMay(value: number) {
+    this.flujoUNCdPMay = value;
+  }
+  private flujoUNCdPJun!: number;
+  public getFlujoUNCdPJun(): number {
+    return this.flujoUNCdPJun;
+  }
+  public setFlujoUNCdPJun(value: number) {
+    this.flujoUNCdPJun = value;
+  }
+  private flujoUNCdPJul!: number;
+  public getFlujoUNCdPJul(): number {
+    return this.flujoUNCdPJul;
+  }
+  public setFlujoUNCdPJul(value: number) {
+    this.flujoUNCdPJul = value;
+  }
+  private flujoUNCdPAgo!: number;
+  public getFlujoUNCdPAgo(): number {
+    return this.flujoUNCdPAgo;
+  }
+  public setFlujoUNCdPAgo(value: number) {
+    this.flujoUNCdPAgo = value;
+  }
+  private flujoUNCdPSep!: number;
+  public getFlujoUNCdPSep(): number {
+    return this.flujoUNCdPSep;
+  }
+  public setFlujoUNCdPSep(value: number) {
+    this.flujoUNCdPSep = value;
+  }
+  private flujoUNCdPOct!: number;
+  public getFlujoUNCdPOct(): number {
+    return this.flujoUNCdPOct;
+  }
+  public setFlujoUNCdPOct(value: number) {
+    this.flujoUNCdPOct = value;
+  }
+  private flujoUNCdPNov!: number;
+  public getFlujoUNCdPNov(): number {
+    return this.flujoUNCdPNov;
+  }
+  public setFlujoUNCdPNov(value: number) {
+    this.flujoUNCdPNov = value;
+  }
+  private flujoUNCdPDiv!: number;
+  public getFlujoUNCdPDiv(): number {
+    return this.flujoUNCdPDiv;
+  }
+  public setFlujoUNCdPDiv(value: number) {
+    this.flujoUNCdPDiv = value;
+  }
+  private flujoCEne!: number;
+  public getFlujoCEne(): number {
+    return this.flujoCEne;
+  }
+  public setFlujoCEne(value: number) {
+    this.flujoCEne = value;
+  }
+  private flujoCFeb!: number;
+  public getFlujoCFeb(): number {
+    return this.flujoCFeb;
+  }
+  public setFlujoCFeb(value: number) {
+    this.flujoCFeb = value;
+  }
+  private flujoCMar!: number;
+  public getFlujoCMar(): number {
+    return this.flujoCMar;
+  }
+  public setFlujoCMar(value: number) {
+    this.flujoCMar = value;
+  }
+  private flujoCAbr!: number;
+  public getFlujoCAbr(): number {
+    return this.flujoCAbr;
+  }
+  public setFlujoCAbr(value: number) {
+    this.flujoCAbr = value;
+  }
+  private flujoCMay!: number;
+  public getFlujoCMay(): number {
+    return this.flujoCMay;
+  }
+  public setFlujoCMay(value: number) {
+    this.flujoCMay = value;
+  }
+  private flujoCJun!: number;
+  public getFlujoCJun(): number {
+    return this.flujoCJun;
+  }
+  public setFlujoCJun(value: number) {
+    this.flujoCJun = value;
+  }
+  private flujoCJul!: number;
+  public getFlujoCJul(): number {
+    return this.flujoCJul;
+  }
+  public setFlujoCJul(value: number) {
+    this.flujoCJul = value;
+  }
+  private flujoCAgo!: number;
+  public getFlujoCAgo(): number {
+    return this.flujoCAgo;
+  }
+  public setFlujoCAgo(value: number) {
+    this.flujoCAgo = value;
+  }
+  private flujoCSep!: number;
+  public getFlujoCSep(): number {
+    return this.flujoCSep;
+  }
+  public setFlujoCSep(value: number) {
+    this.flujoCSep = value;
+  }
+  private flujoCOct!: number;
+  public getFlujoCOct(): number {
+    return this.flujoCOct;
+  }
+  public setFlujoCOct(value: number) {
+    this.flujoCOct = value;
+  }
+  private flujoCNov!: number;
+  public getFlujoCNov(): number {
+    return this.flujoCNov;
+  }
+  public setFlujoCNov(value: number) {
+    this.flujoCNov = value;
+  }
+  private flujoCDiv!: number;
+  public getFlujoCDiv(): number {
+    return this.flujoCDiv;
+  }
+  public setFlujoCDiv(value: number) {
+    this.flujoCDiv = value;
+  }
+  private flujoAEne!: number;
+  public getFlujoAEne(): number {
+    return this.flujoAEne;
+  }
+  public setFlujoAEne(value: number) {
+    this.flujoAEne = value;
+  }
+  private flujoAFeb!: number;
+  public getFlujoAFeb(): number {
+    return this.flujoAFeb;
+  }
+  public setFlujoAFeb(value: number) {
+    this.flujoAFeb = value;
+  }
+  private flujoAMar!: number;
+  public getFlujoAMar(): number {
+    return this.flujoAMar;
+  }
+  public setFlujoAMar(value: number) {
+    this.flujoAMar = value;
+  }
+  private flujoAAbr!: number;
+  public getFlujoAAbr(): number {
+    return this.flujoAAbr;
+  }
+  public setFlujoAAbr(value: number) {
+    this.flujoAAbr = value;
+  }
+  private flujoAMay!: number;
+  public getFlujoAMay(): number {
+    return this.flujoAMay;
+  }
+  public setFlujoAMay(value: number) {
+    this.flujoAMay = value;
+  }
+  private flujoAJun!: number;
+  public getFlujoAJun(): number {
+    return this.flujoAJun;
+  }
+  public setFlujoAJun(value: number) {
+    this.flujoAJun = value;
+  }
+  private flujoAJul!: number;
+  public getFlujoAJul(): number {
+    return this.flujoAJul;
+  }
+  public setFlujoAJul(value: number) {
+    this.flujoAJul = value;
+  }
+  private flujoAAgo!: number;
+  public getFlujoAAgo(): number {
+    return this.flujoAAgo;
+  }
+  public setFlujoAAgo(value: number) {
+    this.flujoAAgo = value;
+  }
+  private flujoASep!: number;
+  public getFlujoASep(): number {
+    return this.flujoASep;
+  }
+  public setFlujoASep(value: number) {
+    this.flujoASep = value;
+  }
+  private flujoAOct!: number;
+  public getFlujoAOct(): number {
+    return this.flujoAOct;
+  }
+  public setFlujoAOct(value: number) {
+    this.flujoAOct = value;
+  }
+  private flujoANov!: number;
+  public getFlujoANov(): number {
+    return this.flujoANov;
+  }
+  public setFlujoANov(value: number) {
+    this.flujoANov = value;
+  }
+  private flujoADiv!: number;
+  public getFlujoADiv(): number {
+    return this.flujoADiv;
+  }
+  public setFlujoADiv(value: number) {
+    this.flujoADiv = value;
+  }
 
   private flujoActividad: string = 'SERVICIOS';
   public getFlujoActividad(): string {

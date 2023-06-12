@@ -45,12 +45,6 @@ export class FlujoComponent {
   costoOpOtrosImpr2!: number;
   costoOpTotalGasto!: number;
 
-  //variables primera tabla de flujo
-  // los que no cambian:
-  flujoCostosFijosTb1!: number;
-  // los que cambian:
-
-
 
   flujoCostOp: string = 'setCostoOp';
   costoOperativo!: number;
@@ -68,6 +62,98 @@ export class FlujoComponent {
   flujoTasaInteres: number = 0.115;
   flujoDatosCredito!: number;
   flujoPlazoMeses!: number;
+
+
+  //variables primera tabla de flujo
+  // los que no cambian:
+  flujoCostosFijosTb1!: number;
+  // los que cambian:
+  flujoSIEne!: number;
+  flujoSIFeb!: number;
+  flujoSIMar!: number;
+  flujoSIAbr!: number;
+  flujoSIMay!: number;
+  flujoSIJun!: number;
+  flujoSIJul!: number;
+  flujoSIAgo!: number;
+  flujoSISep!: number;
+  flujoSIOct!: number;
+  flujoSINov!: number;
+  flujoSIDiv!: number;
+  flujoIEne!: number;
+  flujoIFeb!: number;
+  flujoIMar!: number;
+  flujoIAbr!: number;
+  flujoIMay!: number;
+  flujoIJun!: number;
+  flujoIJul!: number;
+  flujoIAgo!: number;
+  flujoISep!: number;
+  flujoIOct!: number;
+  flujoINov!: number;
+  flujoIDiv!: number;
+  flujoCProdEne!: number;
+  flujoCPFeb!: number;
+  flujoCPMar!: number;
+  flujoCPAbr!: number;
+  flujoCPMay!: number;
+  flujoCPJun!: number;
+  flujoCPJul!: number;
+  flujoCPAgo!: number;
+  flujoCPSep!: number;
+  flujoCPOct!: number;
+  flujoCPNov!: number;
+  flujoCPDiv!: number;
+  flujoUBEne!: number;
+  flujoUBFeb!: number;
+  flujoUBMar!: number;
+  flujoUBAbr!: number;
+  flujoUBMay!: number;
+  flujoUBJun!: number;
+  flujoUBJul!: number;
+  flujoUBAgo!: number;
+  flujoUBSep!: number;
+  flujoUBOct!: number;
+  flujoUBNov!: number;
+  flujoUBDiv!: number;
+  flujoUNCdPagEne!: number;
+  flujoUNCdPFeb!: number;
+  flujoUNCdPMar!: number;
+  flujoUNCdPAbr!: number;
+  flujoUNCdPMay!: number;
+  flujoUNCdPJun!: number;
+  flujoUNCdPJul!: number;
+  flujoUNCdPAgo!: number;
+  flujoUNCdPSep!: number;
+  flujoUNCdPOct!: number;
+  flujoUNCdPNov!: number;
+  flujoUNCdPDiv!: number;
+  flujoCEne!: number;
+  flujoCFeb!: number;
+  flujoCMar!: number;
+  flujoCAbr!: number;
+  flujoCMay!: number;
+  flujoCJun!: number;
+  flujoCJul!: number;
+  flujoCAgo!: number;
+  flujoCSep!: number;
+  flujoCOct!: number;
+  flujoCNov!: number;
+  flujoCDiv!: number;
+  flujoAEne!: number;
+  flujoAFeb!: number;
+  flujoAMar!: number;
+  flujoAAbr!: number;
+  flujoAMay!: number;
+  flujoAJun!: number;
+  flujoAJul!: number;
+  flujoAAgo!: number;
+  flujoASep!: number;
+  flujoAOct!: number;
+  flujoANov!: number;
+  flujoADiv!: number;
+
+  flujoAcIni!: number;
 
 
   constructor(
@@ -120,6 +206,7 @@ export class FlujoComponent {
     if (this.datosCreditoMonto) {
       this.calculateDatosCredito();
     }
+    this.llenarTabla1Flujo();
   }
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])
@@ -143,18 +230,132 @@ export class FlujoComponent {
     this.calculateTotalGastosCostoOperativo();
     this.calculateCostoOpTbUtilidad();
     this.calculateUtilidadOperativa();
-    this.CalculateCostosFijosFlujoTab1()
+    this.CalculateCostosFijosFlujoTab1();
+    this.llenarTabla1Flujo();
   }
   CalculateCostosFijosFlujoTab1() {
     this.flujoCostosFijosTb1 = (this.costoOpTotalGasto ?? 0)
     this.flujoService.setFlujoCostosFijosTb1(this.flujoCostosFijosTb1);
   }
+  /////////////////// tabla de flujo
+  llenarTabla1Flujo() {
+    this.flujoUBEne = (this.flujoIEne ?? 0) - (this.flujoCProdEne ?? 0);
+    this.flujoUNCdPagEne = (this.flujoUBEne ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
+    this.flujoAEne = (this.flujoUNCdPagEne ?? 0) - (this.flujoCEne ?? 0);
+    this.flujoSIFeb = this.flujoAEne;
+    this.flujoService.setFlujoUBEne(this.flujoUBEne);
+    this.flujoService.setFlujoUNCdPagEne(this.flujoUNCdPagEne);
+    this.flujoService.setFlujoAEne(this.flujoAEne);
+    this.flujoService.setFlujoSIFeb(this.flujoSIFeb);
+
+    this.flujoUBFeb = (this.flujoIFeb ?? 0) - (this.flujoCPFeb ?? 0);
+    this.flujoUNCdPFeb = (this.flujoUBFeb ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
+    this.flujoAFeb = (this.flujoUNCdPFeb ?? 0) - (this.flujoCFeb ?? 0);
+    this.flujoSIMar = this.flujoAFeb;
+    this.flujoService.setFlujoUBFeb(this.flujoUBFeb);
+    this.flujoService.setFlujoUNCdPFeb(this.flujoUNCdPFeb);
+    this.flujoService.setFlujoAFeb(this.flujoAFeb);
+    this.flujoService.setFlujoSIMar(this.flujoSIMar);
+
+    this.flujoUBMar = (this.flujoIMar ?? 0) - (this.flujoCPMar ?? 0);
+    this.flujoUNCdPMar = (this.flujoUBMar ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
+    this.flujoAMar = (this.flujoUNCdPMar ?? 0) - (this.flujoCMar ?? 0);
+    this.flujoSIAbr = this.flujoAMar;
+    this.flujoService.setFlujoUBMar(this.flujoUBMar);
+    this.flujoService.setFlujoUNCdPMar(this.flujoUNCdPMar);
+    this.flujoService.setFlujoAMar(this.flujoAMar);
+    this.flujoService.setFlujoSIAbr(this.flujoSIAbr);
+
+    this.flujoUBAbr = (this.flujoIAbr ?? 0) - (this.flujoCPAbr ?? 0);
+    this.flujoUNCdPAbr = (this.flujoUBAbr ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
+    this.flujoAAbr = (this.flujoUNCdPAbr ?? 0) - (this.flujoCAbr ?? 0);
+    this.flujoSIMay = this.flujoAAbr;
+    this.flujoService.setFlujoUBAbr(this.flujoUBAbr);
+    this.flujoService.setFlujoUNCdPAbr(this.flujoUNCdPAbr);
+    this.flujoService.setFlujoAAbr(this.flujoAAbr);
+    this.flujoService.setFlujoSIMay(this.flujoSIMay);
+
+    this.flujoUBMay = (this.flujoIMay ?? 0) - (this.flujoCPMay ?? 0);
+    this.flujoUNCdPMay = (this.flujoUBMay ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
+    this.flujoAMay = (this.flujoUNCdPMay ?? 0) - (this.flujoCMay ?? 0);
+    this.flujoSIJun = this.flujoAMay;
+    this.flujoService.setFlujoUBMay(this.flujoUBMay);
+    this.flujoService.setFlujoUNCdPMay(this.flujoUNCdPMay);
+    this.flujoService.setFlujoAMay(this.flujoAMay);
+    this.flujoService.setFlujoSIJun(this.flujoSIJun);
+
+    this.flujoUBJun = (this.flujoIJun ?? 0) - (this.flujoCPJun ?? 0);
+    this.flujoUNCdPJun = (this.flujoUBJun ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
+    this.flujoAJun = (this.flujoUNCdPJun ?? 0) - (this.flujoCJun ?? 0);
+    this.flujoSIJul = this.flujoAJun;
+    this.flujoService.setFlujoUBJun(this.flujoUBJun);
+    this.flujoService.setFlujoUNCdPJun(this.flujoUNCdPJun);
+    this.flujoService.setFlujoAJun(this.flujoAJun);
+    this.flujoService.setFlujoSIJul(this.flujoSIJul);
+
+    this.flujoUBJul = (this.flujoIJul ?? 0) - (this.flujoCPJul ?? 0);
+    this.flujoUNCdPJul = (this.flujoUBJul ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
+    this.flujoAJul = (this.flujoUNCdPJul ?? 0) - (this.flujoCJul ?? 0);
+    this.flujoSIAgo = this.flujoAJul;
+    this.flujoService.setFlujoUBJul(this.flujoUBJul);
+    this.flujoService.setFlujoUNCdPJul(this.flujoUNCdPJul);
+    this.flujoService.setFlujoAJul(this.flujoAJul);
+    this.flujoService.setFlujoSIAgo(this.flujoSIAgo);
+
+    this.flujoUBAgo = (this.flujoIAgo ?? 0) - (this.flujoCPAgo ?? 0);
+    this.flujoUNCdPAgo = (this.flujoUBAgo ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
+    this.flujoAAgo = (this.flujoUNCdPAgo ?? 0) - (this.flujoCAgo ?? 0);
+    this.flujoSISep = this.flujoAAgo;
+    this.flujoService.setFlujoUBAgo(this.flujoUBAgo);
+    this.flujoService.setFlujoUNCdPAgo(this.flujoUNCdPAgo);
+    this.flujoService.setFlujoAAgo(this.flujoAAgo);
+    this.flujoService.setFlujoSISep(this.flujoSISep);
+
+    this.flujoUBSep = (this.flujoISep ?? 0) - (this.flujoCPSep ?? 0);
+    this.flujoUNCdPSep = (this.flujoUBSep ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
+    this.flujoASep = (this.flujoUNCdPSep ?? 0) - (this.flujoCSep ?? 0);
+    this.flujoSIOct = this.flujoASep;
+    this.flujoService.setFlujoUBSep(this.flujoUBSep);
+    this.flujoService.setFlujoUNCdPSep(this.flujoUNCdPSep);
+    this.flujoService.setFlujoASep(this.flujoASep);
+    this.flujoService.setFlujoSIOct(this.flujoSIOct);
+
+    this.flujoUBOct = (this.flujoIOct ?? 0) - (this.flujoCPOct ?? 0);
+    this.flujoUNCdPOct = (this.flujoUBOct ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
+    this.flujoAOct = (this.flujoUNCdPOct ?? 0) - (this.flujoCOct ?? 0);
+    this.flujoSINov = this.flujoAOct;
+    this.flujoService.setFlujoUBOct(this.flujoUBOct);
+    this.flujoService.setFlujoUNCdPOct(this.flujoUNCdPOct);
+    this.flujoService.setFlujoAOct(this.flujoAOct);
+    this.flujoService.setFlujoSINov(this.flujoSINov);
+
+    this.flujoUBNov = (this.flujoINov ?? 0) - (this.flujoCPNov ?? 0);
+    this.flujoUNCdPNov = (this.flujoUBNov ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
+    this.flujoANov = (this.flujoUNCdPNov ?? 0) - (this.flujoCNov ?? 0);
+    this.flujoSIDiv = this.flujoANov;
+    this.flujoService.setFlujoUBNov(this.flujoUBNov);
+    this.flujoService.setFlujoUNCdPNov(this.flujoUNCdPNov);
+    this.flujoService.setFlujoANov(this.flujoANov);
+    this.flujoService.setFlujoSIDiv(this.flujoSIDiv);
+
+    this.flujoUBDiv = (this.flujoIDiv ?? 0) - (this.flujoCPDiv ?? 0);
+    this.flujoUNCdPDiv = (this.flujoUBDiv ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
+    this.flujoADiv = (this.flujoUNCdPDiv ?? 0) - (this.flujoCDiv ?? 0);
+    //this.flujoSIFeb = this.flujoADiv;
+    this.flujoService.setFlujoUBDiv(this.flujoUBDiv);
+    this.flujoService.setFlujoUNCdPDiv(this.flujoUNCdPDiv);
+    this.flujoService.setFlujoADiv(this.flujoADiv);
+    //this.flujoService.setFlujoSIFeb(this.flujoSIFeb);
+
+  }
+
+
   /////////////////// Datos del credito
   calculateDatosCredito() {
-    if (this.flujoPlazoMeses == null || this.flujoPlazoMeses== undefined) {
-      this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12))**-(this.flujoPlazoMeses ?? 1) )) - this.datosCreditoMonto;
-    }else{
-      this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12))**-(this.flujoPlazoMeses ?? 1) ));
+    if (this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
+      this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12)) ** -(this.flujoPlazoMeses ?? 1))) - this.datosCreditoMonto;
+    } else {
+      this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12)) ** -(this.flujoPlazoMeses ?? 1)));
     }
     //this.flujoCuotaProx = (this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - Math.pow(1 + (this.calculateTasaInteres() / 12), -1));
     //this.flujoDatosCredito = this.flujoCuotaProx + this.calculatePoliza(+this.flujoPoliza); ** ((-this.flujoPlazoMeses) ?? 1)
