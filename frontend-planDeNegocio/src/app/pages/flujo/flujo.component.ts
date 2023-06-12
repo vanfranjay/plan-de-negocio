@@ -12,7 +12,6 @@ export class FlujoComponent {
   colSize: any;
   colSize2: any;
 
-  datosCreditoMonto!: number;
   totalAP!: number;
   totalProyecto!: number;
   aportePropio!: number;
@@ -56,8 +55,20 @@ export class FlujoComponent {
   flujoCostOp: string = 'setCostoOp';
   costoOperativo!: number;
   utilidadOperativa!: number;
-  utilidadBruta: number= 0;
+  utilidadBruta: number = 0;
   colSize3!: number;
+
+  //datos del credito
+  flujoCuotaProx!: number;
+  flujoPoliza: number = 0.395;
+  flujoFrecuencia1!: number;
+  datosCreditoMonto!: number;
+  flujoTipoCuota!: number;
+  flujoActividad: string = 'SERVICIOS';
+  flujoTasaInteres: number = 0.115;
+  flujoDatosCredito!: number;
+  flujoPlazoMeses!: number;
+
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -95,12 +106,20 @@ export class FlujoComponent {
 
     this.total = this.presupuestoService.getTotal();
 
+    //datos credito
+    this.flujoActividad = this.flujoService.getFlujoActividad();
+    this.flujoTasaInteres = this.flujoService.getFlujoTasaInteres();
+
+
     this.flujoCostosFijosTb1 = this.flujoService.getFlujoCostosFijosTb1();
     this.calcularTotalAP();
     this.calcularTotalPI();
     this.calcularTotalProyecto();
     this.calcularAportePropio();
     this.calcularMontoFinanciar();
+    if (this.datosCreditoMonto) {
+      this.calculateDatosCredito();
+    }
   }
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])
@@ -126,13 +145,37 @@ export class FlujoComponent {
     this.calculateUtilidadOperativa();
     this.CalculateCostosFijosFlujoTab1()
   }
-  CalculateCostosFijosFlujoTab1(){
+  CalculateCostosFijosFlujoTab1() {
     this.flujoCostosFijosTb1 = (this.costoOpTotalGasto ?? 0)
     this.flujoService.setFlujoCostosFijosTb1(this.flujoCostosFijosTb1);
   }
+  /////////////////// Datos del credito
+  calculateDatosCredito() {
+    if (this.flujoPlazoMeses == null || this.flujoPlazoMeses== undefined) {
+      this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12))**-(this.flujoPlazoMeses ?? 1) )) - this.datosCreditoMonto;
+    }else{
+      this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12))**-(this.flujoPlazoMeses ?? 1) ));
+    }
+    //this.flujoCuotaProx = (this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - Math.pow(1 + (this.calculateTasaInteres() / 12), -1));
+    //this.flujoDatosCredito = this.flujoCuotaProx + this.calculatePoliza(+this.flujoPoliza); ** ((-this.flujoPlazoMeses) ?? 1)
+  }
+  calculatePoliza(valor: number): number {
+    return valor * 100;
+  }
+  calculateTasaInteres(): number {
+    if (this.flujoActividad === 'SERVICIOS') {
+      this.flujoTasaInteres = 0.115;
+    } else {
+      this.flujoTasaInteres = 0.07;
+    }
+    this.flujoService.setFlujoTasaInteres(this.flujoTasaInteres);
+    this.flujoService.setFlujoActividad(this.flujoActividad);
+    return this.flujoTasaInteres;
+  }
+  ///////////////////
   calculateUtilidadOperativa() {
     this.utilidadOperativa =
-      (this.utilidadBruta)-
+      (this.utilidadBruta) -
       (this.costoOperativo);
   }
   calculateCostoOpTbUtilidad() {
