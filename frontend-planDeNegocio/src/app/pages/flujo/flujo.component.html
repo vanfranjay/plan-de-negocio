@@ -362,9 +362,9 @@
                   <td style="width: 25%" class="border">
                     MANUFACTURA / SERVICIOS
                   </td>
-                  <td style="width: 25%" class="border">120000</td>
-                  <td style="width: 25%" class="border">94800</td>
-                  <td style="width: 25%" class="border">13%</td>
+                  <td style="width: 25%" class="border">{{flujoCostosDirAnualVM}}</td>
+                  <td style="width: 25%" class="border">{{flujoCostosDirAnualCPM}}</td>
+                  <td style="width: 25%" class="border">{{flujoCostosDirMubT | percent: '1.2-2'}}</td>
                 </tr>
                 <tr>
                   <td style="width: 25%" class="border">AGRICOLA</td>
@@ -381,9 +381,9 @@
                 <br />
                 <tr>
                   <td style="width: 25%" class="border">TOTAL</td>
-                  <td style="width: 25%" class="border">12000</td>
-                  <td style="width: 25%" class="border">94800</td>
-                  <td style="width: 25%" class="border">21%</td>
+                  <td style="width: 25%" class="border">{{flujoTV}}</td>
+                  <td style="width: 25%" class="border">{{flujoTC}}</td>
+                  <td style="width: 25%" class="border">{{flujoTM | percent: '1.2-2'}}</td>
                 </tr>
               </table>
               <br />
@@ -394,15 +394,15 @@
                   <td style="width: 50%" class="border">
                     (+) INGRESOS TOTALES
                   </td>
-                  <td style="width: 50%" class="border">120000</td>
+                  <td style="width: 50%" class="border">{{flujoTV}}</td>
                 </tr>
                 <tr>
                   <td style="width: 50%" class="border">(-) COSTOS DIRECTOS</td>
-                  <td style="width: 50%" class="border">94800</td>
+                  <td style="width: 50%" class="border">{{flujoTC}}</td>
                 </tr>
                 <tr>
                   <td style="width: 50%" class="border">(=) UTILIDAD BRUTA</td>
-                  <td style="width: 50%" class="border">25200</td>
+                  <td style="width: 50%" class="border">{{flujoUB}}</td>
                 </tr>
                 <tr>
                   <td style="width: 50%" class="border">(-) COSTO OPERATIVO</td>
@@ -614,7 +614,7 @@
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">Inversiones</td>
-                <td style="width: 7%" class="border">425.789</td>
+                <td style="width: 7%" class="border">{{datosCreditoMonto}}</td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
@@ -631,7 +631,7 @@
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">SALDO INICIAL</td>
-                <td style="width: 7%" class="border">425.789</td>
+                <td style="width: 7%" class="border">{{datosCreditoMonto}}</td>
                 <td style="width: 7%" class="border">-</td>
                 <td style="width: 7%" class="border">
                   {{formatNumber(flujoSIFeb)}}

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { PresupuestoService } from 'src/app/service/presupuesto/presupuesto.service';
 import { FlujoService } from 'src/app/service/flujo/flujo.service';
+import { CostosService } from 'src/app/service/costos/costos.service';
 
 @Component({
   selector: 'app-flujo',
@@ -44,6 +45,33 @@ export class FlujoComponent {
   costoOpOtrosImpr1!: number;
   costoOpOtrosImpr2!: number;
   costoOpTotalGasto!: number;
+
+  // variables de costos para la primera tabla
+  costosDirEneVM!: number;
+  costosDirFebVM!: number;
+  costosDirMarVM!: number;
+  costosDirAbrVM!: number;
+  costosDirMayVM!: number;
+  costosDirJunVM!: number;
+  costosDirJulVM!: number;
+  costosDirAgoVM!: number;
+  costosDirSepVM!: number;
+  costosDirOctVM!: number;
+  costosDirNovVM!: number;
+  costosDirDicVM!: number;
+
+  costosDirEneCPM!: number;
+  costosDirFebCPM!: number;
+  costosDirMarCPM!: number;
+  costosDirAbrCPM!: number;
+  costosDirMayCPM!: number;
+  costosDirJunCPM!: number;
+  costosDirJulCPM!: number;
+  costosDirAgoCPM!: number;
+  costosDirSepCPM!: number;
+  costosDirOctCPM!: number;
+  costosDirNovCPM!: number;
+  costosDirDicCPM!: number;
 
 
   flujoCostOp: string = 'setCostoOp';
@@ -155,12 +183,71 @@ export class FlujoComponent {
 
   flujoAcIni!: number;
 
+  // datos de costos
+  flujoCostosDirAnualVM!: number;
+  flujoCostosDirAnualCPM!: number;
+  flujoCostosDirMubT!: number;
+
+  // datos anuales
+  flujoTV!: number;
+  flujoTC!: number;
+  flujoTM!: number;
+
+  // Tabla de utilidad
+  flujoUB!: number;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
     private presupuestoService: PresupuestoService,
     private flujoService: FlujoService,
+    private costosService: CostosService,
   ) {
+    //datos de costos para la primera tabla
+    this.flujoIEne = (isNaN(this.costosService.getCostosDirEneVM()) ? 0 : this.costosService.getCostosDirEneVM());
+    this.flujoIFeb = (isNaN(this.costosService.getCostosDirFebVM()) ? 0 : this.costosService.getCostosDirFebVM());
+    this.flujoIMar = (isNaN(this.costosService.getCostosDirMarVM()) ? 0 : this.costosService.getCostosDirMarVM());
+    this.flujoIAbr = (isNaN(this.costosService.getCostosDirMarVM()) ? 0 : this.costosService.getCostosDirMarVM());
+    this.flujoIMay = (isNaN(this.costosService.getCostosDirAbrVM()) ? 0 : this.costosService.getCostosDirAbrVM());
+    this.flujoIJun = (isNaN(this.costosService.getCostosDirMayVM()) ? 0 : this.costosService.getCostosDirMayVM());
+    this.flujoIJul = (isNaN(this.costosService.getCostosDirJunVM()) ? 0 : this.costosService.getCostosDirJunVM());
+    this.flujoIAgo = (isNaN(this.costosService.getCostosDirJulVM()) ? 0 : this.costosService.getCostosDirJulVM());
+    this.flujoISep = (isNaN(this.costosService.getCostosDirAgoVM()) ? 0 : this.costosService.getCostosDirAgoVM());
+    this.flujoIOct = (isNaN(this.costosService.getCostosDirSepVM()) ? 0 : this.costosService.getCostosDirSepVM());
+    this.flujoINov = (isNaN(this.costosService.getCostosDirOctVM()) ? 0 : this.costosService.getCostosDirOctVM());
+    this.flujoIDiv = (isNaN(this.costosService.getCostosDirNovVM()) ? 0 : this.costosService.getCostosDirNovVM());
+
+    this.flujoCProdEne = (isNaN(this.costosService.getCostosDirEneCPM()) ? 0 : this.costosService.getCostosDirEneCPM());
+    this.flujoCPFeb = (isNaN(this.costosService.getCostosDirFebCPM()) ? 0 : this.costosService.getCostosDirFebCPM());
+    this.flujoCPMar = (isNaN(this.costosService.getCostosDirMarCPM()) ? 0 : this.costosService.getCostosDirMarCPM());
+    this.flujoCPAbr = (isNaN(this.costosService.getCostosDirAbrCPM()) ? 0 : this.costosService.getCostosDirAbrCPM());
+    this.flujoCPMay = (isNaN(this.costosService.getCostosDirMayCPM()) ? 0 : this.costosService.getCostosDirMayCPM());
+    this.flujoCPJun = (isNaN(this.costosService.getCostosDirJunCPM()) ? 0 : this.costosService.getCostosDirJunCPM());
+    this.flujoCPJul = (isNaN(this.costosService.getCostosDirJulCPM()) ? 0 : this.costosService.getCostosDirJulCPM());
+    this.flujoCPAgo = (isNaN(this.costosService.getCostosDirAgoCPM()) ? 0 : this.costosService.getCostosDirAgoCPM());
+    this.flujoCPSep = (isNaN(this.costosService.getCostosDirSepCPM()) ? 0 : this.costosService.getCostosDirSepCPM());
+    this.flujoCPOct = (isNaN(this.costosService.getCostosDirOctCPM()) ? 0 : this.costosService.getCostosDirOctCPM());
+    this.flujoCPNov = (isNaN(this.costosService.getCostosDirNovCPM()) ? 0 : this.costosService.getCostosDirNovCPM());
+    this.flujoCPDiv = (isNaN(this.costosService.getCostosDirDicCPM()) ? 0 : this.costosService.getCostosDirDicCPM());
+
+    //utilidad bruta
+    this.flujoUBEne = (isNaN(this.flujoIEne) ? 0 : this.flujoIEne) - (isNaN(this.flujoCProdEne) ? 0 : this.flujoCProdEne);
+    this.flujoUBFeb = (isNaN(this.flujoIFeb) ? 0 : this.flujoIFeb) - (isNaN(this.flujoCPFeb) ? 0 : this.flujoCPFeb);
+    this.flujoUBMar = (isNaN(this.flujoIMar) ? 0 : this.flujoIMar) - (isNaN(this.flujoCPMar) ? 0 : this.flujoCPMar);
+    this.flujoUBAbr = (isNaN(this.flujoIAbr) ? 0 : this.flujoIAbr) - (isNaN(this.flujoCPAbr) ? 0 : this.flujoCPAbr);
+    this.flujoUBMay = (isNaN(this.flujoIMay) ? 0 : this.flujoIMay) - (isNaN(this.flujoCPMay) ? 0 : this.flujoCPMay);
+    this.flujoUBJun = (isNaN(this.flujoIJun) ? 0 : this.flujoIJun) - (isNaN(this.flujoCPJun) ? 0 : this.flujoCPJun);
+    this.flujoUBJul = (isNaN(this.flujoIJul) ? 0 : this.flujoIJul) - (isNaN(this.flujoCPJul) ? 0 : this.flujoCPJul);
+    this.flujoUBAgo = (isNaN(this.flujoIAgo) ? 0 : this.flujoIAgo) - (isNaN(this.flujoCPAgo) ? 0 : this.flujoCPAgo);
+    this.flujoUBSep = (isNaN(this.flujoISep) ? 0 : this.flujoISep) - (isNaN(this.flujoCPSep) ? 0 : this.flujoCPSep);
+    this.flujoUBOct = (isNaN(this.flujoIOct) ? 0 : this.flujoIOct) - (isNaN(this.flujoCPOct) ? 0 : this.flujoCPOct);
+    this.flujoUBNov = (isNaN(this.flujoINov) ? 0 : this.flujoINov) - (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov);
+    this.flujoUBDiv = (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv) - (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+
+    this.flujoUB = this.flujoService.getFlujoUB();
+    // Variables de costos
+    this.flujoCostosDirAnualVM = this.costosService.getCostosDirAnualVM();
+    this.flujoCostosDirAnualCPM = this.costosService.getCostosDirAnualCPM();
+    this.flujoCostosDirMubT = this.costosService.getCostosDirMubT();
 
     //Varibles de costos operativos
     this.costoOpImpuesto = this.flujoService.getCostoOpImpuesto();
@@ -197,6 +284,7 @@ export class FlujoComponent {
     this.flujoTasaInteres = this.flujoService.getFlujoTasaInteres();
     this.flujoPoliza = this.flujoService.getFlujoPoliza();
 
+    this.utilidadOperativa = this.flujoService.getUtilidadOperativa();
 
     //tabla flujo
 
@@ -211,6 +299,12 @@ export class FlujoComponent {
       this.calculateDatosCredito();
     }
     this.llenarTabla1Flujo();
+    this.calculateTV();
+    this.calculateTC();
+    this.calculateTM();
+    this.calculateUB();
+    this.calculateUtilidadOperativa();
+
   }
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])
@@ -242,99 +336,99 @@ export class FlujoComponent {
     this.flujoService.setFlujoCostosFijosTb1(this.flujoCostosFijosTb1);
   }
   /////////////////// tabla de flujo
-  asignarValorFlujoCEne(): number{
+  asignarValorFlujoCEne(): number {
     //return this.flujoCEne = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
     if (this.flujoService.getFlujoCuotaProx() != null) {
-      return this.flujoCEne = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
-    }else{
+      return this.flujoCEne = this.flujoService.getFlujoCuotaProx() + this.calculatePoliza();
+    } else {
       return this.flujoCEne = 0;
     }
   }
-  asignarValorFlujoCFeb(): number{
+  asignarValorFlujoCFeb(): number {
     //return this.flujoCFeb = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
     if (this.flujoService.getFlujoCuotaProx() != null) {
-      return this.flujoCFeb = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
-    }else{
+      return this.flujoCFeb = this.flujoService.getFlujoCuotaProx() + this.calculatePoliza();
+    } else {
       return this.flujoCFeb = 0;
     }
   }
-  asignarValorFlujoCMar(): number{
+  asignarValorFlujoCMar(): number {
     //return this.flujoCMar = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
     if (this.flujoService.getFlujoCuotaProx() != null) {
-      return this.flujoCMar = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
-    }else{
+      return this.flujoCMar = this.flujoService.getFlujoCuotaProx() + this.calculatePoliza();
+    } else {
       return this.flujoCMar = 0;
     }
   }
-  asignarValorFlujoCAbr(): number{
+  asignarValorFlujoCAbr(): number {
     //return this.flujoCAbr = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
     if (this.flujoService.getFlujoCuotaProx() != null) {
-      return this.flujoCAbr = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
-    }else{
+      return this.flujoCAbr = this.flujoService.getFlujoCuotaProx() + this.calculatePoliza();
+    } else {
       return this.flujoCAbr = 0;
     }
   }
-  asignarValorFlujoCMay(): number{
+  asignarValorFlujoCMay(): number {
     //return this.flujoCMay = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
     if (this.flujoService.getFlujoCuotaProx() != null) {
-      return this.flujoCMay = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
-    }else{
+      return this.flujoCMay = this.flujoService.getFlujoCuotaProx() + this.calculatePoliza();
+    } else {
       return this.flujoCMay = 0;
     }
   }
-  asignarValorFlujoCJun(): number{
+  asignarValorFlujoCJun(): number {
     //return this.flujoCJun = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
     if (this.flujoService.getFlujoCuotaProx() != null) {
-      return this.flujoCJun = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
-    }else{
+      return this.flujoCJun = this.flujoService.getFlujoCuotaProx() + this.calculatePoliza();
+    } else {
       return this.flujoCJun = 0;
     }
   }
-  asignarValorFlujoCJul(): number{
+  asignarValorFlujoCJul(): number {
     //return this.flujoCJul = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
     if (this.flujoService.getFlujoCuotaProx() != null) {
-      return this.flujoCJul = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
-    }else{
+      return this.flujoCJul = this.flujoService.getFlujoCuotaProx() + this.calculatePoliza();
+    } else {
       return this.flujoCJul = 0;
     }
   }
-  asignarValorFlujoCAgo(): number{
+  asignarValorFlujoCAgo(): number {
     //return this.flujoCAgo = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
     if (this.flujoService.getFlujoCuotaProx() != null) {
-      return this.flujoCAgo = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
-    }else{
+      return this.flujoCAgo = this.flujoService.getFlujoCuotaProx() + this.calculatePoliza();
+    } else {
       return this.flujoCAgo = 0;
     }
   }
-  asignarValorFlujoCSep(): number{
+  asignarValorFlujoCSep(): number {
     //return this.flujoCSep = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
     if (this.flujoService.getFlujoCuotaProx() != null) {
-      return this.flujoCSep = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
-    }else{
+      return this.flujoCSep = this.flujoService.getFlujoCuotaProx() + this.calculatePoliza();
+    } else {
       return this.flujoCSep = 0;
     }
   }
-  asignarValorFlujoCOct(): number{
+  asignarValorFlujoCOct(): number {
     //return this.flujoCOct = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
     if (this.flujoService.getFlujoCuotaProx() != null) {
-      return this.flujoCOct = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
-    }else{
+      return this.flujoCOct = this.flujoService.getFlujoCuotaProx() + this.calculatePoliza();
+    } else {
       return this.flujoCOct = 0;
     }
   }
-  asignarValorFlujoCNov(): number{
+  asignarValorFlujoCNov(): number {
     //return this.flujoCNov = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
     if (this.flujoService.getFlujoCuotaProx() != null) {
-      return this.flujoCNov = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
-    }else{
+      return this.flujoCNov = this.flujoService.getFlujoCuotaProx() + this.calculatePoliza();
+    } else {
       return this.flujoCNov = 0;
     }
   }
-  asignarValorFlujoCDiv(): number{
+  asignarValorFlujoCDiv(): number {
     //return this.flujoCDiv = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
     if (this.flujoService.getFlujoCuotaProx() != null) {
-      return this.flujoCDiv = this.flujoService.getFlujoCuotaProx() +this.calculatePoliza();
-    }else{
+      return this.flujoCDiv = this.flujoService.getFlujoCuotaProx() + this.calculatePoliza();
+    } else {
       return this.flujoCDiv = 0;
     }
   }
@@ -343,7 +437,7 @@ export class FlujoComponent {
     this.flujoUBEne = (this.flujoIEne ?? 0) - (this.flujoCProdEne ?? 0);
     this.flujoUNCdPagEne = (this.flujoUBEne ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
     this.flujoAEne = (this.flujoUNCdPagEne ?? 0) - (this.asignarValorFlujoCEne() ?? 0);
-    this.flujoSIFeb = this.flujoAEne;
+    this.flujoSIFeb = (isNaN(this.flujoAEne) ? 0 : this.flujoAEne);
     this.flujoService.setFlujoUBEne(this.flujoUBEne);
     this.flujoService.setFlujoUNCdPagEne(this.flujoUNCdPagEne);
     this.flujoService.setFlujoAEne(this.flujoAEne);
@@ -484,8 +578,9 @@ export class FlujoComponent {
   ///////////////////
   calculateUtilidadOperativa() {
     this.utilidadOperativa =
-      (this.utilidadBruta) -
-      (this.costoOperativo);
+      (isNaN(this.flujoUB) ? 0 : this.flujoUB) -
+      (isNaN(this.costoOperativo) ? 0 : this.costoOperativo);
+    this.flujoService.setUtilidadOperativa(this.utilidadOperativa);
   }
   calculateCostoOpTbUtilidad() {
     this.costoOperativo = (this.costoOpTotalGasto ?? 0) * 12;
@@ -580,8 +675,25 @@ export class FlujoComponent {
       (this.presupuestoService.getTotalLegal1() ?? 0)
   }
 
+  calculateTV() {
+    this.flujoTV = (isNaN(this.flujoCostosDirAnualVM) ? 0 : this.flujoCostosDirAnualVM); ///agragar + las demas variables que falte
+    this.flujoService.setFlujoTV(this.flujoTV);
+  }
+  calculateTC() {
+    this.flujoTC = (isNaN(this.flujoCostosDirAnualCPM) ? 0 : this.flujoCostosDirAnualCPM); // agregar + las demas variables
+    this.flujoService.setFlujoTC(this.flujoTC);
+  }
+  calculateTM() {
+    this.flujoTM = (isNaN(this.flujoCostosDirMubT) ? 0 : this.flujoCostosDirMubT)
+    this.flujoService.setFlujoTM(this.flujoTM);
+  }
+  calculateUB() {
+    this.flujoUB = (isNaN(this.flujoTV) ? 0 : this.flujoTV) - (isNaN(this.flujoTC) ? 0 : this.flujoTC);
+    this.flujoService.setFlujoUB(this.flujoUB);
+  }
+
   formatNumber(value: number): string {
-    if (value === 0) {
+    if (value === 0 || value == null || value == undefined) {
       return '';
     } else {
       const formattedValue = Math.abs(value).toFixed(0);

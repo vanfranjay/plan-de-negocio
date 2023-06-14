@@ -1180,21 +1180,21 @@ export class CostosComponent {
     switch (index) {
       case 1:
         if (value == 'Diario') {
-          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 25;
+          this.costosDirTotalCM1 = ((isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1)) * 25;
         } else if (value == 'Semanal') {
-          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 4;
+          this.costosDirTotalCM1 = ((isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1)) * 4;
         } else if (value == 'Quincenal') {
-          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 2;
+          this.costosDirTotalCM1 = ((isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1)) * 2;
         } else if (value == 'Mensual') {
-          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 1;
+          this.costosDirTotalCM1 = ((isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1)) * 1;
         } else if (value == 'Bimestral') {
-          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 0.5;
+          this.costosDirTotalCM1 = ((isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1)) * 0.5;
         } else if (value == 'Trimestral') {
-          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * (30 / 90);
+          this.costosDirTotalCM1 = ((isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1)) * (30 / 90);
         } else if (value == 'Semestral') {
-          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * (30 / 180);
+          this.costosDirTotalCM1 = ((isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1)) * (30 / 180);
         } else if (value == 'Anual') {
-          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * (30 / 360);
+          this.costosDirTotalCM1 = ((isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1)) * (30 / 360);
         } else {
           this.costosDirTotalCM1 = 0;
         }
@@ -1205,21 +1205,21 @@ export class CostosComponent {
         break;
       case 2:
         if (value == 'Diario') {
-          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 25;
+          this.costosDirTotalCM2 = ((isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2)) * 25;
         } else if (value == 'Semanal') {
-          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 4;
+          this.costosDirTotalCM2 = ((isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2)) * 4;
         } else if (value == 'Quincenal') {
-          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 2;
+          this.costosDirTotalCM2 = ((isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2)) * 2;
         } else if (value == 'Mensual') {
-          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 1;
+          this.costosDirTotalCM2 = ((isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2)) * 1;
         } else if (value == 'Bimestral') {
-          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 0.5;
+          this.costosDirTotalCM2 = ((isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2)) * 0.5;
         } else if (value == 'Trimestral') {
-          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * (30 / 90);
+          this.costosDirTotalCM2 = ((isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2)) * (30 / 90);
         } else if (value == 'Semestral') {
-          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * (30 / 180);
+          this.costosDirTotalCM2 = ((isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2)) * (30 / 180);
         } else if (value == 'Anual') {
-          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * (30 / 360);
+          this.costosDirTotalCM2 = ((isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2)) * (30 / 360);
         } else {
           this.costosDirTotalCM2 = 0;
         }
@@ -1230,21 +1230,21 @@ export class CostosComponent {
         break;
       case 3:
         if (value == 'Diario') {
-          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 25;
+          this.costosDirTotalCM3 = ((isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3)) * 25;
         } else if (value == 'Semanal') {
-          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 4;
+          this.costosDirTotalCM3 = ((isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3)) * 4;
         } else if (value == 'Quincenal') {
-          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 2;
+          this.costosDirTotalCM3 = ((isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3)) * 2;
         } else if (value == 'Mensual') {
-          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 1;
+          this.costosDirTotalCM3 = ((isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3)) * 1;
         } else if (value == 'Bimestral') {
-          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 0.5;
+          this.costosDirTotalCM3 = ((isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3)) * 0.5;
         } else if (value == 'Trimestral') {
-          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * (30 / 90);
+          this.costosDirTotalCM3 = ((isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3)) * (30 / 90);
         } else if (value == 'Semestral') {
-          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * (30 / 180);
+          this.costosDirTotalCM3 = ((isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3)) * (30 / 180);
         } else if (value == 'Anual') {
-          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * (30 / 360);
+          this.costosDirTotalCM3 = ((isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3)) * (30 / 360);
         } else {
           this.costosDirTotalCM3 = 0;
         }
@@ -1255,21 +1255,21 @@ export class CostosComponent {
         break;
       case 4:
         if (value == 'Diario') {
-          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 25;
+          this.costosDirTotalCM4 = ((isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4)) * 25;
         } else if (value == 'Semanal') {
-          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 4;
+          this.costosDirTotalCM4 = ((isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4)) * 4;
         } else if (value == 'Quincenal') {
-          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 2;
+          this.costosDirTotalCM4 = ((isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4)) * 2;
         } else if (value == 'Mensual') {
-          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 1;
+          this.costosDirTotalCM4 = ((isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4)) * 1;
         } else if (value == 'Bimestral') {
-          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 0.5;
+          this.costosDirTotalCM4 = ((isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4)) * 0.5;
         } else if (value == 'Trimestral') {
-          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * (30 / 90);
+          this.costosDirTotalCM4 = ((isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4)) * (30 / 90);
         } else if (value == 'Semestral') {
-          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * (30 / 180);
+          this.costosDirTotalCM4 = ((isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4)) * (30 / 180);
         } else if (value == 'Anual') {
-          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * (30 / 360);
+          this.costosDirTotalCM4 = ((isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4)) * (30 / 360);
         } else {
           this.costosDirTotalCM4 = 0;
         }
@@ -1460,62 +1460,59 @@ export class CostosComponent {
 
     this.costosService.setCostosDirTotalVMT(this.costosDirTotalVMT);
   }
-  calcularTotalMUB() {
-    this.costosDirMubT =
-      (isNaN(this.costosDirMub1) ? 0 : this.costosDirMub1) +
-      (isNaN(this.costosDirMub2) ? 0 : this.costosDirMub2) +
-      (isNaN(this.costosDirMub3) ? 0 : this.costosDirMub3) +
-      (isNaN(this.costosDirMub4) ? 0 : this.costosDirMub4);
-
-    this.costosService.setCostosDirMubT(this.costosDirMubT);
+  calcularTotalMUB(): number {
+    this.costosDirMubT = ((this.costosDirTotalVMT - this.costosDirTotalCMT) / this.costosDirTotalVMT);
+    const resultado = (isNaN(this.costosDirMubT) ? 0 : this.costosDirMubT);
+    this.costosService.setCostosDirMubT(resultado);
+    return resultado;
   }
   //// Costos de producción mensual
   calculateCostosProdMensual1() {
-    this.costosDirEneCPM = this.costosDirEneVM * (1 - this.costosDirMubT);
+    this.costosDirEneCPM = this.costosDirEneVM * (1 - this.calcularTotalMUB());
     this.costosService.setCostosDirEneCPM(this.costosDirEneCPM);
   }
   calculateCostosProdMensual2() {
-    this.costosDirFebCPM = this.costosDirFebVM * (1 - this.costosDirMubT);
+    this.costosDirFebCPM = this.costosDirFebVM * (1 - this.calcularTotalMUB());
     this.costosService.setCostosDirFebCPM(this.costosDirFebCPM);
   }
   calculateCostosProdMensual3() {
-    this.costosDirMarCPM = this.costosDirMarVM * (1 - this.costosDirMubT);
+    this.costosDirMarCPM = this.costosDirMarVM * (1 - this.calcularTotalMUB());
     this.costosService.setCostosDirMarCPM(this.costosDirMarCPM);
   }
   calculateCostosProdMensual4() {
-    this.costosDirAbrCPM = this.costosDirAbrVM * (1 - this.costosDirMubT);
+    this.costosDirAbrCPM = this.costosDirAbrVM * (1 - this.calcularTotalMUB());
     this.costosService.setCostosDirAbrCPM(this.costosDirAbrCPM);
   }
   calculateCostosProdMensual5() {
-    this.costosDirMayCPM = this.costosDirMayVM * (1 - this.costosDirMubT);
+    this.costosDirMayCPM = this.costosDirMayVM * (1 - this.calcularTotalMUB());
     this.costosService.setCostosDirMayCPM(this.costosDirMayCPM);
   }
   calculateCostosProdMensual6() {
-    this.costosDirJunCPM = this.costosDirJunVM * (1 - this.costosDirMubT);
+    this.costosDirJunCPM = this.costosDirJunVM * (1 - this.calcularTotalMUB());
     this.costosService.setCostosDirJunCPM(this.costosDirJunCPM);
   }
   calculateCostosProdMensual7() {
-    this.costosDirJulCPM = this.costosDirJulVM * (1 - this.costosDirMubT);
+    this.costosDirJulCPM = this.costosDirJulVM * (1 - this.calcularTotalMUB());
     this.costosService.setCostosDirJulCPM(this.costosDirJulCPM);
   }
   calculateCostosProdMensual8() {
-    this.costosDirAgoCPM = this.costosDirAgoVM * (1 - this.costosDirMubT);
+    this.costosDirAgoCPM = this.costosDirAgoVM * (1 - this.calcularTotalMUB());
     this.costosService.setCostosDirAgoCPM(this.costosDirAgoCPM);
   }
   calculateCostosProdMensual9() {
-    this.costosDirSepCPM = this.costosDirSepVM * (1 - this.costosDirMubT);
+    this.costosDirSepCPM = this.costosDirSepVM * (1 - this.calcularTotalMUB());
     this.costosService.setCostosDirSepCPM(this.costosDirSepCPM);
   }
   calculateCostosProdMensual10() {
-    this.costosDirOctCPM = this.costosDirOctVM * (1 - this.costosDirMubT);
+    this.costosDirOctCPM = this.costosDirOctVM * (1 - this.calcularTotalMUB());
     this.costosService.setCostosDirOctCPM(this.costosDirOctCPM);
   }
   calculateCostosProdMensual11() {
-    this.costosDirNovCPM = this.costosDirNovVM * (1 - this.costosDirMubT);
+    this.costosDirNovCPM = this.costosDirNovVM * (1 - this.calcularTotalMUB());
     this.costosService.setCostosDirNovCPM(this.costosDirNovCPM);
   }
   calculateCostosProdMensual12() {
-    this.costosDirDicCPM = this.costosDirDicVM * (1 - this.costosDirMubT);
+    this.costosDirDicCPM = this.costosDirDicVM * (1 - this.calcularTotalMUB());
     this.costosService.setCostosDirDicCPM(this.costosDirDicCPM);
   }
   /// venta mes anual
@@ -1582,5 +1579,12 @@ export class CostosComponent {
     this.calculateCostosProdMensual12()
     this.calcularVentaMesAnual()
     this.calcularCostosProdMesAnual()
+    this.calculateTotalTotalVentaMensual()
+    this.calculateTotalTotalCompraMensual()
+    // this.calculateMUB1()
+    // this.calculateMUB2()
+    // this.calculateMUB3()
+    // this.calculateMUB4()
+    this.calcularTotalMUB()
   }
 }

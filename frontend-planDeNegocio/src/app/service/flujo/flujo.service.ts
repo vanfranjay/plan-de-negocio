@@ -6,6 +6,41 @@ import { Injectable } from '@angular/core';
 export class FlujoService {
 
   constructor() { }
+  private utilidadOperativa!: number;
+  public getUtilidadOperativa(): number {
+    return this.utilidadOperativa;
+  }
+  public setUtilidadOperativa(value: number) {
+    this.utilidadOperativa = value;
+  }
+  private flujoUB!: number;
+  public getFlujoUB(): number {
+    return this.flujoUB;
+  }
+  public setFlujoUB(value: number) {
+    this.flujoUB = value;
+  }
+  private flujoTV!: number;
+  public getFlujoTV(): number {
+    return this.flujoTV;
+  }
+  public setFlujoTV(value: number) {
+    this.flujoTV = value;
+  }
+  private flujoTC!: number;
+  public getFlujoTC(): number {
+    return this.flujoTC;
+  }
+  public setFlujoTC(value: number) {
+    this.flujoTC = value;
+  }
+  private flujoTM!: number;
+  public getflujoTM(): number {
+    return this.flujoTM;
+  }
+  public setFlujoTM(value: number) {
+    this.flujoTM = value;
+  }
   private flujoPoliza: number = 0.395;
   public getFlujoPoliza(): number {
     return this.flujoPoliza;
