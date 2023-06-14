@@ -12,6 +12,7 @@ import { CostosService } from 'src/app/service/costos/costos.service';
 export class FlujoComponent {
   colSize: any;
   colSize2: any;
+  // variable de presupuesto total
 
   totalAP!: number;
   totalProyecto!: number;
