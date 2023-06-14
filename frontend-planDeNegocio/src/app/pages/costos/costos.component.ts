@@ -706,6 +706,23 @@ export class CostosComponent {
 
     (this.costosService as any)[valueM](valor);
   }
+  // asignar a producto o servicio
+  asignarProdServ1() {
+    this.costosDirProdOServ1 = this.costosDirProdServ1;
+    this.costosService.setCostosDirProdOServ1(this.costosDirProdOServ1);
+  }
+  asignarProdServ2() {
+    this.costosDirProdOServ2 = this.costosDirProdServ2;
+    this.costosService.setCostosDirProdOServ2(this.costosDirProdOServ2);
+  }
+  asignarProdServ3() {
+    this.costosDirProdOServ3 = this.costosDirProdServ3;
+    this.costosService.setCostosDirProdOServ3(this.costosDirProdOServ3);
+  }
+  asignarProdServ4() {
+    this.costosDirProdOServ4 = this.costosDirProdServ4;
+    this.costosService.setCostosDirProdOServ4(this.costosDirProdOServ4);
+  }
 
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])
@@ -719,6 +736,8 @@ export class CostosComponent {
         }
       });
   }
+  ///Producto servicios tipo cantidad unidad frecuencia
+
   ///comportamientos de ventas
   selectVentaMensual1() {
     if (this.costosDirEne === 'A') {
@@ -727,11 +746,12 @@ export class CostosComponent {
       this.costosDirEneVM = this.costosDirRangoB;
     } else if (this.costosDirEne === 'B') {
       this.costosDirEneVM = this.costosDirRangoC;
-    }else{
+    } else {
       this.costosDirEneVM = 0;
     }
     this.costosService.setCostosDirEne(this.costosDirEne);
     this.costosService.setCostosDirEneVM(this.costosDirEneVM);
+    this.activar();
   }
   selectVentaMensual2() {
     if (this.costosDirFeb === 'A') {
@@ -740,11 +760,12 @@ export class CostosComponent {
       this.costosDirFebVM = this.costosDirRangoB;
     } else if (this.costosDirFeb === 'B') {
       this.costosDirFebVM = this.costosDirRangoC;
-    }else{
+    } else {
       this.costosDirFebVM = 0;
     }
     this.costosService.setCostosDirFeb(this.costosDirFeb);
     this.costosService.setCostosDirFebVM(this.costosDirFebVM);
+    this.activar();
   }
   selectVentaMensual3() {
     if (this.costosDirMar === 'A') {
@@ -753,11 +774,12 @@ export class CostosComponent {
       this.costosDirMarVM = this.costosDirRangoB;
     } else if (this.costosDirMar === 'B') {
       this.costosDirMarVM = this.costosDirRangoC;
-    }else{
+    } else {
       this.costosDirMarVM = 0;
     }
     this.costosService.setCostosDirMar(this.costosDirMar);
     this.costosService.setCostosDirMarVM(this.costosDirMarVM);
+    this.activar();
   }
   selectVentaMensual4() {
     if (this.costosDirAbr === 'A') {
@@ -766,11 +788,12 @@ export class CostosComponent {
       this.costosDirAbrVM = this.costosDirRangoB;
     } else if (this.costosDirAbr === 'B') {
       this.costosDirAbrVM = this.costosDirRangoC;
-    }else{
+    } else {
       this.costosDirAbrVM = 0;
     }
     this.costosService.setCostosDirAbr(this.costosDirAbr);
     this.costosService.setCostosDirAbrVM(this.costosDirAbrVM);
+    this.activar();
   }
   selectVentaMensual5() {
     if (this.costosDirMay === 'A') {
@@ -779,11 +802,12 @@ export class CostosComponent {
       this.costosDirMayVM = this.costosDirRangoB;
     } else if (this.costosDirMay === 'B') {
       this.costosDirMayVM = this.costosDirRangoC;
-    }else{
+    } else {
       this.costosDirMayVM = 0;
     }
     this.costosService.setCostosDirMay(this.costosDirMay);
     this.costosService.setCostosDirMayVM(this.costosDirMayVM);
+    this.activar();
   }
   selectVentaMensual6() {
     if (this.costosDirJun === 'A') {
@@ -792,11 +816,12 @@ export class CostosComponent {
       this.costosDirJunVM = this.costosDirRangoB;
     } else if (this.costosDirJun === 'B') {
       this.costosDirJunVM = this.costosDirRangoC;
-    }else{
+    } else {
       this.costosDirJunVM = 0;
     }
     this.costosService.setCostosDirJun(this.costosDirJun);
     this.costosService.setCostosDirJunVM(this.costosDirJunVM);
+    this.activar();
   }
   selectVentaMensual7() {
     if (this.costosDirJul === 'A') {
@@ -805,11 +830,12 @@ export class CostosComponent {
       this.costosDirJulVM = this.costosDirRangoB;
     } else if (this.costosDirJul === 'B') {
       this.costosDirJulVM = this.costosDirRangoC;
-    }else{
+    } else {
       this.costosDirJulVM = 0;
     }
     this.costosService.setCostosDirJul(this.costosDirJul);
     this.costosService.setCostosDirJulVM(this.costosDirJulVM);
+    this.activar();
   }
   selectVentaMensual8() {
     if (this.costosDirAgo === 'A') {
@@ -818,11 +844,12 @@ export class CostosComponent {
       this.costosDirAgoVM = this.costosDirRangoB;
     } else if (this.costosDirAgo === 'B') {
       this.costosDirAgoVM = this.costosDirRangoC;
-    }else{
+    } else {
       this.costosDirAgoVM = 0;
     }
     this.costosService.setCostosDirAgo(this.costosDirAgo);
     this.costosService.setCostosDirAgoVM(this.costosDirAgoVM);
+    this.activar();
   }
   selectVentaMensual9() {
     if (this.costosDirSep === 'A') {
@@ -831,11 +858,12 @@ export class CostosComponent {
       this.costosDirSepVM = this.costosDirRangoB;
     } else if (this.costosDirSep === 'B') {
       this.costosDirSepVM = this.costosDirRangoC;
-    }else{
+    } else {
       this.costosDirSepVM = 0;
     }
     this.costosService.setCostosDirSep(this.costosDirSep);
     this.costosService.setCostosDirSepVM(this.costosDirSepVM);
+    this.activar();
   }
   selectVentaMensual10() {
     if (this.costosDirOct === 'A') {
@@ -844,11 +872,12 @@ export class CostosComponent {
       this.costosDirOctVM = this.costosDirRangoB;
     } else if (this.costosDirOct === 'B') {
       this.costosDirOctVM = this.costosDirRangoC;
-    }else{
+    } else {
       this.costosDirOctVM = 0;
     }
     this.costosService.setCostosDirOct(this.costosDirOct);
     this.costosService.setCostosDirOctVM(this.costosDirOctVM);
+    this.activar();
   }
   selectVentaMensual11() {
     if (this.costosDirNov === 'A') {
@@ -857,11 +886,12 @@ export class CostosComponent {
       this.costosDirNovVM = this.costosDirRangoB;
     } else if (this.costosDirNov === 'B') {
       this.costosDirNovVM = this.costosDirRangoC;
-    }else{
+    } else {
       this.costosDirNovVM = 0;
     }
     this.costosService.setCostosDirNov(this.costosDirNov);
     this.costosService.setCostosDirNovVM(this.costosDirNovVM);
+    this.activar();
   }
   selectVentaMensual12() {
     if (this.costosDirDic === 'A') {
@@ -870,11 +900,12 @@ export class CostosComponent {
       this.costosDirDicVM = this.costosDirRangoB;
     } else if (this.costosDirDic === 'B') {
       this.costosDirDicVM = this.costosDirRangoC;
-    }else{
+    } else {
       this.costosDirDicVM = 0;
     }
     this.costosService.setCostosDirDic(this.costosDirDic);
     this.costosService.setCostosDirDicVM(this.costosDirDicVM);
+    this.activar();
   }
 
   calculateColSize(breakpoints: { [key: string]: boolean }): number {
@@ -902,10 +933,654 @@ export class CostosComponent {
   //  rows: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
   inputValues: (number | null)[] = [];
   total: number = 0;
+  input!: number;
 
   calculateTotal(): void {
     this.total = this.inputValues
       .map(value => parseInt(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
+  }
+  asignarCantidad1() { this.costosService.setCostosDirCantidad11(this.costosDirCantidad11); }
+  asignarCantidad2() { this.costosService.setCostosDirCantidad12(this.costosDirCantidad12); }
+  asignarCantidad3() { this.costosService.setCostosDirCantidad13(this.costosDirCantidad13); }
+  asignarCantidad4() { this.costosService.setCostosDirCantidad14(this.costosDirCantidad14); }
+  asignarCantidad5() { this.costosService.setCostosDirCantidad15(this.costosDirCantidad15); }
+  asignarCantidad6() { this.costosService.setCostosDirCantidad16(this.costosDirCantidad16); }
+  asignarCantidad7() { this.costosService.setCostosDirCantidad17(this.costosDirCantidad17); }
+  asignarCantidad8() { this.costosService.setCostosDirCantidad18(this.costosDirCantidad18); }
+
+  calculateABC1() {
+    this.costosDirTotalABC11 = (this.costosDirCantidad11 / this.costosDirUnPS11) * this.costosDirPrecioU12;
+    this.costosService.setCostosDirTotalABC11(this.costosDirTotalABC11);
+    this.calculateSumaABC()
+  }
+  calculateABC2() {
+    this.costosDirTotalABC12 = ((this.costosDirCantidad12 / this.costosDirUnPS12) * this.costosDirPrecioU13) ?? 0;
+    this.costosService.setCostosDirTotalABC12(this.costosDirTotalABC12);
+    this.calculateSumaABC()
+  }
+  calculateABC3() {
+    this.costosDirTotalABC13 = ((this.costosDirCantidad13 / this.costosDirUnPS13) * this.costosDirPrecioU14) ?? 0;
+    this.costosService.setCostosDirTotalABC13(this.costosDirTotalABC13);
+    this.calculateSumaABC()
+  }
+  calculateABC4() {
+    this.costosDirTotalABC14 = ((this.costosDirCantidad14 / this.costosDirUnPS14) * this.costosDirPrecioU15) ?? 0;
+    this.costosService.setCostosDirTotalABC14(this.costosDirTotalABC14);
+    this.calculateSumaABC()
+  }
+  calculateABC5() {
+    this.costosDirTotalABC15 = ((this.costosDirCantidad15 / this.costosDirUnPS15) * this.costosDirPrecioU16) ?? 0;
+    this.costosService.setCostosDirTotalABC15(this.costosDirTotalABC15);
+    this.calculateSumaABC()
+  }
+  calculateABC6() {
+    this.costosDirTotalABC16 = ((this.costosDirCantidad16 / this.costosDirUnPS16) * this.costosDirPrecioU17) ?? 0;
+    this.costosService.setCostosDirTotalABC16(this.costosDirTotalABC16);
+    this.calculateSumaABC()
+  }
+  calculateABC7() {
+    this.costosDirTotalABC17 = ((this.costosDirCantidad17 / this.costosDirUnPS17) * this.costosDirPrecioU18) ?? 0;
+    this.costosService.setCostosDirTotalABC17(this.costosDirTotalABC17);
+    this.calculateSumaABC()
+  }
+  calculateABC8() {
+    this.costosDirTotalABC18 = ((this.costosDirCantidad18 / this.costosDirUnPS18) * this.costosDirPrecioU19) ?? 0;
+    this.costosService.setCostosDirTotalABC18(this.costosDirTotalABC18);
+    this.calculateSumaABC()
+  }
+
+  calculateSumaABC() {
+    this.costosDirTotaCD1 =
+      (isNaN(this.costosDirTotalABC11) ? 0 : this.costosDirTotalABC11) +
+      (isNaN(this.costosDirTotalABC12) ? 0 : this.costosDirTotalABC12) +
+      (isNaN(this.costosDirTotalABC13) ? 0 : this.costosDirTotalABC13) +
+      (isNaN(this.costosDirTotalABC14) ? 0 : this.costosDirTotalABC14) +
+      (isNaN(this.costosDirTotalABC15) ? 0 : this.costosDirTotalABC15) +
+      (isNaN(this.costosDirTotalABC16) ? 0 : this.costosDirTotalABC16) +
+      (isNaN(this.costosDirTotalABC17) ? 0 : this.costosDirTotalABC17) +
+      (isNaN(this.costosDirTotalABC18) ? 0 : this.costosDirTotalABC18);
+    this.costosService.setCostosDirTotaCD1(this.costosDirTotaCD1);
+    this.costosDirPrecioC1 = this.costosDirTotaCD1;
+    this.costosService.setCostosDirPrecioC1(this.costosDirPrecioC1);
+  }
+
+  // 2da tabla
+  calculateABC21() {
+    this.costosDirTotalABC21 = (this.costosDirCantidad21 / this.costosDirUnPS21) * this.costosDirPrecioU21;
+    this.costosService.setCostosDirTotalABC21(this.costosDirTotalABC21);
+    this.calculateSumaABC2()
+  }
+  calculateABC22() {
+    this.costosDirTotalABC22 = ((this.costosDirCantidad22 / this.costosDirUnPS22) * this.costosDirPrecioU22) ?? 0;
+    this.costosService.setCostosDirTotalABC22(this.costosDirTotalABC22);
+    this.calculateSumaABC2()
+  }
+  calculateABC23() {
+    this.costosDirTotalABC23 = ((this.costosDirCantidad23 / this.costosDirUnPS23) * this.costosDirPrecioU23) ?? 0;
+    this.costosService.setCostosDirTotalABC23(this.costosDirTotalABC23);
+    this.calculateSumaABC2()
+  }
+  calculateABC24() {
+    this.costosDirTotalABC24 = ((this.costosDirCantidad24 / this.costosDirUnPS24) * this.costosDirPrecioU24) ?? 0;
+    this.costosService.setCostosDirTotalABC24(this.costosDirTotalABC24);
+    this.calculateSumaABC2()
+  }
+  calculateABC25() {
+    this.costosDirTotalABC25 = ((this.costosDirCantidad25 / this.costosDirUnPS25) * this.costosDirPrecioU25) ?? 0;
+    this.costosService.setCostosDirTotalABC25(this.costosDirTotalABC25);
+    this.calculateSumaABC2()
+  }
+  calculateABC26() {
+    this.costosDirTotalABC26 = ((this.costosDirCantidad26 / this.costosDirUnPS26) * this.costosDirPrecioU26) ?? 0;
+    this.costosService.setCostosDirTotalABC26(this.costosDirTotalABC26);
+    this.calculateSumaABC2()
+  }
+  calculateABC27() {
+    this.costosDirTotalABC27 = ((this.costosDirCantidad27 / this.costosDirUnPS27) * this.costosDirPrecioU27) ?? 0;
+    this.costosService.setCostosDirTotalABC27(this.costosDirTotalABC27);
+    this.calculateSumaABC2()
+  }
+  calculateABC28() {
+    this.costosDirTotalABC28 = ((this.costosDirCantidad28 / this.costosDirUnPS28) * this.costosDirPrecioU28) ?? 0;
+    this.costosService.setCostosDirTotalABC28(this.costosDirTotalABC28);
+    this.calculateSumaABC2()
+  }
+
+  calculateSumaABC2() {
+    this.costosDirTotaCD2 =
+      (isNaN(this.costosDirTotalABC21) ? 0 : this.costosDirTotalABC21) +
+      (isNaN(this.costosDirTotalABC22) ? 0 : this.costosDirTotalABC22) +
+      (isNaN(this.costosDirTotalABC23) ? 0 : this.costosDirTotalABC23) +
+      (isNaN(this.costosDirTotalABC24) ? 0 : this.costosDirTotalABC24) +
+      (isNaN(this.costosDirTotalABC25) ? 0 : this.costosDirTotalABC25) +
+      (isNaN(this.costosDirTotalABC26) ? 0 : this.costosDirTotalABC26) +
+      (isNaN(this.costosDirTotalABC27) ? 0 : this.costosDirTotalABC27) +
+      (isNaN(this.costosDirTotalABC28) ? 0 : this.costosDirTotalABC28);
+    this.costosService.setCostosDirTotaCD2(this.costosDirTotaCD2);
+    this.costosDirPrecioC2 = this.costosDirTotaCD2;
+    this.costosService.setCostosDirPrecioC2(this.costosDirPrecioC2);
+  }
+  //// 3ra tabla
+  calculateABC31() {
+    this.costosDirTotalABC31 = (this.costosDirCantidad31 / this.costosDirUnPS31) * this.costosDirPrecioU31;
+    this.costosService.setCostosDirTotalABC31(this.costosDirTotalABC31);
+    this.calculateSumaABC3()
+  }
+  calculateABC32() {
+    this.costosDirTotalABC32 = ((this.costosDirCantidad32 / this.costosDirUnPS32) * this.costosDirPrecioU32) ?? 0;
+    this.costosService.setCostosDirTotalABC32(this.costosDirTotalABC32);
+    this.calculateSumaABC3()
+  }
+  calculateABC33() {
+    this.costosDirTotalABC33 = ((this.costosDirCantidad33 / this.costosDirUnPS33) * this.costosDirPrecioU33) ?? 0;
+    this.costosService.setCostosDirTotalABC33(this.costosDirTotalABC33);
+    this.calculateSumaABC3()
+  }
+  calculateABC34() {
+    this.costosDirTotalABC34 = ((this.costosDirCantidad34 / this.costosDirUnPS34) * this.costosDirPrecioU34) ?? 0;
+    this.costosService.setCostosDirTotalABC34(this.costosDirTotalABC34);
+    this.calculateSumaABC3()
+  }
+  calculateABC35() {
+    this.costosDirTotalABC35 = ((this.costosDirCantidad35 / this.costosDirUnPS35) * this.costosDirPrecioU35) ?? 0;
+    this.costosService.setCostosDirTotalABC35(this.costosDirTotalABC35);
+    this.calculateSumaABC3()
+  }
+  calculateABC36() {
+    this.costosDirTotalABC36 = ((this.costosDirCantidad36 / this.costosDirUnPS36) * this.costosDirPrecioU36) ?? 0;
+    this.costosService.setCostosDirTotalABC36(this.costosDirTotalABC36);
+    this.calculateSumaABC3()
+  }
+  calculateABC37() {
+    this.costosDirTotalABC37 = ((this.costosDirCantidad37 / this.costosDirUnPS37) * this.costosDirPrecioU37) ?? 0;
+    this.costosService.setCostosDirTotalABC37(this.costosDirTotalABC37);
+    this.calculateSumaABC3()
+  }
+  calculateABC38() {
+    this.costosDirTotalABC38 = ((this.costosDirCantidad38 / this.costosDirUnPS38) * this.costosDirPrecioU38) ?? 0;
+    this.costosService.setCostosDirTotalABC38(this.costosDirTotalABC38);
+    this.calculateSumaABC3()
+  }
+
+  calculateSumaABC3() {
+    this.costosDirTotaCD3 =
+      (isNaN(this.costosDirTotalABC31) ? 0 : this.costosDirTotalABC31) +
+      (isNaN(this.costosDirTotalABC32) ? 0 : this.costosDirTotalABC32) +
+      (isNaN(this.costosDirTotalABC33) ? 0 : this.costosDirTotalABC33) +
+      (isNaN(this.costosDirTotalABC34) ? 0 : this.costosDirTotalABC34) +
+      (isNaN(this.costosDirTotalABC35) ? 0 : this.costosDirTotalABC35) +
+      (isNaN(this.costosDirTotalABC36) ? 0 : this.costosDirTotalABC36) +
+      (isNaN(this.costosDirTotalABC37) ? 0 : this.costosDirTotalABC37) +
+      (isNaN(this.costosDirTotalABC38) ? 0 : this.costosDirTotalABC38);
+    this.costosService.setCostosDirTotaCD3(this.costosDirTotaCD3);
+    this.costosDirPrecioC3 = this.costosDirTotaCD3;
+    this.costosService.setCostosDirPrecioC3(this.costosDirPrecioC3);
+  }
+
+  //// 4ta tabla
+  calculateABC41() {
+    this.costosDirTotalABC41 = (this.costosDirCantidad41 / this.costosDirUnPS41) * this.costosDirPrecioU41;
+    this.costosService.setCostosDirTotalABC41(this.costosDirTotalABC41);
+    this.calculateSumaABC4()
+  }
+  calculateABC42() {
+    this.costosDirTotalABC42 = ((this.costosDirCantidad42 / this.costosDirUnPS42) * this.costosDirPrecioU42) ?? 0;
+    this.costosService.setCostosDirTotalABC42(this.costosDirTotalABC42);
+    this.calculateSumaABC4()
+  }
+  calculateABC43() {
+    this.costosDirTotalABC43 = ((this.costosDirCantidad43 / this.costosDirUnPS43) * this.costosDirPrecioU43) ?? 0;
+    this.costosService.setCostosDirTotalABC43(this.costosDirTotalABC43);
+    this.calculateSumaABC4()
+  }
+  calculateABC44() {
+    this.costosDirTotalABC44 = ((this.costosDirCantidad44 / this.costosDirUnPS44) * this.costosDirPrecioU44) ?? 0;
+    this.costosService.setCostosDirTotalABC44(this.costosDirTotalABC44);
+    this.calculateSumaABC4()
+  }
+  calculateABC45() {
+    this.costosDirTotalABC45 = ((this.costosDirCantidad45 / this.costosDirUnPS45) * this.costosDirPrecioU45) ?? 0;
+    this.costosService.setCostosDirTotalABC45(this.costosDirTotalABC45);
+    this.calculateSumaABC4()
+  }
+  calculateABC46() {
+    this.costosDirTotalABC46 = ((this.costosDirCantidad46 / this.costosDirUnPS46) * this.costosDirPrecioU46) ?? 0;
+    this.costosService.setCostosDirTotalABC46(this.costosDirTotalABC46);
+    this.calculateSumaABC4()
+  }
+  calculateABC47() {
+    this.costosDirTotalABC47 = ((this.costosDirCantidad47 / this.costosDirUnPS47) * this.costosDirPrecioU47) ?? 0;
+    this.costosService.setCostosDirTotalABC47(this.costosDirTotalABC47);
+    this.calculateSumaABC4()
+  }
+  calculateABC48() {
+    this.costosDirTotalABC48 = ((this.costosDirCantidad48 / this.costosDirUnPS48) * this.costosDirPrecioU48) ?? 0;
+    this.costosService.setCostosDirTotalABC48(this.costosDirTotalABC48);
+    this.calculateSumaABC4()
+  }
+
+  calculateSumaABC4() {
+    this.costosDirTotaCD4 =
+      (isNaN(this.costosDirTotalABC41) ? 0 : this.costosDirTotalABC41) +
+      (isNaN(this.costosDirTotalABC42) ? 0 : this.costosDirTotalABC42) +
+      (isNaN(this.costosDirTotalABC43) ? 0 : this.costosDirTotalABC43) +
+      (isNaN(this.costosDirTotalABC44) ? 0 : this.costosDirTotalABC44) +
+      (isNaN(this.costosDirTotalABC45) ? 0 : this.costosDirTotalABC45) +
+      (isNaN(this.costosDirTotalABC46) ? 0 : this.costosDirTotalABC46) +
+      (isNaN(this.costosDirTotalABC47) ? 0 : this.costosDirTotalABC47) +
+      (isNaN(this.costosDirTotalABC48) ? 0 : this.costosDirTotalABC48);
+    this.costosService.setCostosDirTotaCD4(this.costosDirTotaCD4);
+    this.costosDirPrecioC4 = this.costosDirTotaCD4;
+    this.costosService.setCostosDirPrecioC4(this.costosDirPrecioC4);
+  }
+  ///
+
+  calculateTotalCompraMensual(value: string, index: number) {
+    switch (index) {
+      case 1:
+        if (value == 'Diario') {
+          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 25;
+        } else if (value == 'Semanal') {
+          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 4;
+        } else if (value == 'Quincenal') {
+          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 2;
+        } else if (value == 'Mensual') {
+          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 1;
+        } else if (value == 'Bimestral') {
+          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 0.5;
+        } else if (value == 'Trimestral') {
+          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * (30 / 90);
+        } else if (value == 'Semestral') {
+          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * (30 / 180);
+        } else if (value == 'Anual') {
+          this.costosDirTotalCM1 = (isNaN(this.costosDirPrecioC1) ? 0 : this.costosDirPrecioC1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * (30 / 360);
+        } else {
+          this.costosDirTotalCM1 = 0;
+        }
+        this.costosService.setCostosDirProdFrecuencia1(value);
+        this.costosService.setCostosDirTotalCM1(this.costosDirTotalCM1);
+        this.calculateTotalTotalCompraMensual();
+        this.activar();
+        break;
+      case 2:
+        if (value == 'Diario') {
+          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 25;
+        } else if (value == 'Semanal') {
+          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 4;
+        } else if (value == 'Quincenal') {
+          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 2;
+        } else if (value == 'Mensual') {
+          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 1;
+        } else if (value == 'Bimestral') {
+          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 0.5;
+        } else if (value == 'Trimestral') {
+          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * (30 / 90);
+        } else if (value == 'Semestral') {
+          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * (30 / 180);
+        } else if (value == 'Anual') {
+          this.costosDirTotalCM2 = (isNaN(this.costosDirPrecioC2) ? 0 : this.costosDirPrecioC2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * (30 / 360);
+        } else {
+          this.costosDirTotalCM2 = 0;
+        }
+        this.costosService.setCostosDirProdFrecuencia2(value);
+        this.costosService.setCostosDirTotalCM2(this.costosDirTotalCM2);
+        this.calculateTotalTotalCompraMensual();
+        this.activar();
+        break;
+      case 3:
+        if (value == 'Diario') {
+          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 25;
+        } else if (value == 'Semanal') {
+          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 4;
+        } else if (value == 'Quincenal') {
+          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 2;
+        } else if (value == 'Mensual') {
+          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 1;
+        } else if (value == 'Bimestral') {
+          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 0.5;
+        } else if (value == 'Trimestral') {
+          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * (30 / 90);
+        } else if (value == 'Semestral') {
+          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * (30 / 180);
+        } else if (value == 'Anual') {
+          this.costosDirTotalCM3 = (isNaN(this.costosDirPrecioC3) ? 0 : this.costosDirPrecioC3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * (30 / 360);
+        } else {
+          this.costosDirTotalCM3 = 0;
+        }
+        this.costosService.setCostosDirProdFrecuencia3(value);
+        this.costosService.setCostosDirTotalCM3(this.costosDirTotalCM3);
+        this.calculateTotalTotalCompraMensual();
+        this.activar();
+        break;
+      case 4:
+        if (value == 'Diario') {
+          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 25;
+        } else if (value == 'Semanal') {
+          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 4;
+        } else if (value == 'Quincenal') {
+          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 2;
+        } else if (value == 'Mensual') {
+          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 1;
+        } else if (value == 'Bimestral') {
+          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 0.5;
+        } else if (value == 'Trimestral') {
+          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * (30 / 90);
+        } else if (value == 'Semestral') {
+          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * (30 / 180);
+        } else if (value == 'Anual') {
+          this.costosDirTotalCM4 = (isNaN(this.costosDirPrecioC4) ? 0 : this.costosDirPrecioC4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * (30 / 360);
+        } else {
+          this.costosDirTotalCM4 = 0;
+        }
+        this.costosService.setCostosDirProdFrecuencia4(value);
+        this.costosService.setCostosDirTotalCM4(this.costosDirTotalCM4);
+        this.calculateTotalTotalCompraMensual();
+        this.activar();
+        break;
+
+      default:
+        break;
+    }
+  }
+  calculateTotalVentaMensual(value: string, index: number) {
+    switch (index) {
+      case 1:
+        if (value == 'Diario') {
+          this.costosDirTotalVM1 = (isNaN(this.costosDirPrecioV1) ? 0 : this.costosDirPrecioV1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 25;
+        } else if (value == 'Semanal') {
+          this.costosDirTotalVM1 = (isNaN(this.costosDirPrecioV1) ? 0 : this.costosDirPrecioV1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 4;
+        } else if (value == 'Quincenal') {
+          this.costosDirTotalVM1 = (isNaN(this.costosDirPrecioV1) ? 0 : this.costosDirPrecioV1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 2;
+        } else if (value == 'Mensual') {
+          this.costosDirTotalVM1 = (isNaN(this.costosDirPrecioV1) ? 0 : this.costosDirPrecioV1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 1;
+        } else if (value == 'Bimestral') {
+          this.costosDirTotalVM1 = (isNaN(this.costosDirPrecioV1) ? 0 : this.costosDirPrecioV1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * 0.5;
+        } else if (value == 'Trimestral') {
+          this.costosDirTotalVM1 = (isNaN(this.costosDirPrecioV1) ? 0 : this.costosDirPrecioV1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * (30 / 90);
+        } else if (value == 'Semestral') {
+          this.costosDirTotalVM1 = (isNaN(this.costosDirPrecioV1) ? 0 : this.costosDirPrecioV1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * (30 / 180);
+        } else if (value == 'Anual') {
+          this.costosDirTotalVM1 = (isNaN(this.costosDirPrecioV1) ? 0 : this.costosDirPrecioV1) * (isNaN(this.costosDirProdCantidad1) ? 0 : this.costosDirProdCantidad1) * (30 / 360);
+        } else {
+          this.costosDirTotalVM1 = 0;
+        }
+        this.costosService.setCostosDirProdFrecuencia1(value);
+        this.costosService.setCostosDirTotalVM1(this.costosDirTotalVM1);
+        this.calculateMUB1();
+        this.calculateTotalTotalVentaMensual();
+        this.activar();
+        break;
+      case 2:
+        if (value == 'Diario') {
+          this.costosDirTotalVM2 = (isNaN(this.costosDirPrecioV2) ? 0 : this.costosDirPrecioV2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 25;
+        } else if (value == 'Semanal') {
+          this.costosDirTotalVM2 = (isNaN(this.costosDirPrecioV2) ? 0 : this.costosDirPrecioV2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 4;
+        } else if (value == 'Quincenal') {
+          this.costosDirTotalVM2 = (isNaN(this.costosDirPrecioV2) ? 0 : this.costosDirPrecioV2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 2;
+        } else if (value == 'Mensual') {
+          this.costosDirTotalVM2 = (isNaN(this.costosDirPrecioV2) ? 0 : this.costosDirPrecioV2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 1;
+        } else if (value == 'Bimestral') {
+          this.costosDirTotalVM2 = (isNaN(this.costosDirPrecioV2) ? 0 : this.costosDirPrecioV2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * 0.5;
+        } else if (value == 'Trimestral') {
+          this.costosDirTotalVM2 = (isNaN(this.costosDirPrecioV2) ? 0 : this.costosDirPrecioV2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * (30 / 90);
+        } else if (value == 'Semestral') {
+          this.costosDirTotalVM2 = (isNaN(this.costosDirPrecioV2) ? 0 : this.costosDirPrecioV2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * (30 / 180);
+        } else if (value == 'Anual') {
+          this.costosDirTotalVM2 = (isNaN(this.costosDirPrecioV2) ? 0 : this.costosDirPrecioV2) * (isNaN(this.costosDirProdCantidad2) ? 0 : this.costosDirProdCantidad2) * (30 / 360);
+        } else {
+          this.costosDirTotalVM2 = 0;
+        }
+        this.costosService.setCostosDirProdFrecuencia2(value);
+        this.costosService.setCostosDirTotalVM2(this.costosDirTotalVM2);
+        this.calculateMUB2()
+        this.calculateTotalTotalVentaMensual();
+        this.activar();
+        break;
+      case 3:
+        if (value == 'Diario') {
+          this.costosDirTotalVM3 = (isNaN(this.costosDirPrecioV3) ? 0 : this.costosDirPrecioV3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 25;
+        } else if (value == 'Semanal') {
+          this.costosDirTotalVM3 = (isNaN(this.costosDirPrecioV3) ? 0 : this.costosDirPrecioV3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 4;
+        } else if (value == 'Quincenal') {
+          this.costosDirTotalVM3 = (isNaN(this.costosDirPrecioV3) ? 0 : this.costosDirPrecioV3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 2;
+        } else if (value == 'Mensual') {
+          this.costosDirTotalVM3 = (isNaN(this.costosDirPrecioV3) ? 0 : this.costosDirPrecioV3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 1;
+        } else if (value == 'Bimestral') {
+          this.costosDirTotalVM3 = (isNaN(this.costosDirPrecioV3) ? 0 : this.costosDirPrecioV3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * 0.5;
+        } else if (value == 'Trimestral') {
+          this.costosDirTotalVM3 = (isNaN(this.costosDirPrecioV3) ? 0 : this.costosDirPrecioV3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * (30 / 90);
+        } else if (value == 'Semestral') {
+          this.costosDirTotalVM3 = (isNaN(this.costosDirPrecioV3) ? 0 : this.costosDirPrecioV3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * (30 / 180);
+        } else if (value == 'Anual') {
+          this.costosDirTotalVM3 = (isNaN(this.costosDirPrecioV3) ? 0 : this.costosDirPrecioV3) * (isNaN(this.costosDirProdCantidad3) ? 0 : this.costosDirProdCantidad3) * (30 / 360);
+        } else {
+          this.costosDirTotalVM3 = 0;
+        }
+        this.costosService.setCostosDirProdFrecuencia3(value);
+        this.costosService.setCostosDirTotalVM3(this.costosDirTotalVM3);
+        this.calculateMUB3()
+        this.calculateTotalTotalVentaMensual();
+        this.activar();
+        break;
+      case 4:
+        if (value == 'Diario') {
+          this.costosDirTotalVM4 = (isNaN(this.costosDirPrecioV4) ? 0 : this.costosDirPrecioV4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 25;
+        } else if (value == 'Semanal') {
+          this.costosDirTotalVM4 = (isNaN(this.costosDirPrecioV4) ? 0 : this.costosDirPrecioV4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 4;
+        } else if (value == 'Quincenal') {
+          this.costosDirTotalVM4 = (isNaN(this.costosDirPrecioV4) ? 0 : this.costosDirPrecioV4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 2;
+        } else if (value == 'Mensual') {
+          this.costosDirTotalVM4 = (isNaN(this.costosDirPrecioV4) ? 0 : this.costosDirPrecioV4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 1;
+        } else if (value == 'Bimestral') {
+          this.costosDirTotalVM4 = (isNaN(this.costosDirPrecioV4) ? 0 : this.costosDirPrecioV4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * 0.5;
+        } else if (value == 'Trimestral') {
+          this.costosDirTotalVM4 = (isNaN(this.costosDirPrecioV4) ? 0 : this.costosDirPrecioV4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * (30 / 90);
+        } else if (value == 'Semestral') {
+          this.costosDirTotalVM4 = (isNaN(this.costosDirPrecioV4) ? 0 : this.costosDirPrecioV4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * (30 / 180);
+        } else if (value == 'Anual') {
+          this.costosDirTotalVM4 = (isNaN(this.costosDirPrecioV4) ? 0 : this.costosDirPrecioV4) * (isNaN(this.costosDirProdCantidad4) ? 0 : this.costosDirProdCantidad4) * (30 / 360);
+        } else {
+          this.costosDirTotalVM4 = 0;
+        }
+        this.costosService.setCostosDirProdFrecuencia4(value);
+        this.costosService.setCostosDirTotalVM4(this.costosDirTotalVM4);
+        this.calculateMUB4()
+        this.calculateTotalTotalVentaMensual();
+        this.activar();
+        break;
+
+      default:
+        break;
+    }
+  }
+  calculateMUB1() {
+    this.costosDirMub1 = ((isNaN(this.costosDirTotalVM1) ? 0 : this.costosDirTotalVM1) - (isNaN(this.costosDirTotalCM1) ? 0 : this.costosDirTotalCM1)) / (isNaN(this.costosDirTotalVM1) ? 0 : this.costosDirTotalVM1)
+    this.costosDirMub1 = (isNaN(this.costosDirMub1) ? 0 : this.costosDirMub1)
+    this.costosService.setCostosDirMub1(this.costosDirMub1);
+    this.calcularTotalMUB();
+  }
+  calculateMUB2() {
+    this.costosDirMub2 = ((isNaN(this.costosDirTotalVM2) ? 0 : this.costosDirTotalVM2) - (isNaN(this.costosDirTotalCM2) ? 0 : this.costosDirTotalCM2)) / (isNaN(this.costosDirTotalVM2) ? 0 : this.costosDirTotalVM2)
+    this.costosDirMub2 = (isNaN(this.costosDirMub2) ? 0 : this.costosDirMub2)
+    this.costosService.setCostosDirMub2(this.costosDirMub2);
+    this.calcularTotalMUB();
+  }
+  calculateMUB3() {
+    this.costosDirMub3 = ((isNaN(this.costosDirTotalVM3) ? 0 : this.costosDirTotalVM3) - (isNaN(this.costosDirTotalCM3) ? 0 : this.costosDirTotalCM3)) / (isNaN(this.costosDirTotalVM3) ? 0 : this.costosDirTotalVM3)
+    this.costosDirMub3 = (isNaN(this.costosDirMub3) ? 0 : this.costosDirMub3)
+    this.costosService.setCostosDirMub3(this.costosDirMub3);
+    this.calcularTotalMUB();
+  }
+  calculateMUB4() {
+    this.costosDirMub4 = ((isNaN(this.costosDirTotalVM4) ? 0 : this.costosDirTotalVM4) - (isNaN(this.costosDirTotalCM4) ? 0 : this.costosDirTotalCM4)) / (isNaN(this.costosDirTotalVM4) ? 0 : this.costosDirTotalVM4)
+    this.costosDirMub4 = (isNaN(this.costosDirMub4) ? 0 : this.costosDirMub4)
+    this.costosService.setCostosDirMub4(this.costosDirMub4);
+    this.calcularTotalMUB();
+  }
+  asignarPrecioV(value: number, index: number) {
+    switch (index) {
+      case 1:
+        this.costosDirPrecioV1 = value;
+        this.costosService.setCostosDirPrecioV1(this.costosDirPrecioV1);
+        break;
+      case 2:
+        this.costosDirPrecioV2 = value;
+        this.costosService.setCostosDirPrecioV2(this.costosDirPrecioV2);
+        break;
+      case 3:
+        this.costosDirPrecioV3 = value;
+        this.costosService.setCostosDirPrecioV3(this.costosDirPrecioV3);
+        break;
+      case 4:
+        this.costosDirPrecioV4 = value;
+        this.costosService.setCostosDirPrecioV4(this.costosDirPrecioV4);
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  calculateTotalTotalCompraMensual() {
+    this.costosDirTotalCMT =
+      (isNaN(this.costosDirTotalCM1) ? 0 : this.costosDirTotalCM1) +
+      (isNaN(this.costosDirTotalCM2) ? 0 : this.costosDirTotalCM2) +
+      (isNaN(this.costosDirTotalCM3) ? 0 : this.costosDirTotalCM3) +
+      (isNaN(this.costosDirTotalCM4) ? 0 : this.costosDirTotalCM4);
+
+    this.costosService.setCostosDirTotalCMT(this.costosDirTotalCMT);
+  }
+  calculateTotalTotalVentaMensual() {
+    this.costosDirTotalVMT =
+      (isNaN(this.costosDirTotalVM1) ? 0 : this.costosDirTotalVM1) +
+      (isNaN(this.costosDirTotalVM2) ? 0 : this.costosDirTotalVM2) +
+      (isNaN(this.costosDirTotalVM3) ? 0 : this.costosDirTotalVM3) +
+      (isNaN(this.costosDirTotalVM4) ? 0 : this.costosDirTotalVM4);
+
+    this.costosService.setCostosDirTotalVMT(this.costosDirTotalVMT);
+  }
+  calcularTotalMUB() {
+    this.costosDirMubT =
+      (isNaN(this.costosDirMub1) ? 0 : this.costosDirMub1) +
+      (isNaN(this.costosDirMub2) ? 0 : this.costosDirMub2) +
+      (isNaN(this.costosDirMub3) ? 0 : this.costosDirMub3) +
+      (isNaN(this.costosDirMub4) ? 0 : this.costosDirMub4);
+
+    this.costosService.setCostosDirMubT(this.costosDirMubT);
+  }
+  //// Costos de producción mensual
+  calculateCostosProdMensual1() {
+    this.costosDirEneCPM = this.costosDirEneVM * (1 - this.costosDirMubT);
+    this.costosService.setCostosDirEneCPM(this.costosDirEneCPM);
+  }
+  calculateCostosProdMensual2() {
+    this.costosDirFebCPM = this.costosDirFebVM * (1 - this.costosDirMubT);
+    this.costosService.setCostosDirFebCPM(this.costosDirFebCPM);
+  }
+  calculateCostosProdMensual3() {
+    this.costosDirMarCPM = this.costosDirMarVM * (1 - this.costosDirMubT);
+    this.costosService.setCostosDirMarCPM(this.costosDirMarCPM);
+  }
+  calculateCostosProdMensual4() {
+    this.costosDirAbrCPM = this.costosDirAbrVM * (1 - this.costosDirMubT);
+    this.costosService.setCostosDirAbrCPM(this.costosDirAbrCPM);
+  }
+  calculateCostosProdMensual5() {
+    this.costosDirMayCPM = this.costosDirMayVM * (1 - this.costosDirMubT);
+    this.costosService.setCostosDirMayCPM(this.costosDirMayCPM);
+  }
+  calculateCostosProdMensual6() {
+    this.costosDirJunCPM = this.costosDirJunVM * (1 - this.costosDirMubT);
+    this.costosService.setCostosDirJunCPM(this.costosDirJunCPM);
+  }
+  calculateCostosProdMensual7() {
+    this.costosDirJulCPM = this.costosDirJulVM * (1 - this.costosDirMubT);
+    this.costosService.setCostosDirJulCPM(this.costosDirJulCPM);
+  }
+  calculateCostosProdMensual8() {
+    this.costosDirAgoCPM = this.costosDirAgoVM * (1 - this.costosDirMubT);
+    this.costosService.setCostosDirAgoCPM(this.costosDirAgoCPM);
+  }
+  calculateCostosProdMensual9() {
+    this.costosDirSepCPM = this.costosDirSepVM * (1 - this.costosDirMubT);
+    this.costosService.setCostosDirSepCPM(this.costosDirSepCPM);
+  }
+  calculateCostosProdMensual10() {
+    this.costosDirOctCPM = this.costosDirOctVM * (1 - this.costosDirMubT);
+    this.costosService.setCostosDirOctCPM(this.costosDirOctCPM);
+  }
+  calculateCostosProdMensual11() {
+    this.costosDirNovCPM = this.costosDirNovVM * (1 - this.costosDirMubT);
+    this.costosService.setCostosDirNovCPM(this.costosDirNovCPM);
+  }
+  calculateCostosProdMensual12() {
+    this.costosDirDicCPM = this.costosDirDicVM * (1 - this.costosDirMubT);
+    this.costosService.setCostosDirDicCPM(this.costosDirDicCPM);
+  }
+  /// venta mes anual
+  calcularVentaMesAnual() {
+    this.costosDirAnualVM =
+      (isNaN(this.costosDirEneVM) ? 0 : this.costosDirEneVM) +
+      (isNaN(this.costosDirFebVM) ? 0 : this.costosDirFebVM) +
+      (isNaN(this.costosDirMarVM) ? 0 : this.costosDirMarVM) +
+      (isNaN(this.costosDirAbrVM) ? 0 : this.costosDirAbrVM) +
+      (isNaN(this.costosDirMayVM) ? 0 : this.costosDirMayVM) +
+      (isNaN(this.costosDirJunVM) ? 0 : this.costosDirJunVM) +
+      (isNaN(this.costosDirJulVM) ? 0 : this.costosDirJulVM) +
+      (isNaN(this.costosDirAgoVM) ? 0 : this.costosDirAgoVM) +
+      (isNaN(this.costosDirSepVM) ? 0 : this.costosDirSepVM) +
+      (isNaN(this.costosDirOctVM) ? 0 : this.costosDirOctVM) +
+      (isNaN(this.costosDirNovVM) ? 0 : this.costosDirNovVM) +
+      (isNaN(this.costosDirDicVM) ? 0 : this.costosDirDicVM);
+    this.costosService.setCostosDirAnualVM(this.costosDirAnualVM);
+  }
+  /// costos de producción mensuales anual
+  calcularCostosProdMesAnual() {
+    this.costosDirAnualCPM =
+      (isNaN(this.costosDirEneCPM) ? 0 : this.costosDirEneCPM) +
+      (isNaN(this.costosDirFebCPM) ? 0 : this.costosDirFebCPM) +
+      (isNaN(this.costosDirMarCPM) ? 0 : this.costosDirMarCPM) +
+      (isNaN(this.costosDirAbrCPM) ? 0 : this.costosDirAbrCPM) +
+      (isNaN(this.costosDirMayCPM) ? 0 : this.costosDirMayCPM) +
+      (isNaN(this.costosDirJunCPM) ? 0 : this.costosDirJunCPM) +
+      (isNaN(this.costosDirJulCPM) ? 0 : this.costosDirJulCPM) +
+      (isNaN(this.costosDirAgoCPM) ? 0 : this.costosDirAgoCPM) +
+      (isNaN(this.costosDirSepCPM) ? 0 : this.costosDirSepCPM) +
+      (isNaN(this.costosDirOctCPM) ? 0 : this.costosDirOctCPM) +
+      (isNaN(this.costosDirNovCPM) ? 0 : this.costosDirNovCPM) +
+      (isNaN(this.costosDirDicCPM) ? 0 : this.costosDirDicCPM);
+    this.costosService.setCostosDirAnualCPM(this.costosDirAnualCPM);
+  }
+  calculateTotal1(index: number): void {
+    this.input = this.inputValues[index] ?? 0;
+    this.total = this.inputValues
+      .map(value => parseInt(value?.toString() || '0') || 0)
+      .reduce((sum, value) => sum + value, 0);
+    switch (index) {
+      case 0:
+        this.costosDirCantidad11 = this.input;
+        this.costosService.setCostosDirCantidad11(this.input);
+        break;
+
+      default:
+        break;
+    }
+  }
+  activar() {
+    this.calculateCostosProdMensual1()
+    this.calculateCostosProdMensual2()
+    this.calculateCostosProdMensual3()
+    this.calculateCostosProdMensual4()
+    this.calculateCostosProdMensual5()
+    this.calculateCostosProdMensual6()
+    this.calculateCostosProdMensual7()
+    this.calculateCostosProdMensual8()
+    this.calculateCostosProdMensual9()
+    this.calculateCostosProdMensual10()
+    this.calculateCostosProdMensual11()
+    this.calculateCostosProdMensual12()
+    this.calcularVentaMesAnual()
+    this.calcularCostosProdMesAnual()
   }
 }

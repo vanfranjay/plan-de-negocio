@@ -264,80 +264,68 @@
 
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output class="no-margin right-align">{{ costosDirEneCPM | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                      <output class="no-margin right-align">{{ costosDirFebCPM | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output class="no-margin right-align">{{ costosDirMarCPM | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output class="no-margin right-align">{{ costosDirAbrCPM | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output class="no-margin right-align">{{ costosDirMayCPM | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output class="no-margin right-align">{{ costosDirJunCPM | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output class="no-margin right-align">{{ costosDirJulCPM | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output class="no-margin right-align">{{ costosDirAgoCPM | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output class="no-margin right-align">{{ costosDirSepCPM | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output class="no-margin right-align">{{ costosDirOctCPM | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output class="no-margin right-align">{{ costosDirNovCPM | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output class="no-margin right-align">{{ costosDirDicCPM | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirAnualCPM" readonly="readonly" />
                   </div>
                 </td>
               </tr>
@@ -368,7 +356,7 @@
               </tr>
               <tr>
                 <td width="20%" colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdServ1', costosDirProdServ1)"
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdServ1', costosDirProdServ1);asignarProdServ1()"
                   [(ngModel)]="costosDirProdServ1" />
                 </td>
                 <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
@@ -386,235 +374,235 @@
                   [(ngModel)]="costosDirProdUniVenta1" />
                 </td>
                 <td>
-                  <select class="selectCostosSM" (change)="asignarValor('ProdFrecuencia1', costosDirProdFrecuencia1)"
+                  <select class="selectCostosSM" (change)="calculateTotalCompraMensual(costosDirProdFrecuencia1, 1);calculateTotalVentaMensual(costosDirProdFrecuencia1, 1)"
                   [(ngModel)]="costosDirProdFrecuencia1">
-                    <option></option>
-                    <option>Diario</option>
-                    <option>Semanal</option>
-                    <option>Quincenal</option>
-                    <option>Mensual</option>
-                    <option>Bimestral</option>
-                    <option>Trimestral</option>
-                    <option>Semestral</option>
+                    <option value=""></option>
+                    <option value="Diario">Diario</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="Quincenal">Quincenal</option>
+                    <option value="Mensual">Mensual</option>
+                    <option value="Bimestral">Bimestral</option>
+                    <option value="Trimestral">Trimestral</option>
+                    <option value="Semestral">Semestral</option>
+                    <option value="Anual">Anual</option>
                   </select>
                 </td>
                 <td width="8%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirPrecioC1" readonly="readonly" />
                   </div>
                 </td>
                 <td width="8%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirPrecioV1" readonly="readonly" />
                   </div>
                 </td>
                 <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirTotalCM1" readonly="readonly" />
                   </div>
                 </td>
                 <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirTotalVM1" readonly="readonly" />
                   </div>
                 </td>
                 <td width="5%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output>{{costosDirMub1 | percent: '1.2-2' }}</output>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdServ2', costosDirProdServ2)"
+                <td width="20%" colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdServ2', costosDirProdServ2);asignarProdServ2()"
                   [(ngModel)]="costosDirProdServ2" />
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdTipo2', costosDirProdTipo2)"
                   [(ngModel)]="costosDirProdTipo2" />
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="5%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
                     <input type="number" class="no-margin right-align" (change)="asignarValor('ProdCantidad2', costosDirProdCantidad2)"
                     [(ngModel)]="costosDirProdCantidad2" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder=""  (change)="asignarValor('ProdUniVenta2', costosDirProdUniVenta2)"
+                <td width="11%" colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdUniVenta2', costosDirProdUniVenta2)"
                   [(ngModel)]="costosDirProdUniVenta2" />
                 </td>
                 <td>
-                  <select class="selectCostosSM" (change)="asignarValor('ProdFrecuencia2', costosDirProdFrecuencia2)"
+                  <select class="selectCostosSM" (change)="calculateTotalCompraMensual(costosDirProdFrecuencia2, 2);calculateTotalVentaMensual(costosDirProdFrecuencia2, 2)"
                   [(ngModel)]="costosDirProdFrecuencia2">
-                    <option></option>
-                    <option>Diario</option>
-                    <option>Semanal</option>
-                    <option>Quincenal</option>
-                    <option>Mensual</option>
-                    <option>Bimestral</option>
-                    <option>Trimestral</option>
-                    <option>Semestral</option>
+                    <option value=""></option>
+                    <option value="Diario">Diario</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="Quincenal">Quincenal</option>
+                    <option value="Mensual">Mensual</option>
+                    <option value="Bimestral">Bimestral</option>
+                    <option value="Trimestral">Trimestral</option>
+                    <option value="Semestral">Semestral</option>
+                    <option value="Anual">Anual</option>
                   </select>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="8%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirPrecioC2" readonly="readonly" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="8%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirPrecioV2" readonly="readonly" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirTotalCM2" readonly="readonly" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirTotalVM2" readonly="readonly" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="5%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output>{{costosDirMub2 | percent: '1.2-2' }}</output>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder=""  (change)="asignarValor('ProdServ3', costosDirProdServ3)"
-                  [(ngModel)]="costosDirProdServ3"/>
+                <td width="20%" colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdServ3', costosDirProdServ3);asignarProdServ3()"
+                  [(ngModel)]="costosDirProdServ3" />
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdTipo3', costosDirProdTipo3)"
-                  [(ngModel)]="costosDirProdTipo3"/>
+                  [(ngModel)]="costosDirProdTipo3" />
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="5%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
                     <input type="number" class="no-margin right-align" (change)="asignarValor('ProdCantidad3', costosDirProdCantidad3)"
-                    [(ngModel)]="costosDirProdCantidad3"/>
+                    [(ngModel)]="costosDirProdCantidad3" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder=""  (change)="asignarValor('ProdUniVenta3', costosDirProdUniVenta3)"
+                <td width="11%" colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdUniVenta3', costosDirProdUniVenta3)"
                   [(ngModel)]="costosDirProdUniVenta3" />
                 </td>
                 <td>
-                  <select class="selectCostosSM" (change)="asignarValor('ProdFrecuencia3', costosDirProdFrecuencia3)"
+                  <select class="selectCostosSM" (change)="calculateTotalCompraMensual(costosDirProdFrecuencia3, 3);calculateTotalVentaMensual(costosDirProdFrecuencia3, 3)"
                   [(ngModel)]="costosDirProdFrecuencia3">
-                    <option></option>
-                    <option>Diario</option>
-                    <option>Semanal</option>
-                    <option>Quincenal</option>
-                    <option>Mensual</option>
-                    <option>Bimestral</option>
-                    <option>Trimestral</option>
-                    <option>Semestral</option>
+                    <option value=""></option>
+                    <option value="Diario">Diario</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="Quincenal">Quincenal</option>
+                    <option value="Mensual">Mensual</option>
+                    <option value="Bimestral">Bimestral</option>
+                    <option value="Trimestral">Trimestral</option>
+                    <option value="Semestral">Semestral</option>
+                    <option value="Anual">Anual</option>
                   </select>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="8%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirPrecioC3" readonly="readonly" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="8%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirPrecioV3" readonly="readonly" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirTotalCM3" readonly="readonly" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirTotalVM3" readonly="readonly" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="5%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output>{{costosDirMub3 | percent: '1.2-2' }}</output>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder=""  (change)="asignarValor('ProdServ4', costosDirProdServ4)"
-                  [(ngModel)]="costosDirProdServ4"/>
+                <td width="20%" colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdServ4', costosDirProdServ4);asignarProdServ4()"
+                  [(ngModel)]="costosDirProdServ4" />
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder=""  (change)="asignarValor('ProdTipo4', costosDirProdTipo4)"
-                  [(ngModel)]="costosDirProdTipo4"/>
+                <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdTipo4', costosDirProdTipo4)"
+                  [(ngModel)]="costosDirProdTipo4" />
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="5%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align"  (change)="asignarValor('ProdCantidad4', costosDirProdCantidad4)"
+                    <input type="number" class="no-margin right-align" (change)="asignarValor('ProdCantidad4', costosDirProdCantidad4)"
                     [(ngModel)]="costosDirProdCantidad4" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="full-width no-margin" type="text" placeholder=""  (change)="asignarValor('ProdUniVenta4', costosDirProdUniVenta4)"
-                  [(ngModel)]="costosDirProdUniVenta4"  />
+                <td width="11%" colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="full-width no-margin" type="text" placeholder="" (change)="asignarValor('ProdUniVenta4', costosDirProdUniVenta4)"
+                  [(ngModel)]="costosDirProdUniVenta4" />
                 </td>
                 <td>
-                  <select class="selectCostosSM" (change)="asignarValor('ProdFrecuencia4', costosDirProdFrecuencia4)"
+                  <select class="selectCostosSM" (change)="calculateTotalCompraMensual(costosDirProdFrecuencia4, 4);calculateTotalVentaMensual(costosDirProdFrecuencia4, 4)"
                   [(ngModel)]="costosDirProdFrecuencia4">
-                    <option></option>
-                    <option>Diario</option>
-                    <option>Semanal</option>
-                    <option>Quincenal</option>
-                    <option>Mensual</option>
-                    <option>Bimestral</option>
-                    <option>Trimestral</option>
-                    <option>Semestral</option>
+                    <option value=""></option>
+                    <option value="Diario">Diario</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="Quincenal">Quincenal</option>
+                    <option value="Mensual">Mensual</option>
+                    <option value="Bimestral">Bimestral</option>
+                    <option value="Trimestral">Trimestral</option>
+                    <option value="Semestral">Semestral</option>
+                    <option value="Anual">Anual</option>
                   </select>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="8%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirPrecioC4" readonly="readonly" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="8%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirPrecioV4" readonly="readonly" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirTotalCM4" readonly="readonly" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="10%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                      [(ngModel)]="costosDirTotalVM4" readonly="readonly" />
                   </div>
                 </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                <td width="5%" colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output>{{costosDirMub4 | percent: '1.2-2' }}</output>
                   </div>
                 </td>
               </tr>
@@ -626,20 +614,17 @@
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output class="no-margin right-align">{{costosDirTotalCMT | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output>{{ costosDirTotalVMT | number:'1.2-2'}}</output>
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <output>{{costosDirMubT | percent: '1.2-2' }}</output>
                   </div>
                 </td>
               </tr>
@@ -662,13 +647,15 @@
                 <th colspan="1" class="border fondo__subtitulo2 subTitle3">Producto o Servicio:</th>
 
                 <td colspan="2" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <output class="input-container3">{{costosDirProdOServ1}}</output>
                 </td>
 
                 <th colspan="1" class="border fondo__subtitulo2 subTitle3">Unidad de Medida:</th>
 
                 <td colspan="2" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  [(ngModel)]="costosDirUndMedida1"
+                  (change)="asignarValor('UndMedida1',costosDirUndMedida1)"/>
                 </td>
               </tr>
               <tr>
@@ -686,257 +673,345 @@
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo11', costosDirInsumo11)"
+                  [(ngModel)]="costosDirInsumo11"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarCantidad1();calculateABC1()"
+                    [(ngModel)]="costosDirCantidad11"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad11', costosDirUnidad11)"
+                  [(ngModel)]="costosDirUnidad11"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS11', costosDirUnPS11);calculateABC1()"
+                    [(ngModel)]="costosDirUnPS11"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU12', costosDirPrecioU12);calculateABC1()"
+                    [(ngModel)]="costosDirPrecioU12"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC11 >= 0? costosDirTotalABC11: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo12', costosDirInsumo12)"
+                  [(ngModel)]="costosDirInsumo12"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarCantidad2();calculateABC2()"
+                    [(ngModel)]="costosDirCantidad12"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad12', costosDirUnidad12)"
+                  [(ngModel)]="costosDirUnidad12"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS12', costosDirUnPS12);calculateABC2()"
+                    [(ngModel)]="costosDirUnPS12"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU13', costosDirPrecioU13);calculateABC2()"
+                    [(ngModel)]="costosDirPrecioU13"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC12 >= 0? costosDirTotalABC12: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo13', costosDirInsumo13)"
+                  [(ngModel)]="costosDirInsumo13"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarCantidad3();calculateABC3()"
+                    [(ngModel)]="costosDirCantidad13"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad13', costosDirUnidad13)"
+                  [(ngModel)]="costosDirUnidad13"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS13', costosDirUnPS13);calculateABC3()"
+                    [(ngModel)]="costosDirUnPS13"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU14', costosDirPrecioU14);calculateABC3()"
+                    [(ngModel)]="costosDirPrecioU14"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC13 >= 0? costosDirTotalABC13: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo14', costosDirInsumo14)"
+                  [(ngModel)]="costosDirInsumo14"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarCantidad4();calculateABC4()"
+                    [(ngModel)]="costosDirCantidad14"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad14', costosDirUnidad14)"
+                  [(ngModel)]="costosDirUnidad14"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS14', costosDirUnPS14);calculateABC4()"
+                    [(ngModel)]="costosDirUnPS14"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU15', costosDirPrecioU15);calculateABC4()"
+                    [(ngModel)]="costosDirPrecioU15"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC14 >= 0? costosDirTotalABC14: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo15', costosDirInsumo15)"
+                  [(ngModel)]="costosDirInsumo15"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarCantidad5();calculateABC5()"
+                    [(ngModel)]="costosDirCantidad15"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad15', costosDirUnidad15)"
+                  [(ngModel)]="costosDirUnidad15"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS15', costosDirUnPS15);calculateABC5()"
+                    [(ngModel)]="costosDirUnPS15"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU16', costosDirPrecioU16);calculateABC5()"
+                    [(ngModel)]="costosDirPrecioU16"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC15 >= 0? costosDirTotalABC15: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo16', costosDirInsumo16)"
+                  [(ngModel)]="costosDirInsumo16"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarCantidad6();calculateABC6()"
+                    [(ngModel)]="costosDirCantidad16"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad16', costosDirUnidad16)"
+                  [(ngModel)]="costosDirUnidad16"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS16', costosDirUnPS16);calculateABC6()"
+                    [(ngModel)]="costosDirUnPS16"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU17', costosDirPrecioU17);calculateABC6()"
+                    [(ngModel)]="costosDirPrecioU17"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC16 >= 0? costosDirTotalABC16: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo17', costosDirInsumo17)"
+                  [(ngModel)]="costosDirInsumo17"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarCantidad7();calculateABC7()"
+                    [(ngModel)]="costosDirCantidad17"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad17', costosDirUnidad17)"
+                  [(ngModel)]="costosDirUnidad17"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS17', costosDirUnPS17);calculateABC7()"
+                    [(ngModel)]="costosDirUnPS17"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU18', costosDirPrecioU18);calculateABC7()"
+                    [(ngModel)]="costosDirPrecioU18"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC17 >= 0? costosDirTotalABC17: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo18', costosDirInsumo18)"
+                  [(ngModel)]="costosDirInsumo18"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarCantidad8();calculateABC8()"
+                    [(ngModel)]="costosDirCantidad18"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad18', costosDirUnidad18)"
+                  [(ngModel)]="costosDirUnidad18"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS18', costosDirUnPS18);calculateABC8()"
+                    [(ngModel)]="costosDirUnPS18"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU19', costosDirPrecioU19);calculateABC8()"
+                    [(ngModel)]="costosDirPrecioU19"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC18 >= 0? costosDirTotalABC18: ''}}</output>
                   </div>
                 </td>
               </tr>
@@ -948,8 +1023,9 @@
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                    [(ngModel)]="costosDirTotaCD1"
+                    />
                   </div>
                 </td>
 
@@ -962,333 +1038,8 @@
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-
-              </tr>
-              <tr>
-                <th colspan="10" class="border fondo__subtitulo2 subTitle"></th>
-                <br>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="3" [rowspan]="10" class="custom-tile">
-      <div class="content">
-        <div class="contentTable">
-          <div class="contentProSer">
-            <table class="full-width full-height border-table">
-
-              <tr>
-                <th colspan="1" class="border fondo__subtitulo2 subTitle3">Producto o Servicio:</th>
-
-                <td colspan="2" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
-                </td>
-
-                <th colspan="1" class="border fondo__subtitulo2 subTitle3">Unidad de Medida:</th>
-
-                <td colspan="2" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
-                </td>
-              </tr>
-              <tr>
-                <th colspan="6" class="border fondo__subtitulo2 subTitle"></th>
-                <br>
-              </tr>
-              <tr>
-                <th width="30%" colspan="1" class="border fondo__subtitulo2 subTitle3">Insumo</th>
-                <th width="10%" colspan="1" class="border fondo__subtitulo2 subTitle3">Cantidad (A)</th>
-                <th width="20%" colspan="1" class="border fondo__subtitulo2 subTitle3">Unidad</th>
-                <th width="10%" colspan="1" class="border fondo__subtitulo2 subTitle3">N° de Unidades de Productos o
-                  Servicios (B)</th>
-                <th width="15%" colspan="1" class="border fondo__subtitulo2 subTitle3">Precio Unitario (C)</th>
-                <th width="15%" colspan="1" class="border fondo__subtitulo2 subTitle3">Total (A/B)*C</th>
-              </tr>
-              <tr>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="3" class="border fondo__subtitulo2 subTitle">
-                </td>
-                <td colspan="2" class="border fondo__subtitulo2 subTitle">
-                  <b>Total Costo (D):</b>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
-                  </div>
-                </td>
-
-              </tr>
-              <tr>
-                <td colspan="3" class="border fondo__subtitulo2 subTitle">
-                </td>
-                <td colspan="2" class="border fondo__subtitulo2 subTitle">
-                  <b>Precio de Venta:</b>
-                </td>
-                <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align" (change)="asignarPrecioV(costosDirPrecioV1, 1)"
+                      [(ngModel)]="costosDirPrecioV1" />
                   </div>
                 </td>
 
@@ -1312,13 +1063,15 @@
                 <th colspan="1" class="border fondo__subtitulo2 subTitle3">Producto o Servicio:</th>
 
                 <td colspan="2" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <output class="input-container3">{{costosDirProdOServ2}}</output>
                 </td>
 
                 <th colspan="1" class="border fondo__subtitulo2 subTitle3">Unidad de Medida:</th>
 
                 <td colspan="2" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  [(ngModel)]="costosDirUndMedida2"
+                  (change)="asignarValor('UndMedida2',costosDirUndMedida2)"/>
                 </td>
               </tr>
               <tr>
@@ -1336,257 +1089,345 @@
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo21', costosDirInsumo21)"
+                  [(ngModel)]="costosDirInsumo21"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarCantidad2();calculateABC21()"
+                    [(ngModel)]="costosDirCantidad21"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad21', costosDirUnidad21)"
+                  [(ngModel)]="costosDirUnidad21"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS21', costosDirUnPS21);calculateABC21()"
+                    [(ngModel)]="costosDirUnPS21"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU21', costosDirPrecioU21);calculateABC21()"
+                    [(ngModel)]="costosDirPrecioU21"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC21 >= 0? costosDirTotalABC21: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo22', costosDirInsumo22)"
+                  [(ngModel)]="costosDirInsumo22"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad22', costosDirCantidad22);calculateABC22()"
+                    [(ngModel)]="costosDirCantidad22"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad22', costosDirUnidad22)"
+                  [(ngModel)]="costosDirUnidad22"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS22', costosDirUnPS22);calculateABC22()"
+                    [(ngModel)]="costosDirUnPS22"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU22', costosDirPrecioU22);calculateABC22()"
+                    [(ngModel)]="costosDirPrecioU22"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC22 >= 0? costosDirTotalABC22: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo23', costosDirInsumo23)"
+                  [(ngModel)]="costosDirInsumo23"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad23', costosDirCantidad23);calculateABC23()"
+                    [(ngModel)]="costosDirCantidad23"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad23', costosDirUnidad23)"
+                  [(ngModel)]="costosDirUnidad23"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS23', costosDirUnPS23);calculateABC23()"
+                    [(ngModel)]="costosDirUnPS23"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU23', costosDirPrecioU23);calculateABC23()"
+                    [(ngModel)]="costosDirPrecioU23"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC23 >= 0? costosDirTotalABC23: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo24', costosDirInsumo24)"
+                  [(ngModel)]="costosDirInsumo24"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad24', costosDirCantidad24);calculateABC24()"
+                    [(ngModel)]="costosDirCantidad24"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad24', costosDirUnidad24)"
+                  [(ngModel)]="costosDirUnidad24"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS24', costosDirUnPS24);calculateABC24()"
+                    [(ngModel)]="costosDirUnPS24"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU24', costosDirPrecioU24);calculateABC24()"
+                    [(ngModel)]="costosDirPrecioU24"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC24 >= 0? costosDirTotalABC24: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo25', costosDirInsumo25)"
+                  [(ngModel)]="costosDirInsumo25"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad25', costosDirCantidad25);calculateABC25()"
+                    [(ngModel)]="costosDirCantidad25"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad25', costosDirUnidad25)"
+                  [(ngModel)]="costosDirUnidad25"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS25', costosDirUnPS25);calculateABC25()"
+                    [(ngModel)]="costosDirUnPS25"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU25', costosDirPrecioU25);calculateABC25()"
+                    [(ngModel)]="costosDirPrecioU25"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC25 >= 0? costosDirTotalABC25: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo26', costosDirInsumo26)"
+                  [(ngModel)]="costosDirInsumo26"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad26', costosDirCantidad26);calculateABC26()"
+                    [(ngModel)]="costosDirCantidad26"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad26', costosDirUnidad26)"
+                  [(ngModel)]="costosDirUnidad26"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS26', costosDirUnPS26);calculateABC26()"
+                    [(ngModel)]="costosDirUnPS26"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU26', costosDirPrecioU26);calculateABC26()"
+                    [(ngModel)]="costosDirPrecioU26"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC26 >= 0? costosDirTotalABC26: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo27', costosDirInsumo27)"
+                  [(ngModel)]="costosDirInsumo27"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad27', costosDirCantidad27);calculateABC27()"
+                    [(ngModel)]="costosDirCantidad27"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad27', costosDirUnidad27)"
+                  [(ngModel)]="costosDirUnidad27"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS27', costosDirUnPS27);calculateABC27()"
+                    [(ngModel)]="costosDirUnPS27"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU27', costosDirPrecioU27);calculateABC27()"
+                    [(ngModel)]="costosDirPrecioU27"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC27 >= 0? costosDirTotalABC27: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo28', costosDirInsumo28)"
+                  [(ngModel)]="costosDirInsumo28"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad28', costosDirCantidad28);calculateABC28()"
+                    [(ngModel)]="costosDirCantidad28"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad28', costosDirUnidad28)"
+                  [(ngModel)]="costosDirUnidad28"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS28', costosDirUnPS28);calculateABC28()"
+                    [(ngModel)]="costosDirUnPS28"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU28', costosDirPrecioU28);calculateABC28()"
+                    [(ngModel)]="costosDirPrecioU28"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC28 >= 0? costosDirTotalABC28: ''}}</output>
                   </div>
                 </td>
               </tr>
@@ -1598,8 +1439,9 @@
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                    [(ngModel)]="costosDirTotaCD2"
+                    />
                   </div>
                 </td>
 
@@ -1612,8 +1454,8 @@
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align" (change)="asignarPrecioV(costosDirPrecioV2, 2)"
+                      [(ngModel)]="costosDirPrecioV2" />
                   </div>
                 </td>
 
@@ -1637,13 +1479,15 @@
                 <th colspan="1" class="border fondo__subtitulo2 subTitle3">Producto o Servicio:</th>
 
                 <td colspan="2" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <output class="input-container3">{{costosDirProdOServ3}}</output>
                 </td>
 
                 <th colspan="1" class="border fondo__subtitulo2 subTitle3">Unidad de Medida:</th>
 
                 <td colspan="2" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  [(ngModel)]="costosDirUndMedida3"
+                  (change)="asignarValor('UndMedida3',costosDirUndMedida3)"/>
                 </td>
               </tr>
               <tr>
@@ -1661,257 +1505,345 @@
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo31', costosDirInsumo31)"
+                  [(ngModel)]="costosDirInsumo31"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad31', costosDirCantidad31);calculateABC31()"
+                    [(ngModel)]="costosDirCantidad31"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad31', costosDirUnidad31)"
+                  [(ngModel)]="costosDirUnidad31"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS31', costosDirUnPS31);calculateABC31()"
+                    [(ngModel)]="costosDirUnPS31"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU31', costosDirPrecioU31);calculateABC31()"
+                    [(ngModel)]="costosDirPrecioU31"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC31 >= 0? costosDirTotalABC31: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo32', costosDirInsumo32)"
+                  [(ngModel)]="costosDirInsumo32"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad32', costosDirCantidad32);calculateABC32()"
+                    [(ngModel)]="costosDirCantidad32"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad32', costosDirUnidad32)"
+                  [(ngModel)]="costosDirUnidad32"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS32', costosDirUnPS32);calculateABC32()"
+                    [(ngModel)]="costosDirUnPS32"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU32', costosDirPrecioU32);calculateABC32()"
+                    [(ngModel)]="costosDirPrecioU32"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC32 >= 0? costosDirTotalABC32: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo33', costosDirInsumo33)"
+                  [(ngModel)]="costosDirInsumo33"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad33', costosDirCantidad33);calculateABC33()"
+                    [(ngModel)]="costosDirCantidad33"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad33', costosDirUnidad33)"
+                  [(ngModel)]="costosDirUnidad33"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS33', costosDirUnPS33);calculateABC33()"
+                    [(ngModel)]="costosDirUnPS33"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU33', costosDirPrecioU33);calculateABC33()"
+                    [(ngModel)]="costosDirPrecioU33"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC33 >= 0? costosDirTotalABC33: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo34', costosDirInsumo34)"
+                  [(ngModel)]="costosDirInsumo34"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad34', costosDirCantidad34);calculateABC34()"
+                    [(ngModel)]="costosDirCantidad34"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad34', costosDirUnidad34)"
+                  [(ngModel)]="costosDirUnidad34"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS34', costosDirUnPS34);calculateABC34()"
+                    [(ngModel)]="costosDirUnPS34"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU34', costosDirPrecioU34);calculateABC34()"
+                    [(ngModel)]="costosDirPrecioU34"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC34 >= 0? costosDirTotalABC34: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo35', costosDirInsumo35)"
+                  [(ngModel)]="costosDirInsumo35"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad35', costosDirCantidad35);calculateABC35()"
+                    [(ngModel)]="costosDirCantidad35"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad35', costosDirUnidad35)"
+                  [(ngModel)]="costosDirUnidad35"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS35', costosDirUnPS35);calculateABC35()"
+                    [(ngModel)]="costosDirUnPS35"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU35', costosDirPrecioU35);calculateABC35()"
+                    [(ngModel)]="costosDirPrecioU35"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC35 >= 0? costosDirTotalABC35: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo36', costosDirInsumo36)"
+                  [(ngModel)]="costosDirInsumo36"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad36', costosDirCantidad36);calculateABC36()"
+                    [(ngModel)]="costosDirCantidad36"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad36', costosDirUnidad36)"
+                  [(ngModel)]="costosDirUnidad36"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS36', costosDirUnPS36);calculateABC36()"
+                    [(ngModel)]="costosDirUnPS36"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU36', costosDirPrecioU36);calculateABC36()"
+                    [(ngModel)]="costosDirPrecioU36"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC36 >= 0? costosDirTotalABC36: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo37', costosDirInsumo37)"
+                  [(ngModel)]="costosDirInsumo37"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad37', costosDirCantidad37);calculateABC37()"
+                    [(ngModel)]="costosDirCantidad37"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad37', costosDirUnidad37)"
+                  [(ngModel)]="costosDirUnidad37"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS37', costosDirUnPS37);calculateABC37()"
+                    [(ngModel)]="costosDirUnPS37"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU37', costosDirPrecioU37);calculateABC37()"
+                    [(ngModel)]="costosDirPrecioU37"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC37 >= 0? costosDirTotalABC37: ''}}</output>
                   </div>
                 </td>
               </tr>
               <tr>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3" type="text" placeholder="" />
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo38', costosDirInsumo38)"
+                  [(ngModel)]="costosDirInsumo38"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad38', costosDirCantidad38);calculateABC38()"
+                    [(ngModel)]="costosDirCantidad38"
+                     />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
-                  <input class="input-container3 " type="text" placeholder="" />
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad38', costosDirUnidad38)"
+                  [(ngModel)]="costosDirUnidad38"
+                  />
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS38', costosDirUnPS38);calculateABC38()"
+                    [(ngModel)]="costosDirUnPS38"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU38', costosDirPrecioU38);calculateABC38()"
+                    [(ngModel)]="costosDirPrecioU38"
+                    />
                   </div>
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <output>{{costosDirTotalABC38 >= 0? costosDirTotalABC38: ''}}</output>
                   </div>
                 </td>
               </tr>
@@ -1923,8 +1855,9 @@
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container2">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" readonly="readonly" />
+                    <input type="number" class="no-margin right-align"
+                    [(ngModel)]="costosDirTotaCD3"
+                    />
                   </div>
                 </td>
 
@@ -1937,8 +1870,424 @@
                 </td>
                 <td colspan="1" class="border fondo__subtitulo2 subTitle">
                   <div class="input-container3">
-                    <input type="number" class="no-margin right-align" (change)="calculateTotal()"
-                      [(ngModel)]="inputValues[0]" />
+                    <input type="number" class="no-margin right-align" (change)="asignarPrecioV(costosDirPrecioV3, 3)"
+                      [(ngModel)]="costosDirPrecioV3" />
+                  </div>
+                </td>
+
+              </tr>
+              <tr>
+                <th colspan="10" class="border fondo__subtitulo2 subTitle"></th>
+                <br>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="3" [rowspan]="10" class="custom-tile">
+      <div class="content">
+        <div class="contentTable">
+          <div class="contentProSer">
+            <table class="full-width full-height border-table">
+
+              <tr>
+                <th colspan="1" class="border fondo__subtitulo2 subTitle3">Producto o Servicio:</th>
+
+                <td colspan="2" class="border fondo__subtitulo2 subTitle">
+                  <output class="input-container3">{{costosDirProdOServ4}}</output>
+                </td>
+
+                <th colspan="1" class="border fondo__subtitulo2 subTitle3">Unidad de Medida:</th>
+
+                <td colspan="2" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3" type="text" placeholder=""
+                  [(ngModel)]="costosDirUndMedida4"
+                  (change)="asignarValor('UndMedida4',costosDirUndMedida4)"/>
+                </td>
+              </tr>
+              <tr>
+                <th colspan="6" class="border fondo__subtitulo2 subTitle"></th>
+                <br>
+              </tr>
+              <tr>
+                <th width="30%" colspan="1" class="border fondo__subtitulo2 subTitle3">Insumo</th>
+                <th width="10%" colspan="1" class="border fondo__subtitulo2 subTitle3">Cantidad (A)</th>
+                <th width="20%" colspan="1" class="border fondo__subtitulo2 subTitle3">Unidad</th>
+                <th width="10%" colspan="1" class="border fondo__subtitulo2 subTitle3">N° de Unidades de Productos o
+                  Servicios (B)</th>
+                <th width="15%" colspan="1" class="border fondo__subtitulo2 subTitle3">Precio Unitario (C)</th>
+                <th width="15%" colspan="1" class="border fondo__subtitulo2 subTitle3">Total (A/B)*C</th>
+              </tr>
+              <tr>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo41', costosDirInsumo41)"
+                  [(ngModel)]="costosDirInsumo41"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container3">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad41', costosDirCantidad41);calculateABC41()"
+                    [(ngModel)]="costosDirCantidad41"
+                     />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad41', costosDirUnidad41)"
+                  [(ngModel)]="costosDirUnidad41"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS41', costosDirUnPS41);calculateABC41()"
+                    [(ngModel)]="costosDirUnPS41"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU41', costosDirPrecioU41);calculateABC41()"
+                    [(ngModel)]="costosDirPrecioU41"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <output>{{costosDirTotalABC41 >= 0? costosDirTotalABC41: ''}}</output>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo42', costosDirInsumo42)"
+                  [(ngModel)]="costosDirInsumo42"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container3">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad42', costosDirCantidad42);calculateABC42()"
+                    [(ngModel)]="costosDirCantidad42"
+                     />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad42', costosDirUnidad42)"
+                  [(ngModel)]="costosDirUnidad42"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS42', costosDirUnPS42);calculateABC42()"
+                    [(ngModel)]="costosDirUnPS42"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU42', costosDirPrecioU42);calculateABC42()"
+                    [(ngModel)]="costosDirPrecioU42"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <output>{{costosDirTotalABC42 >= 0? costosDirTotalABC42: ''}}</output>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo43', costosDirInsumo43)"
+                  [(ngModel)]="costosDirInsumo43"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container3">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad43', costosDirCantidad43);calculateABC43()"
+                    [(ngModel)]="costosDirCantidad43"
+                     />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad43', costosDirUnidad43)"
+                  [(ngModel)]="costosDirUnidad43"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS43', costosDirUnPS43);calculateABC43()"
+                    [(ngModel)]="costosDirUnPS43"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU43', costosDirPrecioU43);calculateABC43()"
+                    [(ngModel)]="costosDirPrecioU43"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <output>{{costosDirTotalABC43 >= 0? costosDirTotalABC43: ''}}</output>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo44', costosDirInsumo44)"
+                  [(ngModel)]="costosDirInsumo44"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container3">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad44', costosDirCantidad44);calculateABC44()"
+                    [(ngModel)]="costosDirCantidad44"
+                     />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad44', costosDirUnidad44)"
+                  [(ngModel)]="costosDirUnidad44"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS44', costosDirUnPS44);calculateABC44()"
+                    [(ngModel)]="costosDirUnPS44"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU44', costosDirPrecioU44);calculateABC44()"
+                    [(ngModel)]="costosDirPrecioU44"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <output>{{costosDirTotalABC44 >= 0? costosDirTotalABC44: ''}}</output>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo45', costosDirInsumo45)"
+                  [(ngModel)]="costosDirInsumo45"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container3">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad45', costosDirCantidad45);calculateABC45()"
+                    [(ngModel)]="costosDirCantidad45"
+                     />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad45', costosDirUnidad45)"
+                  [(ngModel)]="costosDirUnidad45"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS45', costosDirUnPS45);calculateABC45()"
+                    [(ngModel)]="costosDirUnPS45"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU45', costosDirPrecioU45);calculateABC45()"
+                    [(ngModel)]="costosDirPrecioU45"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <output>{{costosDirTotalABC45 >= 0? costosDirTotalABC45: ''}}</output>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo46', costosDirInsumo46)"
+                  [(ngModel)]="costosDirInsumo46"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container3">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad46', costosDirCantidad46);calculateABC46()"
+                    [(ngModel)]="costosDirCantidad46"
+                     />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad46', costosDirUnidad46)"
+                  [(ngModel)]="costosDirUnidad46"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS46', costosDirUnPS46);calculateABC46()"
+                    [(ngModel)]="costosDirUnPS46"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU46', costosDirPrecioU46);calculateABC46()"
+                    [(ngModel)]="costosDirPrecioU46"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <output>{{costosDirTotalABC46 >= 0? costosDirTotalABC46: ''}}</output>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo47', costosDirInsumo47)"
+                  [(ngModel)]="costosDirInsumo47"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container3">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad47', costosDirCantidad47);calculateABC47()"
+                    [(ngModel)]="costosDirCantidad47"
+                     />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad47', costosDirUnidad47)"
+                  [(ngModel)]="costosDirUnidad47"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS47', costosDirUnPS47);calculateABC47()"
+                    [(ngModel)]="costosDirUnPS47"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU47', costosDirPrecioU47);calculateABC47()"
+                    [(ngModel)]="costosDirPrecioU47"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <output>{{costosDirTotalABC47 >= 0? costosDirTotalABC47: ''}}</output>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3" type="text" placeholder=""
+                  (change)="asignarValor('Insumo48', costosDirInsumo48)"
+                  [(ngModel)]="costosDirInsumo48"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container3">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('Cantidad48', costosDirCantidad48);calculateABC48()"
+                    [(ngModel)]="costosDirCantidad48"
+                     />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <input class="input-container3 " type="text" placeholder=""
+                  (change)="asignarValor('Unidad48', costosDirUnidad48)"
+                  [(ngModel)]="costosDirUnidad48"
+                  />
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('UnPS48', costosDirUnPS48);calculateABC48()"
+                    [(ngModel)]="costosDirUnPS48"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    (change)="asignarValor('PrecioU48', costosDirPrecioU48);calculateABC48()"
+                    [(ngModel)]="costosDirPrecioU48"
+                    />
+                  </div>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <output>{{costosDirTotalABC48 >= 0? costosDirTotalABC48: ''}}</output>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3" class="border fondo__subtitulo2 subTitle">
+                </td>
+                <td colspan="2" class="border fondo__subtitulo2 subTitle">
+                  <b>Total Costo (D):</b>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container2">
+                    <input type="number" class="no-margin right-align"
+                    [(ngModel)]="costosDirTotaCD4"
+                    />
+                  </div>
+                </td>
+
+              </tr>
+              <tr>
+                <td colspan="3" class="border fondo__subtitulo2 subTitle">
+                </td>
+                <td colspan="2" class="border fondo__subtitulo2 subTitle">
+                  <b>Precio de Venta:</b>
+                </td>
+                <td colspan="1" class="border fondo__subtitulo2 subTitle">
+                  <div class="input-container3">
+                    <input type="number" class="no-margin right-align" (change)="asignarPrecioV(costosDirPrecioV4, 4)"
+                      [(ngModel)]="costosDirPrecioV4" />
                   </div>
                 </td>
 
