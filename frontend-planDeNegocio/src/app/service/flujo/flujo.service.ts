@@ -6,6 +6,48 @@ import { Injectable } from '@angular/core';
 export class FlujoService {
 
   constructor() { }
+  private flujoTipoCuota!: number;
+  public getFlujoTipoCuota(): number {
+    return this.flujoTipoCuota;
+  }
+  public setFlujoTipoCuota(value: number) {
+    this.flujoTipoCuota = value;
+  }
+  private flujoTipoCuotaOpcion!: string;
+  public getFlujoTipoCuotaOpcion(): string {
+    return this.flujoTipoCuotaOpcion;
+  }
+  public setFlujoTipoCuotaOpcion(value: string) {
+    this.flujoTipoCuotaOpcion = value;
+  }
+  private flujoPoliza1: number[] = [];
+  public getFlujoPoliza1(): number[] {
+    return this.flujoPoliza1;
+  }
+  public setFlujoPoliza1(value: number[]) {
+    this.flujoPoliza1 = value;
+  }
+  private flujoPlazoMeses!: number;
+  public getFlujoPlazoMeses(): number {
+    return this.flujoPlazoMeses;
+  }
+  public setFlujoPlazoMeses(value: number) {
+    this.flujoPlazoMeses = value;
+  }
+  private flujoFrecuencia1!: string;
+  public getFlujoFrecuencia1(): string {
+    return this.flujoFrecuencia1;
+  }
+  public setFlujoFrecuencia1(value: string) {
+    this.flujoFrecuencia1 = value;
+  }
+  private flujoValorFrecuencia1!: number;
+  public getFlujoValorFrecuencia1(): number {
+    return this.flujoValorFrecuencia1;
+  }
+  public setFlujoValorFrecuencia1(value: number) {
+    this.flujoValorFrecuencia1 = value;
+  }
   private utilidadOperativa!: number;
   public getUtilidadOperativa(): number {
     return this.utilidadOperativa;

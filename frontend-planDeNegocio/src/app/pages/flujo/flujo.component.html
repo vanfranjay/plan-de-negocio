@@ -425,13 +425,13 @@
                 <tr>
                   <td style="width: 20%">Frecuencia:</td>
                   <td style="width: 15%">
-                    <select class="custom-select">
-                      <option value="opcion1">MENSUAL</option>
-                      <option value="opcion2">BIMENSUAL</option>
-                      <option value="opcion3">TRIMESTRAL</option>
-                      <option value="opcion1">CUATRIMESTRAL</option>
-                      <option value="opcion2">SEMESTRAL</option>
-                      <option value="opcion3">ANUAL</option>
+                    <select class="custom-select" [(ngModel)]="flujoFrecuencia1" (change)="asignarFrecuencia(); llenarTabla1Flujo()">
+                      <option value="MENSUAL">MENSUAL</option>
+                      <option value="BIMENSUAL">BIMENSUAL</option>
+                      <option value="TRIMESTRAL">TRIMESTRAL</option>
+                      <option value="CUATRIMESTRAL">CUATRIMESTRAL</option>
+                      <option value="SEMESTRAL">SEMESTRAL</option>
+                      <option value="ANUAL">ANUAL</option>
                     </select>
                   </td>
                   <td style="width: 15%">Poliza</td>
@@ -475,7 +475,7 @@
                       type="number"
                       class="input-container"
                       placeholder="max 84"
-                      (change)="calculateDatosCredito()"
+                      (change)="calculateDatosCredito(); llenarTabla1Flujo()"
                       [(ngModel)]="flujoPlazoMeses"
                     />
                   </td>
@@ -487,10 +487,10 @@
                 <tr>
                   <td style="width: 20%">Tipo cuota::</td>
                   <td style="width: 15%">
-                    <select class="custom-select">
-                      <option value="opcion1">CUOTA FIJA</option>
-                      <option value="opcion2">CUOTA VARIABLE</option>
-                      <option value="opcion3">PERSONALIZADA</option>
+                    <select class="custom-select" [(ngModel)]="flujoTipoCuotaOpcion" (change)="asignarTipoCuota(); calculateDatosCredito(); llenarTabla1Flujo()">
+                      <option value="CUOTA FIJA">CUOTA FIJA</option>
+                      <option value="CUOTA VARIABLE">CUOTA VARIABLE</option>
+                      <option value="PERSONALIZADA">PERSONALIZADA</option>
                     </select>
                   </td>
                   <td style="width: 15%"></td>
@@ -505,7 +505,7 @@
                     <select
                       class="custom-select"
                       [(ngModel)]="flujoActividad"
-                      (change)="calculateDatosCredito()"
+                      (change)="calculateDatosCredito(); llenarTabla1Flujo()"
                     >
                       <option value="SERVICIOS">SERVICIOS</option>
                       <option value="PRODUCTIVIDAD">PRODUCTIVIDAD</option>
@@ -822,101 +822,41 @@
               <tr>
                 <td style="width: 10%" class="fl">Cuota</td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCEne"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCEne | number:'1.0-0' }}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCFeb"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCFeb | number:'1.0-0' }}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCMar"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCMar | number:'1.0-0' }}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCAbr"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCAbr | number:'1.0-0' }}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCMay"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCMay | number:'1.0-0' }}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCJun"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCJun | number:'1.0-0' }}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCJul"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCJul | number:'1.0-0' }}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCAgo"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCAgo | number:'1.0-0' }}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCSep"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCSep | number:'1.0-0' }}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCOct"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCOct | number:'1.0-0' }}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCNov"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCNov | number:'1.0-0' }}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCDiv"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCDiv | number:'1.0-0' }}
                 </td>
                 <td style="width: 8%"></td>
               </tr>
