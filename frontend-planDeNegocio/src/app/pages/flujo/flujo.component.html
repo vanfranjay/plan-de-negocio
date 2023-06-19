@@ -597,7 +597,7 @@
           <div class="conteni">
             <table>
               <tr>
-                <td style="width: 10%"></td>
+                <td style="width: 9%"></td>
                 <td style="width: 7%" class="fl">INICIAL</td>
                 <td style="width: 7%" class="fl">ENERO</td>
                 <td style="width: 7%" class="fl">FEBRERO</td>
@@ -613,7 +613,7 @@
                 <td style="width: 7%" class="fl">DICIEMBRE</td>
               </tr>
               <tr>
-                <td style="width: 10%" class="fl">Inversiones</td>
+                <td style="width: 9%" class="fl">Inversiones</td>
                 <td style="width: 7%" class="border">{{totalPI}}</td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
@@ -627,10 +627,9 @@
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
-                <td style="width: 10%" class="fl">SALDO INICIAL</td>
+                <td style="width: 9%" class="fl">SALDO INICIAL</td>
                 <td style="width: 7%" class="border">{{totalPI}}</td>
                 <td style="width: 7%" class="border">-</td>
                 <td style="width: 7%" class="border">
@@ -646,10 +645,9 @@
                 <td style="width: 7%" class="border">{{ formatNumber(flujoSIOct) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoSINov) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoSIDiv) }}</td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
-                <td style="width: 10%" class="fl">Ingresos</td>
+                <td style="width: 9%" class="fl">Ingresos</td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoIEne) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoIFeb) }}</td>
@@ -663,10 +661,9 @@
                 <td style="width: 7%" class="border">{{ formatNumber(flujoIOct) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoINov) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoIDiv) }}</td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
-                <td style="width: 10%" class="fl">Costo de Produccion</td>
+                <td style="width: 9%" class="fl">Costo de Produccion</td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoCProdEne) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoCPFeb) }}</td>
@@ -680,10 +677,9 @@
                 <td style="width: 7%" class="border">{{ formatNumber(flujoCPOct) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoCPNov) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoCPDiv) }}</td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
-                <td style="width: 10%" class="fl">Utilidad Bruta</td>
+                <td style="width: 9%" class="fl">Utilidad Bruta</td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoUBEne) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoUBFeb) }}</td>
@@ -697,111 +693,49 @@
                 <td style="width: 7%" class="border">{{ formatNumber(flujoUBOct) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoUBNov) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoUBDiv) }}</td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
-                <td style="width: 10%" class="fl">Costos Fijos</td>
+                <td style="width: 9%" class="fl">Costos Fijos</td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCostosFijosTb1"
-                  />
+                <td style="width: 7%" class="border bg-white bg-white">
+                  {{flujoCostosFijosTb1}}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCostosFijosTb1"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCostosFijosTb1}}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCostosFijosTb1"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCostosFijosTb1}}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCostosFijosTb1"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCostosFijosTb1}}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCostosFijosTb1"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCostosFijosTb1}}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCostosFijosTb1"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCostosFijosTb1}}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCostosFijosTb1"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCostosFijosTb1}}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCostosFijosTb1"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCostosFijosTb1}}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCostosFijosTb1"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCostosFijosTb1}}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCostosFijosTb1"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCostosFijosTb1}}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCostosFijosTb1"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCostosFijosTb1}}
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                    [(ngModel)]="flujoCostosFijosTb1"
-                  />
+                <td style="width: 7%" class="border bg-white">
+                  {{flujoCostosFijosTb1}}
                 </td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
-                <td style="width: 10%" class="fl">
+                <td style="width: 9%" class="fl">
                   UTILIDAD NETA Capacidad de pago
                 </td>
                 <td style="width: 7%" class="border"></td>
@@ -817,10 +751,9 @@
                 <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPOct) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPNov) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoUNCdPDiv) }}</td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
-                <td style="width: 10%" class="fl">Cuota</td>
+                <td style="width: 9%" class="fl">Cuota</td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border bg-white">
                   {{flujoCEne | number:'1.0-0' }}
@@ -858,10 +791,9 @@
                 <td style="width: 7%" class="border bg-white">
                   {{flujoCDiv | number:'1.0-0' }}
                 </td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
-                <td style="width: 10%" class="fl">FLUJO ACUMULADO</td>
+                <td style="width: 9%" class="fl">FLUJO ACUMULADO</td>
                 <td style="width: 7%" class="border">-</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoAEne) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoAFeb) }}</td>
@@ -875,7 +807,6 @@
                 <td style="width: 7%" class="border">{{ formatNumber(flujoAOct) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoANov) }}</td>
                 <td style="width: 7%" class="border">{{ formatNumber(flujoADiv) }}</td>
-                <td style="width: 8%"></td>
               </tr>
             </table>
           </div>
@@ -894,7 +825,6 @@
                 <td style="width: 7%" class="fl">2028</td>
                 <td style="width: 7%" class="fl">2029</td>
                 <td style="width: 7%" class="fl">2030</td>
-                <td style="width: 8%"></td>
               </tr>
 
               <tr>
@@ -907,7 +837,6 @@
                 <td style="width: 7%" class="border">(15602)</td>
                 <td style="width: 7%" class="border">(19288)</td>
                 <td style="width: 7%" class="border">(23216)</td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">Ingresos</td>
@@ -919,7 +848,6 @@
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">Costo de Produccion</td>
@@ -931,7 +859,6 @@
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">Utilidad Bruta</td>
@@ -943,7 +870,6 @@
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">Costos Fijos</td>
@@ -955,7 +881,6 @@
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">
@@ -969,61 +894,31 @@
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">Cuota</td>
-                <td style="width: 7%" class="border"></td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
+                <td style="width: 7%" class="border bg-white"></td>
+                <td style="width: 7%" class="border bg-white">
+
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
+                <td style="width: 7%" class="border bg-white">
+
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
+                <td style="width: 7%" class="border bg-white">
+
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
+                <td style="width: 7%" class="border bg-white">
+
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
+                <td style="width: 7%" class="border bg-white">
+
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
+                <td style="width: 7%" class="border bg-white">
+
                 </td>
-                <td style="width: 7%" class="border">
-                  <input
-                    type="text"
-                    class="no-margin input-container"
-                    placeholder=""
-                  />
+                <td style="width: 7%" class="border bg-white">
+
                 </td>
-                <td style="width: 8%"></td>
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">FLUJO ACUMULADO</td>
@@ -1035,7 +930,6 @@
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
-                <td style="width: 8%"></td>
               </tr>
             </table>
           </div>
