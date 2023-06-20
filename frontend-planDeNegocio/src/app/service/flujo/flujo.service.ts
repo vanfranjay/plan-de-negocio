@@ -6,6 +6,13 @@ import { Injectable } from '@angular/core';
 export class FlujoService {
 
   constructor() { }
+  private tab2A!: number;
+  public getTab2A(): number {
+    return this.tab2A;
+  }
+  public setTab2A(value: number) {
+    this.tab2A = value;
+  }
   private mostrarCuotaProxValue!: number;
   public getMostrarCuotaProxValue(): number {
     return this.mostrarCuotaProxValue;

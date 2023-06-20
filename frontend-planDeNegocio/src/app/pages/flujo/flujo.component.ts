@@ -201,6 +201,8 @@ export class FlujoComponent {
 
   // Tabla de utilidad
   flujoUB!: number;
+  // tabla 2
+  tab2A!:number;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -304,6 +306,9 @@ export class FlujoComponent {
 
     //tabla flujo
 
+
+    //tab 2
+    this.tab2A = this.flujoService.getTab2A();
 
     this.flujoCostosFijosTb1 = this.flujoService.getFlujoCostosFijosTb1();
     this.calcularTotalAP();
@@ -980,5 +985,9 @@ export class FlujoComponent {
       const formattedValue = Math.abs(value).toFixed(0);
       return value >= 0 ? formattedValue : `(${formattedValue})`;
     }
+  }
+  /// tab 2 de flujo
+  asignarTab2A(){
+    this.flujoService.setTab2A(this.tab2A);
   }
 }
