@@ -515,7 +515,7 @@
                   <td style="width: 15%"></td>
                   <td style="width: 15%">CUOTA APROX:</td>
                   <td style="width: 15%">
-                    {{ flujoCuotaProx | number : "1.0-0" }}
+                    {{ (mostrarCuotaProxValue == 0 ? '' : mostrarCuotaProxValue)  | number : "1.0-0" }}
                   </td>
                 </tr>
                 <br />

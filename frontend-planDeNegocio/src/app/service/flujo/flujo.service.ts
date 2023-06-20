@@ -6,6 +6,20 @@ import { Injectable } from '@angular/core';
 export class FlujoService {
 
   constructor() { }
+  private mostrarCuotaProxValue!: number;
+  public getMostrarCuotaProxValue(): number {
+    return this.mostrarCuotaProxValue;
+  }
+  public setMostrarCuotaProxValue(value: number) {
+    this.mostrarCuotaProxValue = value;
+  }
+  private flujoCuotaVariable: number[] = [];
+  public getFlujoCuotaVariable(): number[] {
+    return this.flujoCuotaVariable;
+  }
+  public setFlujoCuotaVariable(value: number[]) {
+    this.flujoCuotaVariable = value;
+  }
   private flujoTipoCuota!: number;
   public getFlujoTipoCuota(): number {
     return this.flujoTipoCuota;
