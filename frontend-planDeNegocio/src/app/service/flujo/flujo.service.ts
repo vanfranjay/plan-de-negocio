@@ -6,6 +6,637 @@ import { Injectable } from '@angular/core';
 export class FlujoService {
 
   constructor() { }
+  // tabla flujo 2 pronostico
+  private flujoSaldoInicial0!: number;
+  public getFlujoSaldoInicial0(): number {
+    return this.flujoSaldoInicial0;
+  }
+  public setFlujoSaldoInicial0(value: number) {
+    this.flujoSaldoInicial0 = value;
+  }
+  private flujoSaldoInicial1!: number;
+  public getFlujoSaldoInicial1(): number {
+    return this.flujoSaldoInicial1;
+  }
+  public setFlujoSaldoInicial1(value: number) {
+    this.flujoSaldoInicial1 = value;
+  }
+  private flujoSaldoInicial2!: number;
+  public getFlujoSaldoInicial2(): number {
+    return this.flujoSaldoInicial2;
+  }
+  public setFlujoSaldoInicial2(value: number) {
+    this.flujoSaldoInicial2 = value;
+  }
+  private flujoSaldoInicial3!: number;
+  public getFlujoSaldoInicial3(): number {
+    return this.flujoSaldoInicial3;
+  }
+  public setFlujoSaldoInicial3(value: number) {
+    this.flujoSaldoInicial3 = value;
+  }
+  private flujoSaldoInicial4!: number;
+  public getFlujoSaldoInicial4(): number {
+    return this.flujoSaldoInicial4;
+  }
+  public setFlujoSaldoInicial4(value: number) {
+    this.flujoSaldoInicial4 = value;
+  }
+  private flujoSaldoInicial5!: number;
+  public getFlujoSaldoInicial5(): number {
+    return this.flujoSaldoInicial5;
+  }
+  public setFlujoSaldoInicial5(value: number) {
+    this.flujoSaldoInicial5 = value;
+  }
+  private flujoSaldoInicial6!: number;
+  public getFlujoSaldoInicial6(): number {
+    return this.flujoSaldoInicial6;
+  }
+  public setFlujoSaldoInicial6(value: number) {
+    this.flujoSaldoInicial6 = value;
+  }
+  private flujoSaldoInicial7!: number;
+  public getFlujoSaldoInicial7(): number {
+    return this.flujoSaldoInicial7;
+  }
+  public setFlujoSaldoInicial7(value: number) {
+    this.flujoSaldoInicial7 = value;
+  }
+  private flujoIngreso0!: number;
+  public getFlujoIngreso0(): number {
+    return this.flujoIngreso0;
+  }
+  public setFlujoIngreso0(value: number) {
+    this.flujoIngreso0 = value;
+  }
+  private flujoIngreso1!: number;
+  public getFlujoIngreso1(): number {
+    return this.flujoIngreso1;
+  }
+  public setFlujoIngreso1(value: number) {
+    this.flujoIngreso1 = value;
+  }
+  private flujoIngreso2!: number;
+  public getFlujoIngreso2(): number {
+    return this.flujoIngreso2;
+  }
+  public setFlujoIngreso2(value: number) {
+    this.flujoIngreso2 = value;
+  }
+  private flujoIngreso3!: number;
+  public getFlujoIngreso3(): number {
+    return this.flujoIngreso3;
+  }
+  public setFlujoIngreso3(value: number) {
+    this.flujoIngreso3 = value;
+  }
+  private flujoIngreso4!: number;
+  public getFlujoIngreso4(): number {
+    return this.flujoIngreso4;
+  }
+  public setFlujoIngreso4(value: number) {
+    this.flujoIngreso4 = value;
+  }
+  private flujoIngreso5!: number;
+  public getFlujoIngreso5(): number {
+    return this.flujoIngreso5;
+  }
+  public setFlujoIngreso5(value: number) {
+    this.flujoIngreso5 = value;
+  }
+  private flujoIngreso6!: number;
+  public getFlujoIngreso6(): number {
+    return this.flujoIngreso6;
+  }
+  public setFlujoIngreso6(value: number) {
+    this.flujoIngreso6 = value;
+  }
+  private flujoIngreso7!: number;
+  public getFlujoIngreso7(): number {
+    return this.flujoIngreso7;
+  }
+  public setFlujoIngreso7(value: number) {
+    this.flujoIngreso7 = value;
+  }
+  private flujoCostoProduccion0!: number;
+  public getFlujoCostoProduccion0(): number {
+    return this.flujoCostoProduccion0;
+  }
+  public setFlujoCostoProduccion0(value: number) {
+    this.flujoCostoProduccion0 = value;
+  }
+  private flujoCostoProduccion1!: number;
+  public getFlujoCostoProduccion1(): number {
+    return this.flujoCostoProduccion1;
+  }
+  public setFlujoCostoProduccion1(value: number) {
+    this.flujoCostoProduccion1 = value;
+  }
+  private flujoCostoProduccion2!: number;
+  public getFlujoCostoProduccion2(): number {
+    return this.flujoCostoProduccion2;
+  }
+  public setFlujoCostoProduccion2(value: number) {
+    this.flujoCostoProduccion2 = value;
+  }
+  private flujoCostoProduccion3!: number;
+  public getFlujoCostoProduccion3(): number {
+    return this.flujoCostoProduccion3;
+  }
+  public setFlujoCostoProduccion3(value: number) {
+    this.flujoCostoProduccion3 = value;
+  }
+  private flujoCostoProduccion4!: number;
+  public getFlujoCostoProduccion4(): number {
+    return this.flujoCostoProduccion4;
+  }
+  public setFlujoCostoProduccion4(value: number) {
+    this.flujoCostoProduccion4 = value;
+  }
+  private flujoCostoProduccion5!: number;
+  public getFlujoCostoProduccion5(): number {
+    return this.flujoCostoProduccion5;
+  }
+  public setFlujoCostoProduccion5(value: number) {
+    this.flujoCostoProduccion5 = value;
+  }
+  private flujoCostoProduccion6!: number;
+  public getFlujoCostoProduccion6(): number {
+    return this.flujoCostoProduccion6;
+  }
+  public setFlujoCostoProduccion6(value: number) {
+    this.flujoCostoProduccion6 = value;
+  }
+  private flujoCostoProduccion7!: number;
+  public getFlujoCostoProduccion7(): number {
+    return this.flujoCostoProduccion7;
+  }
+  public setFlujoCostoProduccion7(value: number) {
+    this.flujoCostoProduccion7 = value;
+  }
+  private flujoUtilidadBruta0!: number;
+  public getFlujoUtilidadBruta0(): number {
+    return this.flujoUtilidadBruta0;
+  }
+  public setFlujoUtilidadBruta0(value: number) {
+    this.flujoUtilidadBruta0 = value;
+  }
+  private flujoUtilidadBruta1!: number;
+  public getFlujoUtilidadBruta1(): number {
+    return this.flujoUtilidadBruta1;
+  }
+  public setFlujoUtilidadBruta1(value: number) {
+    this.flujoUtilidadBruta1 = value;
+  }
+  private flujoUtilidadBruta2!: number;
+  public getFlujoUtilidadBruta2(): number {
+    return this.flujoUtilidadBruta2;
+  }
+  public setFlujoUtilidadBruta2(value: number) {
+    this.flujoUtilidadBruta2 = value;
+  }
+  private flujoUtilidadBruta3!: number;
+  public getFlujoUtilidadBruta3(): number {
+    return this.flujoUtilidadBruta3;
+  }
+  public setFlujoUtilidadBruta3(value: number) {
+    this.flujoUtilidadBruta3 = value;
+  }
+  private flujoUtilidadBruta4!: number;
+  public getFlujoUtilidadBruta4(): number {
+    return this.flujoUtilidadBruta4;
+  }
+  public setFlujoUtilidadBruta4(value: number) {
+    this.flujoUtilidadBruta4 = value;
+  }
+  private flujoUtilidadBruta5!: number;
+  public getFlujoUtilidadBruta5(): number {
+    return this.flujoUtilidadBruta5;
+  }
+  public setFlujoUtilidadBruta5(value: number) {
+    this.flujoUtilidadBruta5 = value;
+  }
+  private flujoUtilidadBruta6!: number;
+  public getFlujoUtilidadBruta6(): number {
+    return this.flujoUtilidadBruta6;
+  }
+  public setFlujoUtilidadBruta6(value: number) {
+    this.flujoUtilidadBruta6 = value;
+  }
+  private flujoUtilidadBruta7!: number;
+  public getFlujoUtilidadBruta7(): number {
+    return this.flujoUtilidadBruta7;
+  }
+  public setFlujoUtilidadBruta7(value: number) {
+    this.flujoUtilidadBruta7 = value;
+  }
+  private flujoCostosFijos0!: number;
+  public getFlujoCostosFijos0(): number {
+    return this.flujoCostosFijos0;
+  }
+  public setFlujoCostosFijos0(value: number) {
+    this.flujoCostosFijos0 = value;
+  }
+  private flujoCostosFijos1!: number;
+  public getFlujoCostosFijos1(): number {
+    return this.flujoCostosFijos1;
+  }
+  public setFlujoCostosFijos1(value: number) {
+    this.flujoCostosFijos1 = value;
+  }
+  private flujoCostosFijos2!: number;
+  public getFlujoCostosFijos2(): number {
+    return this.flujoCostosFijos2;
+  }
+  public setFlujoCostosFijos2(value: number) {
+    this.flujoCostosFijos2 = value;
+  }
+  private flujoCostosFijos3!: number;
+  public getFlujoCostosFijos3(): number {
+    return this.flujoCostosFijos3;
+  }
+  public setFlujoCostosFijos3(value: number) {
+    this.flujoCostosFijos3 = value;
+  }
+  private flujoCostosFijos4!: number;
+  public getFlujoCostosFijos4(): number {
+    return this.flujoCostosFijos4;
+  }
+  public setFlujoCostosFijos4(value: number) {
+    this.flujoCostosFijos4 = value;
+  }
+  private flujoCostosFijos5!: number;
+  public getFlujoCostosFijos5(): number {
+    return this.flujoCostosFijos5;
+  }
+  public setFlujoCostosFijos5(value: number) {
+    this.flujoCostosFijos5 = value;
+  }
+  private flujoCostosFijos6!: number;
+  public getFlujoCostosFijos6(): number {
+    return this.flujoCostosFijos6;
+  }
+  public setFlujoCostosFijos6(value: number) {
+    this.flujoCostosFijos6 = value;
+  }
+  private flujoCostosFijos7!: number;
+  public getFlujoCostosFijos7(): number {
+    return this.flujoCostosFijos7;
+  }
+  public setFlujoCostosFijos7(value: number) {
+    this.flujoCostosFijos7 = value;
+  }
+  private flujoUtilidadNetaCapPago0!: number;
+  public getFlujoUtilidadNetaCapPago0(): number {
+    return this.flujoUtilidadNetaCapPago0;
+  }
+  public setFlujoUtilidadNetaCapPago0(value: number) {
+    this.flujoUtilidadNetaCapPago0 = value;
+  }
+  private flujoUtilidadNetaCapPago1!: number;
+  public getFlujoUtilidadNetaCapPago1(): number {
+    return this.flujoUtilidadNetaCapPago1;
+  }
+  public setFlujoUtilidadNetaCapPago1(value: number) {
+    this.flujoUtilidadNetaCapPago1 = value;
+  }
+  private flujoUtilidadNetaCapPago2!: number;
+  public getFlujoUtilidadNetaCapPago2(): number {
+    return this.flujoUtilidadNetaCapPago2;
+  }
+  public setFlujoUtilidadNetaCapPago2(value: number) {
+    this.flujoUtilidadNetaCapPago2 = value;
+  }
+  private flujoUtilidadNetaCapPago3!: number;
+  public getFlujoUtilidadNetaCapPago3(): number {
+    return this.flujoUtilidadNetaCapPago3;
+  }
+  public setFlujoUtilidadNetaCapPago3(value: number) {
+    this.flujoUtilidadNetaCapPago3 = value;
+  }
+  private flujoUtilidadNetaCapPago4!: number;
+  public getFlujoUtilidadNetaCapPago4(): number {
+    return this.flujoUtilidadNetaCapPago4;
+  }
+  public setFlujoUtilidadNetaCapPago4(value: number) {
+    this.flujoUtilidadNetaCapPago4 = value;
+  }
+  private flujoUtilidadNetaCapPago5!: number;
+  public getFlujoUtilidadNetaCapPago5(): number {
+    return this.flujoUtilidadNetaCapPago5;
+  }
+  public setFlujoUtilidadNetaCapPago5(value: number) {
+    this.flujoUtilidadNetaCapPago5 = value;
+  }
+  private flujoUtilidadNetaCapPago6!: number;
+  public getFlujoUtilidadNetaCapPago6(): number {
+    return this.flujoUtilidadNetaCapPago6;
+  }
+  public setFlujoUtilidadNetaCapPago6(value: number) {
+    this.flujoUtilidadNetaCapPago6 = value;
+  }
+  private flujoUtilidadNetaCapPago7!: number;
+  public getFlujoUtilidadNetaCapPago7(): number {
+    return this.flujoUtilidadNetaCapPago7;
+  }
+  public setFlujoUtilidadNetaCapPago7(value: number) {
+    this.flujoUtilidadNetaCapPago7 = value;
+  }
+  private flujoCuota0!: number;
+  public getFlujoCuota0(): number {
+    return this.flujoCuota0;
+  }
+  public setFlujoCuota0(value: number) {
+    this.flujoCuota0 = value;
+  }
+  private flujoCuota1!: number;
+  public getFlujoCuota1(): number {
+    return this.flujoCuota1;
+  }
+  public setFlujoCuota1(value: number) {
+    this.flujoCuota1 = value;
+  }
+  private flujoCuota2!: number;
+  public getFlujoCuota2(): number {
+    return this.flujoCuota2;
+  }
+  public setFlujoCuota2(value: number) {
+    this.flujoCuota2 = value;
+  }
+  private flujoCuota3!: number;
+  public getFlujoCuota3(): number {
+    return this.flujoCuota3;
+  }
+  public setFlujoCuota3(value: number) {
+    this.flujoCuota3 = value;
+  }
+  private flujoCuota4!: number;
+  public getFlujoCuota4(): number {
+    return this.flujoCuota4;
+  }
+  public setFlujoCuota4(value: number) {
+    this.flujoCuota4 = value;
+  }
+  private flujoCuota5!: number;
+  public getFlujoCuota5(): number {
+    return this.flujoCuota5;
+  }
+  public setFlujoCuota5(value: number) {
+    this.flujoCuota5 = value;
+  }
+  private flujoCuota6!: number;
+  public getFlujoCuota6(): number {
+    return this.flujoCuota6;
+  }
+  public setFlujoCuota6(value: number) {
+    this.flujoCuota6 = value;
+  }
+  private flujoCuota7!: number;
+  public getFlujoCuota7(): number {
+    return this.flujoCuota7;
+  }
+  public setFlujoCuota7(value: number) {
+    this.flujoCuota7 = value;
+  }
+  private flujoAcumulado0!: number;
+  public getFlujoAcumulado0(): number {
+    return this.flujoAcumulado0;
+  }
+  public setFlujoAcumulado0(value: number) {
+    this.flujoAcumulado0 = value;
+  }
+  private flujoAcumulado1!: number;
+  public getFlujoAcumulado1(): number {
+    return this.flujoAcumulado1;
+  }
+  public setFlujoAcumulado1(value: number) {
+    this.flujoAcumulado1 = value;
+  }
+  private flujoAcumulado2!: number;
+  public getFlujoAcumulado2(): number {
+    return this.flujoAcumulado2;
+  }
+  public setFlujoAcumulado2(value: number) {
+    this.flujoAcumulado2 = value;
+  }
+  private flujoAcumulado3!: number;
+  public getFlujoAcumulado3(): number {
+    return this.flujoAcumulado3;
+  }
+  public setFlujoAcumulado3(value: number) {
+    this.flujoAcumulado3 = value;
+  }
+  private flujoAcumulado4!: number;
+  public getFlujoAcumulado4(): number {
+    return this.flujoAcumulado4;
+  }
+  public setFlujoAcumulado4(value: number) {
+    this.flujoAcumulado4 = value;
+  }
+  private flujoAcumulado5!: number;
+  public getFlujoAcumulado5(): number {
+    return this.flujoAcumulado5;
+  }
+  public setFlujoAcumulado5(value: number) {
+    this.flujoAcumulado5 = value;
+  }
+  private flujoAcumulado6!: number;
+  public getFlujoAcumulado6(): number {
+    return this.flujoAcumulado6;
+  }
+  public setFlujoAcumulado6(value: number) {
+    this.flujoAcumulado6 = value;
+  }
+  private flujoAcumulado7!: number;
+  public getFlujoAcumulado7(): number {
+    return this.flujoAcumulado7;
+  }
+  public setFlujoAcumulado7(value: number) {
+    this.flujoAcumulado7 = value;
+  }
+  private flujoSaldoInicial!: number;
+  public getFlujoSaldoInicial(): number {
+    return this.flujoSaldoInicial;
+  }
+  public setFlujoSaldoInicial(value: number) {
+    this.flujoSaldoInicial = value;
+  }
+  private flujoTotalPeriodoSaldoInicial!: number;
+  public getFlujoTotalPeriodoSaldoInicial(): number {
+    return this.flujoTotalPeriodoSaldoInicial;
+  }
+  public setFlujoTotalPeriodoSaldoInicial(value: number) {
+    this.flujoTotalPeriodoSaldoInicial = value;
+  }
+  private flujoTotalPeriodoIngreso!: number;
+  public getFlujoTotalPeriodoIngreso(): number {
+    return this.flujoTotalPeriodoIngreso;
+  }
+  public setFlujoTotalPeriodoIngreso(value: number) {
+    this.flujoTotalPeriodoIngreso = value;
+  }
+  private flujoTotalPeriodoCostoProduccion!: number;
+  public getFlujoTotalPeriodoCostoProduccion(): number {
+    return this.flujoTotalPeriodoCostoProduccion;
+  }
+  public setFlujoTotalPeriodoCostoProduccion(value: number) {
+    this.flujoTotalPeriodoCostoProduccion = value;
+  }
+  private flujoTotalPeriodoUB!: number;
+  public getFlujoTotalPeriodoUB(): number {
+    return this.flujoTotalPeriodoUB;
+  }
+  public setFlujoTotalPeriodoUB(value: number) {
+    this.flujoTotalPeriodoUB = value;
+  }
+  private flujoTotalPeriodoCF!: number;
+  public getFlujoTotalPeriodoCF(): number {
+    return this.flujoTotalPeriodoCF;
+  }
+  public setFlujoTotalPeriodoCF(value: number) {
+    this.flujoTotalPeriodoCF = value;
+  }
+  private flujoTotalPeriodoUNCP!: number;
+  public getFlujoTotalPeriodoUNCP(): number {
+    return this.flujoTotalPeriodoUNCP;
+  }
+  public setFlujoTotalPeriodoUNCP(value: number) {
+    this.flujoTotalPeriodoUNCP = value;
+  }
+  private flujoTotalPeriodoC!: number;
+  public getFlujoTotalPeriodoC(): number {
+    return this.flujoTotalPeriodoC;
+  }
+  public setFlujoTotalPeriodoC(value: number) {
+    this.flujoTotalPeriodoC = value;
+  }
+  private flujoTotalPeriodoFA!: number;
+  public getFlujoTotalPeriodoFA(): number {
+    return this.flujoTotalPeriodoFA;
+  }
+  public setFlujoTotalPeriodoFA(value: number) {
+    this.flujoTotalPeriodoFA = value;
+  }
+  private flujoTotalSaldoInicial!: number;
+  public getFlujoTotalSaldoInicial(): number {
+    return this.flujoTotalSaldoInicial;
+  }
+  public setFlujoTotalSaldoInicial(value: number) {
+    this.flujoTotalSaldoInicial = value;
+  }
+  private flujoTotalIngreso!: number;
+  public getFlujoTotalIngreso(): number {
+    return this.flujoTotalIngreso;
+  }
+  public setFlujoTotalIngreso(value: number) {
+    this.flujoTotalIngreso = value;
+  }
+  private flujoTotalCostoProduccion!: number;
+  public getFlujoTotalCostoProduccion(): number {
+    return this.flujoTotalCostoProduccion;
+  }
+  public setFlujoTotalCostoProduccion(value: number) {
+    this.flujoTotalCostoProduccion = value;
+  }
+  private flujoTotalUB!: number;
+  public getFlujoTotalUB(): number {
+    return this.flujoTotalUB;
+  }
+  public setFlujoTotalUB(value: number) {
+    this.flujoTotalUB = value;
+  }
+  private flujoTotalCF!: number;
+  public getFlujoTotalCF(): number {
+    return this.flujoTotalCF;
+  }
+  public setFlujoTotalCF(value: number) {
+    this.flujoTotalCF = value;
+  }
+  private flujoTotalUNCP!: number;
+  public getFlujoTotalUNCP(): number {
+    return this.flujoTotalUNCP;
+  }
+  public setFlujoTotalUNCP(value: number) {
+    this.flujoTotalUNCP = value;
+  }
+  private flujoTotalC!: number;
+  public getFlujoTotalC(): number {
+    return this.flujoTotalC;
+  }
+  public setFlujoTotalC(value: number) {
+    this.flujoTotalC = value;
+  }
+  private flujoTotalFA!: number;
+  public getFlujoTotalFA(): number {
+    return this.flujoTotalFA;
+  }
+  public setFlujoTotalFA(value: number) {
+    this.flujoTotalFA = value;
+  }
+  private flujoPeriodoMes!: number;
+  public getFlujoPeriodoMes(): number {
+    return this.flujoPeriodoMes;
+  }
+  public setFlujoPeriodoMes(value: number) {
+    this.flujoPeriodoMes = value;
+  }
+  private flujoBuscarV!: number;
+  public getFlujoBuscarV(): number {
+    return this.flujoBuscarV;
+  }
+  public setFlujoBuscarV(value: number) {
+    this.flujoBuscarV = value;
+  }
+  private flujoPeriodoA!: number;
+  public getFlujoPeriodoA(): number {
+    return this.flujoPeriodoA;
+  }
+  public setFlujoPeriodoA(value: number) {
+    this.flujoPeriodoA = value;
+  }
+  private flujoRedondeoMax!: number;
+  public getFlujoRedondeoMax(): number {
+    return this.flujoRedondeoMax;
+  }
+  public setFlujoRedondeoMax(value: number) {
+    this.flujoRedondeoMax = value;
+  }
+  private flujoImplementacionEstimadaMes: string = 'ENERO';
+  public getFlujoImplementacionEstimadaMes(): string {
+    return this.flujoImplementacionEstimadaMes;
+  }
+  public setFlujoImplementacionEstimadaMes(value: string) {
+    this.flujoImplementacionEstimadaMes = value;
+  }
+  private flujoImplementacionEstimadaMesValue: number = 1;
+  public getFlujoImplementacionEstimadaMesValue(): number {
+    return this.flujoImplementacionEstimadaMesValue;
+  }
+  public setFlujoImplementacionEstimadaMesValue(value: number) {
+    this.flujoImplementacionEstimadaMesValue = value;
+  }
+  private flujoImplementacionEstimadaA!: number;
+  public getFlujoImplementacionEstimadaA(): number {
+    return this.flujoImplementacionEstimadaA;
+  }
+  public setFlujoImplementacionEstimadaA(value: number) {
+    this.flujoImplementacionEstimadaA = value;
+  }
+  private flujoImplementacionEstimadoMes: string = 'ENERO';
+  public getFlujoImplementacionEstimadoMes(): string {
+    return this.flujoImplementacionEstimadoMes;
+  }
+  public setFlujoImplementacionEstimadoMes(value: string) {
+    this.flujoImplementacionEstimadoMes = value;
+  }
+  private flujoImplementacionEstimadoMesValue: number = 11;
+  public getFlujoImplementacionEstimadoMesValue(): number {
+    return this.flujoImplementacionEstimadoMesValue;
+  }
+  public setFlujoImplementacionEstimadoMesValue(value: number) {
+    this.flujoImplementacionEstimadoMesValue = value;
+  }
   private tab2A!: number;
   public getTab2A(): number {
     return this.tab2A;

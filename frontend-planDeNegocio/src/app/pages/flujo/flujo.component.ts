@@ -189,6 +189,26 @@ export class FlujoComponent {
 
   flujoAcIni!: number;
 
+  flujoTotalSaldoInicial!: number;
+  flujoTotalIngreso!: number;
+  flujoTotalCostoProduccion!: number;
+  flujoTotalUB!: number;
+  flujoTotalCF!: number;
+  flujoTotalUNCP!: number;
+  flujoTotalC!: number;
+  flujoTotalFA!: number;
+
+  flujoTotalPeriodoSaldoInicial!: number;
+  flujoTotalPeriodoIngreso!: number;
+  flujoTotalPeriodoCostoProduccion!: number;
+  flujoTotalPeriodoUB!: number;
+  flujoTotalPeriodoCF!: number;
+  flujoTotalPeriodoUNCP!: number;
+  flujoTotalPeriodoC!: number;
+  flujoTotalPeriodoFA!: number;
+
+  flujoSaldoInicial!: number;
+
   // datos de costos
   flujoCostosDirAnualVM!: number;
   flujoCostosDirAnualCPM!: number;
@@ -201,8 +221,85 @@ export class FlujoComponent {
 
   // Tabla de utilidad
   flujoUB!: number;
-  // tabla 2
-  tab2A!:number;
+  // tabla pequeña de flujo
+  flujoImplementacionEstimadaMes!: string;
+  flujoImplementacionEstimadaMesValue!: number;
+  flujoImplementacionEstimadaA!: number;
+  flujoImplementacionEstimadoMes!: string;
+  flujoImplementacionEstimadoMesValue!: number;
+  tab2A!: number;
+  flujoRedondeoMax!: number;
+  flujoPeriodoA!: number;
+  flujoPeriodoMes!: number;
+  flujoBuscarV!: number;
+
+  // tabla flujo 2 pronostico
+  flujoSaldoInicial0!: number;
+  flujoSaldoInicial1!: number;
+  flujoSaldoInicial2!: number;
+  flujoSaldoInicial3!: number;
+  flujoSaldoInicial4!: number;
+  flujoSaldoInicial5!: number;
+  flujoSaldoInicial6!: number;
+  flujoSaldoInicial7!: number;
+  flujoIngreso0!: number;
+  flujoIngreso1!: number;
+  flujoIngreso2!: number;
+  flujoIngreso3!: number;
+  flujoIngreso4!: number;
+  flujoIngreso5!: number;
+  flujoIngreso6!: number;
+  flujoIngreso7!: number;
+  flujoCostoProduccion0!: number;
+  flujoCostoProduccion1!: number;
+  flujoCostoProduccion2!: number;
+  flujoCostoProduccion3!: number;
+  flujoCostoProduccion4!: number;
+  flujoCostoProduccion5!: number;
+  flujoCostoProduccion6!: number;
+  flujoCostoProduccion7!: number;
+  flujoUtilidadBruta0!: number;
+  flujoUtilidadBruta1!: number;
+  flujoUtilidadBruta2!: number;
+  flujoUtilidadBruta3!: number;
+  flujoUtilidadBruta4!: number;
+  flujoUtilidadBruta5!: number;
+  flujoUtilidadBruta6!: number;
+  flujoUtilidadBruta7!: number;
+  flujoCostosFijos0!: number;
+  flujoCostosFijos1!: number;
+  flujoCostosFijos2!: number;
+  flujoCostosFijos3!: number;
+  flujoCostosFijos4!: number;
+  flujoCostosFijos5!: number;
+  flujoCostosFijos6!: number;
+  flujoCostosFijos7!: number;
+  flujoUtilidadNetaCapPago0!: number;
+  flujoUtilidadNetaCapPago1!: number;
+  flujoUtilidadNetaCapPago2!: number;
+  flujoUtilidadNetaCapPago3!: number;
+  flujoUtilidadNetaCapPago4!: number;
+  flujoUtilidadNetaCapPago5!: number;
+  flujoUtilidadNetaCapPago6!: number;
+  flujoUtilidadNetaCapPago7!: number;
+  flujoCuota0!: number;
+  flujoCuota1!: number;
+  flujoCuota2!: number;
+  flujoCuota3!: number;
+  flujoCuota4!: number;
+  flujoCuota5!: number;
+  flujoCuota6!: number;
+  flujoCuota7!: number;
+  flujoAcumulado0!: number;
+  flujoAcumulado1!: number;
+  flujoAcumulado2!: number;
+  flujoAcumulado3!: number;
+  flujoAcumulado4!: number;
+  flujoAcumulado5!: number;
+  flujoAcumulado6!: number;
+  flujoAcumulado7!: number;
+
+  anioActual: number = new Date().getFullYear();
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -214,15 +311,15 @@ export class FlujoComponent {
     this.flujoIEne = (isNaN(this.costosService.getCostosDirEneVM()) ? 0 : this.costosService.getCostosDirEneVM());
     this.flujoIFeb = (isNaN(this.costosService.getCostosDirFebVM()) ? 0 : this.costosService.getCostosDirFebVM());
     this.flujoIMar = (isNaN(this.costosService.getCostosDirMarVM()) ? 0 : this.costosService.getCostosDirMarVM());
-    this.flujoIAbr = (isNaN(this.costosService.getCostosDirMarVM()) ? 0 : this.costosService.getCostosDirMarVM());
-    this.flujoIMay = (isNaN(this.costosService.getCostosDirAbrVM()) ? 0 : this.costosService.getCostosDirAbrVM());
-    this.flujoIJun = (isNaN(this.costosService.getCostosDirMayVM()) ? 0 : this.costosService.getCostosDirMayVM());
-    this.flujoIJul = (isNaN(this.costosService.getCostosDirJunVM()) ? 0 : this.costosService.getCostosDirJunVM());
-    this.flujoIAgo = (isNaN(this.costosService.getCostosDirJulVM()) ? 0 : this.costosService.getCostosDirJulVM());
-    this.flujoISep = (isNaN(this.costosService.getCostosDirAgoVM()) ? 0 : this.costosService.getCostosDirAgoVM());
-    this.flujoIOct = (isNaN(this.costosService.getCostosDirSepVM()) ? 0 : this.costosService.getCostosDirSepVM());
-    this.flujoINov = (isNaN(this.costosService.getCostosDirOctVM()) ? 0 : this.costosService.getCostosDirOctVM());
-    this.flujoIDiv = (isNaN(this.costosService.getCostosDirNovVM()) ? 0 : this.costosService.getCostosDirNovVM());
+    this.flujoIAbr = (isNaN(this.costosService.getCostosDirAbrVM()) ? 0 : this.costosService.getCostosDirAbrVM());
+    this.flujoIMay = (isNaN(this.costosService.getCostosDirMayVM()) ? 0 : this.costosService.getCostosDirMayVM());
+    this.flujoIJun = (isNaN(this.costosService.getCostosDirJunVM()) ? 0 : this.costosService.getCostosDirJunVM());
+    this.flujoIJul = (isNaN(this.costosService.getCostosDirJulVM()) ? 0 : this.costosService.getCostosDirJulVM());
+    this.flujoIAgo = (isNaN(this.costosService.getCostosDirAgoVM()) ? 0 : this.costosService.getCostosDirAgoVM());
+    this.flujoISep = (isNaN(this.costosService.getCostosDirSepVM()) ? 0 : this.costosService.getCostosDirSepVM());
+    this.flujoIOct = (isNaN(this.costosService.getCostosDirOctVM()) ? 0 : this.costosService.getCostosDirOctVM());
+    this.flujoINov = (isNaN(this.costosService.getCostosDirNovVM()) ? 0 : this.costosService.getCostosDirNovVM());
+    this.flujoIDiv = (isNaN(this.costosService.getCostosDirDicVM()) ? 0 : this.costosService.getCostosDirDicVM());
 
     this.flujoCProdEne = (isNaN(this.costosService.getCostosDirEneCPM()) ? 0 : this.costosService.getCostosDirEneCPM());
     this.flujoCPFeb = (isNaN(this.costosService.getCostosDirFebCPM()) ? 0 : this.costosService.getCostosDirFebCPM());
@@ -236,6 +333,94 @@ export class FlujoComponent {
     this.flujoCPOct = (isNaN(this.costosService.getCostosDirOctCPM()) ? 0 : this.costosService.getCostosDirOctCPM());
     this.flujoCPNov = (isNaN(this.costosService.getCostosDirNovCPM()) ? 0 : this.costosService.getCostosDirNovCPM());
     this.flujoCPDiv = (isNaN(this.costosService.getCostosDirDicCPM()) ? 0 : this.costosService.getCostosDirDicCPM());
+
+    this.flujoTotalSaldoInicial = this.flujoService.getFlujoTotalSaldoInicial();
+    this.flujoTotalIngreso = this.flujoService.getFlujoTotalIngreso();
+    this.flujoTotalCostoProduccion = this.flujoService.getFlujoTotalCostoProduccion();
+    this.flujoTotalUB = this.flujoService.getFlujoTotalUB();
+    this.flujoTotalCF = this.flujoService.getFlujoTotalCF();
+    this.flujoTotalUNCP = this.flujoService.getFlujoTotalUNCP();
+    this.flujoTotalC = this.flujoService.getFlujoTotalC();
+    this.flujoTotalFA = this.flujoService.getFlujoTotalFA();
+
+    this.flujoTotalPeriodoSaldoInicial = this.flujoService.getFlujoTotalPeriodoSaldoInicial();
+    this.flujoTotalPeriodoIngreso = this.flujoService.getFlujoTotalPeriodoIngreso();
+    this.flujoTotalPeriodoCostoProduccion = this.flujoService.getFlujoTotalPeriodoCostoProduccion();
+    this.flujoTotalPeriodoUB = this.flujoService.getFlujoTotalPeriodoUB();
+    this.flujoTotalPeriodoCF = this.flujoService.getFlujoTotalPeriodoCF();
+    this.flujoTotalPeriodoUNCP = this.flujoService.getFlujoTotalPeriodoUNCP();
+    this.flujoTotalPeriodoC = this.flujoService.getFlujoTotalPeriodoC();
+    this.flujoTotalPeriodoFA = this.flujoService.getFlujoTotalPeriodoFA();
+
+    this.flujoSaldoInicial = this.flujoService.getFlujoSaldoInicial();
+    this.flujoAcIni = this.flujoService.getFlujoAcIni();
+
+
+    // tabla flujo 2 pronostico
+    this.flujoSaldoInicial0 = this.flujoService.getFlujoSaldoInicial0();
+    this.flujoSaldoInicial1 = this.flujoService.getFlujoSaldoInicial1();
+    this.flujoSaldoInicial2 = this.flujoService.getFlujoSaldoInicial2();
+    this.flujoSaldoInicial3 = this.flujoService.getFlujoSaldoInicial3();
+    this.flujoSaldoInicial4 = this.flujoService.getFlujoSaldoInicial4();
+    this.flujoSaldoInicial5 = this.flujoService.getFlujoSaldoInicial5();
+    this.flujoSaldoInicial6 = this.flujoService.getFlujoSaldoInicial6();
+    this.flujoSaldoInicial7 = this.flujoService.getFlujoSaldoInicial7();
+    this.flujoIngreso0 = this.flujoService.getFlujoIngreso0();
+    this.flujoIngreso1 = this.flujoService.getFlujoIngreso1();
+    this.flujoIngreso2 = this.flujoService.getFlujoIngreso2();
+    this.flujoIngreso3 = this.flujoService.getFlujoIngreso3();
+    this.flujoIngreso4 = this.flujoService.getFlujoIngreso4();
+    this.flujoIngreso5 = this.flujoService.getFlujoIngreso5();
+    this.flujoIngreso6 = this.flujoService.getFlujoIngreso6();
+    this.flujoIngreso7 = this.flujoService.getFlujoIngreso7();
+    this.flujoCostoProduccion0 = this.flujoService.getFlujoCostoProduccion0();
+    this.flujoCostoProduccion1 = this.flujoService.getFlujoCostoProduccion1();
+    this.flujoCostoProduccion2 = this.flujoService.getFlujoCostoProduccion2();
+    this.flujoCostoProduccion3 = this.flujoService.getFlujoCostoProduccion3();
+    this.flujoCostoProduccion4 = this.flujoService.getFlujoCostoProduccion4();
+    this.flujoCostoProduccion5 = this.flujoService.getFlujoCostoProduccion5();
+    this.flujoCostoProduccion6 = this.flujoService.getFlujoCostoProduccion6();
+    this.flujoCostoProduccion7 = this.flujoService.getFlujoCostoProduccion7();
+    this.flujoUtilidadBruta0 = this.flujoService.getFlujoUtilidadBruta0();
+    this.flujoUtilidadBruta1 = this.flujoService.getFlujoUtilidadBruta1();
+    this.flujoUtilidadBruta2 = this.flujoService.getFlujoUtilidadBruta2();
+    this.flujoUtilidadBruta3 = this.flujoService.getFlujoUtilidadBruta3();
+    this.flujoUtilidadBruta4 = this.flujoService.getFlujoUtilidadBruta4();
+    this.flujoUtilidadBruta5 = this.flujoService.getFlujoUtilidadBruta5();
+    this.flujoUtilidadBruta6 = this.flujoService.getFlujoUtilidadBruta6();
+    this.flujoUtilidadBruta7 = this.flujoService.getFlujoUtilidadBruta7();
+    this.flujoCostosFijos0 = this.flujoService.getFlujoCostosFijos0();
+    this.flujoCostosFijos1 = this.flujoService.getFlujoCostosFijos1();
+    this.flujoCostosFijos2 = this.flujoService.getFlujoCostosFijos2();
+    this.flujoCostosFijos3 = this.flujoService.getFlujoCostosFijos3();
+    this.flujoCostosFijos4 = this.flujoService.getFlujoCostosFijos4();
+    this.flujoCostosFijos5 = this.flujoService.getFlujoCostosFijos5();
+    this.flujoCostosFijos6 = this.flujoService.getFlujoCostosFijos6();
+    this.flujoCostosFijos7 = this.flujoService.getFlujoCostosFijos7();
+    this.flujoUtilidadNetaCapPago0 = this.flujoService.getFlujoUtilidadNetaCapPago0();
+    this.flujoUtilidadNetaCapPago1 = this.flujoService.getFlujoUtilidadNetaCapPago1();
+    this.flujoUtilidadNetaCapPago2 = this.flujoService.getFlujoUtilidadNetaCapPago2();
+    this.flujoUtilidadNetaCapPago3 = this.flujoService.getFlujoUtilidadNetaCapPago3();
+    this.flujoUtilidadNetaCapPago4 = this.flujoService.getFlujoUtilidadNetaCapPago4();
+    this.flujoUtilidadNetaCapPago5 = this.flujoService.getFlujoUtilidadNetaCapPago5();
+    this.flujoUtilidadNetaCapPago6 = this.flujoService.getFlujoUtilidadNetaCapPago6();
+    this.flujoUtilidadNetaCapPago7 = this.flujoService.getFlujoUtilidadNetaCapPago7();
+    this.flujoCuota0 = this.flujoService.getFlujoCuota0();
+    this.flujoCuota1 = this.flujoService.getFlujoCuota1();
+    this.flujoCuota2 = this.flujoService.getFlujoCuota2();
+    this.flujoCuota3 = this.flujoService.getFlujoCuota3();
+    this.flujoCuota4 = this.flujoService.getFlujoCuota4();
+    this.flujoCuota5 = this.flujoService.getFlujoCuota5();
+    this.flujoCuota6 = this.flujoService.getFlujoCuota6();
+    this.flujoCuota7 = this.flujoService.getFlujoCuota7();
+    this.flujoAcumulado0 = this.flujoService.getFlujoAcumulado0();
+    this.flujoAcumulado1 = this.flujoService.getFlujoAcumulado1();
+    this.flujoAcumulado2 = this.flujoService.getFlujoAcumulado2();
+    this.flujoAcumulado3 = this.flujoService.getFlujoAcumulado3();
+    this.flujoAcumulado4 = this.flujoService.getFlujoAcumulado4();
+    this.flujoAcumulado5 = this.flujoService.getFlujoAcumulado5();
+    this.flujoAcumulado6 = this.flujoService.getFlujoAcumulado6();
+    this.flujoAcumulado7 = this.flujoService.getFlujoAcumulado7();
 
     //utilidad bruta
     this.flujoUBEne = (isNaN(this.flujoIEne) ? 0 : this.flujoIEne) - (isNaN(this.flujoCProdEne) ? 0 : this.flujoCProdEne);
@@ -307,8 +492,18 @@ export class FlujoComponent {
     //tabla flujo
 
 
-    //tab 2
+    // tabla pequeña de flujo
+    this.flujoImplementacionEstimadaMes = this.flujoService.getFlujoImplementacionEstimadaMes();
+    this.flujoImplementacionEstimadaMesValue = this.flujoService.getFlujoImplementacionEstimadaMesValue();
+    this.flujoImplementacionEstimadaA = this.flujoService.getFlujoImplementacionEstimadaA();
+    this.flujoImplementacionEstimadoMes = this.flujoService.getFlujoImplementacionEstimadoMes();
+    this.flujoImplementacionEstimadoMesValue = this.flujoService.getFlujoImplementacionEstimadoMesValue();
     this.tab2A = this.flujoService.getTab2A();
+    this.flujoRedondeoMax = this.flujoService.getFlujoRedondeoMax();
+    this.flujoPeriodoA = this.flujoService.getFlujoPeriodoA();
+    this.flujoPeriodoMes = this.flujoService.getFlujoPeriodoMes();
+    this.flujoBuscarV = this.flujoService.getFlujoBuscarV();
+    //  tabla 2
 
     this.flujoCostosFijosTb1 = this.flujoService.getFlujoCostosFijosTb1();
     this.calcularTotalAP();
@@ -327,6 +522,9 @@ export class FlujoComponent {
     this.calculateUB();
     this.calculateUtilidadOperativa();
 
+    this.calculateSaldoInicial();
+
+    this.calculateFlujoAcumuladoInicial();
   }
   ngOnInit() {
     this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium])
@@ -456,7 +654,7 @@ export class FlujoComponent {
     } else {
       this.flujoCEne = this.calculatePoliza();
     }
-    this.flujoAEne = (this.flujoUNCdPagEne ?? 0) - (this.flujoCEne ?? 0);
+    this.flujoAEne = (this.flujoUNCdPagEne ?? 0) - (this.flujoCEne ?? 0) + this.calculateFlujoAcumuladoInicial();
     this.flujoSIFeb = (isNaN(this.flujoAEne) ? 0 : this.flujoAEne);
     this.flujoService.setFlujoUBEne(this.flujoUBEne);
     this.flujoService.setFlujoUNCdPagEne(this.flujoUNCdPagEne);
@@ -942,8 +1140,9 @@ export class FlujoComponent {
       (this.presupuestoService.getTotalMaq() ?? 0) +
       (this.presupuestoService.getTotalLegal() ?? 0)
   }
-  calcularMontoFinanciar() {
+  calcularMontoFinanciar(): number {
     this.datosCreditoMonto = this.totalProyecto - this.aportePropio;
+    return this.datosCreditoMonto;
   }
   calcularTotalProyecto() {
     this.totalProyecto = (this.totalAP ?? 0) + (this.totalPI ?? 0) - (this.total ?? 0);
@@ -951,14 +1150,15 @@ export class FlujoComponent {
   calcularAportePropio() {
     this.aportePropio = this.totalAP ?? 0;
   }
-  calcularTotalPI() {
+  calcularTotalPI(): number {
     this.totalPI =
       (this.presupuestoService.getTotalGastosOp() ?? 0) +
       (this.presupuestoService.getTotalMateriaPrima1() ?? 0) +
       (this.presupuestoService.getTotalReqProm1() ?? 0) +
       (this.presupuestoService.getTotalInfr1() ?? 0) +
       (this.presupuestoService.getTotalMaq1() ?? 0) +
-      (this.presupuestoService.getTotalLegal1() ?? 0)
+      (this.presupuestoService.getTotalLegal1() ?? 0);
+    return this.totalPI;
   }
 
   calculateTV() {
@@ -987,7 +1187,932 @@ export class FlujoComponent {
     }
   }
   /// tab 2 de flujo
-  asignarTab2A(){
+  asignarTab2A(): number {
     this.flujoService.setTab2A(this.tab2A);
+    return this.tab2A;
+  }
+  asignarTabAImplementacion(): number {
+    this.flujoService.setFlujoImplementacionEstimadaA(this.flujoImplementacionEstimadaA);
+    return this.flujoImplementacionEstimadaA;
+  }
+  asignarImplementacionMes(): number {
+    if (this.flujoImplementacionEstimadaMes == 'ENERO') {
+      this.flujoImplementacionEstimadaMesValue = 1;
+    } else if (this.flujoImplementacionEstimadaMes == 'FEBRERO') {
+      this.flujoImplementacionEstimadaMesValue = 2;
+    } else if (this.flujoImplementacionEstimadaMes == 'MARZO') {
+      this.flujoImplementacionEstimadaMesValue = 3;
+    } else if (this.flujoImplementacionEstimadaMes == 'ABRIL') {
+      this.flujoImplementacionEstimadaMesValue = 4;
+    } else if (this.flujoImplementacionEstimadaMes == 'MAYO') {
+      this.flujoImplementacionEstimadaMesValue = 5;
+    } else if (this.flujoImplementacionEstimadaMes == 'JUNIO') {
+      this.flujoImplementacionEstimadaMesValue = 6;
+    } else if (this.flujoImplementacionEstimadaMes == 'JULIO') {
+      this.flujoImplementacionEstimadaMesValue = 7;
+    } else if (this.flujoImplementacionEstimadaMes == 'AGOSTO') {
+      this.flujoImplementacionEstimadaMesValue = 8;
+    } else if (this.flujoImplementacionEstimadaMes == 'SEPTIEMBRE') {
+      this.flujoImplementacionEstimadaMesValue = 9;
+    } else if (this.flujoImplementacionEstimadaMes == 'OCTUBRE') {
+      this.flujoImplementacionEstimadaMesValue = 10;
+    } else if (this.flujoImplementacionEstimadaMes == 'NOVIEMBRE') {
+      this.flujoImplementacionEstimadaMesValue = 11;
+    } else if (this.flujoImplementacionEstimadaMes == 'DICIEMBRE') {
+      this.flujoImplementacionEstimadaMesValue = 12;
+    }
+    this.flujoService.setFlujoImplementacionEstimadaMes(this.flujoImplementacionEstimadaMes);
+    this.flujoService.setFlujoImplementacionEstimadaMesValue(this.flujoImplementacionEstimadaMesValue);
+    return this.flujoImplementacionEstimadaMesValue;
+  }
+  asignarDesembolsoMes(): number {
+    if (this.flujoImplementacionEstimadoMes == 'ENERO') {
+      this.flujoImplementacionEstimadoMesValue = 11;
+    } else if (this.flujoImplementacionEstimadoMes == 'FEBRERO') {
+      this.flujoImplementacionEstimadoMesValue = 10;
+    } else if (this.flujoImplementacionEstimadoMes == 'MARZO') {
+      this.flujoImplementacionEstimadoMesValue = 9;
+    } else if (this.flujoImplementacionEstimadoMes == 'ABRIL') {
+      this.flujoImplementacionEstimadoMesValue = 8;
+    } else if (this.flujoImplementacionEstimadoMes == 'MAYO') {
+      this.flujoImplementacionEstimadoMesValue = 7;
+    } else if (this.flujoImplementacionEstimadoMes == 'JUNIO') {
+      this.flujoImplementacionEstimadoMesValue = 6;
+    } else if (this.flujoImplementacionEstimadoMes == 'JULIO') {
+      this.flujoImplementacionEstimadoMesValue = 5;
+    } else if (this.flujoImplementacionEstimadoMes == 'AGOSTO') {
+      this.flujoImplementacionEstimadoMesValue = 4;
+    } else if (this.flujoImplementacionEstimadoMes == 'SEPTIEMBRE') {
+      this.flujoImplementacionEstimadoMesValue = 3;
+    } else if (this.flujoImplementacionEstimadoMes == 'OCTUBRE') {
+      this.flujoImplementacionEstimadoMesValue = 2;
+    } else if (this.flujoImplementacionEstimadoMes == 'NOVIEMBRE') {
+      this.flujoImplementacionEstimadoMesValue = 1;
+    } else if (this.flujoImplementacionEstimadoMes == 'DICIEMBRE') {
+      this.flujoImplementacionEstimadoMesValue = 0;
+    }
+    this.flujoService.setFlujoImplementacionEstimadoMes(this.flujoImplementacionEstimadoMes);
+    this.flujoService.setFlujoImplementacionEstimadoMesValue(this.flujoImplementacionEstimadoMesValue);
+    return this.flujoImplementacionEstimadoMesValue;
+  }
+  calculateRedondeoMax(): number {
+    this.flujoRedondeoMax = (((isNaN(this.flujoPlazoMeses) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) ? 0 : this.flujoPlazoMeses) - this.asignarDesembolsoMes()) / 12;
+    this.flujoService.setFlujoRedondeoMax(this.flujoRedondeoMax);
+    return Math.ceil(this.flujoRedondeoMax);
+  }
+  calculatePeriodoA(): number {
+    this.flujoPeriodoA = this.asignarTab2A() + this.calculateRedondeoMax();
+    this.flujoService.setFlujoPeriodoA(this.flujoPeriodoA);
+    return this.flujoPeriodoA;
+  }
+  buscarV(): number {
+    if (this.flujoFrecuencia1 == 'BIMENSUAL') {
+      this.flujoBuscarV = 2;
+    } else if (this.flujoFrecuencia1 == 'TRIMESTRAL') {
+      this.flujoBuscarV = 3;
+    } else if (this.flujoFrecuencia1 == 'CUATRIMESTRAL') {
+      this.flujoBuscarV = 4;
+    } else if (this.flujoFrecuencia1 == 'SEMESTRAL') {
+      this.flujoBuscarV = 6;
+    } else if (this.flujoFrecuencia1 == 'ANUAL') {
+      this.flujoBuscarV = 12;
+    } else if (this.flujoFrecuencia1 == 'MENSUAL') {
+      this.flujoBuscarV = 1;
+    }
+    this.flujoService.setFlujoBuscarV(this.flujoBuscarV);
+    return this.flujoBuscarV;
+  }
+  calculatePeriodoMes(): number {
+    this.flujoPeriodoMes = this.flujoPlazoMeses / this.buscarV();
+    this.flujoService.setFlujoPeriodoMes(this.flujoPeriodoMes);
+    return this.flujoPeriodoMes;
+  }
+  calculateFlujoTotalAñoIngreso(): number {
+    this.flujoTotalIngreso =
+      (isNaN(this.flujoIEne) ? 0 : this.flujoIEne) +
+      (isNaN(this.flujoIFeb) ? 0 : this.flujoIFeb) +
+      (isNaN(this.flujoIMar) ? 0 : this.flujoIMar) +
+      (isNaN(this.flujoIAbr) ? 0 : this.flujoIAbr) +
+      (isNaN(this.flujoIMay) ? 0 : this.flujoIMay) +
+      (isNaN(this.flujoIJun) ? 0 : this.flujoIJun) +
+      (isNaN(this.flujoIJul) ? 0 : this.flujoIJul) +
+      (isNaN(this.flujoIAgo) ? 0 : this.flujoIAgo) +
+      (isNaN(this.flujoISep) ? 0 : this.flujoISep) +
+      (isNaN(this.flujoIOct) ? 0 : this.flujoIOct) +
+      (isNaN(this.flujoINov) ? 0 : this.flujoINov) +
+      (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    return this.flujoTotalIngreso;
+  }
+  calculateFlujoTotalAnioCostoProduccion(): number {
+    this.flujoTotalCostoProduccion =
+      (isNaN(this.flujoCProdEne) ? 0 : this.flujoCProdEne) +
+      (isNaN(this.flujoCPFeb) ? 0 : this.flujoCPFeb) +
+      (isNaN(this.flujoCPMar) ? 0 : this.flujoCPMar) +
+      (isNaN(this.flujoCPAbr) ? 0 : this.flujoCPAbr) +
+      (isNaN(this.flujoCPMay) ? 0 : this.flujoCPMay) +
+      (isNaN(this.flujoCPJun) ? 0 : this.flujoCPJun) +
+      (isNaN(this.flujoCPJul) ? 0 : this.flujoCPJul) +
+      (isNaN(this.flujoCPAgo) ? 0 : this.flujoCPAgo) +
+      (isNaN(this.flujoCPSep) ? 0 : this.flujoCPSep) +
+      (isNaN(this.flujoCPOct) ? 0 : this.flujoCPOct) +
+      (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov) +
+      (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    return this.flujoTotalCostoProduccion;
+  }
+  calculateFlujoTotalAnioCuota(): number {
+    this.flujoTotalC =
+      (isNaN(this.flujoCEne) ? 0 : this.flujoCEne) +
+      (isNaN(this.flujoCFeb) ? 0 : this.flujoCFeb) +
+      (isNaN(this.flujoCMar) ? 0 : this.flujoCMar) +
+      (isNaN(this.flujoCAbr) ? 0 : this.flujoCAbr) +
+      (isNaN(this.flujoCMay) ? 0 : this.flujoCMay) +
+      (isNaN(this.flujoCJun) ? 0 : this.flujoCJun) +
+      (isNaN(this.flujoCJul) ? 0 : this.flujoCJul) +
+      (isNaN(this.flujoCAgo) ? 0 : this.flujoCAgo) +
+      (isNaN(this.flujoCSep) ? 0 : this.flujoCSep) +
+      (isNaN(this.flujoCOct) ? 0 : this.flujoCOct) +
+      (isNaN(this.flujoCNov) ? 0 : this.flujoCNov) +
+      (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    return this.flujoTotalC;
+  }
+  calculateTotalAño() {
+    this.flujoTotalSaldoInicial = this.flujoADiv;
+    this.calculateFlujoTotalAñoIngreso();
+    this.calculateFlujoTotalAnioCostoProduccion();
+    this.flujoTotalUB = this.calculateFlujoTotalAñoIngreso() - this.calculateFlujoTotalAnioCostoProduccion();
+    this.flujoTotalCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 12;
+    this.flujoTotalUNCP =
+      (isNaN(this.flujoUNCdPagEne) ? 0 : this.flujoUNCdPagEne) +
+      (isNaN(this.flujoUNCdPFeb) ? 0 : this.flujoUNCdPFeb) +
+      (isNaN(this.flujoUNCdPMar) ? 0 : this.flujoUNCdPMar) +
+      (isNaN(this.flujoUNCdPAbr) ? 0 : this.flujoUNCdPAbr) +
+      (isNaN(this.flujoUNCdPMay) ? 0 : this.flujoUNCdPMay) +
+      (isNaN(this.flujoUNCdPJun) ? 0 : this.flujoUNCdPJun) +
+      (isNaN(this.flujoUNCdPJul) ? 0 : this.flujoUNCdPJul) +
+      (isNaN(this.flujoUNCdPAgo) ? 0 : this.flujoUNCdPAgo) +
+      (isNaN(this.flujoUNCdPSep) ? 0 : this.flujoUNCdPSep) +
+      (isNaN(this.flujoUNCdPOct) ? 0 : this.flujoUNCdPOct) +
+      (isNaN(this.flujoUNCdPNov) ? 0 : this.flujoUNCdPNov) +
+      (isNaN(this.flujoUNCdPDiv) ? 0 : this.flujoUNCdPDiv);
+    this.calculateFlujoTotalAnioCuota();
+    this.flujoTotalFA = (isNaN(this.flujoADiv) ? 0 : this.flujoADiv);
+
+    this.flujoService.setFlujoTotalSaldoInicial(this.flujoTotalSaldoInicial);
+    this.flujoService.setFlujoTotalIngreso(this.flujoTotalIngreso);
+    this.flujoService.setFlujoTotalCostoProduccion(this.flujoTotalCostoProduccion);
+    this.flujoService.setFlujoTotalUB(this.flujoTotalUB);
+    this.flujoService.setFlujoTotalCF(this.flujoTotalCF);
+    this.flujoService.setFlujoTotalUNCP(this.flujoTotalUNCP);
+    this.flujoService.setFlujoTotalC(this.flujoTotalC);
+    this.flujoService.setFlujoTotalFA(this.flujoTotalFA);
+  }
+  calculateFlujoTotalPeriodoIngreso(): number {
+    if (this.asignarImplementacionMes() == 1) {
+      this.flujoTotalPeriodoIngreso =
+        (isNaN(this.flujoIEne) ? 0 : this.flujoIEne) +
+        (isNaN(this.flujoIFeb) ? 0 : this.flujoIFeb) +
+        (isNaN(this.flujoIMar) ? 0 : this.flujoIMar) +
+        (isNaN(this.flujoIAbr) ? 0 : this.flujoIAbr) +
+        (isNaN(this.flujoIMay) ? 0 : this.flujoIMay) +
+        (isNaN(this.flujoIJun) ? 0 : this.flujoIJun) +
+        (isNaN(this.flujoIJul) ? 0 : this.flujoIJul) +
+        (isNaN(this.flujoIAgo) ? 0 : this.flujoIAgo) +
+        (isNaN(this.flujoISep) ? 0 : this.flujoISep) +
+        (isNaN(this.flujoIOct) ? 0 : this.flujoIOct) +
+        (isNaN(this.flujoINov) ? 0 : this.flujoINov) +
+        (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    } else if (this.asignarImplementacionMes() == 2) {
+      this.flujoTotalPeriodoIngreso =
+        (isNaN(this.flujoIFeb) ? 0 : this.flujoIFeb) +
+        (isNaN(this.flujoIMar) ? 0 : this.flujoIMar) +
+        (isNaN(this.flujoIAbr) ? 0 : this.flujoIAbr) +
+        (isNaN(this.flujoIMay) ? 0 : this.flujoIMay) +
+        (isNaN(this.flujoIJun) ? 0 : this.flujoIJun) +
+        (isNaN(this.flujoIJul) ? 0 : this.flujoIJul) +
+        (isNaN(this.flujoIAgo) ? 0 : this.flujoIAgo) +
+        (isNaN(this.flujoISep) ? 0 : this.flujoISep) +
+        (isNaN(this.flujoIOct) ? 0 : this.flujoIOct) +
+        (isNaN(this.flujoINov) ? 0 : this.flujoINov) +
+        (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    } else if (this.asignarImplementacionMes() == 3) {
+      this.flujoTotalPeriodoIngreso =
+        (isNaN(this.flujoIMar) ? 0 : this.flujoIMar) +
+        (isNaN(this.flujoIAbr) ? 0 : this.flujoIAbr) +
+        (isNaN(this.flujoIMay) ? 0 : this.flujoIMay) +
+        (isNaN(this.flujoIJun) ? 0 : this.flujoIJun) +
+        (isNaN(this.flujoIJul) ? 0 : this.flujoIJul) +
+        (isNaN(this.flujoIAgo) ? 0 : this.flujoIAgo) +
+        (isNaN(this.flujoISep) ? 0 : this.flujoISep) +
+        (isNaN(this.flujoIOct) ? 0 : this.flujoIOct) +
+        (isNaN(this.flujoINov) ? 0 : this.flujoINov) +
+        (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    } else if (this.asignarImplementacionMes() == 4) {
+      this.flujoTotalPeriodoIngreso =
+        (isNaN(this.flujoIAbr) ? 0 : this.flujoIAbr) +
+        (isNaN(this.flujoIMay) ? 0 : this.flujoIMay) +
+        (isNaN(this.flujoIJun) ? 0 : this.flujoIJun) +
+        (isNaN(this.flujoIJul) ? 0 : this.flujoIJul) +
+        (isNaN(this.flujoIAgo) ? 0 : this.flujoIAgo) +
+        (isNaN(this.flujoISep) ? 0 : this.flujoISep) +
+        (isNaN(this.flujoIOct) ? 0 : this.flujoIOct) +
+        (isNaN(this.flujoINov) ? 0 : this.flujoINov) +
+        (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    } else if (this.asignarImplementacionMes() == 5) {
+      this.flujoTotalPeriodoIngreso =
+        (isNaN(this.flujoIMay) ? 0 : this.flujoIMay) +
+        (isNaN(this.flujoIJun) ? 0 : this.flujoIJun) +
+        (isNaN(this.flujoIJul) ? 0 : this.flujoIJul) +
+        (isNaN(this.flujoIAgo) ? 0 : this.flujoIAgo) +
+        (isNaN(this.flujoISep) ? 0 : this.flujoISep) +
+        (isNaN(this.flujoIOct) ? 0 : this.flujoIOct) +
+        (isNaN(this.flujoINov) ? 0 : this.flujoINov) +
+        (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    } else if (this.asignarImplementacionMes() == 6) {
+      this.flujoTotalPeriodoIngreso =
+        (isNaN(this.flujoIJun) ? 0 : this.flujoIJun) +
+        (isNaN(this.flujoIJul) ? 0 : this.flujoIJul) +
+        (isNaN(this.flujoIAgo) ? 0 : this.flujoIAgo) +
+        (isNaN(this.flujoISep) ? 0 : this.flujoISep) +
+        (isNaN(this.flujoIOct) ? 0 : this.flujoIOct) +
+        (isNaN(this.flujoINov) ? 0 : this.flujoINov) +
+        (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    } else if (this.asignarImplementacionMes() == 7) {
+      this.flujoTotalPeriodoIngreso =
+        (isNaN(this.flujoIJul) ? 0 : this.flujoIJul) +
+        (isNaN(this.flujoIAgo) ? 0 : this.flujoIAgo) +
+        (isNaN(this.flujoISep) ? 0 : this.flujoISep) +
+        (isNaN(this.flujoIOct) ? 0 : this.flujoIOct) +
+        (isNaN(this.flujoINov) ? 0 : this.flujoINov) +
+        (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    } else if (this.asignarImplementacionMes() == 8) {
+      this.flujoTotalPeriodoIngreso =
+        (isNaN(this.flujoIAgo) ? 0 : this.flujoIAgo) +
+        (isNaN(this.flujoISep) ? 0 : this.flujoISep) +
+        (isNaN(this.flujoIOct) ? 0 : this.flujoIOct) +
+        (isNaN(this.flujoINov) ? 0 : this.flujoINov) +
+        (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    } else if (this.asignarImplementacionMes() == 9) {
+      this.flujoTotalPeriodoIngreso =
+        (isNaN(this.flujoISep) ? 0 : this.flujoISep) +
+        (isNaN(this.flujoIOct) ? 0 : this.flujoIOct) +
+        (isNaN(this.flujoINov) ? 0 : this.flujoINov) +
+        (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    } else if (this.asignarImplementacionMes() == 10) {
+      this.flujoTotalPeriodoIngreso =
+        (isNaN(this.flujoIOct) ? 0 : this.flujoIOct) +
+        (isNaN(this.flujoINov) ? 0 : this.flujoINov) +
+        (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    } else if (this.asignarImplementacionMes() == 11) {
+      this.flujoTotalPeriodoIngreso =
+        (isNaN(this.flujoINov) ? 0 : this.flujoINov) +
+        (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    } else if (this.asignarImplementacionMes() == 12) {
+      this.flujoTotalPeriodoIngreso = (isNaN(this.flujoIDiv) ? 0 : this.flujoIDiv);
+    }
+    return this.flujoTotalPeriodoIngreso;
+  }
+  calculateFlujoTotalPeriodoCostoProduccion(): number {
+    if (this.asignarImplementacionMes() == 1) {
+      this.flujoTotalPeriodoCostoProduccion =
+        (isNaN(this.flujoCProdEne) ? 0 : this.flujoCProdEne) +
+        (isNaN(this.flujoCPFeb) ? 0 : this.flujoCPFeb) +
+        (isNaN(this.flujoCPMar) ? 0 : this.flujoCPMar) +
+        (isNaN(this.flujoCPAbr) ? 0 : this.flujoCPAbr) +
+        (isNaN(this.flujoCPMay) ? 0 : this.flujoCPMay) +
+        (isNaN(this.flujoCPJun) ? 0 : this.flujoCPJun) +
+        (isNaN(this.flujoCPJul) ? 0 : this.flujoCPJul) +
+        (isNaN(this.flujoCPAgo) ? 0 : this.flujoCPAgo) +
+        (isNaN(this.flujoCPSep) ? 0 : this.flujoCPSep) +
+        (isNaN(this.flujoCPOct) ? 0 : this.flujoCPOct) +
+        (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov) +
+        (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    } else if (this.asignarImplementacionMes() == 2) {
+      this.flujoTotalPeriodoCostoProduccion =
+        (isNaN(this.flujoCPFeb) ? 0 : this.flujoCPFeb) +
+        (isNaN(this.flujoCPMar) ? 0 : this.flujoCPMar) +
+        (isNaN(this.flujoCPAbr) ? 0 : this.flujoCPAbr) +
+        (isNaN(this.flujoCPMay) ? 0 : this.flujoCPMay) +
+        (isNaN(this.flujoCPJun) ? 0 : this.flujoCPJun) +
+        (isNaN(this.flujoCPJul) ? 0 : this.flujoCPJul) +
+        (isNaN(this.flujoCPAgo) ? 0 : this.flujoCPAgo) +
+        (isNaN(this.flujoCPSep) ? 0 : this.flujoCPSep) +
+        (isNaN(this.flujoCPOct) ? 0 : this.flujoCPOct) +
+        (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov) +
+        (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    } else if (this.asignarImplementacionMes() == 3) {
+      this.flujoTotalPeriodoCostoProduccion =
+        (isNaN(this.flujoCPMar) ? 0 : this.flujoCPMar) +
+        (isNaN(this.flujoCPAbr) ? 0 : this.flujoCPAbr) +
+        (isNaN(this.flujoCPMay) ? 0 : this.flujoCPMay) +
+        (isNaN(this.flujoCPJun) ? 0 : this.flujoCPJun) +
+        (isNaN(this.flujoCPJul) ? 0 : this.flujoCPJul) +
+        (isNaN(this.flujoCPAgo) ? 0 : this.flujoCPAgo) +
+        (isNaN(this.flujoCPSep) ? 0 : this.flujoCPSep) +
+        (isNaN(this.flujoCPOct) ? 0 : this.flujoCPOct) +
+        (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov) +
+        (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    } else if (this.asignarImplementacionMes() == 4) {
+      this.flujoTotalPeriodoCostoProduccion =
+        (isNaN(this.flujoCPAbr) ? 0 : this.flujoCPAbr) +
+        (isNaN(this.flujoCPMay) ? 0 : this.flujoCPMay) +
+        (isNaN(this.flujoCPJun) ? 0 : this.flujoCPJun) +
+        (isNaN(this.flujoCPJul) ? 0 : this.flujoCPJul) +
+        (isNaN(this.flujoCPAgo) ? 0 : this.flujoCPAgo) +
+        (isNaN(this.flujoCPSep) ? 0 : this.flujoCPSep) +
+        (isNaN(this.flujoCPOct) ? 0 : this.flujoCPOct) +
+        (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov) +
+        (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    } else if (this.asignarImplementacionMes() == 5) {
+      this.flujoTotalPeriodoCostoProduccion =
+        (isNaN(this.flujoCPMay) ? 0 : this.flujoCPMay) +
+        (isNaN(this.flujoCPJun) ? 0 : this.flujoCPJun) +
+        (isNaN(this.flujoCPJul) ? 0 : this.flujoCPJul) +
+        (isNaN(this.flujoCPAgo) ? 0 : this.flujoCPAgo) +
+        (isNaN(this.flujoCPSep) ? 0 : this.flujoCPSep) +
+        (isNaN(this.flujoCPOct) ? 0 : this.flujoCPOct) +
+        (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov) +
+        (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    } else if (this.asignarImplementacionMes() == 6) {
+      this.flujoTotalPeriodoCostoProduccion =
+        (isNaN(this.flujoCPJun) ? 0 : this.flujoCPJun) +
+        (isNaN(this.flujoCPJul) ? 0 : this.flujoCPJul) +
+        (isNaN(this.flujoCPAgo) ? 0 : this.flujoCPAgo) +
+        (isNaN(this.flujoCPSep) ? 0 : this.flujoCPSep) +
+        (isNaN(this.flujoCPOct) ? 0 : this.flujoCPOct) +
+        (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov) +
+        (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    } else if (this.asignarImplementacionMes() == 7) {
+      this.flujoTotalPeriodoCostoProduccion =
+        (isNaN(this.flujoCPJul) ? 0 : this.flujoCPJul) +
+        (isNaN(this.flujoCPAgo) ? 0 : this.flujoCPAgo) +
+        (isNaN(this.flujoCPSep) ? 0 : this.flujoCPSep) +
+        (isNaN(this.flujoCPOct) ? 0 : this.flujoCPOct) +
+        (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov) +
+        (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    } else if (this.asignarImplementacionMes() == 8) {
+      this.flujoTotalPeriodoCostoProduccion =
+        (isNaN(this.flujoCPAgo) ? 0 : this.flujoCPAgo) +
+        (isNaN(this.flujoCPSep) ? 0 : this.flujoCPSep) +
+        (isNaN(this.flujoCPOct) ? 0 : this.flujoCPOct) +
+        (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov) +
+        (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    } else if (this.asignarImplementacionMes() == 9) {
+      this.flujoTotalPeriodoCostoProduccion =
+        (isNaN(this.flujoCPSep) ? 0 : this.flujoCPSep) +
+        (isNaN(this.flujoCPOct) ? 0 : this.flujoCPOct) +
+        (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov) +
+        (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    } else if (this.asignarImplementacionMes() == 10) {
+      this.flujoTotalPeriodoCostoProduccion =
+        (isNaN(this.flujoCPOct) ? 0 : this.flujoCPOct) +
+        (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov) +
+        (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    } else if (this.asignarImplementacionMes() == 11) {
+      this.flujoTotalPeriodoCostoProduccion =
+        (isNaN(this.flujoCPNov) ? 0 : this.flujoCPNov) +
+        (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    } else if (this.asignarImplementacionMes() == 12) {
+      this.flujoTotalPeriodoCostoProduccion = (isNaN(this.flujoCPDiv) ? 0 : this.flujoCPDiv);
+    }
+    return this.flujoTotalPeriodoCostoProduccion;
+  }
+  calculateFlujoTotalPeriodoCF(): number {
+    if (this.asignarImplementacionMes() == 1) {
+      this.flujoTotalPeriodoCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 12;
+    } else if (this.asignarImplementacionMes() == 2) {
+      this.flujoTotalPeriodoCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 11;
+    } else if (this.asignarImplementacionMes() == 3) {
+      this.flujoTotalPeriodoCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 10;
+    } else if (this.asignarImplementacionMes() == 4) {
+      this.flujoTotalPeriodoCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 9;
+    } else if (this.asignarImplementacionMes() == 5) {
+      this.flujoTotalPeriodoCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 8;
+    } else if (this.asignarImplementacionMes() == 6) {
+      this.flujoTotalPeriodoCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 7;
+    } else if (this.asignarImplementacionMes() == 7) {
+      this.flujoTotalPeriodoCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 6;
+    } else if (this.asignarImplementacionMes() == 8) {
+      this.flujoTotalPeriodoCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 5;
+    } else if (this.asignarImplementacionMes() == 9) {
+      this.flujoTotalPeriodoCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 4;
+    } else if (this.asignarImplementacionMes() == 10) {
+      this.flujoTotalPeriodoCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 3;
+    } else if (this.asignarImplementacionMes() == 11) {
+      this.flujoTotalPeriodoCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 2;
+    } else if (this.asignarImplementacionMes() == 12) {
+      this.flujoTotalPeriodoCF = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 1;
+    }
+    return this.flujoTotalPeriodoCF;
+  }
+  calculateFlujoTotalPeriodoC(): number {
+    if (this.asignarImplementacionMes() == 1) {
+      this.flujoTotalPeriodoC =
+        (isNaN(this.flujoCEne) ? 0 : this.flujoCEne) +
+        (isNaN(this.flujoCFeb) ? 0 : this.flujoCFeb) +
+        (isNaN(this.flujoCMar) ? 0 : this.flujoCMar) +
+        (isNaN(this.flujoCAbr) ? 0 : this.flujoCAbr) +
+        (isNaN(this.flujoCMay) ? 0 : this.flujoCMay) +
+        (isNaN(this.flujoCJun) ? 0 : this.flujoCJun) +
+        (isNaN(this.flujoCJul) ? 0 : this.flujoCJul) +
+        (isNaN(this.flujoCAgo) ? 0 : this.flujoCAgo) +
+        (isNaN(this.flujoCSep) ? 0 : this.flujoCSep) +
+        (isNaN(this.flujoCOct) ? 0 : this.flujoCOct) +
+        (isNaN(this.flujoCNov) ? 0 : this.flujoCNov) +
+        (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    } else if (this.asignarImplementacionMes() == 2) {
+      this.flujoTotalPeriodoC =
+        (isNaN(this.flujoCFeb) ? 0 : this.flujoCFeb) +
+        (isNaN(this.flujoCMar) ? 0 : this.flujoCMar) +
+        (isNaN(this.flujoCAbr) ? 0 : this.flujoCAbr) +
+        (isNaN(this.flujoCMay) ? 0 : this.flujoCMay) +
+        (isNaN(this.flujoCJun) ? 0 : this.flujoCJun) +
+        (isNaN(this.flujoCJul) ? 0 : this.flujoCJul) +
+        (isNaN(this.flujoCAgo) ? 0 : this.flujoCAgo) +
+        (isNaN(this.flujoCSep) ? 0 : this.flujoCSep) +
+        (isNaN(this.flujoCOct) ? 0 : this.flujoCOct) +
+        (isNaN(this.flujoCNov) ? 0 : this.flujoCNov) +
+        (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    } else if (this.asignarImplementacionMes() == 3) {
+      this.flujoTotalPeriodoC =
+        (isNaN(this.flujoCMar) ? 0 : this.flujoCMar) +
+        (isNaN(this.flujoCAbr) ? 0 : this.flujoCAbr) +
+        (isNaN(this.flujoCMay) ? 0 : this.flujoCMay) +
+        (isNaN(this.flujoCJun) ? 0 : this.flujoCJun) +
+        (isNaN(this.flujoCJul) ? 0 : this.flujoCJul) +
+        (isNaN(this.flujoCAgo) ? 0 : this.flujoCAgo) +
+        (isNaN(this.flujoCSep) ? 0 : this.flujoCSep) +
+        (isNaN(this.flujoCOct) ? 0 : this.flujoCOct) +
+        (isNaN(this.flujoCNov) ? 0 : this.flujoCNov) +
+        (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    } else if (this.asignarImplementacionMes() == 4) {
+      this.flujoTotalPeriodoC =
+        (isNaN(this.flujoCAbr) ? 0 : this.flujoCAbr) +
+        (isNaN(this.flujoCMay) ? 0 : this.flujoCMay) +
+        (isNaN(this.flujoCJun) ? 0 : this.flujoCJun) +
+        (isNaN(this.flujoCJul) ? 0 : this.flujoCJul) +
+        (isNaN(this.flujoCAgo) ? 0 : this.flujoCAgo) +
+        (isNaN(this.flujoCSep) ? 0 : this.flujoCSep) +
+        (isNaN(this.flujoCOct) ? 0 : this.flujoCOct) +
+        (isNaN(this.flujoCNov) ? 0 : this.flujoCNov) +
+        (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    } else if (this.asignarImplementacionMes() == 5) {
+      this.flujoTotalPeriodoC =
+        (isNaN(this.flujoCMay) ? 0 : this.flujoCMay) +
+        (isNaN(this.flujoCJun) ? 0 : this.flujoCJun) +
+        (isNaN(this.flujoCJul) ? 0 : this.flujoCJul) +
+        (isNaN(this.flujoCAgo) ? 0 : this.flujoCAgo) +
+        (isNaN(this.flujoCSep) ? 0 : this.flujoCSep) +
+        (isNaN(this.flujoCOct) ? 0 : this.flujoCOct) +
+        (isNaN(this.flujoCNov) ? 0 : this.flujoCNov) +
+        (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    } else if (this.asignarImplementacionMes() == 6) {
+      this.flujoTotalPeriodoC =
+        (isNaN(this.flujoCJun) ? 0 : this.flujoCJun) +
+        (isNaN(this.flujoCJul) ? 0 : this.flujoCJul) +
+        (isNaN(this.flujoCAgo) ? 0 : this.flujoCAgo) +
+        (isNaN(this.flujoCSep) ? 0 : this.flujoCSep) +
+        (isNaN(this.flujoCOct) ? 0 : this.flujoCOct) +
+        (isNaN(this.flujoCNov) ? 0 : this.flujoCNov) +
+        (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    } else if (this.asignarImplementacionMes() == 7) {
+      this.flujoTotalPeriodoC =
+        (isNaN(this.flujoCJul) ? 0 : this.flujoCJul) +
+        (isNaN(this.flujoCAgo) ? 0 : this.flujoCAgo) +
+        (isNaN(this.flujoCSep) ? 0 : this.flujoCSep) +
+        (isNaN(this.flujoCOct) ? 0 : this.flujoCOct) +
+        (isNaN(this.flujoCNov) ? 0 : this.flujoCNov) +
+        (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    } else if (this.asignarImplementacionMes() == 8) {
+      this.flujoTotalPeriodoC =
+        (isNaN(this.flujoCAgo) ? 0 : this.flujoCAgo) +
+        (isNaN(this.flujoCSep) ? 0 : this.flujoCSep) +
+        (isNaN(this.flujoCOct) ? 0 : this.flujoCOct) +
+        (isNaN(this.flujoCNov) ? 0 : this.flujoCNov) +
+        (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    } else if (this.asignarImplementacionMes() == 9) {
+      this.flujoTotalPeriodoC =
+        (isNaN(this.flujoCSep) ? 0 : this.flujoCSep) +
+        (isNaN(this.flujoCOct) ? 0 : this.flujoCOct) +
+        (isNaN(this.flujoCNov) ? 0 : this.flujoCNov) +
+        (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    } else if (this.asignarImplementacionMes() == 10) {
+      this.flujoTotalPeriodoC =
+        (isNaN(this.flujoCOct) ? 0 : this.flujoCOct) +
+        (isNaN(this.flujoCNov) ? 0 : this.flujoCNov) +
+        (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    } else if (this.asignarImplementacionMes() == 11) {
+      this.flujoTotalPeriodoC =
+        (isNaN(this.flujoCNov) ? 0 : this.flujoCNov) +
+        (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    } else if (this.asignarImplementacionMes() == 12) {
+      this.flujoTotalPeriodoC = (isNaN(this.flujoCDiv) ? 0 : this.flujoCDiv);
+    }
+    return this.flujoTotalPeriodoC;
+  }
+  calculateTotalPeriodo() {
+    this.flujoTotalPeriodoSaldoInicial = this.calculateSaldoInicial() - this.calcularTotalPI();
+    this.calculateFlujoTotalPeriodoIngreso();
+    // costo de producción total periodo
+    this.calculateFlujoTotalPeriodoCostoProduccion();
+    this.flujoTotalPeriodoUB = this.calculateFlujoTotalPeriodoIngreso() - this.calculateFlujoTotalPeriodoCostoProduccion();
+    // costo fijo total periodo
+    this.calculateFlujoTotalPeriodoCF();
+    this.flujoTotalPeriodoUNCP = this.flujoTotalPeriodoUB - this.calculateFlujoTotalPeriodoCF();
+    // cuota total periodo
+    this.calculateFlujoTotalPeriodoC();
+    this.flujoTotalPeriodoFA = (this.flujoTotalPeriodoUNCP - this.calculateFlujoTotalPeriodoC()) + this.flujoTotalPeriodoSaldoInicial;
+
+    this.flujoService.setFlujoTotalPeriodoSaldoInicial(this.flujoTotalPeriodoSaldoInicial);
+    this.flujoService.setFlujoTotalPeriodoIngreso(this.flujoTotalPeriodoIngreso);
+    this.flujoService.setFlujoTotalPeriodoCostoProduccion(this.flujoTotalPeriodoCostoProduccion);
+    this.flujoService.setFlujoTotalPeriodoUB(this.flujoTotalPeriodoUB);
+    this.flujoService.setFlujoTotalPeriodoCF(this.flujoTotalPeriodoCF);
+    this.flujoService.setFlujoTotalPeriodoUNCP(this.flujoTotalPeriodoUNCP);
+    this.flujoService.setFlujoTotalPeriodoC(this.flujoTotalPeriodoC);
+    this.flujoService.setFlujoTotalPeriodoFA(this.flujoTotalPeriodoFA);
+  }
+  calculateSaldoInicial(): number {
+    this.flujoSaldoInicial = this.calcularMontoFinanciar() + (isNaN(this.total) ? 0 : this.total);
+    this.flujoService.setFlujoSaldoInicial(this.flujoSaldoInicial);
+    return this.flujoSaldoInicial;
+  }
+  calculateFlujoAcumuladoInicial(): number {
+    this.flujoAcIni = this.calculateSaldoInicial() - this.calcularTotalPI();
+    this.flujoService.setFlujoAcIni(this.flujoAcIni);
+    return this.flujoAcIni;
+  }
+  llenarTablaNro2() {
+    // 0
+    if (this.anioActual == this.asignarTabAImplementacion()) {
+      this.flujoSaldoInicial0 = this.calculateFlujoAcumuladoInicial();
+      this.flujoIngreso0 = this.calculateFlujoTotalPeriodoIngreso();
+      this.flujoCostoProduccion0 = this.calculateFlujoTotalPeriodoCostoProduccion();
+      this.flujoUtilidadBruta0 = this.calculateFlujoTotalPeriodoIngreso() - this.calculateFlujoTotalPeriodoCostoProduccion();
+      this.flujoCostosFijos0 = this.calculateFlujoTotalPeriodoCF();
+      this.flujoUtilidadNetaCapPago0 = (this.calculateFlujoTotalPeriodoIngreso() - this.calculateFlujoTotalPeriodoCostoProduccion()) - (this.calculateFlujoTotalPeriodoCF());
+      this.flujoCuota0 = this.calculateFlujoTotalPeriodoC();
+      this.flujoAcumulado0 = (this.flujoUtilidadNetaCapPago0 - this.calculateFlujoTotalPeriodoC()) + this.flujoSaldoInicial0;
+    }else {
+      this.flujoSaldoInicial0 = 0;
+      this.flujoIngreso0 = 0;
+      this.flujoCostoProduccion0 = 0;
+      this.flujoUtilidadBruta0 = 0;
+      this.flujoCostosFijos0 = 0;
+      this.flujoUtilidadNetaCapPago0 = 0;
+      this.flujoCuota0 = 0;
+      this.flujoAcumulado0 = 0;
+    }
+    if (this.calcularMontoFinanciar() != 0 && (this.asignarTab2A() + 1) <= this.calculatePeriodoA()) {
+      // 1 $C$37<$C$55 = B63
+      if (this.asignarTabAImplementacion() < (this.asignarTab2A() + 1)) { // año de implementación estimada es menor desembolso estimado año C37 < C55
+        this.flujoSaldoInicial1 = ((isNaN(this.flujoAcumulado0) || this.flujoAcumulado0 == null || this.flujoAcumulado0 == undefined) ? 0 : this.flujoAcumulado0);
+        this.flujoIngreso1 = this.calculateFlujoTotalAñoIngreso();
+        this.flujoCostoProduccion1 = this.calculateFlujoTotalAnioCostoProduccion();
+        this.flujoUtilidadBruta1 = this.calculateFlujoTotalAñoIngreso() - this.calculateFlujoTotalAnioCostoProduccion();
+        this.flujoCostosFijos1 = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 12;
+        this.flujoUtilidadNetaCapPago1 = this.flujoUtilidadBruta1 - this.flujoCostosFijos1;
+        this.flujoCuota1 = this.calculateFlujoTotalAnioCuota();
+        this.flujoAcumulado1 = (this.flujoUtilidadNetaCapPago1 - this.flujoCuota1) + this.flujoSaldoInicial1;
+        if (this.calculateRedondeoMax() >= 2) {
+          this.flujoSaldoInicial2 = this.flujoAcumulado1;
+          this.flujoIngreso2 = this.calculateFlujoTotalAñoIngreso();
+          this.flujoCostoProduccion2 = this.calculateFlujoTotalAnioCostoProduccion();
+          this.flujoUtilidadBruta2 = this.calculateFlujoTotalAñoIngreso() - this.calculateFlujoTotalAnioCostoProduccion();
+          this.flujoCostosFijos2 = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 12;
+          this.flujoUtilidadNetaCapPago2 = this.flujoUtilidadBruta2 - this.flujoCostosFijos2;
+          this.flujoCuota2 = this.calculateFlujoTotalAnioCuota();
+          this.flujoAcumulado2 = (this.flujoUtilidadNetaCapPago2 - this.flujoCuota2) + this.flujoSaldoInicial2;
+        }else{
+          this.flujoSaldoInicial2 = 0;
+          this.flujoIngreso2 = 0;
+          this.flujoCostoProduccion2 = 0;
+          this.flujoUtilidadBruta2 = 0;
+          this.flujoCostosFijos2 = 0;
+          this.flujoUtilidadNetaCapPago2 = 0;
+          this.flujoCuota2 = 0;
+          this.flujoAcumulado2 = 0;
+        }
+        if (this.calculateRedondeoMax() >= 3) {
+          this.flujoSaldoInicial3 = this.flujoAcumulado2;
+          this.flujoIngreso3 = this.calculateFlujoTotalAñoIngreso();
+          this.flujoCostoProduccion3 = this.calculateFlujoTotalAnioCostoProduccion();
+          this.flujoUtilidadBruta3 = this.calculateFlujoTotalAñoIngreso() - this.calculateFlujoTotalAnioCostoProduccion();
+          this.flujoCostosFijos3 = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 12;
+          this.flujoUtilidadNetaCapPago3 = this.flujoUtilidadBruta3 - this.flujoCostosFijos3;
+          this.flujoCuota3 = this.calculateFlujoTotalAnioCuota();
+          this.flujoAcumulado3 = (this.flujoUtilidadNetaCapPago3 - this.flujoCuota3) + this.flujoSaldoInicial3;
+        }else{
+          this.flujoSaldoInicial3 = 0;
+          this.flujoIngreso3 = 0;
+          this.flujoCostoProduccion3 = 0;
+          this.flujoUtilidadBruta3 = 0;
+          this.flujoCostosFijos3 = 0;
+          this.flujoUtilidadNetaCapPago3 = 0;
+          this.flujoCuota3 = 0;
+          this.flujoAcumulado3 = 0;
+        }
+        if (this.calculateRedondeoMax() >= 4) {
+          this.flujoSaldoInicial4 = this.flujoAcumulado3;
+          this.flujoIngreso4 = this.calculateFlujoTotalAñoIngreso();
+          this.flujoCostoProduccion4 = this.calculateFlujoTotalAnioCostoProduccion();
+          this.flujoUtilidadBruta4 = this.calculateFlujoTotalAñoIngreso() - this.calculateFlujoTotalAnioCostoProduccion();
+          this.flujoCostosFijos4 = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 12;
+          this.flujoUtilidadNetaCapPago4 = this.flujoUtilidadBruta4 - this.flujoCostosFijos4;
+          this.flujoCuota4 = this.calculateFlujoTotalAnioCuota();
+          this.flujoAcumulado4 = (this.flujoUtilidadNetaCapPago4 - this.flujoCuota4) + this.flujoSaldoInicial4;
+        }else{
+          this.flujoSaldoInicial4 = 0;
+          this.flujoIngreso4 = 0;
+          this.flujoCostoProduccion4 = 0;
+          this.flujoUtilidadBruta4 = 0;
+          this.flujoCostosFijos4 = 0;
+          this.flujoUtilidadNetaCapPago4 = 0;
+          this.flujoCuota4 = 0;
+          this.flujoAcumulado4 = 0;
+        }
+        if (this.calculateRedondeoMax() >= 5) {
+          this.flujoSaldoInicial5 = this.flujoAcumulado4;
+          this.flujoIngreso5 = this.calculateFlujoTotalAñoIngreso();
+          this.flujoCostoProduccion5 = this.calculateFlujoTotalAnioCostoProduccion();
+          this.flujoUtilidadBruta5 = this.calculateFlujoTotalAñoIngreso() - this.calculateFlujoTotalAnioCostoProduccion();
+          this.flujoCostosFijos5 = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 12;
+          this.flujoUtilidadNetaCapPago5 = this.flujoUtilidadBruta5 - this.flujoCostosFijos5;
+          this.flujoCuota5 = this.calculateFlujoTotalAnioCuota();
+          this.flujoAcumulado5 = (this.flujoUtilidadNetaCapPago5 - this.flujoCuota5) + this.flujoSaldoInicial5;
+        }else{
+          this.flujoSaldoInicial5 = 0;
+          this.flujoIngreso5 = 0;
+          this.flujoCostoProduccion5 = 0;
+          this.flujoUtilidadBruta5 = 0;
+          this.flujoCostosFijos5 = 0;
+          this.flujoUtilidadNetaCapPago5 = 0;
+          this.flujoCuota5 = 0;
+          this.flujoAcumulado5 = 0;
+        }
+        if (this.calculateRedondeoMax() >= 6) {
+          this.flujoSaldoInicial6 = this.flujoAcumulado5;
+          this.flujoIngreso6 = this.calculateFlujoTotalAñoIngreso();
+          this.flujoCostoProduccion6 = this.calculateFlujoTotalAnioCostoProduccion();
+          this.flujoUtilidadBruta6 = this.calculateFlujoTotalAñoIngreso() - this.calculateFlujoTotalAnioCostoProduccion();
+          this.flujoCostosFijos6 = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 12;
+          this.flujoUtilidadNetaCapPago6 = this.flujoUtilidadBruta6 - this.flujoCostosFijos6;
+          this.flujoCuota6 = this.calculateFlujoTotalAnioCuota();
+          this.flujoAcumulado6 = (this.flujoUtilidadNetaCapPago6 - this.flujoCuota6) + this.flujoSaldoInicial6;
+        }else{
+          this.flujoSaldoInicial6 = 0;
+          this.flujoIngreso6 = 0;
+          this.flujoCostoProduccion6 = 0;
+          this.flujoUtilidadBruta6 = 0;
+          this.flujoCostosFijos6 = 0;
+          this.flujoUtilidadNetaCapPago6 = 0;
+          this.flujoCuota6 = 0;
+          this.flujoAcumulado6 = 0;
+        }
+        if (this.calculateRedondeoMax() >= 7) {
+          this.flujoSaldoInicial7 = this.flujoAcumulado6;
+          this.flujoIngreso7 = this.calculateFlujoTotalAñoIngreso();
+          this.flujoCostoProduccion7 = this.calculateFlujoTotalAnioCostoProduccion();
+          this.flujoUtilidadBruta7 = this.calculateFlujoTotalAñoIngreso() - this.calculateFlujoTotalAnioCostoProduccion();
+          this.flujoCostosFijos7 = (isNaN(this.flujoCostosFijosTb1) ? 0 : this.flujoCostosFijosTb1) * 12;
+          this.flujoUtilidadNetaCapPago7 = this.flujoUtilidadBruta7 - this.flujoCostosFijos7;
+          this.flujoCuota7 = this.calculateFlujoTotalAnioCuota();
+          this.flujoAcumulado7 = (this.flujoUtilidadNetaCapPago7 - this.flujoCuota7) + this.flujoSaldoInicial7;
+        }else{
+          this.flujoSaldoInicial7 = 0;
+          this.flujoIngreso7 = 0;
+          this.flujoCostoProduccion7 = 0;
+          this.flujoUtilidadBruta7 = 0;
+          this.flujoCostosFijos7 = 0;
+          this.flujoUtilidadNetaCapPago7 = 0;
+          this.flujoCuota7 = 0;
+          this.flujoAcumulado7 = 0;
+        }
+      } else if (this.asignarTabAImplementacion() == (this.asignarTab2A() + 1)) {
+        this.flujoSaldoInicial1 = this.calculateSaldoInicial() - this.calcularTotalPI();
+        this.flujoIngreso1 = this.calculateFlujoTotalPeriodoIngreso();
+        this.flujoCostoProduccion1 = this.calculateFlujoTotalPeriodoCostoProduccion();
+        this.flujoUtilidadBruta1 = this.calculateFlujoTotalPeriodoIngreso() - this.calculateFlujoTotalPeriodoCostoProduccion();
+        this.flujoCostosFijos1 = this.calculateFlujoTotalPeriodoCF();
+        this.flujoUtilidadNetaCapPago1 = this.flujoUtilidadBruta1 - this.calculateFlujoTotalPeriodoCF();
+        this.flujoCuota1 = this.calculateFlujoTotalPeriodoC();
+        this.flujoAcumulado1 = (this.flujoUtilidadNetaCapPago1 - this.flujoCuota1) + this.flujoSaldoInicial1;
+        if (this.calculateRedondeoMax() >= 2) {
+          this.flujoSaldoInicial2 = this.flujoAcumulado1;
+          this.flujoIngreso2 = this.calculateFlujoTotalPeriodoIngreso();
+          this.flujoCostoProduccion2 = this.calculateFlujoTotalPeriodoCostoProduccion();
+          this.flujoUtilidadBruta2 = this.calculateFlujoTotalPeriodoIngreso() - this.calculateFlujoTotalPeriodoCostoProduccion();
+          this.flujoCostosFijos2 = this.calculateFlujoTotalPeriodoCF();
+          this.flujoUtilidadNetaCapPago2 = this.flujoUtilidadBruta2 - this.calculateFlujoTotalPeriodoCF();
+          this.flujoCuota2 = this.calculateFlujoTotalPeriodoC();
+          this.flujoAcumulado2 = (this.flujoUtilidadNetaCapPago2 - this.flujoCuota2) + this.flujoSaldoInicial2;
+        }else{
+          this.flujoSaldoInicial2 = 0;
+          this.flujoIngreso2 = 0;
+          this.flujoCostoProduccion2 = 0;
+          this.flujoUtilidadBruta2 = 0;
+          this.flujoCostosFijos2 = 0;
+          this.flujoUtilidadNetaCapPago2 = 0;
+          this.flujoCuota2 = 0;
+          this.flujoAcumulado2 = 0;
+        }
+        if (this.calculateRedondeoMax() >= 3) {
+          this.flujoSaldoInicial3 = this.flujoAcumulado2;
+          this.flujoIngreso3 = this.calculateFlujoTotalPeriodoIngreso();
+          this.flujoCostoProduccion3 = this.calculateFlujoTotalPeriodoCostoProduccion();
+          this.flujoUtilidadBruta3 = this.calculateFlujoTotalPeriodoIngreso() - this.calculateFlujoTotalPeriodoCostoProduccion();
+          this.flujoCostosFijos3 = this.calculateFlujoTotalPeriodoCF();
+          this.flujoUtilidadNetaCapPago3 = this.flujoUtilidadBruta3 - this.calculateFlujoTotalPeriodoCF();
+          this.flujoCuota3 = this.calculateFlujoTotalPeriodoC();
+          this.flujoAcumulado3 = (this.flujoUtilidadNetaCapPago3 - this.flujoCuota3) + this.flujoSaldoInicial3;
+        }else{
+          this.flujoSaldoInicial3 = 0;
+          this.flujoIngreso3 = 0;
+          this.flujoCostoProduccion3 = 0;
+          this.flujoUtilidadBruta3 = 0;
+          this.flujoCostosFijos3 = 0;
+          this.flujoUtilidadNetaCapPago3 = 0;
+          this.flujoCuota3 = 0;
+          this.flujoAcumulado3 = 0;
+        }
+        if (this.calculateRedondeoMax() >= 4) {
+          this.flujoSaldoInicial4 = this.flujoAcumulado3;
+          this.flujoIngreso4 = this.calculateFlujoTotalPeriodoIngreso();
+          this.flujoCostoProduccion4 = this.calculateFlujoTotalPeriodoCostoProduccion();
+          this.flujoUtilidadBruta4 = this.calculateFlujoTotalPeriodoIngreso() - this.calculateFlujoTotalPeriodoCostoProduccion();
+          this.flujoCostosFijos4 = this.calculateFlujoTotalPeriodoCF();
+          this.flujoUtilidadNetaCapPago4 = this.flujoUtilidadBruta4 - this.calculateFlujoTotalPeriodoCF();
+          this.flujoCuota4 = this.calculateFlujoTotalPeriodoC();
+          this.flujoAcumulado4 = (this.flujoUtilidadNetaCapPago4 - this.flujoCuota4) + this.flujoSaldoInicial4;
+        }else{
+          this.flujoSaldoInicial4 = 0;
+          this.flujoIngreso4 = 0;
+          this.flujoCostoProduccion4 = 0;
+          this.flujoUtilidadBruta4 = 0;
+          this.flujoCostosFijos4 = 0;
+          this.flujoUtilidadNetaCapPago4 = 0;
+          this.flujoCuota4 = 0;
+          this.flujoAcumulado4 = 0;
+        }
+        if (this.calculateRedondeoMax() >= 5) {
+          this.flujoSaldoInicial5 = this.flujoAcumulado4;
+          this.flujoIngreso5 = this.calculateFlujoTotalPeriodoIngreso();
+          this.flujoCostoProduccion5 = this.calculateFlujoTotalPeriodoCostoProduccion();
+          this.flujoUtilidadBruta5 = this.calculateFlujoTotalPeriodoIngreso() - this.calculateFlujoTotalPeriodoCostoProduccion();
+          this.flujoCostosFijos5 = this.calculateFlujoTotalPeriodoCF();
+          this.flujoUtilidadNetaCapPago5 = this.flujoUtilidadBruta5 - this.calculateFlujoTotalPeriodoCF();
+          this.flujoCuota5 = this.calculateFlujoTotalPeriodoC();
+          this.flujoAcumulado5 = (this.flujoUtilidadNetaCapPago5 - this.flujoCuota5) + this.flujoSaldoInicial5;
+        }else{
+          this.flujoSaldoInicial5 = 0;
+          this.flujoIngreso5 = 0;
+          this.flujoCostoProduccion5 = 0;
+          this.flujoUtilidadBruta5 = 0;
+          this.flujoCostosFijos5 = 0;
+          this.flujoUtilidadNetaCapPago5 = 0;
+          this.flujoCuota5 = 0;
+          this.flujoAcumulado5 = 0;
+        }
+        if (this.calculateRedondeoMax() >= 6) {
+          this.flujoSaldoInicial6 = this.flujoAcumulado5;
+          this.flujoIngreso6 = this.calculateFlujoTotalPeriodoIngreso();
+          this.flujoCostoProduccion6 = this.calculateFlujoTotalPeriodoCostoProduccion();
+          this.flujoUtilidadBruta6 = this.calculateFlujoTotalPeriodoIngreso() - this.calculateFlujoTotalPeriodoCostoProduccion();
+          this.flujoCostosFijos6 = this.calculateFlujoTotalPeriodoCF();
+          this.flujoUtilidadNetaCapPago6 = this.flujoUtilidadBruta6 - this.calculateFlujoTotalPeriodoCF();
+          this.flujoCuota6 = this.calculateFlujoTotalPeriodoC();
+          this.flujoAcumulado6 = (this.flujoUtilidadNetaCapPago6 - this.flujoCuota6) + this.flujoSaldoInicial6;
+        }else{
+          this.flujoSaldoInicial6 = 0;
+          this.flujoIngreso6 = 0;
+          this.flujoCostoProduccion6 = 0;
+          this.flujoUtilidadBruta6 = 0;
+          this.flujoCostosFijos6 = 0;
+          this.flujoUtilidadNetaCapPago6 = 0;
+          this.flujoCuota6 = 0;
+          this.flujoAcumulado6 = 0;
+        }
+        if (this.calculateRedondeoMax() >= 7) {
+          this.flujoSaldoInicial7 = this.flujoAcumulado6;
+          this.flujoIngreso7 = this.calculateFlujoTotalPeriodoIngreso();
+          this.flujoCostoProduccion7 = this.calculateFlujoTotalPeriodoCostoProduccion();
+          this.flujoUtilidadBruta7 = this.calculateFlujoTotalPeriodoIngreso() - this.calculateFlujoTotalPeriodoCostoProduccion();
+          this.flujoCostosFijos7 = this.calculateFlujoTotalPeriodoCF();
+          this.flujoUtilidadNetaCapPago7 = this.flujoUtilidadBruta7 - this.calculateFlujoTotalPeriodoCF();
+          this.flujoCuota7 = this.calculateFlujoTotalPeriodoC();
+          this.flujoAcumulado7 = (this.flujoUtilidadNetaCapPago7 - this.flujoCuota7) + this.flujoSaldoInicial7;
+        }else{
+          this.flujoSaldoInicial7 = 0;
+          this.flujoIngreso7 = 0;
+          this.flujoCostoProduccion7 = 0;
+          this.flujoUtilidadBruta7 = 0;
+          this.flujoCostosFijos7 = 0;
+          this.flujoUtilidadNetaCapPago7 = 0;
+          this.flujoCuota7 = 0;
+          this.flujoAcumulado7 = 0;
+        }
+      }else{
+        this.flujoSaldoInicial1 = 0;
+        this.flujoIngreso1 = 0;
+        this.flujoCostoProduccion1 = 0;
+        this.flujoUtilidadBruta1 = 0;
+        this.flujoCostosFijos1 = 0;
+        this.flujoUtilidadNetaCapPago1 = 0;
+        this.flujoCuota1 = 0;
+        this.flujoAcumulado1 = 0;
+      }
+    }
+    // tabla flujo 2 pronostico
+  this.flujoService.setFlujoSaldoInicial0(this.flujoSaldoInicial0);
+  this.flujoService.setFlujoSaldoInicial1(this.flujoSaldoInicial1);
+  this.flujoService.setFlujoSaldoInicial2(this.flujoSaldoInicial2);
+  this.flujoService.setFlujoSaldoInicial3(this.flujoSaldoInicial3);
+  this.flujoService.setFlujoSaldoInicial4(this.flujoSaldoInicial4);
+  this.flujoService.setFlujoSaldoInicial5(this.flujoSaldoInicial5);
+  this.flujoService.setFlujoSaldoInicial6(this.flujoSaldoInicial6);
+  this.flujoService.setFlujoSaldoInicial7(this.flujoSaldoInicial7);
+  this.flujoService.setFlujoIngreso0(this.flujoIngreso0);
+  this.flujoService.setFlujoIngreso1(this.flujoIngreso1);
+  this.flujoService.setFlujoIngreso2(this.flujoIngreso2);
+  this.flujoService.setFlujoIngreso3(this.flujoIngreso3);
+  this.flujoService.setFlujoIngreso4(this.flujoIngreso4);
+  this.flujoService.setFlujoIngreso5(this.flujoIngreso5);
+  this.flujoService.setFlujoIngreso6(this.flujoIngreso6);
+  this.flujoService.setFlujoIngreso7(this.flujoIngreso7);
+  this.flujoService.setFlujoCostoProduccion0(this.flujoCostoProduccion0);
+  this.flujoService.setFlujoCostoProduccion1(this.flujoCostoProduccion1);
+  this.flujoService.setFlujoCostoProduccion2(this.flujoCostoProduccion2);
+  this.flujoService.setFlujoCostoProduccion3(this.flujoCostoProduccion3);
+  this.flujoService.setFlujoCostoProduccion4(this.flujoCostoProduccion4);
+  this.flujoService.setFlujoCostoProduccion5(this.flujoCostoProduccion5);
+  this.flujoService.setFlujoCostoProduccion6(this.flujoCostoProduccion6);
+  this.flujoService.setFlujoCostoProduccion7(this.flujoCostoProduccion7);
+  this.flujoService.setFlujoUtilidadBruta0(this.flujoUtilidadBruta0);
+  this.flujoService.setFlujoUtilidadBruta1(this.flujoUtilidadBruta1);
+  this.flujoService.setFlujoUtilidadBruta2(this.flujoUtilidadBruta2);
+  this.flujoService.setFlujoUtilidadBruta3(this.flujoUtilidadBruta3);
+  this.flujoService.setFlujoUtilidadBruta4(this.flujoUtilidadBruta4);
+  this.flujoService.setFlujoUtilidadBruta5(this.flujoUtilidadBruta5);
+  this.flujoService.setFlujoUtilidadBruta6(this.flujoUtilidadBruta6);
+  this.flujoService.setFlujoUtilidadBruta7(this.flujoUtilidadBruta7);
+  this.flujoService.setFlujoCostosFijos0(this.flujoCostosFijos0);
+  this.flujoService.setFlujoCostosFijos1(this.flujoCostosFijos1);
+  this.flujoService.setFlujoCostosFijos2(this.flujoCostosFijos2);
+  this.flujoService.setFlujoCostosFijos3(this.flujoCostosFijos3);
+  this.flujoService.setFlujoCostosFijos4(this.flujoCostosFijos4);
+  this.flujoService.setFlujoCostosFijos5(this.flujoCostosFijos5);
+  this.flujoService.setFlujoCostosFijos6(this.flujoCostosFijos6);
+  this.flujoService.setFlujoCostosFijos7(this.flujoCostosFijos7);
+  this.flujoService.setFlujoUtilidadNetaCapPago0(this.flujoUtilidadNetaCapPago0);
+  this.flujoService.setFlujoUtilidadNetaCapPago1(this.flujoUtilidadNetaCapPago1);
+  this.flujoService.setFlujoUtilidadNetaCapPago2(this.flujoUtilidadNetaCapPago2);
+  this.flujoService.setFlujoUtilidadNetaCapPago3(this.flujoUtilidadNetaCapPago3);
+  this.flujoService.setFlujoUtilidadNetaCapPago4(this.flujoUtilidadNetaCapPago4);
+  this.flujoService.setFlujoUtilidadNetaCapPago5(this.flujoUtilidadNetaCapPago5);
+  this.flujoService.setFlujoUtilidadNetaCapPago6(this.flujoUtilidadNetaCapPago6);
+  this.flujoService.setFlujoUtilidadNetaCapPago7(this.flujoUtilidadNetaCapPago7);
+  this.flujoService.setFlujoCuota0(this.flujoCuota0);
+  this.flujoService.setFlujoCuota1(this.flujoCuota1);
+  this.flujoService.setFlujoCuota2(this.flujoCuota2);
+  this.flujoService.setFlujoCuota3(this.flujoCuota3);
+  this.flujoService.setFlujoCuota4(this.flujoCuota4);
+  this.flujoService.setFlujoCuota5(this.flujoCuota5);
+  this.flujoService.setFlujoCuota6(this.flujoCuota6);
+  this.flujoService.setFlujoCuota7(this.flujoCuota7);
+  this.flujoService.setFlujoAcumulado0(this.flujoAcumulado0);
+  this.flujoService.setFlujoAcumulado1(this.flujoAcumulado1);
+  this.flujoService.setFlujoAcumulado2(this.flujoAcumulado2);
+  this.flujoService.setFlujoAcumulado3(this.flujoAcumulado3);
+  this.flujoService.setFlujoAcumulado4(this.flujoAcumulado4);
+  this.flujoService.setFlujoAcumulado5(this.flujoAcumulado5);
+  this.flujoService.setFlujoAcumulado6(this.flujoAcumulado6);
+  this.flujoService.setFlujoAcumulado7(this.flujoAcumulado7);
+  }
+  activadorProyeccion() {
+    this.calculatePeriodoA();
+    this.buscarV();
+    this.calculatePeriodoMes();
+    this.calculateRedondeoMax();
+    this.calculateSaldoInicial();
+    this.calculateTotalAño();
+    this.calculateTotalPeriodo();
+  }
+  formatearNumero(numero: number): string {
+    if (numero === 0) {
+      return '';
+    } else {
+      const redondeo = Math.round(numero); // Redondea a 0 decimales
+      const valorAbsoluto = Math.abs(redondeo); // Valor absoluto
+
+      if (valorAbsoluto === 0) {
+        return '';
+      } else {
+        const resultado = redondeo < 0 ? `(${valorAbsoluto})` : `${valorAbsoluto}`;
+        const partes = resultado.split('.');
+        partes[0] = partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        const resultadoFormateado = partes[0];
+
+        return resultadoFormateado === 'NaN' ? '' : resultadoFormateado;
+      }
+    }
   }
 }
