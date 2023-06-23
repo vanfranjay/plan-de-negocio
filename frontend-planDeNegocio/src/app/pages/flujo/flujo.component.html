@@ -387,8 +387,12 @@
                 <br />
                 <tr>
                   <td style="width: 25%" class="border">TOTAL</td>
-                  <td style="width: 25%" class="border">{{ formatearNumero(flujoTV) }}</td>
-                  <td style="width: 25%" class="border">{{ formatearNumero(flujoTC) }}</td>
+                  <td style="width: 25%" class="border">
+                    {{ formatearNumero(flujoTV) }}
+                  </td>
+                  <td style="width: 25%" class="border">
+                    {{ formatearNumero(flujoTC) }}
+                  </td>
                   <td style="width: 25%" class="border">
                     {{ flujoTM | percent : "1.2-2" }}
                   </td>
@@ -402,15 +406,21 @@
                   <td style="width: 50%" class="border">
                     (+) INGRESOS TOTALES
                   </td>
-                  <td style="width: 50%" class="border">{{ formatearNumero(flujoTV) }}</td>
+                  <td style="width: 50%" class="border">
+                    {{ formatearNumero(flujoTV) }}
+                  </td>
                 </tr>
                 <tr>
                   <td style="width: 50%" class="border">(-) COSTOS DIRECTOS</td>
-                  <td style="width: 50%" class="border">{{ formatearNumero(flujoTC) }}</td>
+                  <td style="width: 50%" class="border">
+                    {{ formatearNumero(flujoTC) }}
+                  </td>
                 </tr>
                 <tr>
                   <td style="width: 50%" class="border">(=) UTILIDAD BRUTA</td>
-                  <td style="width: 50%" class="border">{{ formatearNumero(flujoUB) }}</td>
+                  <td style="width: 50%" class="border">
+                    {{ formatearNumero(flujoUB) }}
+                  </td>
                 </tr>
                 <tr>
                   <td style="width: 50%" class="border">(-) COSTO OPERATIVO</td>
@@ -440,7 +450,8 @@
                         asignarFrecuencia();
                         activadorProyeccion();
                         llenarTabla1Flujo();
-                        llenarTablaNro2()
+                        llenarTablaNro2();
+                        calculateVan()
                       "
                     >
                       <option value="MENSUAL">MENSUAL</option>
@@ -501,7 +512,8 @@
                         calculateDatosCredito();
                         activadorProyeccion();
                         llenarTabla1Flujo();
-                        llenarTablaNro2()
+                        llenarTablaNro2();
+                        calculateVan()
                       "
                       [(ngModel)]="flujoPlazoMeses"
                     />
@@ -522,7 +534,8 @@
                         activadorProyeccion();
                         calculateDatosCredito();
                         llenarTabla1Flujo();
-                        llenarTablaNro2()
+                        llenarTablaNro2();
+                        calculateVan()
                       "
                     >
                       <option value="CUOTA FIJA">CUOTA FIJA</option>
@@ -546,7 +559,8 @@
                         calculateDatosCredito();
                         activadorProyeccion();
                         llenarTabla1Flujo();
-                        llenarTablaNro2()
+                        llenarTablaNro2();
+                        calculateVan()
                       "
                     >
                       <option value="SERVICIOS">SERVICIOS</option>
@@ -628,7 +642,11 @@
               <select
                 class="custom-select"
                 [(ngModel)]="flujoImplementacionEstimadoMes"
-                (change)="asignarDesembolsoMes(); activadorProyeccion(); llenarTablaNro2()"
+                (change)="
+                  asignarDesembolsoMes();
+                  activadorProyeccion();
+                  llenarTablaNro2()
+                "
               >
                 <option value="ENERO">ENERO</option>
                 <option value="FEBRERO">FEBRERO</option>
@@ -649,7 +667,9 @@
                 type="number"
                 class="no-margin"
                 [(ngModel)]="tab2A"
-                (change)="asignarTab2A(); activadorProyeccion(); llenarTablaNro2()"
+                (change)="
+                  asignarTab2A(); activadorProyeccion(); llenarTablaNro2()
+                "
               />
             </td>
           </tr>
@@ -681,7 +701,9 @@
               </tr>
               <tr>
                 <td style="width: 9%" class="fl">Inversiones</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(totalPI) }}</td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(totalPI) }}
+                </td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
                 <td style="width: 7%" class="border"></td>
@@ -700,7 +722,9 @@
                 <td style="width: 7%" class="border">
                   {{ formatearNumero(flujoSaldoInicial) }}
                 </td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoAcIni) }}</td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoAcIni) }}
+                </td>
                 <td style="width: 7%" class="border">
                   {{ formatearNumero(flujoSIFeb) }}
                 </td>
@@ -979,7 +1003,9 @@
               </tr>
               <tr>
                 <td style="width: 9%" class="fl">FLUJO ACUMULADO</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoAcIni) }}</td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoAcIni) }}
+                </td>
                 <td style="width: 7%" class="border">
                   {{ formatearNumero(flujoAEne) }}
                 </td>
@@ -1081,14 +1107,30 @@
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">Ingresos</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoIngreso0) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoIngreso1) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoIngreso2) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoIngreso3) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoIngreso4) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoIngreso5) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoIngreso6) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoIngreso7) }}</td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoIngreso0) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoIngreso1) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoIngreso2) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoIngreso3) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoIngreso4) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoIngreso5) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoIngreso6) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoIngreso7) }}
+                </td>
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">Costo de Produccion</td>
@@ -1229,14 +1271,30 @@
               </tr>
               <tr>
                 <td style="width: 10%" class="fl">FLUJO ACUMULADO</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoAcumulado0) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoAcumulado1) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoAcumulado2) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoAcumulado3) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoAcumulado4) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoAcumulado5) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoAcumulado6) }}</td>
-                <td style="width: 7%" class="border">{{ formatearNumero(flujoAcumulado7) }}</td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoAcumulado0) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoAcumulado1) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoAcumulado2) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoAcumulado3) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoAcumulado4) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoAcumulado5) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoAcumulado6) }}
+                </td>
+                <td style="width: 7%" class="border">
+                  {{ formatearNumero(flujoAcumulado7) }}
+                </td>
               </tr>
             </table>
           </div>
@@ -1245,7 +1303,9 @@
         <table style="width: 40%">
           <tr>
             <td style="width: 60%" class="fl">VAN</td>
-            <td style="width: 40%" class="border"></td>
+            <td style="width: 40%" class="border">
+              {{ formatearNumero(flujoValueVan) }}
+            </td>
           </tr>
           <tr>
             <td style="width: 60%" class="fl">TIR</td>

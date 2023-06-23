@@ -299,6 +299,10 @@ export class FlujoComponent {
   flujoAcumulado6!: number;
   flujoAcumulado7!: number;
 
+  // flujo Van
+  flujoValueVan!: number;
+  flujoValueFrPaDv!: number;
+
   anioActual: number = new Date().getFullYear();
 
   constructor(
@@ -492,6 +496,12 @@ export class FlujoComponent {
     //tabla flujo
 
 
+    // datos para el van
+    this.flujoValueFrPaDv = this.flujoService.getFlujoValueFrPaDv();
+    this.flujoValueVan = this.flujoService.getFlujoValueVan();
+    //calcular TIR
+
+
     // tabla pequeña de flujo
     this.flujoImplementacionEstimadaMes = this.flujoService.getFlujoImplementacionEstimadaMes();
     this.flujoImplementacionEstimadaMesValue = this.flujoService.getFlujoImplementacionEstimadaMesValue();
@@ -550,6 +560,8 @@ export class FlujoComponent {
     this.calculateUtilidadOperativa();
     this.CalculateCostosFijosFlujoTab1();
     this.llenarTabla1Flujo();
+    this.llenarTablaNro2();
+    this.calculateVan();
   }
   CalculateCostosFijosFlujoTab1() {
     this.flujoCostosFijosTb1 = (this.costoOpTotalGasto ?? 0)
@@ -938,11 +950,13 @@ export class FlujoComponent {
   calculateDatosCredito(): number {
     if (this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses == 0) {
       this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12)) ** -(this.flujoPlazoMeses === 0 ? 1 : (this.flujoPlazoMeses ?? 1)))) - this.datosCreditoMonto;
+      //this.flujoCuotaProx = this.datosCreditoMonto*((this.calculateTasaInteres()/(360/this.asignarFrecuencia())/(1-(1+this.calculateTasaInteres()/(360/this.asignarFrecuencia()))^(-(360/this.asignarFrecuencia())*((this.flujoPlazoMeses-0)/12)))));
       this.flujoService.setFlujoCuotaProx(this.flujoCuotaProx);
       this.flujoService.setFlujoPoliza(this.flujoPoliza);
       this.flujoService.setFlujoPlazoMeses(this.flujoPlazoMeses);
     } else {
       this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12)) ** -(this.flujoPlazoMeses)));
+      //this.flujoCuotaProx = this.datosCreditoMonto*((this.calculateTasaInteres()/(360/this.asignarFrecuencia())/(1-(1+this.calculateTasaInteres()/(360/this.asignarFrecuencia()))^(-(360/this.asignarFrecuencia())*((this.flujoPlazoMeses-0)/12)))));
       this.flujoService.setFlujoCuotaProx(this.flujoCuotaProx);
       this.flujoService.setFlujoPoliza(this.flujoPoliza);
       this.flujoService.setFlujoPlazoMeses(this.flujoPlazoMeses);
@@ -1281,6 +1295,23 @@ export class FlujoComponent {
     }
     this.flujoService.setFlujoBuscarV(this.flujoBuscarV);
     return this.flujoBuscarV;
+  }
+  ValorFrecuenciaParaDividir(): number {
+    if (this.flujoFrecuencia1 == 'BIMENSUAL') {
+      this.flujoValueFrPaDv = 6;
+    } else if (this.flujoFrecuencia1 == 'TRIMESTRAL') {
+      this.flujoValueFrPaDv = 4;
+    } else if (this.flujoFrecuencia1 == 'CUATRIMESTRAL') {
+      this.flujoValueFrPaDv = 3;
+    } else if (this.flujoFrecuencia1 == 'SEMESTRAL') {
+      this.flujoValueFrPaDv = 2;
+    } else if (this.flujoFrecuencia1 == 'ANUAL') {
+      this.flujoValueFrPaDv = 1;
+    } else if (this.flujoFrecuencia1 == 'MENSUAL') {
+      this.flujoValueFrPaDv = 12;
+    }
+    this.flujoService.setFlujoValueFrPaDv(this.flujoValueFrPaDv);
+    return this.flujoValueFrPaDv;
   }
   calculatePeriodoMes(): number {
     this.flujoPeriodoMes = this.flujoPlazoMeses / this.buscarV();
@@ -1752,7 +1783,7 @@ export class FlujoComponent {
       this.flujoUtilidadNetaCapPago0 = (this.calculateFlujoTotalPeriodoIngreso() - this.calculateFlujoTotalPeriodoCostoProduccion()) - (this.calculateFlujoTotalPeriodoCF());
       this.flujoCuota0 = this.calculateFlujoTotalPeriodoC();
       this.flujoAcumulado0 = (this.flujoUtilidadNetaCapPago0 - this.calculateFlujoTotalPeriodoC()) + this.flujoSaldoInicial0;
-    }else {
+    } else {
       this.flujoSaldoInicial0 = 0;
       this.flujoIngreso0 = 0;
       this.flujoCostoProduccion0 = 0;
@@ -1782,7 +1813,7 @@ export class FlujoComponent {
           this.flujoUtilidadNetaCapPago2 = this.flujoUtilidadBruta2 - this.flujoCostosFijos2;
           this.flujoCuota2 = this.calculateFlujoTotalAnioCuota();
           this.flujoAcumulado2 = (this.flujoUtilidadNetaCapPago2 - this.flujoCuota2) + this.flujoSaldoInicial2;
-        }else{
+        } else {
           this.flujoSaldoInicial2 = 0;
           this.flujoIngreso2 = 0;
           this.flujoCostoProduccion2 = 0;
@@ -1801,7 +1832,7 @@ export class FlujoComponent {
           this.flujoUtilidadNetaCapPago3 = this.flujoUtilidadBruta3 - this.flujoCostosFijos3;
           this.flujoCuota3 = this.calculateFlujoTotalAnioCuota();
           this.flujoAcumulado3 = (this.flujoUtilidadNetaCapPago3 - this.flujoCuota3) + this.flujoSaldoInicial3;
-        }else{
+        } else {
           this.flujoSaldoInicial3 = 0;
           this.flujoIngreso3 = 0;
           this.flujoCostoProduccion3 = 0;
@@ -1820,7 +1851,7 @@ export class FlujoComponent {
           this.flujoUtilidadNetaCapPago4 = this.flujoUtilidadBruta4 - this.flujoCostosFijos4;
           this.flujoCuota4 = this.calculateFlujoTotalAnioCuota();
           this.flujoAcumulado4 = (this.flujoUtilidadNetaCapPago4 - this.flujoCuota4) + this.flujoSaldoInicial4;
-        }else{
+        } else {
           this.flujoSaldoInicial4 = 0;
           this.flujoIngreso4 = 0;
           this.flujoCostoProduccion4 = 0;
@@ -1839,7 +1870,7 @@ export class FlujoComponent {
           this.flujoUtilidadNetaCapPago5 = this.flujoUtilidadBruta5 - this.flujoCostosFijos5;
           this.flujoCuota5 = this.calculateFlujoTotalAnioCuota();
           this.flujoAcumulado5 = (this.flujoUtilidadNetaCapPago5 - this.flujoCuota5) + this.flujoSaldoInicial5;
-        }else{
+        } else {
           this.flujoSaldoInicial5 = 0;
           this.flujoIngreso5 = 0;
           this.flujoCostoProduccion5 = 0;
@@ -1858,7 +1889,7 @@ export class FlujoComponent {
           this.flujoUtilidadNetaCapPago6 = this.flujoUtilidadBruta6 - this.flujoCostosFijos6;
           this.flujoCuota6 = this.calculateFlujoTotalAnioCuota();
           this.flujoAcumulado6 = (this.flujoUtilidadNetaCapPago6 - this.flujoCuota6) + this.flujoSaldoInicial6;
-        }else{
+        } else {
           this.flujoSaldoInicial6 = 0;
           this.flujoIngreso6 = 0;
           this.flujoCostoProduccion6 = 0;
@@ -1877,7 +1908,7 @@ export class FlujoComponent {
           this.flujoUtilidadNetaCapPago7 = this.flujoUtilidadBruta7 - this.flujoCostosFijos7;
           this.flujoCuota7 = this.calculateFlujoTotalAnioCuota();
           this.flujoAcumulado7 = (this.flujoUtilidadNetaCapPago7 - this.flujoCuota7) + this.flujoSaldoInicial7;
-        }else{
+        } else {
           this.flujoSaldoInicial7 = 0;
           this.flujoIngreso7 = 0;
           this.flujoCostoProduccion7 = 0;
@@ -1905,7 +1936,7 @@ export class FlujoComponent {
           this.flujoUtilidadNetaCapPago2 = this.flujoUtilidadBruta2 - this.calculateFlujoTotalPeriodoCF();
           this.flujoCuota2 = this.calculateFlujoTotalPeriodoC();
           this.flujoAcumulado2 = (this.flujoUtilidadNetaCapPago2 - this.flujoCuota2) + this.flujoSaldoInicial2;
-        }else{
+        } else {
           this.flujoSaldoInicial2 = 0;
           this.flujoIngreso2 = 0;
           this.flujoCostoProduccion2 = 0;
@@ -1924,7 +1955,7 @@ export class FlujoComponent {
           this.flujoUtilidadNetaCapPago3 = this.flujoUtilidadBruta3 - this.calculateFlujoTotalPeriodoCF();
           this.flujoCuota3 = this.calculateFlujoTotalPeriodoC();
           this.flujoAcumulado3 = (this.flujoUtilidadNetaCapPago3 - this.flujoCuota3) + this.flujoSaldoInicial3;
-        }else{
+        } else {
           this.flujoSaldoInicial3 = 0;
           this.flujoIngreso3 = 0;
           this.flujoCostoProduccion3 = 0;
@@ -1943,7 +1974,7 @@ export class FlujoComponent {
           this.flujoUtilidadNetaCapPago4 = this.flujoUtilidadBruta4 - this.calculateFlujoTotalPeriodoCF();
           this.flujoCuota4 = this.calculateFlujoTotalPeriodoC();
           this.flujoAcumulado4 = (this.flujoUtilidadNetaCapPago4 - this.flujoCuota4) + this.flujoSaldoInicial4;
-        }else{
+        } else {
           this.flujoSaldoInicial4 = 0;
           this.flujoIngreso4 = 0;
           this.flujoCostoProduccion4 = 0;
@@ -1962,7 +1993,7 @@ export class FlujoComponent {
           this.flujoUtilidadNetaCapPago5 = this.flujoUtilidadBruta5 - this.calculateFlujoTotalPeriodoCF();
           this.flujoCuota5 = this.calculateFlujoTotalPeriodoC();
           this.flujoAcumulado5 = (this.flujoUtilidadNetaCapPago5 - this.flujoCuota5) + this.flujoSaldoInicial5;
-        }else{
+        } else {
           this.flujoSaldoInicial5 = 0;
           this.flujoIngreso5 = 0;
           this.flujoCostoProduccion5 = 0;
@@ -1981,7 +2012,7 @@ export class FlujoComponent {
           this.flujoUtilidadNetaCapPago6 = this.flujoUtilidadBruta6 - this.calculateFlujoTotalPeriodoCF();
           this.flujoCuota6 = this.calculateFlujoTotalPeriodoC();
           this.flujoAcumulado6 = (this.flujoUtilidadNetaCapPago6 - this.flujoCuota6) + this.flujoSaldoInicial6;
-        }else{
+        } else {
           this.flujoSaldoInicial6 = 0;
           this.flujoIngreso6 = 0;
           this.flujoCostoProduccion6 = 0;
@@ -2000,7 +2031,7 @@ export class FlujoComponent {
           this.flujoUtilidadNetaCapPago7 = this.flujoUtilidadBruta7 - this.calculateFlujoTotalPeriodoCF();
           this.flujoCuota7 = this.calculateFlujoTotalPeriodoC();
           this.flujoAcumulado7 = (this.flujoUtilidadNetaCapPago7 - this.flujoCuota7) + this.flujoSaldoInicial7;
-        }else{
+        } else {
           this.flujoSaldoInicial7 = 0;
           this.flujoIngreso7 = 0;
           this.flujoCostoProduccion7 = 0;
@@ -2010,7 +2041,7 @@ export class FlujoComponent {
           this.flujoCuota7 = 0;
           this.flujoAcumulado7 = 0;
         }
-      }else{
+      } else {
         this.flujoSaldoInicial1 = 0;
         this.flujoIngreso1 = 0;
         this.flujoCostoProduccion1 = 0;
@@ -2022,70 +2053,70 @@ export class FlujoComponent {
       }
     }
     // tabla flujo 2 pronostico
-  this.flujoService.setFlujoSaldoInicial0(this.flujoSaldoInicial0);
-  this.flujoService.setFlujoSaldoInicial1(this.flujoSaldoInicial1);
-  this.flujoService.setFlujoSaldoInicial2(this.flujoSaldoInicial2);
-  this.flujoService.setFlujoSaldoInicial3(this.flujoSaldoInicial3);
-  this.flujoService.setFlujoSaldoInicial4(this.flujoSaldoInicial4);
-  this.flujoService.setFlujoSaldoInicial5(this.flujoSaldoInicial5);
-  this.flujoService.setFlujoSaldoInicial6(this.flujoSaldoInicial6);
-  this.flujoService.setFlujoSaldoInicial7(this.flujoSaldoInicial7);
-  this.flujoService.setFlujoIngreso0(this.flujoIngreso0);
-  this.flujoService.setFlujoIngreso1(this.flujoIngreso1);
-  this.flujoService.setFlujoIngreso2(this.flujoIngreso2);
-  this.flujoService.setFlujoIngreso3(this.flujoIngreso3);
-  this.flujoService.setFlujoIngreso4(this.flujoIngreso4);
-  this.flujoService.setFlujoIngreso5(this.flujoIngreso5);
-  this.flujoService.setFlujoIngreso6(this.flujoIngreso6);
-  this.flujoService.setFlujoIngreso7(this.flujoIngreso7);
-  this.flujoService.setFlujoCostoProduccion0(this.flujoCostoProduccion0);
-  this.flujoService.setFlujoCostoProduccion1(this.flujoCostoProduccion1);
-  this.flujoService.setFlujoCostoProduccion2(this.flujoCostoProduccion2);
-  this.flujoService.setFlujoCostoProduccion3(this.flujoCostoProduccion3);
-  this.flujoService.setFlujoCostoProduccion4(this.flujoCostoProduccion4);
-  this.flujoService.setFlujoCostoProduccion5(this.flujoCostoProduccion5);
-  this.flujoService.setFlujoCostoProduccion6(this.flujoCostoProduccion6);
-  this.flujoService.setFlujoCostoProduccion7(this.flujoCostoProduccion7);
-  this.flujoService.setFlujoUtilidadBruta0(this.flujoUtilidadBruta0);
-  this.flujoService.setFlujoUtilidadBruta1(this.flujoUtilidadBruta1);
-  this.flujoService.setFlujoUtilidadBruta2(this.flujoUtilidadBruta2);
-  this.flujoService.setFlujoUtilidadBruta3(this.flujoUtilidadBruta3);
-  this.flujoService.setFlujoUtilidadBruta4(this.flujoUtilidadBruta4);
-  this.flujoService.setFlujoUtilidadBruta5(this.flujoUtilidadBruta5);
-  this.flujoService.setFlujoUtilidadBruta6(this.flujoUtilidadBruta6);
-  this.flujoService.setFlujoUtilidadBruta7(this.flujoUtilidadBruta7);
-  this.flujoService.setFlujoCostosFijos0(this.flujoCostosFijos0);
-  this.flujoService.setFlujoCostosFijos1(this.flujoCostosFijos1);
-  this.flujoService.setFlujoCostosFijos2(this.flujoCostosFijos2);
-  this.flujoService.setFlujoCostosFijos3(this.flujoCostosFijos3);
-  this.flujoService.setFlujoCostosFijos4(this.flujoCostosFijos4);
-  this.flujoService.setFlujoCostosFijos5(this.flujoCostosFijos5);
-  this.flujoService.setFlujoCostosFijos6(this.flujoCostosFijos6);
-  this.flujoService.setFlujoCostosFijos7(this.flujoCostosFijos7);
-  this.flujoService.setFlujoUtilidadNetaCapPago0(this.flujoUtilidadNetaCapPago0);
-  this.flujoService.setFlujoUtilidadNetaCapPago1(this.flujoUtilidadNetaCapPago1);
-  this.flujoService.setFlujoUtilidadNetaCapPago2(this.flujoUtilidadNetaCapPago2);
-  this.flujoService.setFlujoUtilidadNetaCapPago3(this.flujoUtilidadNetaCapPago3);
-  this.flujoService.setFlujoUtilidadNetaCapPago4(this.flujoUtilidadNetaCapPago4);
-  this.flujoService.setFlujoUtilidadNetaCapPago5(this.flujoUtilidadNetaCapPago5);
-  this.flujoService.setFlujoUtilidadNetaCapPago6(this.flujoUtilidadNetaCapPago6);
-  this.flujoService.setFlujoUtilidadNetaCapPago7(this.flujoUtilidadNetaCapPago7);
-  this.flujoService.setFlujoCuota0(this.flujoCuota0);
-  this.flujoService.setFlujoCuota1(this.flujoCuota1);
-  this.flujoService.setFlujoCuota2(this.flujoCuota2);
-  this.flujoService.setFlujoCuota3(this.flujoCuota3);
-  this.flujoService.setFlujoCuota4(this.flujoCuota4);
-  this.flujoService.setFlujoCuota5(this.flujoCuota5);
-  this.flujoService.setFlujoCuota6(this.flujoCuota6);
-  this.flujoService.setFlujoCuota7(this.flujoCuota7);
-  this.flujoService.setFlujoAcumulado0(this.flujoAcumulado0);
-  this.flujoService.setFlujoAcumulado1(this.flujoAcumulado1);
-  this.flujoService.setFlujoAcumulado2(this.flujoAcumulado2);
-  this.flujoService.setFlujoAcumulado3(this.flujoAcumulado3);
-  this.flujoService.setFlujoAcumulado4(this.flujoAcumulado4);
-  this.flujoService.setFlujoAcumulado5(this.flujoAcumulado5);
-  this.flujoService.setFlujoAcumulado6(this.flujoAcumulado6);
-  this.flujoService.setFlujoAcumulado7(this.flujoAcumulado7);
+    this.flujoService.setFlujoSaldoInicial0(this.flujoSaldoInicial0);
+    this.flujoService.setFlujoSaldoInicial1(this.flujoSaldoInicial1);
+    this.flujoService.setFlujoSaldoInicial2(this.flujoSaldoInicial2);
+    this.flujoService.setFlujoSaldoInicial3(this.flujoSaldoInicial3);
+    this.flujoService.setFlujoSaldoInicial4(this.flujoSaldoInicial4);
+    this.flujoService.setFlujoSaldoInicial5(this.flujoSaldoInicial5);
+    this.flujoService.setFlujoSaldoInicial6(this.flujoSaldoInicial6);
+    this.flujoService.setFlujoSaldoInicial7(this.flujoSaldoInicial7);
+    this.flujoService.setFlujoIngreso0(this.flujoIngreso0);
+    this.flujoService.setFlujoIngreso1(this.flujoIngreso1);
+    this.flujoService.setFlujoIngreso2(this.flujoIngreso2);
+    this.flujoService.setFlujoIngreso3(this.flujoIngreso3);
+    this.flujoService.setFlujoIngreso4(this.flujoIngreso4);
+    this.flujoService.setFlujoIngreso5(this.flujoIngreso5);
+    this.flujoService.setFlujoIngreso6(this.flujoIngreso6);
+    this.flujoService.setFlujoIngreso7(this.flujoIngreso7);
+    this.flujoService.setFlujoCostoProduccion0(this.flujoCostoProduccion0);
+    this.flujoService.setFlujoCostoProduccion1(this.flujoCostoProduccion1);
+    this.flujoService.setFlujoCostoProduccion2(this.flujoCostoProduccion2);
+    this.flujoService.setFlujoCostoProduccion3(this.flujoCostoProduccion3);
+    this.flujoService.setFlujoCostoProduccion4(this.flujoCostoProduccion4);
+    this.flujoService.setFlujoCostoProduccion5(this.flujoCostoProduccion5);
+    this.flujoService.setFlujoCostoProduccion6(this.flujoCostoProduccion6);
+    this.flujoService.setFlujoCostoProduccion7(this.flujoCostoProduccion7);
+    this.flujoService.setFlujoUtilidadBruta0(this.flujoUtilidadBruta0);
+    this.flujoService.setFlujoUtilidadBruta1(this.flujoUtilidadBruta1);
+    this.flujoService.setFlujoUtilidadBruta2(this.flujoUtilidadBruta2);
+    this.flujoService.setFlujoUtilidadBruta3(this.flujoUtilidadBruta3);
+    this.flujoService.setFlujoUtilidadBruta4(this.flujoUtilidadBruta4);
+    this.flujoService.setFlujoUtilidadBruta5(this.flujoUtilidadBruta5);
+    this.flujoService.setFlujoUtilidadBruta6(this.flujoUtilidadBruta6);
+    this.flujoService.setFlujoUtilidadBruta7(this.flujoUtilidadBruta7);
+    this.flujoService.setFlujoCostosFijos0(this.flujoCostosFijos0);
+    this.flujoService.setFlujoCostosFijos1(this.flujoCostosFijos1);
+    this.flujoService.setFlujoCostosFijos2(this.flujoCostosFijos2);
+    this.flujoService.setFlujoCostosFijos3(this.flujoCostosFijos3);
+    this.flujoService.setFlujoCostosFijos4(this.flujoCostosFijos4);
+    this.flujoService.setFlujoCostosFijos5(this.flujoCostosFijos5);
+    this.flujoService.setFlujoCostosFijos6(this.flujoCostosFijos6);
+    this.flujoService.setFlujoCostosFijos7(this.flujoCostosFijos7);
+    this.flujoService.setFlujoUtilidadNetaCapPago0(this.flujoUtilidadNetaCapPago0);
+    this.flujoService.setFlujoUtilidadNetaCapPago1(this.flujoUtilidadNetaCapPago1);
+    this.flujoService.setFlujoUtilidadNetaCapPago2(this.flujoUtilidadNetaCapPago2);
+    this.flujoService.setFlujoUtilidadNetaCapPago3(this.flujoUtilidadNetaCapPago3);
+    this.flujoService.setFlujoUtilidadNetaCapPago4(this.flujoUtilidadNetaCapPago4);
+    this.flujoService.setFlujoUtilidadNetaCapPago5(this.flujoUtilidadNetaCapPago5);
+    this.flujoService.setFlujoUtilidadNetaCapPago6(this.flujoUtilidadNetaCapPago6);
+    this.flujoService.setFlujoUtilidadNetaCapPago7(this.flujoUtilidadNetaCapPago7);
+    this.flujoService.setFlujoCuota0(this.flujoCuota0);
+    this.flujoService.setFlujoCuota1(this.flujoCuota1);
+    this.flujoService.setFlujoCuota2(this.flujoCuota2);
+    this.flujoService.setFlujoCuota3(this.flujoCuota3);
+    this.flujoService.setFlujoCuota4(this.flujoCuota4);
+    this.flujoService.setFlujoCuota5(this.flujoCuota5);
+    this.flujoService.setFlujoCuota6(this.flujoCuota6);
+    this.flujoService.setFlujoCuota7(this.flujoCuota7);
+    this.flujoService.setFlujoAcumulado0(this.flujoAcumulado0);
+    this.flujoService.setFlujoAcumulado1(this.flujoAcumulado1);
+    this.flujoService.setFlujoAcumulado2(this.flujoAcumulado2);
+    this.flujoService.setFlujoAcumulado3(this.flujoAcumulado3);
+    this.flujoService.setFlujoAcumulado4(this.flujoAcumulado4);
+    this.flujoService.setFlujoAcumulado5(this.flujoAcumulado5);
+    this.flujoService.setFlujoAcumulado6(this.flujoAcumulado6);
+    this.flujoService.setFlujoAcumulado7(this.flujoAcumulado7);
   }
   activadorProyeccion() {
     this.calculatePeriodoA();
@@ -2095,6 +2126,21 @@ export class FlujoComponent {
     this.calculateSaldoInicial();
     this.calculateTotalAño();
     this.calculateTotalPeriodo();
+  }
+  calculateVan() {
+    this.flujoValueVan = this.calcularMontoFinanciar() * (-1);
+    const periodoMes = Math.floor(this.calculatePeriodoMes());
+    const valueDividioTotalFA = ((isNaN(this.flujoADiv) ? 0 : this.flujoADiv) / this.ValorFrecuenciaParaDividir()); // valor que resulta de la division del fluo acumulado total año
+
+    if (periodoMes == 0) {
+      this.flujoValueVan = this.flujoValueVan;
+    } else {
+      for (let index = 1; index <= periodoMes; index++) {
+        const value = this.flujoValueVan;
+        this.flujoValueVan = value + ((valueDividioTotalFA) / ((1 + ((this.calculateTasaInteres()) / this.ValorFrecuenciaParaDividir())) ** (index)))
+      }
+    }
+    this.flujoService.setFlujoValueVan(this.flujoValueVan);
   }
   formatearNumero(numero: number): string {
     if (numero === 0) {

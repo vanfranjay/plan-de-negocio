@@ -6,6 +6,20 @@ import { Injectable } from '@angular/core';
 export class FlujoService {
 
   constructor() { }
+  private flujoValueVan!: number;
+  public getFlujoValueVan(): number {
+    return this.flujoValueVan;
+  }
+  public setFlujoValueVan(value: number) {
+    this.flujoValueVan = value;
+  }
+  private flujoValueFrPaDv!: number;
+  public getFlujoValueFrPaDv(): number {
+    return this.flujoValueFrPaDv;
+  }
+  public setFlujoValueFrPaDv(value: number) {
+    this.flujoValueFrPaDv = value;
+  }
   // tabla flujo 2 pronostico
   private flujoSaldoInicial0!: number;
   public getFlujoSaldoInicial0(): number {
