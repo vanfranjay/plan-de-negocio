@@ -6,6 +6,20 @@ import { Injectable } from '@angular/core';
 export class FlujoService {
 
   constructor() { }
+  private interesAX15PL!: number;
+  public getInteresAX15PL(): number {
+    return this.interesAX15PL;
+  }
+  public setInteresAX15PL(value: number) {
+    this.interesAX15PL = value;
+  }
+  private condicionalCuotaFija!: number;
+  public getCondicionalCuotaFija(): number {
+    return this.condicionalCuotaFija;
+  }
+  public setCondicionalCuotaFija(value: number) {
+    this.condicionalCuotaFija = value;
+  }
   private flujoValueVan!: number;
   public getFlujoValueVan(): number {
     return this.flujoValueVan;
