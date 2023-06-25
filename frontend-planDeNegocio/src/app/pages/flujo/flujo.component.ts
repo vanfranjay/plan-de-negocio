@@ -1345,13 +1345,11 @@ export class FlujoComponent {
     const enteroAbsoluto = Math.ceil(Math.abs(this.flujoRedondeoMax));
     this.flujoRedondeoMax= enteroAbsoluto * signo;
     this.flujoService.setFlujoRedondeoMax(this.flujoRedondeoMax);
-    console.log('el redondeo max es: ' + this.flujoRedondeoMax);
     return this.flujoRedondeoMax;
   }
   calculatePeriodoA(): number {
     this.flujoPeriodoA = this.asignarTab2A() + this.calculateRedondeoMax();
     this.flujoService.setFlujoPeriodoA(this.flujoPeriodoA);
-    console.log('desde el periodo es: ' + this.flujoPeriodoA)
     return this.flujoPeriodoA;
   }
   buscarV(): number {
@@ -2286,36 +2284,40 @@ export class FlujoComponent {
     const periodoMes = Math.floor(this.calculatePeriodoMes());
     const valueDividioTotalFA = ((isNaN(this.flujoADiv) ? 0 : this.flujoADiv) / this.ValorFrecuenciaParaDividir()); // valor que resulta de la division del fluo acumulado total año
     var indexCounter = 1;
-    var posibleTir = 1;
+    var posibleTir = Number((0.01).toFixed(2));
     var variable1;
     var value1;
     var variable2;
     var value2;
-    var counterItereaciones = 0;
+    //var counterItereaciones = 0;
     if (periodoMes == 0) {
       this.flujoValueVan = valorVanManager;
     } else {
       for (let index = 1; index <= periodoMes; index++) {         // valorVanManager se cambio antes era this.flujoValueVan
         const value = valorVanManager;
-        valorVanManager = value + ((valueDividioTotalFA) / ((1 + (posibleTir)) ** (index)))
+        valorVanManager = value + ((valueDividioTotalFA) / ((1 + (posibleTir/12)) ** (index)))
       }
-      this.resultadoVanTir[0] = valorVanManager;
-      posibleTir = 2;
-      do {
+      this.resultadoVanTir[indexCounter] = valorVanManager;
+      posibleTir = Number((0.02).toFixed(2));
+      indexCounter = 2;
+
+      while (this.resultadoVanTir[indexCounter - 1] > 0 ) {
         for (let index = 1; index <= periodoMes; index++) {
           const value = valorVanManager;
-          valorVanManager = value + ((valueDividioTotalFA) / ((1 + (posibleTir)) ** (index)))
+          valorVanManager = value + ((valueDividioTotalFA) / ((1 + (posibleTir/12)) ** (index)))
         }
         this.resultadoVanTir[indexCounter] = valorVanManager;
+        valorVanManager = this.calcularMontoFinanciar() * (-1);
         indexCounter = indexCounter + 1;
-        posibleTir = posibleTir + 1;
-        counterItereaciones += 1;
-      } while (this.resultadoVanTir[indexCounter - 1] > 0 || counterItereaciones == 100);
-      variable1 = posibleTir - 2;
+        posibleTir = Number((posibleTir + 0.01).toFixed(2));
+      }
+
+      variable1 = posibleTir - Number((0.02).toFixed(2));
       value1 = this.resultadoVanTir[indexCounter - 2];
-      variable2 = posibleTir - 1;
+      variable2 = posibleTir - Number((0.01).toFixed(2));
       value2 = this.resultadoVanTir[indexCounter - 1];
       this.flujoValueTir = this.interpolacionLineal(variable1, value1, variable2, value2);
+      //console.log('variable 1: '+variable1+' value 1: '+value1+ 'variable 2: '+variable2+' value 2: '+value2+' indes counter: '+indexCounter+' valor: '+this.resultadoVanTir[indexCounter-1]);
     }
     return this.flujoValueTir;
   }
@@ -2328,6 +2330,7 @@ export class FlujoComponent {
 
     i = (((variable2 - variable1) / (value1 - value2)) * (value1)) + variable1;
     resultado = i;
+    console.log('resultado de la interpolación: '+resultado)
     return resultado;
   }
   calcularTir() {
