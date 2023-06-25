@@ -44,6 +44,7 @@
 @media (max-width: 599px) {
   .text__mobil{
     font-size: 10px;
+    line-height: 10px;
   }
 }
 @media (max-width: 599px){
@@ -54,6 +55,7 @@
 @media (max-width: 450px){
   .text__mobil{
     font-size: 10px;
+    line-height: 10px;
   }
 }
 .table{
@@ -144,6 +146,21 @@
 }
 .border-right{
   border-right: 1px solid #000;
+}
+.border1{
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  justify-content: left;
+  align-items: center;
+  font-weight: bold;
+  padding-top: 16px;
+}
+.border2{
+  border-left: 1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  
 }
 .text-center{
   text-align: center;
