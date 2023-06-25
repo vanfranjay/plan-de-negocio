@@ -6,6 +6,13 @@ import { Injectable } from '@angular/core';
 export class FlujoService {
 
   constructor() { }
+  private flujoValueTir!: number;
+  public getFlujoValueTir(): number {
+    return this.flujoValueTir;
+  }
+  public setFlujoValueTir(value: number) {
+    this.flujoValueTir = value;
+  }
   private interesAX15PL!: number;
   public getInteresAX15PL(): number {
     return this.interesAX15PL;

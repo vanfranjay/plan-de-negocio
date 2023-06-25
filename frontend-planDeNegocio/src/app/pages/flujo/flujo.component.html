@@ -451,7 +451,8 @@
                         activadorProyeccion();
                         llenarTabla1Flujo();
                         llenarTablaNro2();
-                        calculateVan()
+                        calculateVan();
+                        calcularTir()
                       "
                     >
                       <option value="MENSUAL">MENSUAL</option>
@@ -513,7 +514,8 @@
                         activadorProyeccion();
                         llenarTabla1Flujo();
                         llenarTablaNro2();
-                        calculateVan()
+                        calculateVan();
+                        calcularTir()
                       "
                       [(ngModel)]="flujoPlazoMeses"
                     />
@@ -535,7 +537,8 @@
                         calculateDatosCredito();
                         llenarTabla1Flujo();
                         llenarTablaNro2();
-                        calculateVan()
+                        calculateVan();
+                        calcularTir()
                       "
                     >
                       <option value="CUOTA FIJA">CUOTA FIJA</option>
@@ -560,7 +563,8 @@
                         activadorProyeccion();
                         llenarTabla1Flujo();
                         llenarTablaNro2();
-                        calculateVan()
+                        calculateVan();
+                        calcularTir()
                       "
                     >
                       <option value="SERVICIOS">SERVICIOS</option>
@@ -1309,7 +1313,7 @@
           </tr>
           <tr>
             <td style="width: 60%" class="fl">TIR</td>
-            <td style="width: 40%" class="border"></td>
+            <td style="width: 40%" class="border">{{flujoValueTir}}</td>
           </tr>
         </table>
       </div>
