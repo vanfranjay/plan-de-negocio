@@ -510,6 +510,7 @@
                       class="input-container"
                       placeholder="max 84"
                       (change)="
+                        obtenerPlazoMeses();
                         calculateDatosCredito();
                         activadorProyeccion();
                         llenarTabla1Flujo();
@@ -1313,7 +1314,7 @@
           </tr>
           <tr>
             <td style="width: 60%" class="fl">TIR</td>
-            <td style="width: 40%" class="border">{{flujoValueTir}}</td>
+            <td style="width: 40%" class="border">{{flujoValueTir | percent:'1.2-2' }}</td>
           </tr>
         </table>
       </div>

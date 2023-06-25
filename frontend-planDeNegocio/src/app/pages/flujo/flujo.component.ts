@@ -690,14 +690,14 @@ export class FlujoComponent {
     this.flujoUNCdPFeb = (this.flujoUBFeb ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
     if (this.flujoFrecuencia1 == 'MENSUAL') {
       if (this.asignarTipoCuota() == 'CUOTA FIJA') {
-        if (1 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCFeb = this.calculateDatosCredito() + ((isNaN(resultadoArray[1]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[1]);
+        if (1 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCFeb = this.calculateDatosCredito() + ((isNaN(resultadoArray[1]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[1]);
         } else {
           this.flujoCFeb = 0;
         }
       } else if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
-        if (1 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCFeb = resultadoCuotaVariable[1] + ((isNaN(resultadoArray[1]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[1]);
+        if (1 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCFeb = resultadoCuotaVariable[1] + ((isNaN(resultadoArray[1]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[1]);
         } else {
           this.flujoCFeb = 0;
         }
@@ -718,14 +718,14 @@ export class FlujoComponent {
     this.flujoUNCdPMar = (this.flujoUBMar ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
     if (this.flujoFrecuencia1 == 'MENSUAL') {
       if (this.asignarTipoCuota() == 'CUOTA FIJA') {
-        if (2 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCMar = this.calculateDatosCredito() + ((isNaN(resultadoArray[2]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[2]);
+        if (2 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCMar = this.calculateDatosCredito() + ((isNaN(resultadoArray[2]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[2]);
         } else {
           this.flujoCMar = 0;
         }
       } else if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
-        if (2 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCMar = resultadoCuotaVariable[2] + ((isNaN(resultadoArray[2]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[2]);
+        if (2 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCMar = resultadoCuotaVariable[2] + ((isNaN(resultadoArray[2]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[2]);
         } else {
           this.flujoCMar = 0;
         }
@@ -746,14 +746,14 @@ export class FlujoComponent {
     this.flujoUNCdPAbr = (this.flujoUBAbr ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
     if (this.flujoFrecuencia1 == 'MENSUAL') {
       if (this.asignarTipoCuota() == 'CUOTA FIJA') {
-        if (3 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCAbr = this.calculateDatosCredito() + ((isNaN(resultadoArray[3]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[3]);
+        if (3 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCAbr = this.calculateDatosCredito() + ((isNaN(resultadoArray[3]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[3]);
         } else {
           this.flujoCAbr = 0;
         }
       } else if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
-        if (3 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCAbr = resultadoCuotaVariable[3] + ((isNaN(resultadoArray[3]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[3]);
+        if (3 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCAbr = resultadoCuotaVariable[3] + ((isNaN(resultadoArray[3]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[3]);
         } else {
           this.flujoCAbr = 0;
         }
@@ -774,14 +774,14 @@ export class FlujoComponent {
     this.flujoUNCdPMay = (this.flujoUBMay ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
     if (this.flujoFrecuencia1 == 'MENSUAL') {
       if (this.asignarTipoCuota() == 'CUOTA FIJA') {
-        if (4 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCMay = this.calculateDatosCredito() + ((isNaN(resultadoArray[4]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[4]);
+        if (4 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCMay = this.calculateDatosCredito() + ((isNaN(resultadoArray[4]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[4]);
         } else {
           this.flujoCMay = 0;
         }
       } else if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
-        if (4 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCMay = resultadoCuotaVariable[4] + ((isNaN(resultadoArray[4]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[4]);
+        if (4 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCMay = resultadoCuotaVariable[4] + ((isNaN(resultadoArray[4]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[4]);
         } else {
           this.flujoCMay = 0;
         }
@@ -802,14 +802,14 @@ export class FlujoComponent {
     this.flujoUNCdPJun = (this.flujoUBJun ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
     if (this.flujoFrecuencia1 == 'MENSUAL') {
       if (this.asignarTipoCuota() == 'CUOTA FIJA') {
-        if (5 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCJun = this.calculateDatosCredito() + ((isNaN(resultadoArray[5]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[5]);
+        if (5 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCJun = this.calculateDatosCredito() + ((isNaN(resultadoArray[5]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[5]);
         } else {
           this.flujoCJun = 0;
         }
       } else if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
-        if (5 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCJun = resultadoCuotaVariable[5] + ((isNaN(resultadoArray[5]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[5]);
+        if (5 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCJun = resultadoCuotaVariable[5] + ((isNaN(resultadoArray[5]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[5]);
         } else {
           this.flujoCJun = 0;
         }
@@ -830,14 +830,14 @@ export class FlujoComponent {
     this.flujoUNCdPJul = (this.flujoUBJul ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
     if (this.flujoFrecuencia1 == 'MENSUAL') {
       if (this.asignarTipoCuota() == 'CUOTA FIJA') {
-        if (6 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCJul = this.calculateDatosCredito() + ((isNaN(resultadoArray[6]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[6]);
+        if (6 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCJul = this.calculateDatosCredito() + ((isNaN(resultadoArray[6]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[6]);
         } else {
           this.flujoCJul = 0;
         }
       } else if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
-        if (6 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCJul = resultadoCuotaVariable[6] + ((isNaN(resultadoArray[6]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[6]);
+        if (6 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCJul = resultadoCuotaVariable[6] + ((isNaN(resultadoArray[6]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[6]);
         } else {
           this.flujoCJul = 0;
         }
@@ -858,14 +858,14 @@ export class FlujoComponent {
     this.flujoUNCdPAgo = (this.flujoUBAgo ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
     if (this.flujoFrecuencia1 == 'MENSUAL') {
       if (this.asignarTipoCuota() == 'CUOTA FIJA') {
-        if (7 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCAgo = this.calculateDatosCredito() + ((isNaN(resultadoArray[7]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[7]);
+        if (7 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCAgo = this.calculateDatosCredito() + ((isNaN(resultadoArray[7]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[7]);
         } else {
           this.flujoCAgo = 0;
         }
       } else if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
-        if (7 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCAgo = resultadoCuotaVariable[7] + ((isNaN(resultadoArray[7]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[7]);
+        if (7 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCAgo = resultadoCuotaVariable[7] + ((isNaN(resultadoArray[7]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[7]);
         } else {
           this.flujoCAgo = 0;
         }
@@ -886,14 +886,14 @@ export class FlujoComponent {
     this.flujoUNCdPSep = (this.flujoUBSep ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
     if (this.flujoFrecuencia1 == 'MENSUAL') {
       if (this.asignarTipoCuota() == 'CUOTA FIJA') {
-        if (8 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCSep = this.calculateDatosCredito() + ((isNaN(resultadoArray[8]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[8]);
+        if (8 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCSep = this.calculateDatosCredito() + ((isNaN(resultadoArray[8]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[8]);
         } else {
           this.flujoCSep = 0;
         }
       } else if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
-        if (8 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCSep = resultadoCuotaVariable[8] + ((isNaN(resultadoArray[8]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[8]);
+        if (8 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCSep = resultadoCuotaVariable[8] + ((isNaN(resultadoArray[8]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[8]);
         } else {
           this.flujoCSep = 0;
         }
@@ -914,14 +914,14 @@ export class FlujoComponent {
     this.flujoUNCdPOct = (this.flujoUBOct ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
     if (this.flujoFrecuencia1 == 'MENSUAL') {
       if (this.asignarTipoCuota() == 'CUOTA FIJA') {
-        if (9 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCOct = this.calculateDatosCredito() + ((isNaN(resultadoArray[9]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[9]);
+        if (9 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCOct = this.calculateDatosCredito() + ((isNaN(resultadoArray[9]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[9]);
         } else {
           this.flujoCOct = 0;
         }
       } else if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
-        if (9 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCOct = resultadoCuotaVariable[9] + ((isNaN(resultadoArray[9]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[9]);
+        if (9 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCOct = resultadoCuotaVariable[9] + ((isNaN(resultadoArray[9]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[9]);
         } else {
           this.flujoCOct = 0;
         }
@@ -942,14 +942,14 @@ export class FlujoComponent {
     this.flujoUNCdPNov = (this.flujoUBNov ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
     if (this.flujoFrecuencia1 == 'MENSUAL') {
       if (this.asignarTipoCuota() == 'CUOTA FIJA') {
-        if (10 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCNov = this.calculateDatosCredito() + ((isNaN(resultadoArray[10]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[10]);
+        if (10 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCNov = this.calculateDatosCredito() + ((isNaN(resultadoArray[10]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[10]);
         } else {
           this.flujoCNov = 0;
         }
       } else if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
-        if (10 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCNov = resultadoCuotaVariable[10] + ((isNaN(resultadoArray[10]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[10]);
+        if (10 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCNov = resultadoCuotaVariable[10] + ((isNaN(resultadoArray[10]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[10]);
         } else {
           this.flujoCNov = 0;
         }
@@ -970,14 +970,14 @@ export class FlujoComponent {
     this.flujoUNCdPDiv = (this.flujoUBDiv ?? 0) - (this.flujoCostosFijosTb1 ?? 0);
     if (this.flujoFrecuencia1 == 'MENSUAL') {
       if (this.asignarTipoCuota() == 'CUOTA FIJA') {
-        if (11 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCDiv = this.calculateDatosCredito() + ((isNaN(resultadoArray[11]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[11]);
+        if (11 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCDiv = this.calculateDatosCredito() + ((isNaN(resultadoArray[11]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[11]);
         } else {
           this.flujoCDiv = 0;
         }
       } else if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
-        if (11 < this.flujoPlazoMeses || this.flujoPlazoMeses === 0 || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
-          this.flujoCDiv = resultadoCuotaVariable[11] + ((isNaN(resultadoArray[11]) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses === 0) ? this.calculatePoliza() : resultadoArray[11]);
+        if (11 < this.obtenerPlazoMeses() || this.obtenerPlazoMeses() === 0 || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) {
+          this.flujoCDiv = resultadoCuotaVariable[11] + ((isNaN(resultadoArray[11]) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() === 0) ? this.calculatePoliza() : resultadoArray[11]);
         } else {
           this.flujoCDiv = 0;
         }
@@ -1010,24 +1010,23 @@ export class FlujoComponent {
     return this.interesAX15PL;
   }
   calculateDatosCredito(): number {
-    this.condicionalCuotaFija = ((360 / this.asignarFrecuencia()) * (this.flujoPlazoMeses / 12));
-    if (this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses == 0) {
-      this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12)) ** -(this.flujoPlazoMeses === 0 ? 1 : (this.flujoPlazoMeses ?? 1)))) - this.datosCreditoMonto;
-      //this.flujoCuotaProx = this.datosCreditoMonto*((this.calculateTasaInteres()/(360/this.asignarFrecuencia())/(1-(1+this.calculateTasaInteres()/(360/this.asignarFrecuencia()))^(-(360/this.asignarFrecuencia())*((this.flujoPlazoMeses-0)/12)))));
+    this.condicionalCuotaFija = ((360 / this.asignarFrecuencia()) * (this.obtenerPlazoMeses() / 12));
+    if (this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() == 0) {
+      this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12)) ** -(this.obtenerPlazoMeses() === 0 ? 1 : (this.obtenerPlazoMeses() ?? 1)))) - this.datosCreditoMonto;
+      //this.flujoCuotaProx = this.datosCreditoMonto*((this.calculateTasaInteres()/(360/this.asignarFrecuencia())/(1-(1+this.calculateTasaInteres()/(360/this.asignarFrecuencia()))^(-(360/this.asignarFrecuencia())*((this.obtenerPlazoMeses()-0)/12)))));
     } else {
       if (this.condicionalCuotaFija < 1) {   // El 1 cambiarlo mmientras por Nro Cuota
         this.flujoCuotaProx = this.calculateInteres();
       } else {
-        //this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12)) ** -(this.flujoPlazoMeses)));
-        this.flujoCuotaProx = this.datosCreditoMonto * ((this.calculateTasaInteres() / (360 / this.asignarFrecuencia()) / (1 - (1 + this.calculateTasaInteres() / (360 / this.asignarFrecuencia())) ** (-(360 / this.asignarFrecuencia()) * ((this.flujoPlazoMeses - 0) / 12)))));
+        //this.flujoCuotaProx = ((this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - (1 + (this.calculateTasaInteres() / 12)) ** -(this.obtenerPlazoMeses())));
+        this.flujoCuotaProx = this.datosCreditoMonto * ((this.calculateTasaInteres() / (360 / this.asignarFrecuencia()) / (1 - (1 + this.calculateTasaInteres() / (360 / this.asignarFrecuencia())) ** (-(360 / this.asignarFrecuencia()) * ((this.obtenerPlazoMeses() - 0) / 12)))));
       }
     }
     //this.flujoCuotaProx = (this.datosCreditoMonto * (this.calculateTasaInteres() / 12)) / (1 - Math.pow(1 + (this.calculateTasaInteres() / 12), -1));
-    //this.flujoDatosCredito = this.flujoCuotaProx + this.calculatePoliza(+this.flujoPoliza); ** ((-this.flujoPlazoMeses) ?? 1)
+    //this.flujoDatosCredito = this.flujoCuotaProx + this.calculatePoliza(+this.flujoPoliza); ** ((-this.obtenerPlazoMeses()) ?? 1)
     this.flujoService.setCondicionalCuotaFija(this.condicionalCuotaFija);
     this.flujoService.setFlujoCuotaProx(this.flujoCuotaProx);
     this.flujoService.setFlujoPoliza(this.flujoPoliza);
-    this.flujoService.setFlujoPlazoMeses(this.flujoPlazoMeses);
     return this.flujoCuotaProx;
   }
   mostrarCuotaProx() {
@@ -1048,14 +1047,14 @@ export class FlujoComponent {
     var poliza = 0;
     var cuotaCredito = 0;
     const valuePoliza = ((this.flujoPoliza / 1000) * 12);
-    const valor = (isNaN(this.flujoPlazoMeses) ? 0 : this.flujoPlazoMeses);
-    if (this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined || this.flujoPlazoMeses == 0) {
+    const valor = (isNaN(this.obtenerPlazoMeses()) ? 0 : this.obtenerPlazoMeses());
+    if (this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined || this.obtenerPlazoMeses() == 0) {
       for (let index = 0; index < 16; index++) {
         interes = ((this.calculateTasaInteres() * saldoCapital) / (360 / this.asignarFrecuencia()));
         this.flujoCuotaVariable[index] = interes;
       }
     } else {
-      amortizacion = saldoCapital / this.flujoPlazoMeses;
+      amortizacion = saldoCapital / this.obtenerPlazoMeses();
       for (let index = 0; index < valor; index++) {
         interes = ((this.calculateTasaInteres() * saldoCapital) / (360 / this.asignarFrecuencia()));
         cuotaCredito = (amortizacion + interes);
@@ -1087,7 +1086,7 @@ export class FlujoComponent {
     var interes = 0;
     var amortizacion = 0;
     var poliza = 0;
-    const valor = (isNaN(this.flujoPlazoMeses) ? 0 : this.flujoPlazoMeses);
+    const valor = (isNaN(this.obtenerPlazoMeses()) ? 0 : this.obtenerPlazoMeses());
     const valuePoliza = ((this.flujoPoliza / 1000) * 12);
     for (let index = 1; index < valor; index++) {
       interes = ((this.calculateTasaInteres() * saldoCapital) / (360 / this.asignarFrecuencia()));
@@ -1335,7 +1334,7 @@ export class FlujoComponent {
     return this.flujoImplementacionEstimadoMesValue;
   }
   calculateRedondeoMax(): number {
-    this.flujoRedondeoMax = (((isNaN(this.flujoPlazoMeses) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) ? 0 : this.flujoPlazoMeses) - this.asignarDesembolsoMes()) / 12;
+    this.flujoRedondeoMax = (((isNaN(this.obtenerPlazoMeses()) || this.obtenerPlazoMeses() == null || this.obtenerPlazoMeses() == undefined) ? 0 : this.obtenerPlazoMeses()) - this.asignarDesembolsoMes()) / 12;
     // if (this.flujoRedondeoMax > 0) {
     //   this.flujoRedondeoMax = Math.ceil(this.flujoRedondeoMax);
     // } else {
@@ -1386,8 +1385,20 @@ export class FlujoComponent {
     this.flujoService.setFlujoValueFrPaDv(this.flujoValueFrPaDv);
     return this.flujoValueFrPaDv;
   }
-  calculatePeriodoMes(): number {
-    this.flujoPeriodoMes = this.flujoPlazoMeses / this.buscarV();
+  obtenerPlazoMeses(): number{
+    var plazoMeses;
+    if (this.flujoPlazoMeses <= 84 && this.flujoPlazoMeses >= 0 || isNaN(this.flujoPlazoMeses) || this.flujoPlazoMeses == null || this.flujoPlazoMeses == undefined) {
+      this.flujoPlazoMeses = this.flujoPlazoMeses;
+    } else if (this.flujoPlazoMeses < 0) {
+      this.flujoPlazoMeses = this.flujoPlazoMeses *(-1);
+    } else {
+      this.flujoPlazoMeses = 84;
+    }
+    this.flujoService.setFlujoPlazoMeses(this.flujoPlazoMeses);
+    return this.flujoPlazoMeses;
+  }
+  calculatePeriodoMes(): number {     // controlador de cantidad de Periodo Mes
+    this.flujoPeriodoMes = this.obtenerPlazoMeses() / this.buscarV();
     this.flujoService.setFlujoPeriodoMes(this.flujoPeriodoMes);
     return this.flujoPeriodoMes;
   }
@@ -2295,7 +2306,7 @@ export class FlujoComponent {
     } else {
       for (let index = 1; index <= periodoMes; index++) {         // valorVanManager se cambio antes era this.flujoValueVan
         const value = valorVanManager;
-        valorVanManager = value + ((valueDividioTotalFA) / ((1 + (posibleTir/12)) ** (index)))
+        valorVanManager = value + ((valueDividioTotalFA) / ((1 + (posibleTir/this.ValorFrecuenciaParaDividir())) ** (index)))
       }
       this.resultadoVanTir[indexCounter] = valorVanManager;
       posibleTir = Number((0.02).toFixed(2));
@@ -2304,7 +2315,7 @@ export class FlujoComponent {
       while (this.resultadoVanTir[indexCounter - 1] > 0 ) {
         for (let index = 1; index <= periodoMes; index++) {
           const value = valorVanManager;
-          valorVanManager = value + ((valueDividioTotalFA) / ((1 + (posibleTir/12)) ** (index)))
+          valorVanManager = value + ((valueDividioTotalFA) / ((1 + (posibleTir/this.ValorFrecuenciaParaDividir())) ** (index)))
         }
         this.resultadoVanTir[indexCounter] = valorVanManager;
         valorVanManager = this.calcularMontoFinanciar() * (-1);
