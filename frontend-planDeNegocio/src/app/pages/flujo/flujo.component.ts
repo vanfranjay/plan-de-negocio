@@ -1200,9 +1200,9 @@ export class FlujoComponent {
     if (breakpoints[Breakpoints.XSmall]) {
       return 1; // Pantallas extra pequeñas, 1 columna
     } else if (breakpoints[Breakpoints.Small]) {
-      return 2; // Pantallas pequeñas, 2 columnas
+      return 1; // Pantallas pequeñas, 2 columnas
     } else if (breakpoints[Breakpoints.Medium]) {
-      return 3; // Pantallas medianas, 3 columnas
+      return 2; // Pantallas medianas, 3 columnas
     } else {
       return 3; // Por defecto, 4 columnas
     }
