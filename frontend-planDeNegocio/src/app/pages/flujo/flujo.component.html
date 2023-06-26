@@ -496,11 +496,7 @@
                       [(ngModel)]="datosCreditoMonto"
                       (change)="(calculateDatosCredito)"
                     >
-                      {{
-                        datosCreditoMonto >= 0
-                          ? "bs. " + datosCreditoMonto
-                          : "(" + datosCreditoMonto * -1 + ")"
-                      }}
+                      {{ formatearNumero(datosCreditoMonto) }}
                     </output>
                   </td>
                   <td style="width: 15%">Plazo (meses)</td>
@@ -1314,7 +1310,9 @@
           </tr>
           <tr>
             <td style="width: 60%" class="fl">TIR</td>
-            <td style="width: 40%" class="border">{{flujoValueTir | percent:'1.2-2' }}</td>
+            <td style="width: 40%" class="border">
+              {{ flujoValueTir | percent : "1.2-2" }}
+            </td>
           </tr>
         </table>
       </div>

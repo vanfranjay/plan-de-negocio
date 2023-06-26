@@ -1602,7 +1602,7 @@ export class CostosComponent {
         partes[0] = partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
         const resultadoFormateado = partes[0];
 
-        return resultadoFormateado === 'NaN' ? '' : resultadoFormateado;
+        return resultadoFormateado === 'NaN' ? '' : 'Bs. ' + resultadoFormateado;
       }
     }
   }
