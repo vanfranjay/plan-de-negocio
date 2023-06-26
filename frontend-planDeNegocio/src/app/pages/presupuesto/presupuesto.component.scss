@@ -162,7 +162,39 @@
   border-bottom: 1px solid #000;
   
 }
+.border3{
+  border-right: 1px solid #000;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.border4{
+ 
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+} 
+.border5{
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000; 
+}
+.border6{
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+.border7{
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-top: 1px solid #000; 
+}
 .text-center{
   text-align: center;
+}
+.centrado{
+  display: flex;
+  align-items: center;
 }
 
