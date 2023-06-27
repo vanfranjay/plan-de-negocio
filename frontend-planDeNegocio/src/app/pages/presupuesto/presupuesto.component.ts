@@ -190,13 +190,18 @@ export class PresupuestoComponent {
   total!: number;
   input1!: number;
 
-  calculateTotal(index: number): void {parseFloat
+  calculateTotal(index: number): void {
     this.input1 = this.inputValuesDetalle[index] ?? 0;
+    if (this.input1 < 0) {
+      this.input1 = this.input1 * (-1);
+      this.inputValuesDetalle[index] = this.input1;
+    } else {
+      this.input1 = this.input1;
+    }
     this.total = this.inputValuesDetalle
       .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotal(this.total);
-    console.log(this.total);
     switch (index) {
       case 0:
         this.presupuestoService.setInputValuesDetalle0(this.input1);
@@ -298,6 +303,12 @@ export class PresupuestoComponent {
 
   calculateTotal1(index: number): void {
     this.input2 = this.inputValuesMateriaPrima[index] ?? 0;
+    if (this.input2 < 0) {
+      this.input2 = this.input2 * (-1);
+      this.inputValuesMateriaPrima[index] = this.input2;
+    } else {
+      this.input2 = this.input2;
+    }
     this.totalMateriaPrima = this.inputValuesMateriaPrima
       .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
@@ -321,6 +332,12 @@ export class PresupuestoComponent {
 
   calculateTotal2(index: number): void {
     this.input2 = this.inputValuesMateriaPrima1[index] ?? 0;
+    if (this.input2 < 0) {
+      this.input2 = this.input2 * (-1);
+      this.inputValuesMateriaPrima1[index] = this.input2;
+    } else {
+      this.input2 = this.input2;
+    }
     this.totalMateriaPrima1 = this.inputValuesMateriaPrima1
       .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
@@ -345,6 +362,12 @@ export class PresupuestoComponent {
 
   calculateTotal3(index: number): void {
     this.input2 = this.inputValuesReqProm[index] ?? 0;
+    if (this.input2 < 0) {
+      this.input2 = this.input2 * (-1);
+      this.inputValuesReqProm[index] = this.input2;
+    } else {
+      this.input2 = this.input2;
+    }
     this.totalReqProm = this.inputValuesReqProm
       .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
@@ -368,6 +391,12 @@ export class PresupuestoComponent {
 
   calculateTotal4(index: number): void {
     this.input2 = this.inputValuesReqProm1[index] ?? 0;
+    if (this.input2 < 0) {
+      this.input2 = this.input2 * (-1);
+      this.inputValuesReqProm1[index] = this.input2;
+    } else {
+      this.input2 = this.input2;
+    }
     this.totalReqProm1 = this.inputValuesReqProm1
       .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
@@ -391,6 +420,12 @@ export class PresupuestoComponent {
 
   calculateTotal5(index: number): void {
     this.input2 = this.inputValuesGastosOp[index] ?? 0;
+    if (this.input2 < 0) {
+      this.input2 = this.input2 * (-1);
+      this.inputValuesGastosOp[index] = this.input2;
+    } else {
+      this.input2 = this.input2;
+    }
     this.totalGastosOp = this.inputValuesGastosOp
       .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
@@ -414,6 +449,12 @@ export class PresupuestoComponent {
 
   calculateTotal6(index: number): void {
     this.input2 = this.inputValuesInfr[index] ?? 0;
+    if (this.input2 < 0) {
+      this.input2 = this.input2 * (-1);
+      this.inputValuesInfr[index] = this.input2;
+    } else {
+      this.input2 = this.input2;
+    }
     this.totalInfr = this.inputValuesInfr
       .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
@@ -437,6 +478,12 @@ export class PresupuestoComponent {
 
   calculateTotal7(index: number): void {
     this.input2 = this.inputValuesInfr1[index] ?? 0;
+    if (this.input2 < 0) {
+      this.input2 = this.input2 * (-1);
+      this.inputValuesInfr1[index] = this.input2;
+    } else {
+      this.input2 = this.input2;
+    }
     this.totalInfr1 = this.inputValuesInfr1
       .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
@@ -460,6 +507,12 @@ export class PresupuestoComponent {
 
   calculateTotal8(index: number): void {
     this.input2 = this.inputValuesMaq[index] ?? 0;
+    if (this.input2 < 0) {
+      this.input2 = this.input2 * (-1);
+      this.inputValuesMaq[index] = this.input2;
+    } else {
+      this.input2 = this.input2;
+    }
     this.totalMaq = this.inputValuesMaq
       .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
@@ -483,6 +536,12 @@ export class PresupuestoComponent {
 
   calculateTotal9(index: number): void {
     this.input2 = this.inputValuesMaq1[index] ?? 0;
+    if (this.input2 < 0) {
+      this.input2 = this.input2 * (-1);
+      this.inputValuesMaq1[index] = this.input2;
+    } else {
+      this.input2 = this.input2;
+    }
     this.totalMaq1 = this.inputValuesMaq1
       .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
@@ -506,6 +565,12 @@ export class PresupuestoComponent {
 
   calculateTotal10(index: number): void {
     this.input2 = this.inputValuesLegal[index] ?? 0;
+    if (this.input2 < 0) {
+      this.input2 = this.input2 * (-1);
+      this.inputValuesLegal[index] = this.input2;
+    } else {
+      this.input2 = this.input2;
+    }
     this.totalLegal = this.inputValuesLegal
       .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
@@ -529,6 +594,12 @@ export class PresupuestoComponent {
 
   calculateTotal11(index: number): void {
     this.input2 = this.inputValuesLegal1[index] ?? 0;
+    if (this.input2 < 0) {
+      this.input2 = this.input2 * (-1);
+      this.inputValuesLegal1[index] = this.input2;
+    } else {
+      this.input2 = this.input2;
+    }
     this.totalLegal1 = this.inputValuesLegal1
       .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
