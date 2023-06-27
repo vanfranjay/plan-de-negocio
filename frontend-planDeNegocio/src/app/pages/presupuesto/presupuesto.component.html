@@ -96,7 +96,7 @@
         <div class="border2"></div>
         <div class="border1"></div>
         <div class="table_item">SUB TOTAL</div>
-        <div class="table_item">{{ total }}</div>
+        <div class="table_item">{{ formatearNumero(total) }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
@@ -139,7 +139,7 @@
         <div class="border2"></div>
         <div class="border4"></div>
         <div class="border3">SUB TOTAL</div>
-        <div class="table_item">{{ valorManoObra }}</div>
+        <div class="table_item">{{ formatearNumero(valorManoObra) }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -271,8 +271,8 @@
         <div class="border2"></div>
         <div class="border4"></div>
         <div class="border3">SUB TOTAL</div>
-        <div class="table_item">{{ totalMateriaPrima }}</div>
-        <div class="table_item">{{ totalMateriaPrima1 }}</div>
+        <div class="table_item">{{ formatearNumero(totalMateriaPrima) }}</div>
+        <div class="table_item">{{ formatearNumero(totalMateriaPrima1) }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -402,8 +402,8 @@
         <div class="border2"></div>
         <div class="border4"></div>
         <div class="border3">SUB TOTAL</div>
-        <div class="table_item">{{ totalReqProm }}</div>
-        <div class="table_item">{{ totalReqProm1 }}</div>
+        <div class="table_item">{{ formatearNumero(totalReqProm) }}</div>
+        <div class="table_item">{{ formatearNumero(totalReqProm1) }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -513,12 +513,12 @@
         <div class="border4"></div>
         <div class="border3">SUB TOTAL</div>
         <div class="table_item"></div>
-        <div class="table_item">{{ totalGastosOp }}</div>
+        <div class="table_item">{{ formatearNumero(totalGastosOp) }}</div>
         <div class="border2"></div>
         <div class="border4"></div>
         <div class="border3">TOTAL CAPITAL DE OPERACIONES</div>
-        <div class="table_item">{{ totalCapitalOpApPro }}</div>
-        <div class="table_item">{{ totalCapitalOpInvertira }}</div>
+        <div class="table_item">{{ formatearNumero(totalCapitalOpApPro) }}</div>
+        <div class="table_item">{{ formatearNumero(totalCapitalOpInvertira) }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1" class="custom-tile">
@@ -657,8 +657,8 @@
         <div class="border2"></div>
         <div class="border4"></div>
         <div class="border3">SUB TOTAL</div>
-        <div class="table_item">{{ totalInfr }}</div>
-        <div class="table_item">{{ totalInfr1 }}</div>
+        <div class="table_item">{{ formatearNumero(totalInfr) }}</div>
+        <div class="table_item">{{ formatearNumero(totalInfr1) }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -788,8 +788,8 @@
         <div class="border2"></div>
         <div class="border4"></div>
         <div class="border3">SUB TOTAL</div>
-        <div class="table_item">{{ totalMaq }}</div>
-        <div class="table_item">{{ totalMaq1 }}</div>
+        <div class="table_item">{{ formatearNumero(totalMaq) }}</div>
+        <div class="table_item">{{ formatearNumero(totalMaq1) }}</div>
       </div>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -919,13 +919,13 @@
         <div class="border2"></div>
         <div class="border4"></div>
         <div class="border3">SUB TOTAL</div>
-        <div class="table_item">{{ totalLegal }}</div>
-        <div class="table_item">{{ totalLegal1 }}</div>
+        <div class="table_item">{{ formatearNumero(totalLegal) }}</div>
+        <div class="table_item">{{ formatearNumero(totalLegal1) }}</div>
         <div class="border2"></div>
         <div class="border4"></div>
         <div class="border3">TOTAL CAPITAL DE INVERSION</div>
-        <div class="table_item">{{ totalCapitalInversionApPo }}</div>
-        <div class="table_item">{{ totalCapitalInversionSeInvertira }}</div>
+        <div class="table_item">{{ formatearNumero(totalCapitalInversionApPo) }}</div>
+        <div class="table_item">{{ formatearNumero(totalCapitalInversionSeInvertira) }}</div>
       </div>
     </mat-grid-tile>
   </mat-grid-list>

@@ -190,12 +190,13 @@ export class PresupuestoComponent {
   total!: number;
   input1!: number;
 
-  calculateTotal(index: number): void {
+  calculateTotal(index: number): void {parseFloat
     this.input1 = this.inputValuesDetalle[index] ?? 0;
     this.total = this.inputValuesDetalle
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotal(this.total);
+    console.log(this.total);
     switch (index) {
       case 0:
         this.presupuestoService.setInputValuesDetalle0(this.input1);
@@ -298,7 +299,7 @@ export class PresupuestoComponent {
   calculateTotal1(index: number): void {
     this.input2 = this.inputValuesMateriaPrima[index] ?? 0;
     this.totalMateriaPrima = this.inputValuesMateriaPrima
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotalMateriaPrima(this.totalMateriaPrima);
     switch (index) {
@@ -321,7 +322,7 @@ export class PresupuestoComponent {
   calculateTotal2(index: number): void {
     this.input2 = this.inputValuesMateriaPrima1[index] ?? 0;
     this.totalMateriaPrima1 = this.inputValuesMateriaPrima1
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotalMateriaPrima1(this.totalMateriaPrima1);
     switch (index) {
@@ -345,7 +346,7 @@ export class PresupuestoComponent {
   calculateTotal3(index: number): void {
     this.input2 = this.inputValuesReqProm[index] ?? 0;
     this.totalReqProm = this.inputValuesReqProm
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotalReqProm(this.totalReqProm);
     switch (index) {
@@ -368,7 +369,7 @@ export class PresupuestoComponent {
   calculateTotal4(index: number): void {
     this.input2 = this.inputValuesReqProm1[index] ?? 0;
     this.totalReqProm1 = this.inputValuesReqProm1
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotalReqProm1(this.totalReqProm1);
     switch (index) {
@@ -391,7 +392,7 @@ export class PresupuestoComponent {
   calculateTotal5(index: number): void {
     this.input2 = this.inputValuesGastosOp[index] ?? 0;
     this.totalGastosOp = this.inputValuesGastosOp
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotalGastosOp(this.totalGastosOp);
     switch (index) {
@@ -414,7 +415,7 @@ export class PresupuestoComponent {
   calculateTotal6(index: number): void {
     this.input2 = this.inputValuesInfr[index] ?? 0;
     this.totalInfr = this.inputValuesInfr
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotalInfr(this.totalInfr);
     switch (index) {
@@ -437,7 +438,7 @@ export class PresupuestoComponent {
   calculateTotal7(index: number): void {
     this.input2 = this.inputValuesInfr1[index] ?? 0;
     this.totalInfr1 = this.inputValuesInfr1
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotalInfr1(this.totalInfr1);
     switch (index) {
@@ -460,7 +461,7 @@ export class PresupuestoComponent {
   calculateTotal8(index: number): void {
     this.input2 = this.inputValuesMaq[index] ?? 0;
     this.totalMaq = this.inputValuesMaq
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotalMaq(this.totalMaq);
     switch (index) {
@@ -483,7 +484,7 @@ export class PresupuestoComponent {
   calculateTotal9(index: number): void {
     this.input2 = this.inputValuesMaq1[index] ?? 0;
     this.totalMaq1 = this.inputValuesMaq1
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotalMaq1(this.totalMaq1);
     switch (index) {
@@ -506,7 +507,7 @@ export class PresupuestoComponent {
   calculateTotal10(index: number): void {
     this.input2 = this.inputValuesLegal[index] ?? 0;
     this.totalLegal = this.inputValuesLegal
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotalLegal(this.totalLegal);
     switch (index) {
@@ -529,7 +530,7 @@ export class PresupuestoComponent {
   calculateTotal11(index: number): void {
     this.input2 = this.inputValuesLegal1[index] ?? 0;
     this.totalLegal1 = this.inputValuesLegal1
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoService.setTotalLegal1(this.totalLegal1);
     switch (index) {
@@ -544,5 +545,24 @@ export class PresupuestoComponent {
         break;
     }
     this.calcularCapitalInversionSeInvertira();
+  }
+  formatearNumero(numero: number): string {
+    if (numero === 0) {
+      return '';
+    } else {
+      const redondeo = Math.round(numero * 100) / 100; // Redondea a 0 decimales
+      const valorAbsoluto = Math.abs(redondeo); // Valor absoluto
+
+      if (valorAbsoluto === 0) {
+        return '';
+      } else {
+        const resultado = redondeo < 0 ? `${valorAbsoluto}` : `${valorAbsoluto}`;
+        const partes = resultado.split('.');
+        partes[0] = partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        const resultadoFormateado = partes.join(',');
+
+        return resultadoFormateado === 'NaN' ? '' : 'Bs. ' + resultadoFormateado;
+      }
+    }
   }
 }

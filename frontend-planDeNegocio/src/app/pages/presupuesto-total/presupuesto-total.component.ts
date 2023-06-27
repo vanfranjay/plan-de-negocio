@@ -296,4 +296,42 @@ export class PresupuestoTotalComponent {
       this.presupuestoTotalService.setShowErrorMessage(this.showErrorMessage);
     }
   }
+  formatearNumero(numero: number): string {
+    if (numero === 0) {
+      return '';
+    } else {
+      const redondeo = Math.round(numero * 100) / 100; // Redondea a 0 decimales
+      const valorAbsoluto = Math.abs(redondeo); // Valor absoluto
+
+      if (valorAbsoluto === 0) {
+        return '';
+      } else {
+        const resultado = redondeo < 0 ? `${valorAbsoluto}` : `${valorAbsoluto}`;
+        const partes = resultado.split('.');
+        partes[0] = partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        const resultadoFormateado = partes.join(',');
+
+        return resultadoFormateado === 'NaN' ? '' : 'Bs. ' + resultadoFormateado;
+      }
+    }
+  }
+  formatearNumeroConNegativo(numero: number): string {
+    if (numero === 0) {
+      return '';
+    } else {
+      const redondeo = Math.round(numero * 100) / 100; // Redondea a 0 decimales
+      const valorAbsoluto = redondeo; // Valor absoluto
+
+      if (valorAbsoluto === 0) {
+        return '';
+      } else {
+        const resultado = redondeo < 0 ? `${valorAbsoluto}` : `${valorAbsoluto}`;
+        const partes = resultado.split('.');
+        partes[0] = partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        const resultadoFormateado = partes.join(',');
+
+        return resultadoFormateado === 'NaN' ? '' : 'Bs. ' + resultadoFormateado;
+      }
+    }
+  }
 }

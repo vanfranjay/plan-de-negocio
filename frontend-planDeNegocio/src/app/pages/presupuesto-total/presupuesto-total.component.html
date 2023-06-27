@@ -5,7 +5,7 @@
         <div class="content-title">
           <h2 class="title">9. PRESUPUESTO RESUMEN</h2>
         </div>
-        <br>
+        <br />
         <table class="full-width">
           <tr>
             <th></th>
@@ -15,12 +15,16 @@
           <tr>
             <td style="width: 5%" rowspan="4" class="border">K.O.</td>
             <td style="width: 75%" class="border">Efectivo</td>
-            <td style="width: 20%" class="border text-center">{{total}}</td>
+            <td style="width: 20%" class="border text-center">
+              {{ formatearNumero(total) }}
+            </td>
           </tr>
           <tr>
             <td class="border">Mano de Obra del Emprendedor</td>
             <td class="border text-center">
-              <output class="">{{manoObraEmprendedor}}</output>
+              <output class="">{{
+                formatearNumero(manoObraEmprendedor)
+              }}</output>
             </td>
           </tr>
           <tr>
@@ -28,32 +32,34 @@
               Materia Prima, Insumos y/o Animales de Engorde
             </td>
             <td class="border text-center">
-              <output>{{materiaPrimaAP}}</output>
+              <output>{{ formatearNumero(materiaPrimaAP) }}</output>
             </td>
           </tr>
           <tr>
             <td class="border">Requerimientos Promocionales</td>
             <td class="border text-center">
-              <output>{{requerimientosPromocionalesAP}}</output>
+              <output>{{
+                formatearNumero(requerimientosPromocionalesAP)
+              }}</output>
             </td>
           </tr>
           <tr>
             <td rowspan="3" class="border">K.I.</td>
             <td class="border">Infraestructura, Terrenos y/o Plantines</td>
             <td class="border text-center">
-              <output>{{infrTerrPlanAP}}</output>
+              <output>{{ formatearNumero(infrTerrPlanAP) }}</output>
             </td>
           </tr>
           <tr>
             <td class="border">Maquinaria, Equipos, Vehículos y/o Ganado</td>
             <td class="border text-center">
-              <output>{{maqEquVehAP}}</output>
+              <output>{{ formatearNumero(maqEquVehAP) }}</output>
             </td>
           </tr>
           <tr>
             <td class="border">Requerimientos Legales</td>
             <td class="border text-center">
-              <output>{{requerimientosLegalesAP}}</output>
+              <output>{{ formatearNumero(requerimientosLegalesAP) }}</output>
             </td>
           </tr>
           <tr>
@@ -62,11 +68,11 @@
               <p class="text-bold text-end">TOTAL</p>
             </td>
             <td class="border">
-              <output class="text-bold">{{totalAP}}</output>
+              <output class="text-bold">{{ formatearNumero(totalAP) }}</output>
             </td>
           </tr>
         </table>
-        <br>
+        <br />
         <table class="full-width">
           <tr>
             <th></th>
@@ -82,7 +88,7 @@
               Gastos Operativos
             </td>
             <td style="width: 17%" class="border color-green text-center">
-              <output>{{gastosOperativos}}</output>
+              <output>{{ formatearNumero(gastosOperativos) }}</output>
             </td>
             <td style="width: 17%" class="border input-container">
               <div class="input-container">
@@ -100,7 +106,7 @@
               Materia Prima, Insumos y/o Animales de Engorde
             </td>
             <td class="border color-green text-center">
-              <output>{{materiaPrimaPI}}</output>
+              <output>{{ formatearNumero(materiaPrimaPI) }}</output>
             </td>
             <td class="border">
               <div class="input-container">
@@ -116,7 +122,9 @@
           <tr>
             <td class="border color-green">Requerimientos Promocionales</td>
             <td class="border color-green text-center">
-              <output>{{requerimientosPromocionalesPI}}</output>
+              <output>{{
+                formatearNumero(requerimientosPromocionalesPI)
+              }}</output>
             </td>
             <td class="border">
               <div class="input-container">
@@ -135,7 +143,7 @@
               Infraestructura, Terrenos y/o Plantines
             </td>
             <td class="border color-rose text-center">
-              <output>{{infrTerrPlanPI}}</output>
+              <output>{{ formatearNumero(infrTerrPlanPI) }}</output>
             </td>
             <td class="border">
               <div class="input-container">
@@ -153,7 +161,7 @@
               Maquinaria, Equipos, Vehiculos y/o Ganado
             </td>
             <td class="border color-rose text-center">
-              <output>{{maqEquVehPI}}</output>
+              <output>{{ formatearNumero(maqEquVehPI) }}</output>
             </td>
             <td class="border">
               <div class="input-container">
@@ -169,7 +177,7 @@
           <tr>
             <td class="border color-rose">Requerimientos Legales</td>
             <td class="border color-rose text-center">
-              <output>{{requerimientosLegalesPI}}</output>
+              <output>{{ formatearNumero(requerimientosLegalesPI) }}</output>
             </td>
             <td class="border">
               <div class="input-container">
@@ -186,15 +194,19 @@
             <td></td>
             <td class="border text-bold text-end">TOTAL</td>
             <td class="border text-center">
-              <output class="text-bold">{{totalPI}}</output>
+              <output class="text-bold">{{ formatearNumero(totalPI) }}</output>
             </td>
             <td class="border">
-              <output id="result" class="text-bold">{{ totalApPropioEfectivo | currency: 'BOB'}}</output>
+              <output id="result" class="text-bold">{{
+                formatearNumero(totalApPropioEfectivo)
+              }}</output>
             </td>
           </tr>
           <tr>
             <td colspan="4" class="text-end color-red">
-              <p *ngIf="showErrorMessage">AP. PROPIO EFECTIVO TOTAL tiene que ser igual EFECTIVO</p>
+              <p *ngIf="showErrorMessage">
+                AP. PROPIO EFECTIVO TOTAL tiene que ser igual EFECTIVO
+              </p>
             </td>
           </tr>
         </table>
@@ -202,24 +214,34 @@
     </mat-grid-tile>
     <mat-grid-tile [colspan]="colSize2" [rowspan]="1" class="custom-tile">
       <div class="content">
-        <br>
+        <br />
         <table class="full-width">
           <tr>
             <td style="width: 60%" class="border">TOTAL PROYECTO</td>
             <td style="width: 40%" class="border text-center">
-              <output class="text-bold">{{totalProyecto}}</output>
+              <output class="text-bold">{{
+                formatearNumero(totalProyecto)
+              }}</output>
             </td>
           </tr>
           <tr>
             <td class="border">APORTE PROPIO</td>
             <td class="border text-center">
-              <output class="text-bold">{{aportePropio}}</output>
+              <output class="text-bold">{{
+                formatearNumero(aportePropio)
+              }}</output>
             </td>
           </tr>
           <tr>
             <td class="border">% APORTE PROPIO</td>
             <td class="border text-center">
-              <output class="text-bold">{{porcAportePropio | percent: '1.2-2' }}</output>
+              <output class="text-bold">{{
+                porcAportePropio == 0 ||
+                porcAportePropio == null ||
+                porcAportePropio == undefined
+                  ? ""
+                  : (porcAportePropio | percent : "1.2-2")
+              }}</output>
             </td>
           </tr>
           <tr>
@@ -229,24 +251,33 @@
             </th>
           </tr>
         </table>
-        <br>
+        <br />
         <table class="full-width">
           <tr>
             <td style="width: 60%" class="border">MONTO A FINANCIAR</td>
             <td style="width: 40%" class="border text-center">
-              <output class="text-bold">bs. {{montoFinanciar}}</output>
+              <output class="text-bold">{{
+                montoFinanciar == 0 ||
+                montoFinanciar == null ||
+                montoFinanciar == undefined
+                  ? ""
+                  : formatearNumeroConNegativo(montoFinanciar)
+              }}</output>
             </td>
           </tr>
         </table>
-        <br>
+        <br />
         <table class="full-width">
           <tr>
             <td style="width: 60%" class="border">Primer Desembolso</td>
             <td style="width: 40%" class="border">
               <div class="input-container">
-                <input type="number" class="no-margin"
-                (change)="addPrimerDesembolso()"
-                [(ngModel)]="primerDesembolso"/>
+                <input
+                  type="number"
+                  class="no-margin"
+                  (change)="addPrimerDesembolso()"
+                  [(ngModel)]="primerDesembolso"
+                />
               </div>
             </td>
           </tr>
@@ -254,25 +285,28 @@
             <td class="border">Segundo Desembolso</td>
             <td class="border">
               <div class="input-container">
-                <input type="number" class="no-margin"
-                (change)="addSegundoDesembolso()"
-                [(ngModel)]="segundoDesembolso"/>
+                <input
+                  type="number"
+                  class="no-margin"
+                  (change)="addSegundoDesembolso()"
+                  [(ngModel)]="segundoDesembolso"
+                />
               </div>
             </td>
           </tr>
           <tr>
             <th class="border color-yellow" colspan="2">
-              {{messageDesembolso}}
+              {{ messageDesembolso }}
             </th>
           </tr>
         </table>
-        <br>
+        <br />
         <table class="full-width">
           <tr>
-            <th class="border color-yellow">{{messageApEfectivo}}</th>
+            <th class="border color-yellow">{{ messageApEfectivo }}</th>
           </tr>
         </table>
-        <br>
+        <br />
         <p>
           Nota: Para montos mayores a Bs 70.000 las operaciones otorgadas con
           recursos del Fondo para Capital Semilla deberán ser realizadas
