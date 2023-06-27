@@ -6,6 +6,496 @@ import { Injectable } from '@angular/core';
 export class PresupuestoService {
 
   constructor() { }
+  private presupuestoCapInMaqCan10!: string;
+  public getPresupuestoCapInMaqCan10(): string {
+    return this.presupuestoCapInMaqCan10;
+  }
+  public setPresupuestoCapInMaqCan10(value: string) {
+    this.presupuestoCapInMaqCan10 = value;
+  }
+  private presupuestoCapInMaqUn10!: string;
+  public getPresupuestoCapInMaqUn10(): string {
+    return this.presupuestoCapInMaqUn10;
+  }
+  public setPresupuestoCapInMaqUn10(value: string) {
+    this.presupuestoCapInMaqUn10 = value;
+  }
+  private presupuestoCapInMaqDet10!: string;
+  public getPresupuestoCapInMaqDet10(): string {
+    return this.presupuestoCapInMaqDet10;
+  }
+  public setPresupuestoCapInMaqDet10(value: string) {
+    this.presupuestoCapInMaqDet10 = value;
+  }
+  private presupuestoCapInMaqCan4!: string;
+  public getPresupuestoCapInMaqCan4(): string {
+    return this.presupuestoCapInMaqCan4;
+  }
+  public setPresupuestoCapInMaqCan4(value: string) {
+    this.presupuestoCapInMaqCan4 = value;
+  }
+  private presupuestoCapInMaqCan5!: string;
+  public getPresupuestoCapInMaqCan5(): string {
+    return this.presupuestoCapInMaqCan5;
+  }
+  public setPresupuestoCapInMaqCan5(value: string) {
+    this.presupuestoCapInMaqCan5 = value;
+  }
+  private presupuestoCapInMaqCan6!: string;
+  public getPresupuestoCapInMaqCan6(): string {
+    return this.presupuestoCapInMaqCan6;
+  }
+  public setPresupuestoCapInMaqCan6(value: string) {
+    this.presupuestoCapInMaqCan6 = value;
+  }
+  private presupuestoCapInMaqCan7!: string;
+  public getPresupuestoCapInMaqCan7(): string {
+    return this.presupuestoCapInMaqCan7;
+  }
+  public setPresupuestoCapInMaqCan7(value: string) {
+    this.presupuestoCapInMaqCan7 = value;
+  }
+  private presupuestoCapInMaqCan8!: string;
+  public getPresupuestoCapInMaqCan8(): string {
+    return this.presupuestoCapInMaqCan8;
+  }
+  public setPresupuestoCapInMaqCan8(value: string) {
+    this.presupuestoCapInMaqCan8 = value;
+  }
+  private presupuestoCapInMaqCan9!: string;
+  public getPresupuestoCapInMaqCan9(): string {
+    return this.presupuestoCapInMaqCan9;
+  }
+  public setPresupuestoCapInMaqCan9(value: string) {
+    this.presupuestoCapInMaqCan9 = value;
+  }
+  private presupuestoCapInMaqUn4!: string;
+  public getPresupuestoCapInMaqUn4(): string {
+    return this.presupuestoCapInMaqUn4;
+  }
+  public setPresupuestoCapInMaqUn4(value: string) {
+    this.presupuestoCapInMaqUn4 = value;
+  }
+  private presupuestoCapInMaqUn5!: string;
+  public getPresupuestoCapInMaqUn5(): string {
+    return this.presupuestoCapInMaqUn5;
+  }
+  public setPresupuestoCapInMaqUn5(value: string) {
+    this.presupuestoCapInMaqUn5 = value;
+  }
+  private presupuestoCapInMaqUn6!: string;
+  public getPresupuestoCapInMaqUn6(): string {
+    return this.presupuestoCapInMaqUn6;
+  }
+  public setPresupuestoCapInMaqUn6(value: string) {
+    this.presupuestoCapInMaqUn6 = value;
+  }
+  private presupuestoCapInMaqUn7!: string;
+  public getPresupuestoCapInMaqUn7(): string {
+    return this.presupuestoCapInMaqUn7;
+  }
+  public setPresupuestoCapInMaqUn7(value: string) {
+    this.presupuestoCapInMaqUn7 = value;
+  }
+  private presupuestoCapInMaqUn8!: string;
+  public getPresupuestoCapInMaqUn8(): string {
+    return this.presupuestoCapInMaqUn8;
+  }
+  public setPresupuestoCapInMaqUn8(value: string) {
+    this.presupuestoCapInMaqUn8 = value;
+  }
+  private presupuestoCapInMaqUn9!: string;
+  public getPresupuestoCapInMaqUn9(): string {
+    return this.presupuestoCapInMaqUn9;
+  }
+  public setPresupuestoCapInMaqUn9(value: string) {
+    this.presupuestoCapInMaqUn9 = value;
+  }
+  private presupuestoCapInMaqDet4!: string;
+  public getPresupuestoCapInMaqDet4(): string {
+    return this.presupuestoCapInMaqDet4;
+  }
+  public setPresupuestoCapInMaqDet4(value: string) {
+    this.presupuestoCapInMaqDet4 = value;
+  }
+  private presupuestoCapInMaqDet5!: string;
+  public getPresupuestoCapInMaqDet5(): string {
+    return this.presupuestoCapInMaqDet5;
+  }
+  public setPresupuestoCapInMaqDet5(value: string) {
+    this.presupuestoCapInMaqDet5 = value;
+  }
+  private presupuestoCapInMaqDet6!: string;
+  public getPresupuestoCapInMaqDet6(): string {
+    return this.presupuestoCapInMaqDet6;
+  }
+  public setPresupuestoCapInMaqDet6(value: string) {
+    this.presupuestoCapInMaqDet6 = value;
+  }
+  private presupuestoCapInMaqDet7!: string;
+  public getPresupuestoCapInMaqDet7(): string {
+    return this.presupuestoCapInMaqDet7;
+  }
+  public setPresupuestoCapInMaqDet7(value: string) {
+    this.presupuestoCapInMaqDet7 = value;
+  }
+  private presupuestoCapInMaqDet8!: string;
+  public getPresupuestoCapInMaqDet8(): string {
+    return this.presupuestoCapInMaqDet8;
+  }
+  public setPresupuestoCapInMaqDet8(value: string) {
+    this.presupuestoCapInMaqDet8 = value;
+  }
+  private presupuestoCapInMaqDet9!: string;
+  public getPresupuestoCapInMaqDet9(): string {
+    return this.presupuestoCapInMaqDet9;
+  }
+  public setPresupuestoCapInMaqDet9(value: string) {
+    this.presupuestoCapInMaqDet9 = value;
+  }
+  private inputValuesMaq13!: number;
+  public getInputValuesMaq13(): number {
+    return this.inputValuesMaq13;
+  }
+  public setInputValuesMaq13(value: number) {
+    this.inputValuesMaq13 = value;
+  }
+  private inputValuesMaq14!: number;
+  public getInputValuesMaq14(): number {
+    return this.inputValuesMaq14;
+  }
+  public setInputValuesMaq14(value: number) {
+    this.inputValuesMaq14 = value;
+  }
+  private inputValuesMaq15!: number;
+  public getInputValuesMaq15(): number {
+    return this.inputValuesMaq15;
+  }
+  public setInputValuesMaq15(value: number) {
+    this.inputValuesMaq15 = value;
+  }
+  private inputValuesMaq16!: number;
+  public getInputValuesMaq16(): number {
+    return this.inputValuesMaq16;
+  }
+  public setInputValuesMaq16(value: number) {
+    this.inputValuesMaq16 = value;
+  }
+  private inputValuesMaq17!: number;
+  public getInputValuesMaq17(): number {
+    return this.inputValuesMaq17;
+  }
+  public setInputValuesMaq17(value: number) {
+    this.inputValuesMaq17 = value;
+  }
+  private inputValuesMaq18!: number;
+  public getInputValuesMaq18(): number {
+    return this.inputValuesMaq18;
+  }
+  public setInputValuesMaq18(value: number) {
+    this.inputValuesMaq18 = value;
+  }
+  private inputValuesMaq19!: number;
+  public getInputValuesMaq19(): number {
+    return this.inputValuesMaq19;
+  }
+  public setInputValuesMaq19(value: number) {
+    this.inputValuesMaq19 = value;
+  }
+  private inputValuesMaq3!: number;
+  public getInputValuesMaq3(): number {
+    return this.inputValuesMaq3;
+  }
+  public setInputValuesMaq3(value: number) {
+    this.inputValuesMaq3 = value;
+  }
+  private inputValuesMaq4!: number;
+  public getInputValuesMaq4(): number {
+    return this.inputValuesMaq4;
+  }
+  public setInputValuesMaq4(value: number) {
+    this.inputValuesMaq4 = value;
+  }
+  private inputValuesMaq5!: number;
+  public getInputValuesMaq5(): number {
+    return this.inputValuesMaq5;
+  }
+  public setInputValuesMaq5(value: number) {
+    this.inputValuesMaq5 = value;
+  }
+  private inputValuesMaq6!: number;
+  public getInputValuesMaq6(): number {
+    return this.inputValuesMaq6;
+  }
+  public setInputValuesMaq6(value: number) {
+    this.inputValuesMaq6 = value;
+  }
+  private inputValuesMaq7!: number;
+  public getInputValuesMaq7(): number {
+    return this.inputValuesMaq7;
+  }
+  public setInputValuesMaq7(value: number) {
+    this.inputValuesMaq7 = value;
+  }
+  private inputValuesMaq8!: number;
+  public getInputValuesMaq8(): number {
+    return this.inputValuesMaq8;
+  }
+  public setInputValuesMaq8(value: number) {
+    this.inputValuesMaq8 = value;
+  }
+  private inputValuesMaq9!: number;
+  public getInputValuesMaq9(): number {
+    return this.inputValuesMaq9;
+  }
+  public setInputValuesMaq9(value: number) {
+    this.inputValuesMaq9 = value;
+  }
+  private presupuestoCapInInfrCan4!: string;
+  public getPresupuestoCapInInfrCan4(): string {
+    return this.presupuestoCapInInfrCan4;
+  }
+  public setPresupuestoCapInInfrCan4(value: string) {
+    this.presupuestoCapInInfrCan4 = value;
+  }
+  private presupuestoCapInInfrCan5!: string;
+  public getPresupuestoCapInInfrCan5(): string {
+    return this.presupuestoCapInInfrCan5;
+  }
+  public setPresupuestoCapInInfrCan5(value: string) {
+    this.presupuestoCapInInfrCan5 = value;
+  }
+  private presupuestoCapInInfrUn4!: string;
+  public getPresupuestoCapInInfrUn4(): string {
+    return this.presupuestoCapInInfrUn4;
+  }
+  public setPresupuestoCapInInfrUn4(value: string) {
+    this.presupuestoCapInInfrUn4 = value;
+  }
+  private presupuestoCapInInfrUn5!: string;
+  public getPresupuestoCapInInfrUn5(): string {
+    return this.presupuestoCapInInfrUn5;
+  }
+  public setPresupuestoCapInInfrUn5(value: string) {
+    this.presupuestoCapInInfrUn5 = value;
+  }
+  private presupuestoCapInInfrDet4!: string;
+  public getPresupuestoCapInInfrDet4(): string {
+    return this.presupuestoCapInInfrDet4;
+  }
+  public setPresupuestoCapInInfrDet4(value: string) {
+    this.presupuestoCapInInfrDet4 = value;
+  }
+  private presupuestoCapInInfrDet5!: string;
+  public getPresupuestoCapInInfrDet5(): string {
+    return this.presupuestoCapInInfrDet5;
+  }
+  public setPresupuestoCapInInfrDet5(value: string) {
+    this.presupuestoCapInInfrDet5 = value;
+  }
+  private inputValuesInfr13!: number;
+  public getInputValuesInfr13(): number {
+    return this.inputValuesInfr13;
+  }
+  public setInputValuesInfr13(value: number) {
+    this.inputValuesInfr13 = value;
+  }
+  private inputValuesInfr14!: number;
+  public getInputValuesInfr14(): number {
+    return this.inputValuesInfr14;
+  }
+  public setInputValuesInfr14(value: number) {
+    this.inputValuesInfr14 = value;
+  }
+  private inputValuesInfr3!: number;
+  public getInputValuesInfr3(): number {
+    return this.inputValuesInfr3;
+  }
+  public setInputValuesInfr3(value: number) {
+    this.inputValuesInfr3 = value;
+  }
+  private inputValuesInfr4!: number;
+  public getInputValuesInfr4(): number {
+    return this.inputValuesInfr4;
+  }
+  public setInputValuesInfr4(value: number) {
+    this.inputValuesInfr4 = value;
+  }
+  private presupuestoCaOpMatPrimaCant4!: string;
+  public getPresupuestoCaOpMatPrimaCant4(): string {
+    return this.presupuestoCaOpMatPrimaCant4;
+  }
+  public setPresupuestoCaOpMatPrimaCant4(value: string) {
+    this.presupuestoCaOpMatPrimaCant4 = value;
+  }
+  private presupuestoCaOpMatPrimaCant5!: string;
+  public getPresupuestoCaOpMatPrimaCant5(): string {
+    return this.presupuestoCaOpMatPrimaCant5;
+  }
+  public setPresupuestoCaOpMatPrimaCant5(value: string) {
+    this.presupuestoCaOpMatPrimaCant5 = value;
+  }
+  private presupuestoCaOpMatPrimaCant6!: string;
+  public getPresupuestoCaOpMatPrimaCant6(): string {
+    return this.presupuestoCaOpMatPrimaCant6;
+  }
+  public setPresupuestoCaOpMatPrimaCant6(value: string) {
+    this.presupuestoCaOpMatPrimaCant6 = value;
+  }
+  private presupuestoCaOpMatPrimaCant7!: string;
+  public getPresupuestoCaOpMatPrimaCant7(): string {
+    return this.presupuestoCaOpMatPrimaCant7;
+  }
+  public setPresupuestoCaOpMatPrimaCant7(value: string) {
+    this.presupuestoCaOpMatPrimaCant7 = value;
+  }
+  private presupuestoCaOpMatPrimaCant8!: string;
+  public getPresupuestoCaOpMatPrimaCant8(): string {
+    return this.presupuestoCaOpMatPrimaCant8;
+  }
+  public setPresupuestoCaOpMatPrimaCant8(value: string) {
+    this.presupuestoCaOpMatPrimaCant8 = value;
+  }
+  private presupuestoCaOpMatPrimaUnidad4!: string;
+  public getPresupuestoCaOpMatPrimaUnidad4(): string {
+    return this.presupuestoCaOpMatPrimaUnidad4;
+  }
+  public setPresupuestoCaOpMatPrimaUnidad4(value: string) {
+    this.presupuestoCaOpMatPrimaUnidad4 = value;
+  }
+  private presupuestoCaOpMatPrimaUnidad5!: string;
+  public getPresupuestoCaOpMatPrimaUnidad5(): string {
+    return this.presupuestoCaOpMatPrimaUnidad5;
+  }
+  public setPresupuestoCaOpMatPrimaUnidad5(value: string) {
+    this.presupuestoCaOpMatPrimaUnidad5 = value;
+  }
+  private presupuestoCaOpMatPrimaUnidad6!: string;
+  public getPresupuestoCaOpMatPrimaUnidad6(): string {
+    return this.presupuestoCaOpMatPrimaUnidad6;
+  }
+  public setPresupuestoCaOpMatPrimaUnidad6(value: string) {
+    this.presupuestoCaOpMatPrimaUnidad6 = value;
+  }
+  private presupuestoCaOpMatPrimaUnidad7!: string;
+  public getPresupuestoCaOpMatPrimaUnidad7(): string {
+    return this.presupuestoCaOpMatPrimaUnidad7;
+  }
+  public setPresupuestoCaOpMatPrimaUnidad7(value: string) {
+    this.presupuestoCaOpMatPrimaUnidad7 = value;
+  }
+  private presupuestoCaOpMatPrimaUnidad8!: string;
+  public getPresupuestoCaOpMatPrimaUnidad8(): string {
+    return this.presupuestoCaOpMatPrimaUnidad8;
+  }
+  public setPresupuestoCaOpMatPrimaUnidad8(value: string) {
+    this.presupuestoCaOpMatPrimaUnidad8 = value;
+  }
+  private presupuestoCaOpMatPrimaDetalle4!: string;
+  public getPresupuestoCaOpMatPrimaDetalle4(): string {
+    return this.presupuestoCaOpMatPrimaDetalle4;
+  }
+  public setPresupuestoCaOpMatPrimaDetalle4(value: string) {
+    this.presupuestoCaOpMatPrimaDetalle4 = value;
+  }
+  private presupuestoCaOpMatPrimaDetalle5!: string;
+  public getPresupuestoCaOpMatPrimaDetalle5(): string {
+    return this.presupuestoCaOpMatPrimaDetalle5;
+  }
+  public setPresupuestoCaOpMatPrimaDetalle5(value: string) {
+    this.presupuestoCaOpMatPrimaDetalle5 = value;
+  }
+  private presupuestoCaOpMatPrimaDetalle6!: string;
+  public getPresupuestoCaOpMatPrimaDetalle6(): string {
+    return this.presupuestoCaOpMatPrimaDetalle6;
+  }
+  public setPresupuestoCaOpMatPrimaDetalle6(value: string) {
+    this.presupuestoCaOpMatPrimaDetalle6 = value;
+  }
+  private presupuestoCaOpMatPrimaDetalle7!: string;
+  public getPresupuestoCaOpMatPrimaDetalle7(): string {
+    return this.presupuestoCaOpMatPrimaDetalle7;
+  }
+  public setPresupuestoCaOpMatPrimaDetalle7(value: string) {
+    this.presupuestoCaOpMatPrimaDetalle7 = value;
+  }
+  private presupuestoCaOpMatPrimaDetalle8!: string;
+  public getPresupuestoCaOpMatPrimaDetalle8(): string {
+    return this.presupuestoCaOpMatPrimaDetalle8;
+  }
+  public setPresupuestoCaOpMatPrimaDetalle8(value: string) {
+    this.presupuestoCaOpMatPrimaDetalle8 = value;
+  }
+  private inputValuesMateriaPrima3!: number;
+  public getInputValuesMateriaPrima3(): number {
+    return this.inputValuesMateriaPrima3;
+  }
+  public setInputValuesMateriaPrima3(value: number) {
+    this.inputValuesMateriaPrima3 = value;
+  }
+  private inputValuesMateriaPrima4!: number;
+  public getInputValuesMateriaPrima4(): number {
+    return this.inputValuesMateriaPrima4;
+  }
+  public setInputValuesMateriaPrima4(value: number) {
+    this.inputValuesMateriaPrima4 = value;
+  }
+  private inputValuesMateriaPrima5!: number;
+  public getInputValuesMateriaPrima5(): number {
+    return this.inputValuesMateriaPrima5;
+  }
+  public setInputValuesMateriaPrima5(value: number) {
+    this.inputValuesMateriaPrima5 = value;
+  }
+  private inputValuesMateriaPrima6!: number;
+  public getInputValuesMateriaPrima6(): number {
+    return this.inputValuesMateriaPrima6;
+  }
+  public setInputValuesMateriaPrima6(value: number) {
+    this.inputValuesMateriaPrima6 = value;
+  }
+  private inputValuesMateriaPrima7!: number;
+  public getInputValuesMateriaPrima7(): number {
+    return this.inputValuesMateriaPrima7;
+  }
+  public setInputValuesMateriaPrima7(value: number) {
+    this.inputValuesMateriaPrima7 = value;
+  }
+  private inputValuesMateriaPrima13!: number;
+  public getInputValuesMateriaPrima13(): number {
+    return this.inputValuesMateriaPrima13;
+  }
+  public setInputValuesMateriaPrima13(value: number) {
+    this.inputValuesMateriaPrima13 = value;
+  }
+  private inputValuesMateriaPrima14!: number;
+  public getInputValuesMateriaPrima14(): number {
+    return this.inputValuesMateriaPrima14;
+  }
+  public setInputValuesMateriaPrima14(value: number) {
+    this.inputValuesMateriaPrima14 = value;
+  }
+  private inputValuesMateriaPrima15!: number;
+  public getInputValuesMateriaPrima15(): number {
+    return this.inputValuesMateriaPrima15;
+  }
+  public setInputValuesMateriaPrima15(value: number) {
+    this.inputValuesMateriaPrima15 = value;
+  }
+  private inputValuesMateriaPrima16!: number;
+  public getInputValuesMateriaPrima16(): number {
+    return this.inputValuesMateriaPrima16;
+  }
+  public setInputValuesMateriaPrima16(value: number) {
+    this.inputValuesMateriaPrima16 = value;
+  }
+  private inputValuesMateriaPrima17!: number;
+  public getInputValuesMateriaPrima17(): number {
+    return this.inputValuesMateriaPrima17;
+  }
+  public setInputValuesMateriaPrima17(value: number) {
+    this.inputValuesMateriaPrima17 = value;
+  }
   private presupuestoCaOpDetalle1!: string;
   public getPresupuestoCaOpDetalle1(): string {
     return this.presupuestoCaOpDetalle1;
