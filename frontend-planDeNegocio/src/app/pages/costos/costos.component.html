@@ -65,7 +65,7 @@
                     <input
                       type="number"
                       class="no-margin border right-align"
-                      (change)="asignarValor('RangoA', costosDirRangoA)"
+                      (change)="asignarValor('RangoA', costosDirRangoA); activarSelects()"
                       [(ngModel)]="costosDirRangoA"
                     />
                   </div>
@@ -79,7 +79,7 @@
                     <input
                       type="number"
                       class="no-margin border right-align"
-                      (change)="asignarValor('RangoB', costosDirRangoB)"
+                      (change)="asignarValor('RangoB', costosDirRangoB); activarSelects()"
                       [(ngModel)]="costosDirRangoB"
                     />
                   </div>
@@ -93,7 +93,7 @@
                     <input
                       type="number"
                       class="no-margin border right-align"
-                      (change)="asignarValor('RangoC', costosDirRangoC)"
+                      (change)="asignarValor('RangoC', costosDirRangoC); activarSelects()"
                       [(ngModel)]="costosDirRangoC"
                     />
                   </div>
@@ -258,67 +258,67 @@
 
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirEneVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirEneVM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirFebVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirFebVM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirMarVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirMarVM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirAbrVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirAbrVM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirMayVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirMayVM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirJunVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirJunVM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirJulVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirJulVM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirAgoVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirAgoVM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirSepVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirSepVM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirOctVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirOctVM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirNovVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirNovVM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirDicVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirDicVM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirAnualVM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirAnualVM) }}
                   </div>
                 </td>
               </tr>
@@ -332,67 +332,67 @@
 
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2">
-                    {{ formatearNumero(costosDirEneCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirEneCPM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2">
-                    {{ formatearNumero(costosDirFebCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirFebCPM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2">
-                    {{ formatearNumero(costosDirMarCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirMarCPM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2">
-                    {{ formatearNumero(costosDirAbrCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirAbrCPM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2">
-                    {{ formatearNumero(costosDirMayCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirMayCPM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2">
-                    {{ formatearNumero(costosDirJunCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirJunCPM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2">
-                    {{ formatearNumero(costosDirJulCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirJulCPM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2">
-                    {{ formatearNumero(costosDirAgoCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirAgoCPM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2">
-                    {{ formatearNumero(costosDirSepCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirSepCPM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2">
-                    {{ formatearNumero(costosDirOctCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirOctCPM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2">
-                    {{ formatearNumero(costosDirNovCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirNovCPM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2">
-                    {{ formatearNumero(costosDirDicCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirDicCPM) }}
                   </div>
                 </td>
                 <td colspan="1" class="fondo__subtitulo2 subTitle border">
                   <div class="input-container2 min-width-50px">
-                    {{ formatearNumero(costosDirAnualCPM) }}
+                    {{ formatearNumeroCeroDecimales(costosDirAnualCPM) }}
                   </div>
                 </td>
               </tr>

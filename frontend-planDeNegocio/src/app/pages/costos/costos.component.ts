@@ -702,9 +702,13 @@ export class CostosComponent {
   }
 
   asignarValor(value: string, valor: any) {
+    if (valor < 0) {
+      valor = valor * (-1);
+    }
     const valueM: string = this.costos + value;      //setHome${NombreDeudor}
 
-    (this.costosService as any)[valueM](valor);
+    (this.costosService as any)[valueM](valor);      // this.costosService.setHomeNOMBREDELAVARIABLE
+    console.log(valor, valueM);
   }
   // asignar a producto o servicio
   asignarProdServ1() {
@@ -907,7 +911,20 @@ export class CostosComponent {
     this.costosService.setCostosDirDicVM(this.costosDirDicVM);
     this.activar();
   }
-
+  activarSelects(){
+    this.selectVentaMensual1();
+    this.selectVentaMensual2();
+    this.selectVentaMensual3();
+    this.selectVentaMensual4();
+    this.selectVentaMensual5();
+    this.selectVentaMensual6();
+    this.selectVentaMensual7();
+    this.selectVentaMensual8();
+    this.selectVentaMensual9();
+    this.selectVentaMensual10();
+    this.selectVentaMensual11();
+    this.selectVentaMensual12();
+  }
   calculateColSize(breakpoints: { [key: string]: boolean }): number {
     if (breakpoints[Breakpoints.XSmall]) {
       return 3; // Pantallas extra pequeñas, 1 columna
@@ -1591,13 +1608,32 @@ export class CostosComponent {
     if (numero === 0) {
       return '';
     } else {
+      const redondeo = Math.round(numero * 100) / 100; // Redondea a 2 decimales
+      const valorAbsoluto = Math.abs(redondeo); // Valor absoluto
+
+      if (valorAbsoluto === 0) {
+        return '';
+      } else {
+        const resultado = redondeo < 0 ? `${valorAbsoluto}` : `${valorAbsoluto}`;
+        const partes = resultado.split('.');
+        partes[0] = partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        const resultadoFormateado = partes.join(',');
+
+        return resultadoFormateado === 'NaN' ? '' : 'Bs. ' + resultadoFormateado;
+      }
+    }
+  }
+  formatearNumeroCeroDecimales(numero: number): string {
+    if (numero === 0) {
+      return '';
+    } else {
       const redondeo = Math.round(numero); // Redondea a 0 decimales
       const valorAbsoluto = Math.abs(redondeo); // Valor absoluto
 
       if (valorAbsoluto === 0) {
         return '';
       } else {
-        const resultado = redondeo < 0 ? `(${valorAbsoluto})` : `${valorAbsoluto}`;
+        const resultado = redondeo < 0 ? `${valorAbsoluto}` : `${valorAbsoluto}`; // sin parentezis
         const partes = resultado.split('.');
         partes[0] = partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
         const resultadoFormateado = partes[0];
@@ -1606,4 +1642,5 @@ export class CostosComponent {
       }
     }
   }
+
 }

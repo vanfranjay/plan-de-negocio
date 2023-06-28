@@ -280,7 +280,7 @@ export class PresupuestoTotalComponent {
     }
 
     this.totalApPropioEfectivo = this.inputValues
-      .map(value => parseInt(value?.toString() || '0') || 0)
+      .map(value => parseFloat(value?.toString() || '0') || 0)
       .reduce((sum, value) => sum + value, 0);
     this.presupuestoTotalService.setTotalApPropioEfectivo(this.totalApPropioEfectivo);
 
