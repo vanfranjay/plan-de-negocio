@@ -65,7 +65,10 @@
                     <input
                       type="number"
                       class="no-margin border right-align"
-                      (change)="asignarValor('RangoA', costosDirRangoA); activarSelects()"
+                      (change)="
+                        asignarValor('RangoA', costosDirRangoA);
+                        activarSelects()
+                      "
                       [(ngModel)]="costosDirRangoA"
                     />
                   </div>
@@ -79,7 +82,10 @@
                     <input
                       type="number"
                       class="no-margin border right-align"
-                      (change)="asignarValor('RangoB', costosDirRangoB); activarSelects()"
+                      (change)="
+                        asignarValor('RangoB', costosDirRangoB);
+                        activarSelects()
+                      "
                       [(ngModel)]="costosDirRangoB"
                     />
                   </div>
@@ -93,7 +99,10 @@
                     <input
                       type="number"
                       class="no-margin border right-align"
-                      (change)="asignarValor('RangoC', costosDirRangoC); activarSelects()"
+                      (change)="
+                        asignarValor('RangoC', costosDirRangoC);
+                        activarSelects()
+                      "
                       [(ngModel)]="costosDirRangoC"
                     />
                   </div>
@@ -1539,7 +1548,11 @@
                   <input
                     type="number"
                     class="no-margin right-align"
-                    (change)="asignarPrecioV(costosDirPrecioV1, 1)"
+                    (change)="
+                      asignarPrecioV(costosDirPrecioV1, 1);
+                      calculateTotalCompraMensual(costosDirProdFrecuencia1, 1);
+                      calculateTotalVentaMensual(costosDirProdFrecuencia1, 1)
+                    "
                     [(ngModel)]="costosDirPrecioV1"
                   />
                 </td>
@@ -2203,7 +2216,11 @@
                   <input
                     type="number"
                     class="no-margin right-align"
-                    (change)="asignarPrecioV(costosDirPrecioV2, 2)"
+                    (change)="
+                      asignarPrecioV(costosDirPrecioV2, 2);
+                      calculateTotalCompraMensual(costosDirProdFrecuencia1, 1);
+                      calculateTotalVentaMensual(costosDirProdFrecuencia1, 1)
+                    "
                     [(ngModel)]="costosDirPrecioV2"
                   />
                 </td>
@@ -2804,7 +2821,11 @@
                   <input
                     type="number"
                     class="no-margin right-align"
-                    (change)="asignarPrecioV(costosDirPrecioV3, 3)"
+                    (change)="
+                      asignarPrecioV(costosDirPrecioV3, 3);
+                      calculateTotalCompraMensual(costosDirProdFrecuencia1, 1);
+                      calculateTotalVentaMensual(costosDirProdFrecuencia1, 1)
+                    "
                     [(ngModel)]="costosDirPrecioV3"
                   />
                 </td>
@@ -3408,7 +3429,11 @@
                   <input
                     type="number"
                     class="no-margin right-align"
-                    (change)="asignarPrecioV(costosDirPrecioV4, 4)"
+                    (change)="
+                      asignarPrecioV(costosDirPrecioV4, 4);
+                      calculateTotalCompraMensual(costosDirProdFrecuencia1, 1);
+                      calculateTotalVentaMensual(costosDirProdFrecuencia1, 1)
+                    "
                     [(ngModel)]="costosDirPrecioV4"
                   />
                 </td>
