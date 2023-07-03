@@ -101,7 +101,7 @@ export class HomeComponent {
       edadDeudor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(2), Validators.min(21)]],
       EstadoCivilDeudor: ['', [Validators.required, Validators.pattern(/^\S*$/)]],
       telefonoDeudor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(8)]],
-      direccionDeudor: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s]*$/), Validators.maxLength(120)]],
+      direccionDeudor: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s.-]*$/), Validators.maxLength(120)]],
 
       nameCodeudor: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/), Validators.maxLength(30)]],
       ciCodeudor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/)]],
@@ -109,20 +109,20 @@ export class HomeComponent {
       edadCodeudor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(2), Validators.min(21)]],
       EstadoCivilCodeudor: ['', [Validators.required, Validators.pattern(/^\S*$/)]],
       telefonoCodeudor: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(8)]],
-      direccionCodeudor: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s]*$/), Validators.maxLength(120)]],
+      direccionCodeudor: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s.-]*$/), Validators.maxLength(120)]],
 
       razonSocial: ['', [Validators.required, Validators.pattern(/^[\w\s.]*$/)]],
       nit: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(30)]],
       sigla: ['', [Validators.required, Validators.pattern(/^\S*$/), Validators.maxLength(20)]],
       tipoFormaSociendadComercial: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s.]*$/), Validators.maxLength(10)]],
       representanteLegal: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/), Validators.maxLength(30)]],
-      domicilioLegal: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s.]*$/), Validators.maxLength(120)]],
+      domicilioLegal: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s.-]*$/), Validators.maxLength(120)]],
 
       actividad: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/), Validators.maxLength(100)]],
       departamento: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/), Validators.maxLength(20)]],
       municipio: ['', [Validators.required, Validators.pattern(/^\S*$/), Validators.maxLength(20)]],
       telefono: ['', [Validators.required, Validators.pattern(/^[0-9]+$/), Validators.maxLength(8)]],
-      direccion: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s]*$/), Validators.maxLength(120)]]
+      direccion: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9\s.-]*$/), Validators.maxLength(120)]]
     });
 
     //variables deudor

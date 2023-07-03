@@ -1,8 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { PresupuestoService } from 'src/app/service/presupuesto/presupuesto.service';
 import { FlujoService } from 'src/app/service/flujo/flujo.service';
 import { CostosService } from 'src/app/service/costos/costos.service';
+import { PdfService } from 'src/app/service/pdfService/pdf.service';
+//import * as pdfMake from 'pdfmake/build/pdfmake';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+import htmlToPdfmake from 'html-to-pdfmake';
+import pdfMake from 'pdfmake/build/pdfmake';
+import { HomesService } from 'src/app/service/homes/homes.service';
+
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 @Component({
   selector: 'app-flujo',
@@ -10,8 +18,25 @@ import { CostosService } from 'src/app/service/costos/costos.service';
   styleUrls: ['./flujo.component.scss']
 })
 export class FlujoComponent {
+  @ViewChild('pdfContent', { static: true }) pdfContentRef!: ElementRef;
+
   colSize: any;
   colSize2: any;
+
+  //filas para el informe
+  filas: number[] = [];
+
+  //datos de home
+  deudor!: string;
+  actividadEmpre!: string;
+  codeudor!: string;
+  productoServicio1!: string;
+  productoServicio2!: string;
+  productoServicio3!: string;
+  productoServicio4!: string;
+
+  homeRazonSocilJuridica!: string;
+
   // variable de presupuesto total
 
   totalAP!: number;
@@ -316,7 +341,19 @@ export class FlujoComponent {
     private presupuestoService: PresupuestoService,
     private flujoService: FlujoService,
     private costosService: CostosService,
+    private pdfService: PdfService,
+    private homesService: HomesService,
   ) {
+    // datos de home
+    this.deudor = this.homesService.getHomeNombreDeudor();
+    this.actividadEmpre = this.homesService.getHomeActividadEmpre();
+    this.codeudor = this.homesService.getHomeNombreCodeudor();
+    this.productoServicio1 = this.costosService.getCostosDirProdOServ1();
+    this.productoServicio2 = this.costosService.getCostosDirProdOServ2();
+    this.productoServicio3 = this.costosService.getCostosDirProdOServ3();
+    this.productoServicio4 = this.costosService.getCostosDirProdOServ4();
+
+    this.homeRazonSocilJuridica = this.homesService.getHomeRazonSocilJuridica();
     //datos de costos para la primera tabla
     this.flujoIEne = (isNaN(this.costosService.getCostosDirEneVM()) ? 0 : this.costosService.getCostosDirEneVM());
     this.flujoIFeb = (isNaN(this.costosService.getCostosDirFebVM()) ? 0 : this.costosService.getCostosDirFebVM());
@@ -558,7 +595,12 @@ export class FlujoComponent {
           this.colSize3 = 3;
         }
       });
-
+    this.generarFilas();
+  }
+  generarFilas(): void {
+    for (let i = 2; i <= 84; i++) {
+      this.filas.push(i);
+    }
   }
   asignarValor(value: string, valor: any) {
     const valueM: string = this.flujoCostOp + value;      //setHome${NombreDeudor}
@@ -1080,6 +1122,8 @@ export class FlujoComponent {
     const value1 = ((value * this.datosCreditoMonto) * ((this.asignarFrecuencia() / 30) / 12));
     return value1;
   }
+  amortizacionValue: number[] = [];
+  interesValue: number[] = [];
   calculatePoliza2(): number[] {
     var saldoCapital = this.datosCreditoMonto;
     const cuotaCredito = this.calculateDatosCredito();
@@ -1088,7 +1132,7 @@ export class FlujoComponent {
     var poliza = 0;
     const valor = (isNaN(this.obtenerPlazoMeses()) ? 0 : this.obtenerPlazoMeses());
     const valuePoliza = ((this.flujoPoliza / 1000) * 12);
-    for (let index = 1; index < valor; index++) {
+    for (let index = 1; index <= valor; index++) {
       interes = ((this.calculateTasaInteres() * saldoCapital) / (360 / this.asignarFrecuencia()));
       if (this.asignarTipoCuota() == 'CUOTA FIJA') {
         amortizacion = cuotaCredito - interes;
@@ -1097,11 +1141,42 @@ export class FlujoComponent {
       }
       saldoCapital = saldoCapital - amortizacion;
       poliza = ((valuePoliza * saldoCapital) * ((this.asignarFrecuencia() / 30) / 12));
+      this.amortizacionValue[index - 1] = amortizacion;
+      this.interesValue[index - 1] = interes;
       this.flujoPoliza1[index] = poliza;
     }
     this.flujoService.setFlujoPoliza1(this.flujoPoliza1);
     this.flujoResultadoArray = this.flujoPoliza1;
+    this.calcularSumaAmortizacion();
+    this.calcularSumaInteres();
+    this.calculateSumaPoliza();
+    this.calcularTotalPolizaInteresAmortizacion();
     return this.flujoPoliza1;
+  }
+  intPolAmSumaTotal!: number;
+  calcularTotalPolizaInteresAmortizacion() {
+    this.intPolAmSumaTotal = this.polizaSumaTotal + this.interesSumaTotal + this.amortizacionSumaTotal;
+  }
+  polizaSumaTotal!: number;
+  calculateSumaPoliza() {
+    const valores = this.flujoPoliza1;
+    const subarreglo = valores.slice(0, this.valorFila());
+    const suma = subarreglo.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
+    this.polizaSumaTotal = suma + this.calculatePoliza();
+  }
+  interesSumaTotal!: number;
+  calcularSumaInteres() {
+    const valores = this.interesValue;
+    const subarreglo = valores.slice(0, this.valorFila());
+    const suma = subarreglo.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
+    this.interesSumaTotal = suma;
+  }
+  amortizacionSumaTotal!: number;
+  calcularSumaAmortizacion() {
+    const valores = this.amortizacionValue;
+    const subarreglo = valores.slice(0, this.valorFila());
+    const suma = subarreglo.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
+    this.amortizacionSumaTotal = suma;
   }
   asignarFrecuencia(): number {
     if (this.flujoFrecuencia1 == 'BIMENSUAL') {
@@ -2371,4 +2446,70 @@ export class FlujoComponent {
       }
     }
   }
+  //pdfContent!: string;
+  // generarPDF() {
+  //   this.pdfService.generatePdf();
+  // }
+  generarPDF() {
+    const divContent = this.pdfContentRef.nativeElement;
+
+    // Aplica un ancho máximo al contenedor de la tabla
+    divContent.style.maxWidth = '100%';
+
+    // Obtiene la tabla contenida en divContent
+    const table = divContent.querySelector('table');
+
+    // Aplica estilos de fuente más pequeños a la tabla
+    table.style.fontSize = '10px'; // Tamaño de fuente ajustable según tus necesidades
+
+    // Convierte el contenido actualizado a formato pdfmake
+    const content = htmlToPdfmake(divContent.innerHTML, {
+      window: window as any // Pasa el objeto window como 'any'
+    });
+
+    const docDefinition = {
+      content: [content]
+    };
+
+    pdfMake.createPdf(docDefinition).download(`informe de ${this.homeRazonSocilJuridica}.pdf`);
+  }
+
+  valorFilaPDF!: number;
+  valorFila(): number {
+    this.valorFilaPDF = this.flujoPlazoMeses / this.buscarV();
+    return this.valorFilaPDF;
+  }
+  calcularPrimeraCuotaTotal(): number {
+    var resultado;
+    if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
+      resultado = this.flujoCuotaVariable[0] + this.calculatePoliza();
+    } else if (this.asignarTipoCuota() == 'PERSONALIZADA') {
+      resultado = 0 + this.calculatePoliza();
+    } else {
+      resultado = this.calculateDatosCredito() + this.calculatePoliza();
+    }
+    return resultado;
+  }
+  calcularCuotaTOtal(index: number): number {
+    var resultado;
+    if (this.asignarTipoCuota() == 'CUOTA VARIABLE') {
+      resultado = this.flujoCuotaVariable[index] + this.flujoPoliza1[index];
+    } else if (this.asignarTipoCuota() == 'PERSONALIZADA') {
+      resultado = 0 + this.flujoPoliza1[index];
+    } else {
+      resultado = this.calculateDatosCredito() + this.flujoPoliza1[index];
+    }
+    this.calculateSaldoCapital();
+    return resultado;
+  }
+  resultadoSaldoCapital: number[] = [];
+  calculateSaldoCapital() {
+    var resultado = this.datosCreditoMonto;
+    this.resultadoSaldoCapital[0] = resultado;
+    for (let index = 1; index <= this.valorFila(); index++) {
+      resultado = resultado - this.amortizacionValue[index - 1];
+      this.resultadoSaldoCapital[index] = resultado;
+    }
+  }
+  //filas: number[] = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84];
 }

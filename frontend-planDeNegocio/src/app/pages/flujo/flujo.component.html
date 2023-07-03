@@ -452,7 +452,8 @@
                         llenarTabla1Flujo();
                         llenarTablaNro2();
                         calculateVan();
-                        calcularTir()
+                        calcularTir();
+                        valorFila()
                       "
                     >
                       <option value="MENSUAL">MENSUAL</option>
@@ -512,7 +513,8 @@
                         llenarTabla1Flujo();
                         llenarTablaNro2();
                         calculateVan();
-                        calcularTir()
+                        calcularTir();
+                        valorFila()
                       "
                       [(ngModel)]="flujoPlazoMeses"
                     />
@@ -1318,4 +1320,246 @@
       </div>
     </mat-grid-tile>
   </mat-grid-list>
+  <div class="bg-lightblue">
+    <h2>Generar Plan de Negocio</h2>
+    <!-- <div class="ocultar">
+        <app-pdf-content></app-pdf-content>
+      </div> -->
+    <div id="pdf-content" class="pdf-container ocultar" #pdfContent>
+      <h1 style="text-align: center; font-size: 16px;">PLAN DE PAGOS</h1>
+      <span>
+        Negocio: {{ actividadEmpre }}<br />
+        Deudor: {{ deudor }}<br />
+        Co-Deudor: {{ codeudor }}<br />
+        <div *ngIf="productoServicio1 || productoServicio2 || productoServicio3 || productoServicio4">Productos o Servicios: <br /></div>
+        <div *ngIf="productoServicio1">1. {{ productoServicio1 }}<br /></div>
+        <div *ngIf="productoServicio2">2. {{ productoServicio2 }}<br /></div>
+        <div *ngIf="productoServicio3">3. {{ productoServicio3 }}<br /></div>
+        <div *ngIf="productoServicio4">4. {{ productoServicio4 }}<br /></div>
+      </span>
+      <table style="max-width: 100%">
+        <tr>
+          <th colspan="9" style="text-align: center;">PLAN DE PAGOS</th>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-bold border">MONTO</td>
+          <td colspan="1" class="text-end border">
+            {{ formatearNumero(datosCreditoMonto) }}
+          </td>
+          <td colspan="4" style="border-bottom: 0px solid;"></td>
+          <th colspan="2" class="border">TOTALES</th>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-bold border">PLAZO (MESES)</td>
+          <td colspan="1" class="text-end border">
+            {{ flujoPlazoMeses | number : "1.0-0" }}
+          </td>
+          <td colspan="4"></td>
+          <td colspan="1" class="text-bold border">AMORTIZACIÓN</td>
+          <td colspan="1" class="text-end border">
+            {{ amortizacionSumaTotal | number : "1.2-2" }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-bold border">TIPO DE CUOTA</td>
+          <td colspan="1" class="text-end border">
+            {{ flujoTipoCuotaOpcion }}
+          </td>
+          <td colspan="4"></td>
+          <td colspan="1" class="text-bold border">INTERESES</td>
+          <td colspan="1" class="text-end border">
+            {{ interesSumaTotal | number : "1.2-2" }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-bold border">FRECUENCIA</td>
+          <td colspan="1" class="text-end border">
+            {{ flujoFrecuencia1 }}
+          </td>
+          <td colspan="4"></td>
+          <td colspan="1" class="text-bold border">PÓLIZA</td>
+          <td colspan="1" class="text-end border">
+            {{ polizaSumaTotal | number : "1.2-2" }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-bold border">TASA DE INTERÉS</td>
+          <td colspan="1" class="text-end border">
+            {{ flujoTasaInteres | percent : "1.2-2" }}
+          </td>
+          <td colspan="4" class="text-bold">ANUAL</td>
+          <td colspan="1" class="text-bold border">TOTAL</td>
+          <td colspan="1" class="text-end border">
+            {{ intPolAmSumaTotal | number : "1.2-2" }}
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-bold border">PÓLIZA</td>
+          <td colspan="1" class="text-end border">
+            {{ (this.flujoPoliza / 1000) * 12 }}
+          </td>
+          <td colspan="6"></td>
+        </tr>
+        <tr>
+          <th colspan="1" style="width: 6%" class="border">No. CUOTA</th>
+          <th colspan="1" style="width: 12%" class="border">AMORTIZACIÓN</th>
+          <th colspan="1" style="width: 12%" class="border">INTERES</th>
+          <th colspan="1" style="width: 12%" class="border">CUOTA CRÉDITO</th>
+          <th colspan="1" style="width: 12%" class="border">PÓLIZA</th>
+          <th colspan="1" style="width: 12%" class="border">CUOTA TOTAL</th>
+          <th colspan="1" style="width: 12%" class="border">SALDO CAPITAL</th>
+          <th colspan="1" style="width: 12%" class="border">TIEMPO (DIAS)</th>
+          <th colspan="1" style="width: 12%" class="border">SALDO CAPITAL</th>
+        </tr>
+        <tr *ngIf="valorFila() >= 1">
+          <td class="text-center border-bottom">1</td>
+          <td class="text-end border-bottom">
+            {{ amortizacionValue[0] | number : "2.2-2" }}
+          </td>
+          <td class="text-end border-bottom">
+            {{ this.interesValue[0] | number : "2.2-2" }}
+          </td>
+          <td class="text-end border-bottom">
+            {{
+              asignarTipoCuota() === "CUOTA VARIABLE"
+                ? (flujoCuotaVariable[0] | number : "2.2-2")
+                : asignarTipoCuota() === "CUOTA FIJA"
+                ? (calculateDatosCredito() | number : "2.2-2")
+                : ""
+            }}
+          </td>
+          <td class="text-end border-bottom">
+            {{ calculatePoliza() | number : "2.2-2" }}
+          </td>
+          <td class="text-end border-bottom">
+            {{ calcularPrimeraCuotaTotal() | number : "2.2-2" }}
+          </td>
+          <td class="text-end border-bottom">
+            {{ datosCreditoMonto | number : "1.2-2" }}
+          </td>
+          <td class="text-center border-bottom">
+            {{
+              valorFila() <=
+              ((360 / asignarFrecuencia()) * flujoPlazoMeses) / 12
+                ? asignarFrecuencia()
+                : ""
+            }}
+          </td>
+          <td class="text-end border-bottom">
+            {{ resultadoSaldoCapital[1] | number : "1.2-2" }}
+          </td>
+        </tr>
+        <ng-container *ngFor="let fila of filas">
+          <tr *ngIf="valorFila() >= fila">
+            <td class="text-center border-bottom">{{ fila }}</td>
+            <td class="text-end border-bottom">
+              {{ amortizacionValue[fila - 1] | number : "2.2-2" }}
+            </td>
+            <td class="text-end border-bottom">
+              {{ interesValue[fila - 1] | number : "2.2-2" }}
+            </td>
+            <td class="text-end border-bottom">
+              {{
+                asignarTipoCuota() === "CUOTA VARIABLE"
+                  ? (flujoCuotaVariable[fila - 1] | number : "2.2-2")
+                  : asignarTipoCuota() === "CUOTA FIJA"
+                  ? (calculateDatosCredito() | number : "2.2-2")
+                  : ""
+              }}
+            </td>
+            <td class="text-end border-bottom">
+              {{ flujoPoliza1[fila - 1] | number : "2.2-2" }}
+            </td>
+            <td class="text-end border-bottom">
+              {{ calcularCuotaTOtal(fila - 1) | number : "2.2-2" }}
+            </td>
+            <td class="text-end border-bottom">
+              {{ resultadoSaldoCapital[fila - 1] | number : "1.2-2" }}
+            </td>
+            <td class="text-center border-bottom">
+              {{
+                valorFila() <=
+                ((360 / asignarFrecuencia()) * flujoPlazoMeses) / 12
+                  ? asignarFrecuencia()
+                  : ""
+              }}
+            </td>
+            <td class="text-end border-bottom">
+              {{ resultadoSaldoCapital[fila] | number : "1.2-2" }}
+            </td>
+          </tr>
+        </ng-container>
+      </table>
+      <br />
+      <table>
+        <tr>
+          <th>VAN:</th>
+          <td>{{ formatearNumero(flujoValueVan) }}</td>
+        </tr>
+        <tr>
+          <th>TIR:</th>
+          <td>{{ flujoValueTir | percent : "1.2-2" }}</td>
+        </tr>
+      </table>
+      <div *ngIf="calculateVan() > 0">
+        <span>
+          El proyecto o inversión asociada al préstamo presenta un VAN positivo
+          de {{ formatearNumero(flujoValueVan) }}. Esto significa que el
+          proyecto tiene la capacidad de generar un valor adicional, más allá de
+          la inversión inicial, equivalente a
+          {{ formatearNumero(flujoValueVan) }}. Por lo tanto, desde una
+          perspectiva financiera, se espera obtener un retorno positivo y
+          favorable sobre la inversión realizada.
+        </span>
+        <br />
+        <br />
+        <span>
+          Además, la TIR del {{ flujoValueTir | percent : "1.2-2" }} indica que
+          la tasa de rendimiento esperada del proyecto es del
+          {{ flujoValueTir | percent : "1.2-2" }}. Esto implica que la
+          rentabilidad del proyecto es superior a la tasa de interés utilizada
+          en el cálculo ({{ flujoTasaInteres | percent : "1.2-2" }}), lo cual es
+          un indicador positivo.
+        </span>
+      </div>
+      <div *ngIf="calculateVan() < 0">
+        <span>
+          Si el Valor Actual Neto (VAN) resulta negativo en un préstamo, esto
+          indica que los flujos de efectivo generados por el proyecto o
+          inversión asociada son insuficientes para cubrir la inversión inicial.
+          En este caso, es importante considerar medidas adicionales antes de
+          tomar una decisión:
+        </span>
+        <br />
+        <span>
+          Reevaluar el proyecto: Analiza detalladamente todos los componentes
+          del proyecto, incluyendo:
+        </span>
+        <br />
+        <span>Costos.</span>
+        <br />
+        <span>Ingresos Proyectados.</span>
+        <br />
+        <span>Plazos y riesgos asociados.</span>
+        <br />
+        <br />
+        <span
+          >Identificar las causas del VAN negativo: Examina los elementos que
+          contribuyen al VAN negativo, como: , ingresos insuficientes o
+          ineficiencias operativas.
+        </span>
+        <br />
+        <span>Costos elevados.</span>
+        <br />
+        <span>Ingresos insuficientes o ineficiencias operativas.</span>
+        <br />
+        <br />
+        <span>
+          Buscar asesoramiento profesional: En situaciones complejas, considera
+          buscar la ayuda de expertos en finanzas o consultores especializados.
+        </span>
+      </div>
+    </div>
+    <button (click)="generarPDF()" class="estilos__boton">Generar Plan de Negocio</button>
+  </div>
 </div>
